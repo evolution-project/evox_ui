@@ -4,6 +4,8 @@ GUI development from EvoX gui wallet project
 
 ## require
 
+* Ubuntu 20.04
+
 * node v10.24.1
 
 # install package
