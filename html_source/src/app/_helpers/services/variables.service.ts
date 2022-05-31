@@ -21,7 +21,7 @@ export class VariablesService {
   public appLogin = false;
   public moneyEquivalent = 0;
   public moneyEquivalentPercent = 0;
-  public defaultCurrency = 'ZANO';
+  public defaultCurrency = 'EvoX';
   public opening_wallet: Wallet;
   public exp_med_ts = 0;
   public net_time_delta_median = 0;

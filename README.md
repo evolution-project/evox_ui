@@ -1,2 +1,2 @@
-# zano_ui
-UI development from Zano  project
+# evox_ui
+GUI development from EvoX  project

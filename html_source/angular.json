@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "zano": {
+    "evox": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "zano:build"
+            "browserTarget": "evox:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "zano:build:production"
+              "browserTarget": "evox:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "zano:build"
+            "browserTarget": "evox:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "zano-e2e": {
+    "evox-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "zano:serve"
+            "devServerTarget": "evox:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "zano:serve:production"
+              "devServerTarget": "evox:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "zano"
+  "defaultProject": "evox"
 }

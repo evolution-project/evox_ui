@@ -69,7 +69,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Create or open the wallet to start using Zano",
+    "TITLE": "Create or open the wallet to start using EvoX",
     "BUTTON_NEW_WALLET": "Create New Wallet",
     "BUTTON_OPEN_WALLET": "Open Existing Wallet",
     "BUTTON_RESTORE_BACKUP": "Restore from Backup",
@@ -352,11 +352,11 @@
     "SUCCESS_SENT": "Transaction sent",
     "WRAP": {
       "TITLE": "Wrap",
-      "MAIN_TEXT": "This transaction will create wZano (\"Wrapped Zano\") which will be sent to the specified address on the Ethereum network.",
+      "MAIN_TEXT": "This transaction will create wZano (\"Wrapped Evox\") which will be sent to the specified address on the Ethereum network.",
       "ESTIMATE": "Transaction Estimates",
       "WILL_RECEIVE": "You'll receive:",
       "FEE": "Ethereum Txn Fee:",
-      "ZANO": "ZANO",
+      "EVOX": "EVOX",
       "wZANO": "wZANO"
     },
     "FORM_ERRORS": {
@@ -369,7 +369,7 @@
       "FEE_MINIMUM": "Minimum fee: {{fee}}",
       "MAX_LENGTH": "Maximum comment length reached",
       "GREAT_THAN_UNWRAPPED_COINS": "Amount is bigger than ERC20 tokens left available",
-      "LESS_THAN_ZANO_NEEDED": "Too small amount to cover ERC20 fee",
+      "LESS_THAN_EVOX_NEEDED": "Too small amount to cover ERC20 fee",
       "WRAP_INFO_NULL": "failed to request wrap state"
     }
   },
@@ -648,7 +648,7 @@
     "NO_MONEY_REMOVE_OFFER": "There is no fee for deleting an offer, but in order to protect the network against flood transactions you need to have at least {{fee}} {{currency}} in your wallet",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mix-in number is too big for current blockchain state. There are not enough unspent outputs to mix with",
     "TRANSACTION_IS_TO_BIG": "Transaction exceeds network limit, send required amount with multiple transactions",
-    "TRANSFER_ATTEMPT": "There is no connection to Zano network",
+    "TRANSFER_ATTEMPT": "There is no connection to EvoX network",
     "ACCESS_DENIED": "Access denied",
     "TRANSACTION_ERROR": "Error. Transaction not completed.",
     "BAD_ARG": "Invalid argument",
@@ -680,7 +680,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Payment received",
     "MINED": "Mined",
     "LOCKED": "Blocked",
-    "IS_MINIMIZE": "Zano application is minimized to the system tray",
+    "IS_MINIMIZE": "EvoX application is minimized to the system tray",
     "RESTORE": "You can recover it by clicking or using the context menu",
     "TRAY_MENU_SHOW": "Resize",
     "TRAY_MENU_MINIMIZE": "Minimize"

@@ -53,8 +53,8 @@
                 <div *ngIf="sendForm.controls['amount'].errors['great_than_unwraped_coins']">
                     {{ 'SEND.FORM_ERRORS.GREAT_THAN_UNWRAPPED_COINS' | translate }}
                 </div>
-                <div *ngIf="sendForm.controls['amount'].errors['less_than_zano_needed']">
-                    {{ 'SEND.FORM_ERRORS.LESS_THAN_ZANO_NEEDED' | translate }}
+                <div *ngIf="sendForm.controls['amount'].errors['less_than_evox_needed']">
+                    {{ 'SEND.FORM_ERRORS.LESS_THAN_EVOX_NEEDED' | translate }}
                 </div>
                 <div *ngIf="sendForm.controls['amount'].errors['wrap_info_null']">
                     {{ 'SEND.FORM_ERRORS.WRAP_INFO_NULL' | translate }}
@@ -98,8 +98,8 @@
             <tr>
                 <td>{{ 'SEND.WRAP.FEE' | translate }}</td>
                 <td>
-                    {{wrapInfo?.tx_cost?.zano_needed_for_erc20 | intToMoney: 3 }}
-                    {{ 'SEND.WRAP.ZANO' | translate }}(${{wrapInfo?.tx_cost?.usd_needed_for_erc20}})
+                    {{wrapInfo?.tx_cost?.evox_needed_for_erc20 | intToMoney: 3 }}
+                    {{ 'SEND.WRAP.EVOX' | translate }}(${{wrapInfo?.tx_cost?.usd_needed_for_erc20}})
                 </td>
             </tr>
         </table>

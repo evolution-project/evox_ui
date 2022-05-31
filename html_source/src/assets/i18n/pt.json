@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Crie ou abra a carteira para começar a usar Zano",
+    "TITLE": "Crie ou abra a carteira para começar a usar EvoX",
     "BUTTON_NEW_WALLET": "Criar nova carteira",
     "BUTTON_OPEN_WALLET": "Abrir carteira existente",
     "BUTTON_RESTORE_BACKUP": "Restaurar de cópia",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Não há taxa para excluir uma oferta, mas para proteger a rede contra transações de inundação, é preciso ter pelo menos {{fee}} {{currency}} na sua carteira",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "O número de mixagem é muito grande para o estado atual da blockchain. Não há saídas não gastas suficientes para misturar",
     "TRANSACTION_IS_TO_BIG": "Transação excede o limite de rede, envie quantidade necessária com várias transações",
-    "TRANSFER_ATTEMPT": "Sem conexão à rede Zano",
+    "TRANSFER_ATTEMPT": "Sem conexão à rede EvoX",
     "ACCESS_DENIED": "Acesso negado",
     "TRANSACTION_ERROR": "Erro. Transação não completada.",
     "BAD_ARG": "Argumento inválido",
@@ -585,7 +585,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Pagamento recebido",
     "MINED": "Minerado",
     "LOCKED": "Bloqueado",
-    "IS_MINIMIZE": "Aplicação Zano foi minimizada na bandeja do sistema",
+    "IS_MINIMIZE": "Aplicação EvoX foi minimizada na bandeja do sistema",
     "RESTORE": "Pode recuperá-lo ao clicar ou usar o menu de contexto",
     "TRAY_MENU_SHOW": "Redimensionar",
     "TRAY_MENU_MINIMIZE": "Minimizar"

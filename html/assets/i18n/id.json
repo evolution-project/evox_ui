@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Buat atau buka dompet untuk mulai menggunakan Zano",
+    "TITLE": "Buat atau buka dompet untuk mulai menggunakan EvoX",
     "BUTTON_NEW_WALLET": "Buat dompet baru",
     "BUTTON_OPEN_WALLET": "Buka dompet yang telah dibuat",
     "BUTTON_RESTORE_BACKUP": "Pulihkan dari cadangan",
@@ -548,7 +548,7 @@
     "NO_MONEY_REMOVE_OFFER": "Tidak ada biaya untuk menghapus penawaran, tetapi untuk melindungi jaringan terhadap transaksi banjir/banyak, Anda harus memiliki setidaknya {{fee}} {{currency}} di dompet Anda",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mixin terlalu besar untuk keadaan blockchain saat ini. Tidak ada cukup keluaran yang tidak terpakai untuk digabungkan",
     "TRANSACTION_IS_TO_BIG": "Transaksi melebihi batas jaringan, mengirim jumlah yang diperlukan dengan banyak transaksi",
-    "TRANSFER_ATTEMPT": "Tidak ada koneksi ke jaringan Zano",
+    "TRANSFER_ATTEMPT": "Tidak ada koneksi ke jaringan EvoX",
     "ACCESS_DENIED": "Akses ditolak",
     "TRANSACTION_ERROR": "Kesalahan. Transaksi tidak selesai.",
     "BAD_ARG": "Argumen tidak valid",
@@ -579,7 +579,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Pembayaran diterima",
     "MINED": "Ditambang",
     "LOCKED": "Diblokir",
-    "IS_MINIMIZE": "Aplikasi Zano di minimalkan ke dalam sistem tray.",
+    "IS_MINIMIZE": "Aplikasi EvoX di minimalkan ke dalam sistem tray.",
     "RESTORE": "Kamu dapat mengembalikannya dengan cara mengklik ke dalam menu konteks.",
     "TRAY_MENU_SHOW": "Ubah ukuran",
     "TRAY_MENU_MINIMIZE": "Minimalkan"

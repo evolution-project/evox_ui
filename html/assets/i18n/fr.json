@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Créer ou ouvrir le portefeuille pour commencer à utiliser Zano",
+    "TITLE": "Créer ou ouvrir le portefeuille pour commencer à utiliser EvoX",
     "BUTTON_NEW_WALLET": "Créer un nouveau portefeuille",
     "BUTTON_OPEN_WALLET": "Ouvrir un portefeuille existant",
     "BUTTON_RESTORE_BACKUP": "Restaurer depuis une sauvegarde",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Il n'y a pas de frais pour supprimer une offre, mais pour protéger le réseau contre les transactions de spam, vous devez avoir au moins {{fee}} {{currency}} dans votre portefeuille",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Le nombre de mixage est trop grand pour l'état actuel de la blockchain. Il n'y a pas assez de sorties non utilisées pour mélanger avec",
     "TRANSACTION_IS_TO_BIG": "La transaction dépasse la limite réseau, envoyez le montant requis avec plusieurs transactions",
-    "TRANSFER_ATTEMPT": "Il n'y a pas de connexion au réseau Zano",
+    "TRANSFER_ATTEMPT": "Il n'y a pas de connexion au réseau EvoX",
     "ACCESS_DENIED": "Accès refusé",
     "TRANSACTION_ERROR": "Erreur. Transaction non complétée.",
     "BAD_ARG": "Argument invalide",
@@ -585,7 +585,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Paiement reçu",
     "MINED": "Miné",
     "LOCKED": "Bloqué",
-    "IS_MINIMIZE": "L'application Zano est minimisée dans la barre d'état",
+    "IS_MINIMIZE": "L'application EvoX est minimisée dans la barre d'état",
     "RESTORE": "Vous pouvez le récupérer en cliquant ou en utilisant le menu contextuel",
     "TRAY_MENU_SHOW": "Redimensionner",
     "TRAY_MENU_MINIMIZE": "Réduire"
