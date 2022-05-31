@@ -3352,8 +3352,8 @@ var AUDITABLE_WALLET_HELP_PAGE = 'docs.zano.org/docs/auditable-wallets';
 var CREATE_NEW_WALLET_HELP_PAGE = 'docs.zano.org/docs/getting-started-1#section-create-new-wallet';
 var LOCKED_BALANCE_HELP_PAGE = 'docs.zano.org/docs/locked-balance';
 var DOWNLOADS_PAGE_URL = 'zano.org/downloads.html';
-var BLOCK_EXPLORER_TX_URL_PREFIX = 'explorer.zano.org/transaction/';
-var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-explorer.zano.org/transaction/';
+var BLOCK_EXPLORER_TX_URL_PREFIX = 'chain.evolution-network.org/transaction/';
+var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-chain.evolution-network.org/transaction/';
 
 
 /***/ }),
