@@ -1,13 +1,12 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import {Pipe, PipeTransform} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Pipe({
   name: 'historyTypeMessages'
 })
 export class HistoryTypeMessagesPipe implements PipeTransform {
 
-  constructor(private translate: TranslateService) {
-  }
+  constructor(private translate: TranslateService) {}
 
   transform(item: any, args?: any): any {
 

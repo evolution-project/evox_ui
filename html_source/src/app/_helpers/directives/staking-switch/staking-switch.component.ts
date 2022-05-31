@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BackendService } from '../../services/backend.service';
-import { VariablesService } from '../../services/variables.service';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {BackendService} from '../../services/backend.service';
+import {VariablesService} from '../../services/variables.service';
 
 @Component({
   selector: 'app-staking-switch',
@@ -9,15 +9,13 @@ import { VariablesService } from '../../services/variables.service';
 })
 export class StakingSwitchComponent implements OnInit {
 
-  @Input() wallet_id: number;
+  @Input() wallet_id: boolean;
   @Input() staking: boolean;
   @Output() stakingChange = new EventEmitter<boolean>();
 
-  constructor(private backend: BackendService, private variablesService: VariablesService) {
-  }
+  constructor(private backend: BackendService, private variablesService: VariablesService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleStaking() {
     const wallet = this.variablesService.getWallet(this.wallet_id);

@@ -8,16 +8,17 @@ import { ContextMenuComponent } from 'ngx-contextmenu';
 import { IntToMoneyPipe } from './_helpers/pipes/int-to-money.pipe';
 import { BigNumber } from 'bignumber.js';
 import { ModalService } from './_helpers/services/modal.service';
+import { UtilsService } from './_helpers/services/utils.service';
 import { Store } from 'store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { pathsChildrenAuth, paths } from './paths';
 
 @Component({
-             selector: 'app-root',
-             templateUrl: './app.component.html',
-             styleUrls: ['./app.component.scss']
-           })
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  providers: [UtilsService]
+})
 export class AppComponent implements OnInit, OnDestroy {
 
   intervalUpdatePriceState;
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @ViewChild('allContextMenu') public allContextMenu: ContextMenuComponent;
   @ViewChild('onlyCopyContextMenu') public onlyCopyContextMenu: ContextMenuComponent;
-  @ViewChild('pasteSelectContextMenu') public pasteSelectContextMenu: ContextMenuComponent;
 
   constructor(
     private http: HttpClient,
@@ -45,6 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private intToMoneyPipe: IntToMoneyPipe,
     private modalService: ModalService,
+    private utilsService: UtilsService,
     private store: Store
   ) {
     translate.addLangs(['en', 'fr', 'de', 'it', 'pt']);
@@ -83,7 +84,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.variablesService.allContextMenu = this.allContextMenu;
     this.variablesService.onlyCopyContextMenu = this.onlyCopyContextMenu;
-    this.variablesService.pasteSelectContextMenu = this.pasteSelectContextMenu;
 
     this.backend.initService().subscribe(initMessage => {
       console.log('Init message: ', initMessage);
@@ -175,6 +175,7 @@ export class AppComponent implements OnInit, OnDestroy {
           });
         }
       });
+
 
       this.backend.eventSubscribe('update_daemon_state', (data) => {
         console.log('----------------- update_daemon_state -----------------');
@@ -554,11 +555,17 @@ export class AppComponent implements OnInit, OnDestroy {
               this.variablesService.settings[key] = data[key];
             }
           }
-          if (this.variablesService.settings.hasOwnProperty('scale') && ['8px', '10px', '12px', '14px'].indexOf(this.variablesService.settings.scale) !== -1) {
-            this.renderer.setStyle(document.documentElement, 'font-size', this.variablesService.settings.scale);
+          if (this.variablesService.settings.hasOwnProperty('scale') && [6, 8, 10, 12].indexOf(this.variablesService.settings.scale) !== -1) {
+            const width = this.utilsService.getMinWidthByScale(this.variablesService.settings.scale);
+            const app = document.documentElement.querySelector('app-root');
+            this.renderer.setStyle(app, 'min-width', width + 'px');
+            this.renderer.setStyle(document.documentElement, 'font-size', this.variablesService.settings.scale + 'px');
           } else {
-            this.variablesService.settings.scale = '10px';
-            this.renderer.setStyle(document.documentElement, 'font-size', this.variablesService.settings.scale);
+            this.variablesService.settings.scale = 8;
+            const width = this.utilsService.getMinWidthByScale(this.variablesService.settings.scale);
+            const app = document.documentElement.querySelector('app-root');
+            this.renderer.setStyle(app, 'min-width', width + 'px');
+            this.renderer.setStyle(document.documentElement, 'font-size', this.variablesService.settings.scale + 'px');
           }
         }
         this.translate.use(this.variablesService.settings.language);
@@ -566,10 +573,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
         this.backend.setLogLevel(this.variablesService.settings.appLog);
         this.backend.setEnableTor(this.variablesService.settings.appUseTor);
-
-        if (!this.variablesService.settings.wallets || !this.variablesService.settings.wallets.length) {
-          return this.router.navigate([`${ paths.auth }/${ pathsChildrenAuth.noWallet }`]).then();
-        }
 
         if (this.router.url !== '/login') {
           this.backend.haveSecureAppData((statusPass) => {

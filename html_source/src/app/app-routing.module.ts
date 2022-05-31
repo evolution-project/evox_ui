@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AddWalletComponent } from './add-wallet/add-wallet.component';
+import { Routes, RouterModule } from '@angular/router';
+
+// Components
+import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { SendComponent } from './send/send.component';
@@ -8,6 +10,8 @@ import { ReceiveComponent } from './receive/receive.component';
 import { HistoryComponent } from './history/history.component';
 import { ContractsComponent } from './contracts/contracts.component';
 import { PurchaseComponent } from './purchase/purchase.component';
+import { MessagesComponent } from './messages/messages.component';
+import { TypingMessageComponent } from './typing-message/typing-message.component';
 import { StakingComponent } from './staking/staking.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CreateWalletComponent } from './create-wallet/create-wallet.component';
@@ -24,262 +28,147 @@ import { ContactSendComponent } from './contact-send/contact-send.component';
 import { ExportImportComponent } from './export-import/export-import.component';
 import { DeeplinkComponent } from './deeplink/deeplink.component';
 import { ContractsTabComponent } from './contracts/contracts-tab/contracts-tab.component';
-import { pathsChildrenContracts, pathsChildrenWallet, paths } from './paths';
-import { FullLayoutComponent } from './layouts/full-layout/full-layout.component';
-import { WithSidebarLayoutComponent } from './layouts/with-sidebar-layout/with-sidebar-layout.component';
 
 const routes: Routes = [
   {
-    path: paths.auth,
-    component: FullLayoutComponent,
-    loadChildren: './pages/auth/auth.module#AuthModule'
+    path: '',
+    component: MainComponent
   },
   {
-    path: paths.addWallet,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '', component: AddWalletComponent
-      }
-    ]
+    path: 'main',
+    component: MainComponent
   },
   {
-    path: paths.login,
-    component: FullLayoutComponent,
-    children: [
-      {
-        path: '', component: LoginComponent
-      }
-    ]
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: paths.wallet,
-    component: WithSidebarLayoutComponent,
+    path: 'wallet',
+    component: WalletComponent,
     children: [
       {
-        path: '',
-        component: WalletComponent,
+        path: 'send',
+        component: SendComponent
+      },
+      {
+        path: 'receive',
+        component: ReceiveComponent
+      },
+      {
+        path: 'history',
+        component: HistoryComponent
+      },
+      {
+        path: 'contracts',
+        component: ContractsTabComponent,
         children: [
           {
-            path: pathsChildrenWallet.send,
-            component: SendComponent
-          },
-          {
-            path: pathsChildrenWallet.receive,
-            component: ReceiveComponent
-          },
-          {
-            path: pathsChildrenWallet.history,
-            component: HistoryComponent
-          },
-          {
-            path: pathsChildrenWallet.contracts,
-            component: ContractsTabComponent,
-            children: [
-              {
-                path: '',
-                component: ContractsComponent,
-              },
-              {
-                path: pathsChildrenContracts.purchase,
-                component: PurchaseComponent
-              },
-              {
-                path: `${ pathsChildrenContracts.purchase }/:id`,
-                component: PurchaseComponent
-              },
-              {
-                path: '**', redirectTo: '',
-              },
-            ]
-          },
-
-          {
-            path: pathsChildrenWallet.staking,
-            component: StakingComponent
-          },
-          {
             path: '',
-            redirectTo: pathsChildrenWallet.history,
-            pathMatch: 'full'
-          }
+            component: ContractsComponent,
+          },
+          {
+            path: 'purchase',
+            component: PurchaseComponent
+          },
+          {
+            path: 'purchase/:id',
+            component: PurchaseComponent
+          },
+          {
+            path: '**', redirectTo: '',
+          },
         ]
-      }
-    ]
-
-  },
-  {
-    path: paths.create,
-    component: WithSidebarLayoutComponent,
-    children: [
+      },
+      {
+        path: 'messages',
+        component: MessagesComponent,
+      },
+      {
+        path: 'messages/:id',
+        component: TypingMessageComponent,
+      },
+      {
+        path: 'staking',
+        component: StakingComponent
+      },
       {
         path: '',
-        component: CreateWalletComponent
-      }
-    ]
-  },
-  {
-    path: paths.open,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: OpenWalletComponent
+        redirectTo: 'history',
+        pathMatch: 'full'
       }
     ]
   },
   {
-    path: paths.restore,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: RestoreWalletComponent
-      }
-    ]
+    path: 'create',
+    component: CreateWalletComponent
   },
   {
-    path: paths.seedPhrase,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: SeedPhraseComponent
-      }
-    ]
+    path: 'open',
+    component: OpenWalletComponent
   },
   {
-    path: paths.details,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: WalletDetailsComponent
-      }
-    ]
+    path: 'restore',
+    component: RestoreWalletComponent
   },
   {
-    path: paths.assignAlias,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: AssignAliasComponent
-      }
-    ]
+    path: 'seed-phrase',
+    component: SeedPhraseComponent
   },
   {
-    path: paths.editAlias,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: EditAliasComponent
-      }
-    ]
+    path: 'details',
+    component: WalletDetailsComponent
   },
   {
-    path: paths.transferAlias,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: TransferAliasComponent
-      }
-    ]
+    path: 'assign-alias',
+    component: AssignAliasComponent
   },
   {
-    path: paths.settings,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: SettingsComponent
-      }
-    ]
+    path: 'edit-alias',
+    component: EditAliasComponent
   },
   {
-    path: paths.contacts,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: ContactsComponent
-      }
-    ]
+    path: 'transfer-alias',
+    component: TransferAliasComponent
   },
   {
-    path: paths.addContacts,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: AddContactsComponent
-      }
-    ]
+    path: 'settings',
+    component: SettingsComponent
   },
   {
-    path: `${ paths.editContacts }/:id`,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: AddContactsComponent
-      }
-    ]
+    path: 'contacts',
+    component: ContactsComponent
   },
   {
-    path: `${ paths.contactSend }/:id`,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: ContactSendComponent
-      }
-    ]
+    path: 'add-contacts',
+    component: AddContactsComponent
   },
   {
-    path: paths.import,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: ExportImportComponent
-      }
-    ]
+    path: 'edit-contacts/:id',
+    component: AddContactsComponent
   },
   {
-    path: paths.deeplink,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: DeeplinkComponent
-      }
-    ]
+    path: 'contact-send/:id',
+    component: ContactSendComponent
   },
   {
-    path: paths.uiKit,
-    component: WithSidebarLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: './pages/ui-kit/ui-kit.module#UiKitModule'
-      }
-    ]
+    path: 'import',
+    component: ExportImportComponent
+  },
+  {
+    path: 'deeplink',
+    component: DeeplinkComponent
   },
   {
     path: '',
-    redirectTo: paths.addWallet,
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-            imports: [RouterModule.forRoot(routes)],
-            exports: [RouterModule]
-          })
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 
 
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

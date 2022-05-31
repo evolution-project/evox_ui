@@ -1,31 +1,21 @@
-<div class="page-container">
-
-    <div class="toolbar mb-2">
-        <div class="left">
-            <button type="button"
-                    class="btn-icon circle big mr-2"
-                    (click)="back()">
-                <i class="icon dropdown-arrow-left"></i>
-            </button>
-            <h1>{{ 'CONTACTS.IMPORT_EXPORT' | translate }}</h1>
-        </div>
-        <div class="right"></div>
+<div class="content scrolled-content">
+  <div>
+    <div class="head">
+      <button type="button" class="back-btn" (click)="back()">
+        <i class="icon back"></i>
+        <span>{{ 'COMMON.BACK' | translate }}</span>
+      </button>
     </div>
 
-    <div class="page-content">
-        <div class="scrolled-content">
-            <div class="controls flex">
-                <button class="primary big max-w-19-rem w-100 mr-1"
-                        type="button"
-                        (click)="import()">
-                    {{ 'CONTACTS.IMPORT' | translate }}
-                </button>
-                <button class="primary big max-w-19-rem w-100"
-                        type="button"
-                        (click)="export()">
-                    {{ 'CONTACTS.EXPORT' | translate }}
-                </button>
-            </div>
-        </div>
+    <h3 class="contacts-title">{{ 'CONTACTS.IMPORT_EXPORT' | translate }}</h3>
+
+    <div class="btn-wrapper">
+      <button class="blue-button" type="button" (click)="import()">
+        {{ 'CONTACTS.IMPORT' | translate }}
+      </button>
+      <button class="blue-button" type="button" (click)="export()">
+        {{ 'CONTACTS.EXPORT' | translate }}
+      </button>
     </div>
+  </div>
 </div>

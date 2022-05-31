@@ -1,14 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { VariablesService } from '../services/variables.service';
-import { BigNumber } from 'bignumber.js';
+import {Pipe, PipeTransform} from '@angular/core';
+import {VariablesService} from '../services/variables.service';
+import {BigNumber} from 'bignumber.js';
 
 @Pipe({
   name: 'intToMoney'
 })
 export class IntToMoneyPipe implements PipeTransform {
 
-  constructor(private variablesService: VariablesService) {
-  }
+  constructor(private variablesService: VariablesService) {}
 
   transform(value: any, args?: any): any {
     if (value === 0 || value === undefined) {

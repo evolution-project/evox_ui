@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewChecked, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { VariablesService } from '../_helpers/services/variables.service';
 import { ActivatedRoute } from '@angular/router';
 import { Transaction } from '../_helpers/models/transaction.model';
@@ -7,6 +7,7 @@ import { PaginationService } from '../_helpers/services/pagination.service';
 import { PaginationStore } from '../_helpers/services/pagination.store';
 import { Wallet } from '../_helpers/models/wallet.model';
 import { BackendService } from '../_helpers/services/backend.service';
+
 
 @Component({
   selector: 'app-history',
@@ -43,9 +44,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
       this.openedDetails = '';
     });
     let restore = false;
-    if (this.variablesService.after_sync_request.hasOwnProperty(this.variablesService.currentWallet.wallet_id)) {
-      restore = this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id];
-    }
+    if (this.variablesService.after_sync_request.hasOwnProperty(this.variablesService.currentWallet.wallet_id)) { restore = this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id]; }
     if (!this.variablesService.sync_started && restore && this.variablesService.currentWallet.wallet_id) {
       this.wallet = this.variablesService.getNotLoadedWallet();
       if (this.wallet) {
@@ -61,7 +60,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
     ) {
       after_sync_request = this.variablesService.after_sync_request[
         this.variablesService.currentWallet.wallet_id
-        ];
+      ];
     }
     if (after_sync_request && !this.variablesService.sync_started) {
       // if user click on the wallet at the first time after restore.
@@ -86,14 +85,14 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   strokeSize(item) {
-    const rem = this.variablesService.settings.scale;
+    const rem = this.variablesService.settings.scale
     if ((this.variablesService.height_app - item.height >= 10 && item.height !== 0) || (item.is_mining === true && item.height === 0)) {
       return 0;
     } else {
       if (item.height === 0 || this.variablesService.height_app - item.height < 0) {
-        return (4.5 * parseInt(rem, 10));
+        return (4.5 * rem);
       } else {
-        return ((4.5 * parseInt(rem, 10)) - (((4.5 * parseInt(rem, 10)) / 100) * ((this.variablesService.height_app - item.height) * 10)));
+        return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
       }
     }
   }
@@ -113,7 +112,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
         this.variablesService.currentWallet.totalPages = 1;
       }
       this.variablesService.currentWallet.totalPages >
-      this.variablesService.maxPages
+        this.variablesService.maxPages
         ? (this.variablesService.currentWallet.pages = new Array(5)
           .fill(1)
           .map((value, index) => value + index))

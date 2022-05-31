@@ -1,11 +1,76 @@
-@import "assets/scss/base/index";
+// BASE
+@import "assets/scss/base/mixins";
+@import "assets/scss/base/null";
+@import "assets/scss/base/variables";
+@import "assets/scss/base/base";
 
-@import "assets/scss/layout/index";
+// HELPERS
+@import "assets/scss/helpers/helpers";
 
-@import "assets/scss/components/index";
+// LAYOUT
+@import "assets/scss/layout/main";
+@import "assets/scss/layout/settings";
+@import "assets/scss/layout/sidebar";
+@import "assets/scss/layout/status";
+@import "assets/scss/layout/wallet";
+@import "assets/scss/layout/contact";
+@import "assets/scss/layout/seed-phrase";
+@import "assets/scss/layout/loader";
 
-@import "assets/scss/modals/index";
+// MODULES
+@import "assets/scss/modules/head";
+@import "assets/scss/modules/scroll";
+@import "assets/scss/modules/table";
 
-@import "assets/scss/pages/index";
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
-@import "assets/scss/helpers/index";
+@font-face {
+  font-family: SF-Pro-Rounded;
+  src: url(~src/assets/fonts/SF-Pro-Rounded-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: SF-Pro-Rounded;
+  src: url(~src/assets/fonts/SF-Pro-Rounded-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: SF-Pro-Rounded;
+  src: url(~src/assets/fonts/SF-Pro-Rounded-Semibold.ttf);
+  font-weight: 600;
+}
+
+html {
+  font-family: SF-Pro-Rounded, sans-serif;
+  font-size: 8px;
+}
+
+body {
+  font-family: SF-Pro-Rounded, sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  width: 100vw;
+  height: 100vh;
+  background: #0c0c3a;
+  i {
+    display: inline-block;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  app-root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.update-tooltip {
+  .tooltip-inner {
+    .icon {
+      background: center / contain no-repeat url(assets/icons/update-alert.svg);
+    }
+  }
+}

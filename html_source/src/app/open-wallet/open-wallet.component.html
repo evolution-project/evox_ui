@@ -1,71 +1,46 @@
-<div class="page-container">
+<div class="content">
 
-    <div class="toolbar mb-2">
-        <div class="left">
-            <button type="button"
-                    class="btn-icon circle big mr-2"
-                    (click)="back()">
-                <i class="icon dropdown-arrow-left"></i>
-            </button>
-            <h1>{{ 'BREADCRUMBS.OPEN_WALLET' | translate }}</h1>
+  <div class="head">
+    <div class="breadcrumbs">
+      <span [routerLink]="['/main']">{{ 'BREADCRUMBS.ADD_WALLET' | translate }}</span>
+      <span>{{ 'BREADCRUMBS.OPEN_WALLET' | translate }}</span>
+    </div>
+    <button type="button" class="back-btn" [routerLink]="['/main']">
+      <i class="icon back"></i>
+      <span>{{ 'COMMON.BACK' | translate }}</span>
+    </button>
+  </div>
+
+  <form class="form-open" [formGroup]="openForm">
+
+    <div class="input-block">
+      <label for="wallet-name">{{ 'OPEN_WALLET.NAME' | translate }}</label>
+      <input type="text" id="wallet-name" formControlName="name" [maxLength]="variablesService.maxWalletNameLength"
+        [class.required-error]="openForm.controls['name'].dirty || openForm.controls['name'].touched"
+        [placeholder]="openForm.controls['name'].dirty || openForm.controls['name'].touched ? ('OPEN_WALLET.FORM_ERRORS.NAME_REQUIRED' | translate ):('PLACEHOLDERS.WALLET_NAME_PLACEHOLDER' | translate)"
+        (contextmenu)="variablesService.onContextMenu($event)">
+      <div class="error-block"
+        *ngIf="openForm.controls['name'].invalid && !openForm.controls['name'].errors['required'] && (openForm.controls['name'].dirty || openForm.controls['name'].touched)">
+        <div *ngIf="openForm.controls['name'].errors['duplicate']">
+          {{ 'OPEN_WALLET.FORM_ERRORS.NAME_DUPLICATE' | translate }}
         </div>
-        <div class="right"></div>
+      </div>
+      <div class="error-block" *ngIf="openForm.get('name').value.length >= variablesService.maxWalletNameLength">
+        {{ 'OPEN_WALLET.FORM_ERRORS.MAX_LENGTH' | translate }}
+      </div>
     </div>
 
-    <div class="page-content">
-        <div class="breadcrumbs mb-2">
-            <div class="breadcrumb">
-                <a [routerLink]="['/add-wallet']">{{'BREADCRUMBS.ADD_WALLET' | translate }}</a>
-            </div>
-            <div class="breadcrumb">
-                <span>{{'BREADCRUMBS.OPEN_WALLET' | translate}}</span>
-            </div>
-        </div>
-
-        <div class="scrolled-content">
-            <form class="form"
-                  [formGroup]="openForm">
-
-                <div class="form__field">
-                    <label for="wallet-name">{{ 'OPEN_WALLET.NAME' | translate }}</label>
-                    <input class="form__field--input"
-                           type="text"
-                           id="wallet-name"
-                           formControlName="name"
-                           [maxLength]="variablesService.maxWalletNameLength"
-                           [placeholder]="'PLACEHOLDERS.WALLET_NAME_PLACEHOLDER' | translate"
-                           (contextmenu)="variablesService.onContextMenu($event)">
-                    <div class="error"
-                         *ngIf="openForm.controls['name'].invalid && (openForm.controls['name'].dirty || openForm.controls['name'].touched)">
-                        <div *ngIf="openForm.controls['name'].errors['duplicate']">
-                            {{ 'OPEN_WALLET.FORM_ERRORS.NAME_DUPLICATE' | translate }}
-                        </div>
-                        <div *ngIf="openForm.controls['name'].errors['required']">
-                            {{ 'OPEN_WALLET.FORM_ERRORS.NAME_REQUIRED' | translate }}
-                        </div>
-                    </div>
-                    <div class="error"
-                         *ngIf="openForm.get('name').value.length >= variablesService.maxWalletNameLength">
-                        {{ 'OPEN_WALLET.FORM_ERRORS.MAX_LENGTH' | translate }}
-                    </div>
-                </div>
-
-                <div class="form__field">
-                    <label for="wallet-password">{{ 'OPEN_WALLET.PASS' | translate }}</label>
-                    <input class="form__field--input"
-                           type="password"
-                           id="wallet-password"
-                           formControlName="password"
-                           placeholder="{{ 'PLACEHOLDERS.PASS_PLACEHOLDER' | translate }}"
-                           (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
-                </div>
-
-
-                <button type="button"
-                        class="primary big max-w-19-rem w-100"
-                        (click)="openWallet()"
-                        [disabled]="!openForm.valid">{{'OPEN_WALLET.BUTTON' | translate }}</button>
-            </form>
-        </div>
+    <div class="input-block">
+      <label for="wallet-password">{{ 'OPEN_WALLET.PASS' | translate }}</label>
+      <input type="password" id="wallet-password" formControlName="password"
+        (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
     </div>
+
+    <div class="wrap-buttons">
+      <button type="button" class="blue-button create-button" (click)="openWallet()" [disabled]="!openForm.valid">{{
+        'OPEN_WALLET.BUTTON' | translate }}</button>
+    </div>
+
+  </form>
+
 </div>

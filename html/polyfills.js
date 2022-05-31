@@ -5727,7 +5727,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * This file is divided into 2 sections:
  *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your add-wallet
+ *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
  *      file.
  *
  * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
@@ -5800,8 +5800,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Work\zano_ui\html_source\src\polyfills.ts */"./src/polyfills.ts");
-module.exports = __webpack_require__(/*! D:\Work\zano_ui\html_source\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+__webpack_require__(/*! /home/neo/Desktop/zano_ui/html_source/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /home/neo/Desktop/zano_ui/html_source/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
 
 /***/ })

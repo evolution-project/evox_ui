@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Location } from '@angular/common';
 import { VariablesService } from '../_helpers/services/variables.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,8 +20,7 @@ export class ContactSendComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private ngZone: NgZone,
     private router: Router,
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.queryRouting = this.route.queryParams.subscribe(params => {

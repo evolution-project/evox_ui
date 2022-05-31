@@ -1,102 +1,150 @@
-<div class="auth"
-     fxLayout="row"
-     fxLayoutAlign="center center"
-     fxFlexFill>
-    <div
-          class="card max-w-42-rem max-h-100 w-100 p-2 border-radius-0_8-rem bg-light-blue overflow-x-hidden">
+<div class="content">
 
-        <div class="logo border-radius-0_8-rem overflow-hidden mb-3"
-             fxLayout="row"
-             fxLayoutAlign="center center">
-            <img src="assets/icons/blue/zano-logo.svg"
-                 alt="zano-logo">
+  <div class="wrap-login">
+
+    <div class="logo"><img src="assets/icons/logo-all.png" alt=""></div>
+
+    <form *ngIf="type === 'reg'" class="form-login" [formGroup]="regForm" (ngSubmit)="onSubmitCreatePass()">
+
+      <div class="input-block">
+        <label for="master-pass">{{ 'LOGIN.SETUP_MASTER_PASS' | translate }}</label>
+        <input type="password" id="master-pass" formControlName="password"
+          placeholder="{{ 'PLACEHOLDERS.MASTER_PASS_PLACEHOLDER' | translate }}"
+          (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
+        <div class="error-block" *ngIf="regForm.controls['password'].dirty && regForm.controls['password'].errors">
+          <div *ngIf="regForm.controls['password'].errors.pattern">
+            {{ 'ERRORS.WRONG_PASSWORD' | translate }}
+          </div>
         </div>
+      </div>
 
-        <form *ngIf="type === 'reg'"
-              class="form bg-light-blue-details"
-              [formGroup]="regForm"
-              (ngSubmit)="onSubmitCreatePass()">
-            <div
-                  class="form__field--wrapper pt-2 pl-2 pr-2 pb-1 mb-2 bg-light-blue-details border-radius-0_8-rem overflow-hidden">
-                <div class="form__field mb-2">
-                    <label for="master-pass">{{ 'LOGIN.SETUP_MASTER_PASS' | translate }}</label>
-                    <input class="form__field--input"
-                           type="password"
-                           id="master-pass"
-                           formControlName="password"
-                           placeholder="{{ 'PLACEHOLDERS.MASTER_PASS_PLACEHOLDER' | translate }}"
-                           (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
-                    <div class="error"
-                         *ngIf="regForm.controls['password'].dirty && regForm.controls['password'].errors">
-                        <div *ngIf="regForm.controls['password'].errors.pattern">
-                            {{ 'ERRORS.WRONG_PASSWORD' | translate }}
-                        </div>
-                    </div>
-                </div>
+      <div class="input-block">
+        <label for="confirm-pass">{{ 'LOGIN.SETUP_CONFIRM_PASS' | translate }}</label>
+        <input type="password" id="confirm-pass" placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_CONFIRM' | translate }}"
+          formControlName="confirmation" (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
+        <div class="error-block"
+          *ngIf="regForm.controls['password'].dirty && regForm.controls['confirmation'].dirty && regForm.errors">
+          <div *ngIf="regForm.errors['mismatch']">
+            {{ 'LOGIN.FORM_ERRORS.MISMATCH' | translate }}
+          </div>
+        </div>
+      </div>
 
-                <div class="form__field">
-                    <label for="confirm-pass">{{ 'LOGIN.SETUP_CONFIRM_PASS' | translate }}</label>
-                    <input class="form__field--input"
-                           type="password"
-                           id="confirm-pass"
-                           placeholder="{{ 'PLACEHOLDERS.PLACEHOLDER_CONFIRM' | translate }}"
-                           formControlName="confirmation"
-                           (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
-                    <div class="error"
-                         *ngIf="regForm.controls['password'].dirty && regForm.controls['confirmation'].dirty && regForm.errors">
-                        <div *ngIf="regForm.errors['mismatch']">
-                            {{ 'LOGIN.FORM_ERRORS.MISMATCH' | translate }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="wrap-button">
+        <button type="submit" class="blue-button"
+          [disabled]="!regForm.controls['password'].value.length || !regForm.controls['confirmation'].value.length || (regForm.errors && regForm.errors['mismatch']) || regForm.controls['password'].errors">{{
+          'LOGIN.BUTTON_NEXT' | translate }}</button>
+        <button type="button" class="blue-button" (click)="onSkipCreatePass()"
+          [disabled]="regForm.controls['password'].value.length || regForm.controls['confirmation'].value.length">{{
+          'LOGIN.BUTTON_SKIP' | translate }}</button>
+      </div>
 
-            <button type="submit"
-                    class="primary big w-100 mb-1"
-                    [disabled]="!regForm.controls['password'].value.length || !regForm.controls['confirmation'].value.length || (regForm.errors && regForm.errors['mismatch']) || regForm.controls['password'].errors">{{
-                'LOGIN.BUTTON_NEXT' | translate }}</button>
+    </form>
 
-            <button type="button"
-                    class="primary big w-100"
-                    (click)="onSkipCreatePass()"
-                    [disabled]="regForm.controls['password'].value.length || regForm.controls['confirmation'].value.length">{{
-                'LOGIN.BUTTON_SKIP' | translate }}</button>
+    <form *ngIf="type !== 'reg'" class="form-login" [formGroup]="authForm" (ngSubmit)="onSubmitAuthPass()">
 
-        </form>
+      <div class="input-block">
+        <label for="master-pass-login">{{ 'LOGIN.MASTER_PASS' | translate }}</label>
+        <input type="password" id="master-pass-login" [class.required-error]="authForm.controls['password'].dirty"
+          [placeholder]="authForm.controls['password'].dirty ? ('LOGIN.FORM_ERRORS.INVALID_PASS' | translate) : ('PLACEHOLDERS.MASTER_PASS_PLACEHOLDER' | translate)"
+          formControlName="password" autofocus (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
+      </div>
 
-        <form *ngIf="type !== 'reg'"
-              class="form"
-              [formGroup]="authForm"
-              (ngSubmit)="onSubmitAuthPass()">
-            <div
-                  class="form__field--wrapper pt-2 pl-2 pr-2 pb-1 mb-2 bg-light-blue-details border-radius-0_8-rem overflow-hidden">
-                <div class="form__field">
-                    <label for="master-pass-login">{{ 'LOGIN.MASTER_PASS' | translate }}</label>
-                    <input class="form__field--input"
-                           type="password"
-                           id="master-pass-login"
-                           [placeholder]="'PLACEHOLDERS.MASTER_PASS_PLACEHOLDER' | translate"
-                           formControlName="password"
-                           autofocus
-                           (contextmenu)="variablesService.onContextMenuPasteSelect($event)">
-                    <div class="error"
-                         *ngIf="authForm.controls['password'].invalid && (authForm.controls['password'].dirty || authForm.controls['password'].touched)">
-                        <div *ngIf="authForm.controls['password'].hasError('wrong_password')">
-                            {{ 'LOGIN.FORM_ERRORS.INVALID_PASS' | translate }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button type="submit"
-                    class="primary big w-100 mb-1">
-                {{'LOGIN.BUTTON_NEXT' | translate }}</button>
+      <div class="wrap-button">
+        <button type="submit" class="blue-button">{{
+          'LOGIN.BUTTON_NEXT' | translate }}</button>
+        <button type="button" class="blue-button_reset" (click)="dropSecureAppData()">{{ 'LOGIN.BUTTON_RESET' |
+          translate }}</button>
+        <!--Add "Reset"-button-->
+      </div>
 
-            <button type="button"
-                    class="outline big w-100"
-                    (click)="dropSecureAppData()">
-                {{ 'LOGIN.BUTTON_RESET' | translate }}</button>
-        </form>
+    </form>
+
+  </div>
+
+  <div class="synchronization-status"
+    [ngStyle]="{'align-items': variablesService.daemon_state === 1 || variablesService.daemon_state === 6 ? 'flex-start' : 'center'}">
+    <div class="status-container">
+      <span class="offline" *ngIf="variablesService.daemon_state === 0">
+        {{ 'SIDEBAR.SYNCHRONIZATION.OFFLINE' | translate }}
+      </span>
+      <span class="syncing" *ngIf="variablesService.daemon_state === 1">
+        {{ 'SIDEBAR.SYNCHRONIZATION.SYNCING' | translate }} {{ variablesService.height_app }}{{
+        'SIDEBAR.SYNCHRONIZATION.SLASH' | translate }}{{ variablesService.height_max }}
+      </span>
+      <span class="online" *ngIf="variablesService.daemon_state === 2">
+        {{ 'SIDEBAR.SYNCHRONIZATION.ONLINE' | translate }}
+      </span>
+      <span class="loading" *ngIf="variablesService.daemon_state === 3">
+        {{ 'SIDEBAR.SYNCHRONIZATION.LOADING' | translate }}
+      </span>
+      <span class="offline" *ngIf="variablesService.daemon_state === 4">
+        {{ 'SIDEBAR.SYNCHRONIZATION.ERROR' | translate }}
+      </span>
+      <span class="online" *ngIf="variablesService.daemon_state === 5">
+        {{ 'SIDEBAR.SYNCHRONIZATION.COMPLETE' | translate }}
+      </span>
+      <span class="syncing" *ngIf="variablesService.daemon_state === 6">
+        {{ 'SIDEBAR.SYNCHRONIZATION.DOWNLOADING' | translate }} {{ variablesService.downloaded }}{{
+        'SIDEBAR.SYNCHRONIZATION.SLASH' | translate }}{{ variablesService.total }}{{ 'SIDEBAR.SYNCHRONIZATION.MB' |
+        translate }}
+      </span>
+      <div class="progress-bar-container"
+        *ngIf="variablesService.daemon_state === 1 || variablesService.daemon_state === 3">
+        <div class="syncing" *ngIf="variablesService.daemon_state === 1">
+          <div class="progress-bar">
+            <div class="fill" [style.width]="variablesService.sync.progress_value + '%'"></div>
+          </div>
+          <div class="progress-percent">{{ variablesService.sync.progress_value_text }}%</div>
+        </div>
+        <div class="loading" *ngIf="variablesService.daemon_state === 3"></div>
+      </div>
+
+      <div class="progress-bar-container" *ngIf="variablesService.daemon_state === 6">
+        <div class="syncing downloading" *ngIf="variablesService.daemon_state === 6">
+          <div class="progress-bar">
+            <div class="fill" [style.width]="variablesService.download.progress_value + '%'"></div>
+          </div>
+          <div class="progress-percent">{{ variablesService.download.progress_value_text }}%</div>
+        </div>
+      </div>
     </div>
+    <div class="update-container"
+      *ngIf="(variablesService.daemon_state === 0 || variablesService.daemon_state === 2) && [2, 3, 4].indexOf(variablesService.last_build_displaymode) !== -1">
+      <ng-container *ngIf="variablesService.last_build_displaymode === 2">
+        <div class="update-text standard">
+          <span [style.cursor]="'pointer'" (click)="getUpdate()">{{ 'SIDEBAR.UPDATE.STANDARD' | translate }}</span>
+        </div>
+        <i class="icon update standard" tooltip="{{ 'SIDEBAR.UPDATE.STANDARD_TOOLTIP' | translate }}"
+          placement="right-bottom" tooltipClass="update-tooltip" [delay]="500"></i>
+      </ng-container>
+      <ng-container *ngIf="variablesService.last_build_displaymode === 3">
+        <div class="update-text important">
+          <span [style.cursor]="'pointer'" (click)="getUpdate()">{{ 'SIDEBAR.UPDATE.IMPORTANT' | translate }}</span>
+          <br>
+          <span style="font-size: 1rem">{{ 'SIDEBAR.UPDATE.IMPORTANT_HINT' | translate }}</span>
+        </div>
+        <i class="icon update important" tooltip="{{ 'SIDEBAR.UPDATE.IMPORTANT_TOOLTIP' | translate }}"
+          placement="right-bottom" tooltipClass="update-tooltip important" [delay]="500"></i>
+      </ng-container>
+      <ng-container *ngIf="variablesService.last_build_displaymode === 4">
+        <div class="update-text critical">
+          <span [style.cursor]="'pointer'" (click)="getUpdate()">{{ 'SIDEBAR.UPDATE.CRITICAL' | translate }}</span>
+          <br>
+          <span style="font-size: 1rem">{{ 'SIDEBAR.UPDATE.IMPORTANT_HINT' | translate }}</span>
+        </div>
+        <i class="icon update critical" tooltip="{{ 'SIDEBAR.UPDATE.CRITICAL_TOOLTIP' | translate }}"
+          placement="right-bottom" tooltipClass="update-tooltip critical" [delay]="500"></i>
+      </ng-container>
+    </div>
+    <div class="update-container"
+      *ngIf="variablesService.daemon_state === 2 && variablesService.net_time_delta_median !== 0">
+      <div class="update-text time">
+        <span>{{ 'SIDEBAR.UPDATE.TIME' | translate }}</span>
+      </div>
+      <i class="icon time" tooltip="{{ 'SIDEBAR.UPDATE.TIME_TOOLTIP' | translate }}" placement="right-bottom"
+        tooltipClass="update-tooltip important" [delay]="500"></i>
+    </div>
+  </div>
 
-    <app-synchronization-status class="max-w-19-rem"></app-synchronization-status>
 </div>

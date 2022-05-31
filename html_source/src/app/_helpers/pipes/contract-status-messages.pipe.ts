@@ -1,16 +1,15 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import {Pipe, PipeTransform} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Pipe({
   name: 'contractStatusMessages'
 })
 export class ContractStatusMessagesPipe implements PipeTransform {
 
-  constructor(private translate: TranslateService) {
-  }
+  constructor(private translate: TranslateService) {}
 
   getStateSeller(stateNum: number): string {
-    const state = { part1: '', part2: '' };
+    const state = {part1: '', part2: ''};
     switch (stateNum) {
       case 1:
         state.part1 = this.translate.instant('CONTRACTS.STATUS_MESSAGES.SELLER.NEW_CONTRACT');
@@ -52,7 +51,7 @@ export class ContractStatusMessagesPipe implements PipeTransform {
   }
 
   getStateBuyer(stateNum: number): string {
-    const state = { part1: '', part2: '' };
+    const state = {part1: '', part2: ''};
     switch (stateNum) {
       case 1:
         state.part1 = this.translate.instant('CONTRACTS.STATUS_MESSAGES.BUYER.WAITING');

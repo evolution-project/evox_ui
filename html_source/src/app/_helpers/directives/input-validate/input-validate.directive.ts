@@ -1,5 +1,5 @@
-import { Directive, ElementRef, Input, HostListener } from '@angular/core';
-import { VariablesService } from '../../services/variables.service';
+import {Directive, ElementRef, Input, HostListener} from '@angular/core';
+import {VariablesService} from '../../services/variables.service';
 
 @Directive({
   selector: '[appInputValidate]'
@@ -18,9 +18,9 @@ export class InputValidateDirective {
 
   @HostListener('input', ['$event'])
   handleInput(event: Event) {
-    if (this.type === 'money') {
+    if ( this.type === 'money' ) {
       this.moneyValidation(event);
-    } else if (this.type === 'integer') {
+    } else if ( this.type === 'integer' ) {
       this.integerValidation(event);
     }
   }
@@ -60,7 +60,7 @@ export class InputValidateDirective {
   private integerValidation(event: Event) {
     let currentValue = (<HTMLInputElement>event.target).value;
     const originalValue = currentValue;
-    const OnlyD = /\D/g;
+    const OnlyD = /[^\d]/g;
     const _has_error = currentValue.match(OnlyD);
     if (_has_error && _has_error.length) {
       currentValue = currentValue.replace(OnlyD, '');

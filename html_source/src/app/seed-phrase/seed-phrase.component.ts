@@ -72,8 +72,7 @@ export class SeedPhraseComponent implements OnInit, OnDestroy {
     public variablesService: VariablesService,
     private modalService: ModalService,
     private ngZone: NgZone
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.showSeed = false;
@@ -99,6 +98,7 @@ export class SeedPhraseComponent implements OnInit, OnDestroy {
   }
 
 
+
   runWallet() {
     let exists = false;
     this.variablesService.wallets.forEach((wallet) => {
@@ -114,7 +114,7 @@ export class SeedPhraseComponent implements OnInit, OnDestroy {
             this.backend.storeSecureAppData();
           }
           this.ngZone.run(() => {
-            this.variablesService.setCurrentWallet(this.wallet_id);
+            this.variablesService.setCurrentWallet(this.wallet_id)
             this.router.navigate(['/wallet/']);
           });
         } else {

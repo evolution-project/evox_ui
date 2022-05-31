@@ -29,8 +29,7 @@ export class TransferAliasComponent implements OnInit {
     public variablesService: VariablesService,
     private modalService: ModalService,
     private ngZone: NgZone
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.wallet = this.variablesService.currentWallet;

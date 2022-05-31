@@ -98,9 +98,7 @@ export class BackendService {
   }
 
   static bigNumberParser(key, val) {
-    if (
-      val.constructor.name === 'BigNumber' &&
-      ['balance', 'unlocked_balance', 'amount', 'fee', 'b_fee', 'to_pay', 'a_pledge', 'b_pledge', 'coast', 'a'].indexOf(key) === -1) {
+    if (val.constructor.name === 'BigNumber' && ['balance', 'unlocked_balance', 'amount', 'fee', 'b_fee', 'to_pay', 'a_pledge', 'b_pledge', 'coast', 'a'].indexOf(key) === -1) {
       return val.toNumber();
     }
     if (key === 'rcv' || key === 'spn') {
@@ -130,6 +128,7 @@ export class BackendService {
 
   private informerRun(error, params, command) {
     let error_translate = '';
+
     switch (error) {
       case 'NOT_ENOUGH_MONEY':
         error_translate = 'ERRORS.NOT_ENOUGH_MONEY';
@@ -183,12 +182,12 @@ export class BackendService {
       case 'WALLET_WATCH_ONLY_NOT_SUPPORTED':
         error_translate = 'ERRORS.WALLET_WATCH_ONLY_NOT_SUPPORTED';
         break;
-      // case 'WRONG_PASSWORD':
-        // params = JSON.parse(params);
-        // if (!params.testEmpty) {
-        //   error_translate = 'ERRORS.WRONG_PASSWORD';
-        // }
-        // break;
+      case 'WRONG_PASSWORD':
+        params = JSON.parse(params);
+        if (!params.testEmpty) {
+          error_translate = 'ERRORS.WRONG_PASSWORD';
+        }
+        break;
       case 'FILE_RESTORED':
         if (command === 'open_wallet') {
           error_translate = 'ERRORS.FILE_RESTORED';
@@ -216,13 +215,7 @@ export class BackendService {
       case '':
         break;
       case 'FAIL':
-        if (
-          command === 'create_proposal' ||
-          command === 'accept_proposal' ||
-          command === 'release_contract' ||
-          command === 'request_cancel_contract' ||
-          command === 'accept_cancel_contract'
-        ) {
+        if (command === 'create_proposal' || command === 'accept_proposal' || command === 'release_contract' || command === 'request_cancel_contract' || command === 'accept_cancel_contract') {
           error_translate = ' ';
         }
         break;
@@ -256,8 +249,8 @@ export class BackendService {
     BackendService.Debug(2, debug);
     try {
       BackendService.Debug(2, JSONBigNumber.parse(result, BackendService.bigNumberParser));
-    } catch (e) {
-      BackendService.Debug(2, { response_data: result, error_code: 'OK' });
+    } catch ( e ) {
+      BackendService.Debug(2, {response_data: result, error_code: 'OK'});
     }
   }
 
@@ -269,8 +262,8 @@ export class BackendService {
       } else {
         try {
           Result = JSONBigNumber.parse(resultStr, BackendService.bigNumberParser);
-        } catch (e) {
-          Result = { response_data: resultStr, error_code: 'OK' };
+        } catch ( e ) {
+          Result = {response_data: resultStr, error_code: 'OK'};
         }
       }
     } else {
@@ -289,13 +282,7 @@ export class BackendService {
     const data = ((typeof Result === 'object') && 'response_data' in Result) ? Result.response_data : Result;
 
     let res_error_code = false;
-    if (
-      typeof Result === 'object' &&
-      'error_code' in Result && Result.error_code !== 'OK' &&
-      Result.error_code !== 'TRUE' &&
-      Result.error_code !== 'FALSE' &&
-      Result.error_code !== 'WRAP'
-    ) {
+    if (typeof Result === 'object' && 'error_code' in Result && Result.error_code !== 'OK' && Result.error_code !== 'TRUE' && Result.error_code !== 'FALSE' && Result.error_code !== 'WRAP') {
       if (core_busy) {
         setTimeout(() => {
           // this is will avoid update data when user
@@ -411,7 +398,7 @@ export class BackendService {
     if (this.variablesService.wallets.length) {
       this.variablesService.settings.wallets = [];
       this.variablesService.wallets.forEach((wallet) => {
-        this.variablesService.settings.wallets.push({ name: wallet.name, path: wallet.path });
+        this.variablesService.settings.wallets.push({name: wallet.name, path: wallet.path});
       });
     }
     this.runCommand('store_app_data', this.variablesService.settings, callback);
@@ -443,12 +430,12 @@ export class BackendService {
     const wallets = [];
     const contacts = [];
     this.variablesService.wallets.forEach((wallet) => {
-      wallets.push({ name: wallet.name, pass: wallet.pass, path: wallet.path, staking: wallet.staking });
+      wallets.push({name: wallet.name, pass: wallet.pass, path: wallet.path, staking: wallet.staking});
     });
     this.variablesService.contacts.forEach((contact) => {
-      contacts.push({ name: contact.name, address: contact.address, notes: contact.notes });
+      contacts.push({name: contact.name, address: contact.address, notes: contact.notes});
     });
-    data = { wallets: wallets, contacts: contacts };
+    data = {wallets: wallets, contacts: contacts};
     this.backendObject['store_secure_app_data'](JSON.stringify(data), this.variablesService.appPass, (dataStore) => {
       this.backendCallback(dataStore, {}, callback, 'store_secure_app_data');
     });
@@ -519,11 +506,11 @@ export class BackendService {
   }
 
   closeWallet(wallet_id, callback?) {
-    this.runCommand('close_wallet', { wallet_id: +wallet_id }, callback);
+    this.runCommand('close_wallet', {wallet_id: +wallet_id}, callback);
   }
 
-  getSmartWalletInfo({ wallet_id, seed_password }, callback) {
-    this.runCommand('get_smart_wallet_info', { wallet_id: +wallet_id, seed_password }, callback);
+  getSmartWalletInfo({wallet_id, seed_password}, callback) {
+    this.runCommand('get_smart_wallet_info', {wallet_id: +wallet_id, seed_password}, callback);
   }
 
   getSeedPhraseInfo(param, callback) {
@@ -531,7 +518,7 @@ export class BackendService {
   }
 
   runWallet(wallet_id, callback?) {
-    this.runCommand('run_wallet', { wallet_id: +wallet_id }, callback);
+    this.runCommand('run_wallet', {wallet_id: +wallet_id}, callback);
   }
 
   isValidRestoreWalletText(param, callback) {
@@ -648,15 +635,15 @@ export class BackendService {
   }
 
   getMiningHistory(wallet_id, callback) {
-    this.runCommand('get_mining_history', { wallet_id: parseInt(wallet_id, 10) }, callback);
+    this.runCommand('get_mining_history', {wallet_id: parseInt(wallet_id, 10)}, callback);
   }
 
   startPosMining(wallet_id, callback?) {
-    this.runCommand('start_pos_mining', { wallet_id: parseInt(wallet_id, 10) }, callback);
+    this.runCommand('start_pos_mining', {wallet_id: parseInt(wallet_id, 10)}, callback);
   }
 
   stopPosMining(wallet_id, callback?) {
-    this.runCommand('stop_pos_mining', { wallet_id: parseInt(wallet_id, 10) }, callback);
+    this.runCommand('stop_pos_mining', {wallet_id: parseInt(wallet_id, 10)}, callback);
   }
 
   openUrlInBrowser(url, callback?) {
@@ -726,11 +713,11 @@ export class BackendService {
   }
 
   getAliasCoast(alias, callback) {
-    this.runCommand('get_alias_coast', { v: alias }, callback);
+    this.runCommand('get_alias_coast', {v: alias}, callback);
   }
 
   resyncWallet(id) {
-    this.runCommand('resync_wallet', { wallet_id: id });
+    this.runCommand('resync_wallet', {wallet_id: id});
   }
 
   getWalletAlias(address) {
@@ -799,11 +786,11 @@ export class BackendService {
   }
 
   setLogLevel(level) {
-    return this.runCommand('set_log_level', { v: level });
+    return this.runCommand('set_log_level', {v: level});
   }
 
   asyncCall(command: string, params: PramsObj, callback?: (job_id?: number) => void | any) {
-    return this.runCommand('async_call', [command, params], (status, { job_id }: { job_id: number }) => {
+    return this.runCommand('async_call', [command, params], (status, {job_id}: { job_id: number }) => {
       callback(job_id);
     });
   }
@@ -827,14 +814,14 @@ export class BackendService {
   }
 
   setEnableTor(value: boolean) {
-    return this.runCommand('set_enable_tor', <{ v: boolean }>{ v: value });
+    return this.runCommand('set_enable_tor', <{ v: boolean }>{v: value});
   }
 
   getOptions() {
     return this.runCommand(
       'get_options',
       {},
-      (status, { disable_price_fetch, use_debug_mode }: { disable_price_fetch: boolean; use_debug_mode: boolean }) => {
+      (status, {disable_price_fetch, use_debug_mode}: { disable_price_fetch: boolean; use_debug_mode: boolean }) => {
         this.variablesService.disable_price_fetch$.next(disable_price_fetch);
         this.variablesService.use_debug_mode$.next(use_debug_mode);
       });

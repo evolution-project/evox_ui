@@ -1,16 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  Renderer2,
-  ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import {
   AsyncCommandResults,
   BackendService,
@@ -42,14 +30,12 @@ const failedStatuses: string[] = [StatusCurrentActionState.STATE_SEND_FAILED, St
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SendDetailsModalComponent implements OnInit, OnDestroy {
-  @HostBinding('class.modal-overlay') modalOverlay = true;
-
   /** Working id is traceable */
   @Input() job_id: number;
 
   @Output() close: EventEmitter<never> = new EventEmitter<never>();
 
-  @ViewChild('elDetailsList') elDetailsList: ElementRef;
+  @ViewChild('elDetailsWrapper') elDetailsWrapper: ElementRef;
 
   /** BehaviorSubject with ResponseAsyncTransfer */
   responseData$ = new BehaviorSubject<ResponseAsyncTransfer>(null);
@@ -90,12 +76,10 @@ export class SendDetailsModalComponent implements OnInit, OnDestroy {
 
   constructor(
     private _backendService: BackendService,
-    private _variablesService: VariablesService,
-    private _renderer: Renderer2) {
+    private _variablesService: VariablesService) {
   }
 
   ngOnInit() {
-    this._renderer.addClass(document.body, 'no-scroll');
     const { currentWallet: { wallet_id }, settings: { appUseTor } } = this._variablesService;
 
     if (appUseTor) {
@@ -136,14 +120,13 @@ export class SendDetailsModalComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._renderer.removeClass(document.body, 'no-scroll');
     this._destroy$.next();
   }
 
   /** Show/Hide details transaction */
   toggleDetails(): any {
     this.stateDetails$.next(!this.stateDetails$.value);
-    setTimeout(() => this._scrollToBottomDetailsList(), 100);
+    setTimeout(() => this._scrollToBottomDetailsWrapper(), 100);
   }
 
   /** identification item by *ngFor */
@@ -162,9 +145,9 @@ export class SendDetailsModalComponent implements OnInit, OnDestroy {
   }
 
   /** Scroll elDetailsWrapper to bottom */
-  private _scrollToBottomDetailsList() {
-    if (this.elDetailsList) {
-      const { nativeElement } = this.elDetailsList;
+  private _scrollToBottomDetailsWrapper() {
+    if (this.elDetailsWrapper) {
+      const { nativeElement } = this.elDetailsWrapper;
       nativeElement.scrollTop = nativeElement.scrollHeight;
     }
   }

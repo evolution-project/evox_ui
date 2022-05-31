@@ -1,99 +1,80 @@
-<div class="page-container">
-
-    <div class="toolbar mb-2">
-        <div class="left">
-            <button type="button"
-                    class="btn-icon circle big mr-2"
-                    (click)="back()">
-                <i class="icon dropdown-arrow-left"></i>
-            </button>
-            <h1>{{ 'CONTACTS.TITLE' | translate }}</h1>
-        </div>
-        <div class="right"></div>
+<div class="content scrolled-content">
+  <div>
+    <div class="head">
+      <h3 class="contacts-title">{{ 'CONTACTS.TITLE' | translate }}</h3>
+      <button type="button" class="back-btn" (click)="back()">
+        <i class="icon back"></i>
+        <span>{{ 'COMMON.BACK' | translate }}</span>
+      </button>
     </div>
 
-    <div class="page-content">
-        <div fxFlex="1 1 auto" fxLayout="row">
-            <ng-container *ngIf="this.variablesService.contacts.length !== 0; else emptyList">
-                <div class="contacts w-100"
-                     fxLayout="column"
-                     fxLayoutGap="2rem"
-                     fxLayoutAlign="start stretch">
-                    <div class="wrap-table scrolled-content"
-                         fxLayout="column"
-                         fxFlex="1 1 auto">
-                        <table class="contacts-table">
-                            <thead>
-                            <tr #head
-                                (window:resize)="calculateWidth()">
-                                <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>
-                                <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>
-                                <th>{{ 'CONTACTS.TABLE.ADDRESS' | translate }}</th>
-                                <th>{{ 'CONTACTS.TABLE.NOTES' | translate }}</th>
-                                <th></th>
-                            </tr>
-                            <div class="row-divider"></div>
-                            </thead>
-                            <tbody>
-                            <ng-container *ngFor="let contact of this.variablesService.contacts; let i = index">
-                                <tr>
-                                    <td>
-                                        {{ contact.name }}
-                                    </td>
-                                    <td>
-                                        <ng-container *ngIf="contact.alias">
-                                            <span>{{ contact.alias }}</span>
-                                        </ng-container>
-                                    </td>
-                                    <td class="remote-address" (contextmenu)="variablesService.onContextMenuOnlyCopy($event, contact.address)">
-                                        {{ contact.address | slice:0:6 }}...{{ contact.address | slice:-6 }}
-                                    </td>
-                                    <td class="remote-notes">
-                                        {{ contact.notes }}
-                                    </td>
-                                    <td>
-                                        <div class="button-wrapper">
-                                            <button class="btn-icon small circle"
-                                                    [routerLink]="['/contact-send/' + i]"
-                                                    [queryParams]="{ address: contact.address }">
-                                                <i class="icon arrow-up-square"></i>
-                                            </button>
-                                            <button class="btn-icon small circle"
-                                                    [routerLink]="['/edit-contacts/' + i]"
-                                                    [queryParams]="{ id: i }">
-                                                <i class="icon edit-square"></i>
-                                            </button>
-                                            <button class="btn-icon small circle"
-                                                    (click)="delete(i)">
-                                                <i class="icon delete"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <div class="row-divider"></div>
-                            </ng-container>
-                            </tbody>
-                        </table>
-                    </div>
-                    <ng-container *ngTemplateOutlet="tempButtonAdd"></ng-container>
-                </div>
+
+
+    <div class="wrap-table">
+      <ng-container>
+        <table *ngIf="this.variablesService.contacts.length !== 0; else emptyList">
+          <thead>
+            <tr #head (window:resize)="calculateWidth()">
+              <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>
+              <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>
+              <th>{{ 'CONTACTS.TABLE.ADDRESS' | translate }}</th>
+              <th>{{ 'CONTACTS.TABLE.NOTES' | translate }}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="
+                let contact of this.variablesService.contacts;
+                let i = index
+              ">
+              <tr>
+                <td>
+                  {{ contact.name }}
+                </td>
+                <td>
+                  <ng-container *ngIf="contact.alias">
+                    <span>{{ contact.alias }}</span>
+                  </ng-container>
+                </td>
+                <td class="remote-address">
+                  {{ contact.address }}
+                </td>
+                <td class="remote-notes">
+                  {{ contact.notes }}
+                </td>
+                <td>
+                  <div class="button-wrapper">
+                    <button [routerLink]="['/contact-send/' + i]" [queryParams]="{ address: contact.address }">
+                      <i class="icon transfer"></i>
+                      <span>{{ 'CONTACTS.BUTTON.SEND' | translate }}</span>
+                    </button>
+                    <button [routerLink]="['/edit-contacts/' + i]" [queryParams]="{ id: i }">
+                      <i class="icon edit"></i>
+                      <span>{{ 'CONTACTS.BUTTON.EDIT' | translate }}</span>
+                    </button>
+                    <button (click)="delete(i)">
+                      <i class="icon delete"></i>
+                      <span>{{ 'CONTACTS.BUTTON.DELETE' | translate }}</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <div class="row-divider"></div>
             </ng-container>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <ng-template #emptyList>
+        <div class="empty-list">
+          {{ 'CONTACTS.TABLE.EMPTY' | translate }}
         </div>
+      </ng-template>
     </div>
-</div>
 
-<ng-template #emptyList>
-    <div class="empty-list w-100"
-         fxLayout="column"
-         fxLayoutAlign="center center">
-        <h4 class="mb-2">{{ 'CONTACTS.TABLE.EMPTY' | translate }}</h4>
-        <ng-container *ngTemplateOutlet="tempButtonAdd"></ng-container>
-    </div>
-</ng-template>
-
-<ng-template #tempButtonAdd>
-    <button [routerLink]="['/add-contacts']"
-            class="primary big w-100 max-w-19-rem">
-        {{ 'CONTACTS.BUTTON.ADD' | translate }}
+    <button [routerLink]="['/add-contacts']" class="blue-button">
+      {{ 'CONTACTS.BUTTON.ADD' | translate }}
     </button>
-</ng-template>
+
+  </div>
+</div>

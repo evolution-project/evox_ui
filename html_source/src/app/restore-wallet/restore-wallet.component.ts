@@ -1,5 +1,5 @@
 import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -8,7 +8,6 @@ import { Wallet } from '../_helpers/models/wallet.model';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs/internal/Subject';
 import { pairwise, startWith, takeUntil } from 'rxjs/operators';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-restore-wallet',
@@ -60,10 +59,8 @@ export class RestoreWalletComponent implements OnInit, OnDestroy {
     public variablesService: VariablesService,
     private modalService: ModalService,
     private ngZone: NgZone,
-    private location: Location,
     private translate: TranslateService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.checkValidSeedPhrasePassword();
@@ -74,6 +71,7 @@ export class RestoreWalletComponent implements OnInit, OnDestroy {
     this.unsubscribeAll.next(true);
     this.unsubscribeAll.complete();
   }
+
 
 
   changeDetectionSeedPhrasePassword() {
@@ -180,7 +178,7 @@ export class RestoreWalletComponent implements OnInit, OnDestroy {
                             this.variablesService.count
                           );
                           this.variablesService.opening_wallet.totalPages >
-                          this.variablesService.maxPages
+                            this.variablesService.maxPages
                             ? (this.variablesService.opening_wallet.pages = new Array(
                               5
                             )
@@ -256,7 +254,7 @@ export class RestoreWalletComponent implements OnInit, OnDestroy {
             this.backend.storeSecureAppData();
           }
           this.ngZone.run(() => {
-            this.variablesService.setCurrentWallet(this.wallet.id);
+            this.variablesService.setCurrentWallet(this.wallet.id)
             this.router.navigate(['/wallet/']);
           });
         } else {
@@ -275,9 +273,5 @@ export class RestoreWalletComponent implements OnInit, OnDestroy {
         });
       });
     }
-  }
-
-  back() {
-    this.location.back();
   }
 }

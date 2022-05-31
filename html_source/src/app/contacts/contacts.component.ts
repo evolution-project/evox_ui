@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { VariablesService } from '../_helpers/services/variables.service';
 import { BackendService } from '../_helpers/services/backend.service';
@@ -16,8 +16,7 @@ export class ContactsComponent implements OnInit {
     private location: Location,
     public variablesService: VariablesService,
     private backend: BackendService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.backend.getContactAlias();

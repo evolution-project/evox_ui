@@ -13,7 +13,7 @@ interface WrapInfo {
   tx_cost: {
     usd_needed_for_erc20: string;
     zano_needed_for_erc20: string;
-};
+  };
   unwraped_coins_left: string;
 }
 
@@ -33,7 +33,7 @@ export class SendComponent implements OnInit, OnDestroy {
   wrapInfo: WrapInfo;
   isLoading = true;
   isWrapShown = false;
-  currentAliasAddress: string;
+  currentAliasAdress: string;
   lenghtOfAdress: number;
   additionalOptions = false;
   parentRouting;
@@ -43,7 +43,7 @@ export class SendComponent implements OnInit, OnDestroy {
     address: new FormControl('', [Validators.required, (g: FormControl) => {
       this.localAliases = [];
       if (g.value) {
-        this.currentAliasAddress = '';
+        this.currentAliasAdress = '';
         if (g.value.indexOf('@') !== 0) {
           this.isOpen = false;
           this.backend.validateAddress(g.value, (valid_status, data) => {
@@ -68,12 +68,12 @@ export class SendComponent implements OnInit, OnDestroy {
           this.localAliases = this.variablesService.aliases.filter((item) => {
             return item.name.indexOf(g.value) > -1;
           });
-          if (!(/^@?[a-z\d\-]{6,25}$/.test(g.value))) {
+          if (!(/^@?[a-z0-9\.\-]{6,25}$/.test(g.value))) {
             g.setErrors(Object.assign({ 'alias_not_valid': true }, g.errors));
           } else {
             this.backend.getAliasByName(g.value.replace('@', ''), (alias_status, alias_data) => {
               this.ngZone.run(() => {
-                this.currentAliasAddress = alias_data.address;
+                this.currentAliasAdress = alias_data.address;
                 this.lenghtOfAdress = g.value.length;
                 if (alias_status) {
                   if (g.hasError('alias_not_valid')) {
@@ -144,8 +144,8 @@ export class SendComponent implements OnInit, OnDestroy {
   }
 
   getShorterAdress() {
-    const tempArr = this.currentAliasAddress.split('');
-    return this.currentAliasAddress.split('', 13).join('') + '...' + tempArr.splice((tempArr.length - 4), 4).join('');
+    let tempArr = this.currentAliasAdress.split('');
+    return this.currentAliasAdress.split('', 34).join('') + '...' + tempArr.splice((tempArr.length - 13), 13).join('');
   }
 
   addressMouseDown(e) {
@@ -218,7 +218,7 @@ export class SendComponent implements OnInit, OnDestroy {
       comment: this.actionData.comment || this.actionData.comments || '',
       mixin: this.actionData.mixins || this.mixin,
       fee: this.actionData.fee || this.variablesService.default_fee,
-      hide: this.actionData.hide_sender === 'true'
+      hide: this.actionData.hide_sender === 'true' ? true : false
     });
   }
 

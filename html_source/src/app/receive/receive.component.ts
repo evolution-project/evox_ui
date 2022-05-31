@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import QRCode from 'qrcode';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -18,8 +18,7 @@ export class ReceiveComponent implements OnInit, OnDestroy {
   constructor(
     private backend: BackendService,
     public variablesService: VariablesService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     QRCode.toDataURL(this.variablesService.currentWallet.address, {

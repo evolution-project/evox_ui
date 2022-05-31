@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Location } from '@angular/common';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -25,11 +25,9 @@ export class ExportImportComponent implements OnInit {
     private translate: TranslateService,
     private router: Router,
     private ngZone: NgZone
-  ) {
-  }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   import() {
     this.backend.openFileDialog(
@@ -73,9 +71,9 @@ export class ExportImportComponent implements OnInit {
                       }
                       if (indexName !== -1 && indexAddress === -1) {
                         this.variablesService.contacts.push({
-                          name: `${ element.name } ${ this.translate.instant(
+                          name: `${element.name} ${this.translate.instant(
                             'CONTACTS.COPY'
-                          ) }`,
+                          )}`,
                           address: element.address,
                           notes: element.notes
                         });
@@ -119,7 +117,7 @@ export class ExportImportComponent implements OnInit {
         if (!this.variablesService.contacts.length && !(file_data.error_code === 'CANCELED')) {
           this.modalService.prepareModal('error', 'CONTACTS.ERROR_EMPTY_LIST');
         }
-        const path = this.isValid(file_data.path) ? file_data.path : `${ file_data.path }.csv`;
+        const path = this.isValid(file_data.path) ? file_data.path : `${file_data.path}.csv`;
         if (file_status && this.isValid(path) && this.variablesService.contacts.length) {
           this.backend.storeFile(path, this.papa.unparse(contacts));
         }

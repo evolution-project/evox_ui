@@ -1,14 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { VariablesService } from '../services/variables.service';
-import { BigNumber } from 'bignumber.js';
+import {Pipe, PipeTransform} from '@angular/core';
+import {VariablesService} from '../services/variables.service';
+import {BigNumber} from 'bignumber.js';
 
 @Pipe({
   name: 'moneyToInt'
 })
 export class MoneyToIntPipe implements PipeTransform {
 
-  constructor(private variablesService: VariablesService) {
-  }
+  constructor(private variablesService: VariablesService) {}
 
   transform(value: any, args?: any): any {
     const CURRENCY_DISPLAY_DECIMAL_POINT = this.variablesService.digits;

@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { VariablesService } from './variables.service';
 import { PaginationStore } from './pagination.store';
 import * as _ from 'lodash';
+import {Store} from 'store';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,7 @@ export class PaginationService {
     private variables: VariablesService,
     private ngZone: NgZone,
     private paginationStore: PaginationStore,
-  ) {
-  }
+  ) { }
 
   paginate(currentPage = 1) {
     if (currentPage < 1) {
@@ -31,7 +31,7 @@ export class PaginationService {
       if (currentPage <= maxPagesBeforeCurrentPage) {
         startPage = 1;
         this.variables.currentWallet.totalPages > this.variables.maxPages
-          ? endPage = this.variables.maxPages
+         ? endPage = this.variables.maxPages
           : endPage = this.variables.currentWallet.totalPages
         ;
       } else if (currentPage + maxPagesAfterCurrentPage >= this.variables.currentWallet.totalPages) {
@@ -51,9 +51,7 @@ export class PaginationService {
     const mining = this.variables.currentWallet.exclude_mining_txs;
     const currentPage = (this.variables.currentWallet.currentPage);
     let offset = ((currentPage - 1) * this.variables.count);
-    if (!mining) {
-      return offset;
-    }
+    if (!mining) { return offset; }
     const value = this.paginationStore.value;
     const pages = value.filter(item => item.walletID === walletID);
     if (pages && pages.length) {
@@ -63,21 +61,21 @@ export class PaginationService {
         offset = max.offset;
       } else {
         const index = pages.findIndex(item => item.page === (currentPage));
-        offset = pages[index].offset;
+          offset = pages[index].offset;
       }
     }
     return offset;
   }
 
-  calcPages(data) {
+ calcPages(data) {
     if (data.total_history_items && (data && data.history)) {
-      this.variables.currentWallet.totalPages = Math.ceil(data.total_history_items / this.variables.count);
+      this.variables.currentWallet.totalPages = Math.ceil( data.total_history_items / this.variables.count);
       this.variables.currentWallet.totalPages > this.variables.maxPages
         ? this.variables.currentWallet.pages = new Array(5).fill(1).map((value, index) => value + index)
         : this.variables.currentWallet.pages =
           new Array(this.variables.currentWallet.totalPages).fill(1).map((value, index) => value + index);
     } else if (this.variables.currentWallet.restore) {
-      this.variables.currentWallet.totalPages = Math.ceil(data.history.length / this.variables.count);
+      this.variables.currentWallet.totalPages = Math.ceil( data.history.length / this.variables.count);
       this.variables.currentWallet.totalPages > this.variables.maxPages
         ? this.variables.currentWallet.pages = new Array(5).fill(1).map((value, index) => value + index)
         : this.variables.currentWallet.pages =

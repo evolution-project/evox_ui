@@ -1,5 +1,5 @@
-import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, NgZone, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { BackendService } from '../_helpers/services/backend.service';
@@ -20,7 +20,7 @@ export class AssignAliasComponent implements OnInit, OnDestroy {
 
   wallet: Wallet;
   assignForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.pattern(/^@?[a-z\d\.\-]{6,25}$/)]),
+    name: new FormControl('', [Validators.required, Validators.pattern(/^@?[a-z0-9\.\-]{6,25}$/)]),
     comment: new FormControl('', [(g: FormControl) => {
       if (g.value > this.variablesService.maxCommentLength) {
         return { 'maxLength': true };
@@ -51,8 +51,7 @@ export class AssignAliasComponent implements OnInit, OnDestroy {
     private modalService: ModalService,
     private moneyToInt: MoneyToIntPipe,
     private intToMoney: IntToMoneyPipe
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.wallet = this.variablesService.currentWallet;
@@ -60,8 +59,7 @@ export class AssignAliasComponent implements OnInit, OnDestroy {
       this.canRegister = false;
       this.alias.exists = false;
       const newName = value.toLowerCase().replace('@', '');
-      if (!(this.assignForm.controls['name'].errors && this.assignForm.controls['name'].errors.hasOwnProperty(
-        'pattern')) && newName.length >= 6 && newName.length <= 25) {
+      if (!(this.assignForm.controls['name'].errors && this.assignForm.controls['name'].errors.hasOwnProperty('pattern')) && newName.length >= 6 && newName.length <= 25) {
         this.backend.getAliasByName(newName, status => {
           this.ngZone.run(() => {
             this.alias.exists = status;
@@ -101,16 +99,15 @@ export class AssignAliasComponent implements OnInit, OnDestroy {
       this.modalService.prepareModal('info', 'ASSIGN_ALIAS.ONE_ALIAS');
     } else {
       this.alias.comment = this.assignForm.get('comment').value;
-      this.backend.registerAlias(this.wallet.wallet_id, this.alias.name, this.wallet.address, this.alias.fee, this.alias.comment,
-        this.alias.rewardOriginal, (status) => {
-          if (status) {
-            this.wallet.wakeAlias = true;
-            this.modalService.prepareModal('info', 'ASSIGN_ALIAS.REQUEST_ADD_REG');
-            this.ngZone.run(() => {
-              this.router.navigate(['/wallet/']);
-            });
-          }
-        });
+      this.backend.registerAlias(this.wallet.wallet_id, this.alias.name, this.wallet.address, this.alias.fee, this.alias.comment, this.alias.rewardOriginal, (status, data) => {
+        if (status) {
+          this.wallet.wakeAlias = true;
+          this.modalService.prepareModal('info', 'ASSIGN_ALIAS.REQUEST_ADD_REG');
+          this.ngZone.run(() => {
+            this.router.navigate(['/wallet/']);
+          });
+        }
+      });
     }
   }
 

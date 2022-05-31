@@ -1,5 +1,24 @@
-:host {
+.wallets-selection {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  button {
+    height: 4rem;
+    font-size: 2rem;
+  }
+}
+
+.input-block {
+  width: 44rem;
+
+  input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.blue-button {
+  margin-top: 2.5rem;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  max-width: 18rem;
 }

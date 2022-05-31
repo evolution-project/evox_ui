@@ -1,25 +1,7 @@
-<div class="container overflow-auto"
-     fxLayout="column"
-     fxLayoutAlign="center center"
-     fxFlexFill>
-    <div class="wrap-qr overflow-hidden border-radius-0_8-rem mb-2"
-         fxLayout="column"
-         fxFlex="0 0 auto"
-         fxLayoutAlign="center center">
-        <img src="{{qrImageSrc}}"
-             alt="qr-code">
-    </div>
-
-    <div class="address border-radius-0_8-rem overflow-hidden pl-1 pr-0_5 pt-0_5 pb-0_5"
-         fxLayout="row"
-         fxFlex="0 0 auto"
-         fxLayoutAlign="space-between center">
-        <span class="text-ellipsis mr-1">{{ variablesService.currentWallet.address | slice:0:10 }}...{{ variablesService.currentWallet.address | slice:-10 }}</span>
-        <button (click)="copyAddress()"
-                class="btn-icon circle small">
-            <i class="icon small"
-               [class.copy]="!copyAnimation"
-               [class.check]="copyAnimation"></i>
-        </button>
-    </div>
+<div class="wrap-qr">
+  <img src="{{qrImageSrc}}" alt="qr-code">
+  <div class="wrap-address">
+    <div class="address">{{variablesService.currentWallet.address}}</div>
+    <button type="button" class="btn-copy-address" [class.copy]="!copyAnimation" [class.copied]="copyAnimation" (click)="copyAddress()"></button>
+  </div>
 </div>

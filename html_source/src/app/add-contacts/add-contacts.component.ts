@@ -1,5 +1,5 @@
-import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
 import { ModalService } from '../_helpers/services/modal.service';
@@ -90,8 +90,7 @@ export class AddContactsComponent implements OnInit, OnDestroy {
     private modalService: ModalService,
     private ngZone: NgZone,
     private location: Location
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.queryRouting = this.route.queryParams.subscribe(params => {
@@ -171,7 +170,6 @@ export class AddContactsComponent implements OnInit, OnDestroy {
       }
     }
   }
-
   confirmed() {
 
   }
