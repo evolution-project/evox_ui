@@ -39,7 +39,7 @@ export class SendModalComponent implements OnInit {
       if (this.variablesService.appPass === this.confirmForm.controls['password'].value) {
         this.confirmed.emit(true);
       } else {
-        this.confirmForm.controls['password'].setErrors({ passwordNotMatch: true });
+        this.confirmForm.controls['password'].setErrors({ passwordNotMatch: true })
       }
     } else {
       this.confirmed.emit(true);

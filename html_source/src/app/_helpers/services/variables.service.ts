@@ -83,7 +83,6 @@ export class VariablesService {
   getTotalEvent = new BehaviorSubject(null);
   getRefreshStackingEvent = new BehaviorSubject(null);
   getAliasChangedEvent = new BehaviorSubject(null);
-  getWalletChangedEvent = new BehaviorSubject(null);
 
   public idle = new Idle()
     .whenNotInteractive()
@@ -154,7 +153,6 @@ export class VariablesService {
     this.wallets.forEach((wallet) => {
       if (wallet.wallet_id === id) {
         this.currentWallet = wallet;
-        this.getWalletChangedEvent.next(wallet)
       }
     });
   }

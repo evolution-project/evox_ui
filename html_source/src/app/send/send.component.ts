@@ -49,7 +49,7 @@ export class SendComponent implements OnInit, OnDestroy {
     address: new FormControl('', [Validators.required, (g: FormControl) => {
       this.localAliases = [];
       if (g.value) {
-        this.currentAliasAdress = '';
+        this.currentAliasAdress = ''
         if (g.value.indexOf('@') !== 0) {
           this.isOpen = false;
           this.backend.validateAddress(g.value, (valid_status, data) => {
@@ -79,7 +79,7 @@ export class SendComponent implements OnInit, OnDestroy {
           } else {
             this.backend.getAliasByName(g.value.replace('@', ''), (alias_status, alias_data) => {
               this.ngZone.run(() => {
-                this.currentAliasAdress = alias_data.address;
+                this.currentAliasAdress = alias_data.address
                 this.lenghtOfAdress = g.value.length;
                 if (alias_status) {
                   if (g.hasError('alias_not_valid')) {
@@ -142,8 +142,8 @@ export class SendComponent implements OnInit, OnDestroy {
   }
 
   getShorterAdress() {
-    let tempArr = this.currentAliasAdress.split('');
-    return this.currentAliasAdress.split('', 34).join('') + '...' + tempArr.splice((tempArr.length - 13), 13).join('');
+    let tempArr = this.currentAliasAdress.split("");
+    return this.currentAliasAdress.split("", 34).join('') + "..." + tempArr.splice((tempArr.length - 13), 13).join('')
   }
 
   addressMouseDown(e) {
@@ -177,14 +177,14 @@ export class SendComponent implements OnInit, OnDestroy {
 
     this.getWrapInfo();
     this.dLActionSubscribe = this.variablesService.sendActionData$.subscribe((res) => {
-      if (res.action === 'send') {
-        this.actionData = res;
+      if (res.action === "send") {
+        this.actionData = res
         setTimeout(() => {
-          this.fillDeepLinkData();
-        }, 100);
+          this.fillDeepLinkData()
+        }, 100)
         this.variablesService.sendActionData$.next({});
       }
-    });
+    })
   }
 
   private getWrapInfo() {
@@ -216,7 +216,7 @@ export class SendComponent implements OnInit, OnDestroy {
       comment: this.actionData.comment || this.actionData.comments || '',
       mixin: this.actionData.mixins || this.mixin,
       fee: this.actionData.fee || this.variablesService.default_fee,
-      hide: this.actionData.hide_sender === 'true' ? true : false
+      hide: this.actionData.hide_sender === "true" ? true : false
     });
   }
 
@@ -319,7 +319,7 @@ export class SendComponent implements OnInit, OnDestroy {
       fee: this.sendForm.get('fee').value,
       hide: this.sendForm.get('hide').value
     };
-    this.actionData = {};
+    this.actionData = {}
   }
 
   public getReceivedValue() {

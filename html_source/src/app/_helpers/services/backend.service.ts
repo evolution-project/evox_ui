@@ -338,7 +338,7 @@ export class BackendService {
   }
 
   getIsDisabledNotifications(callback) {
-    const params = {};
+    const params = {}
     this.runCommand('get_is_disabled_notifications', params, callback);
   }
 
@@ -637,7 +637,7 @@ export class BackendService {
   }
 
   resyncWallet(id) {
-    this.runCommand('resync_wallet', { wallet_id: id });
+    this.runCommand('resync_wallet', { wallet_id: id })
   }
 
   getWalletAlias(address) {

@@ -25,7 +25,7 @@
     </div>
   </div>
 
-
+  <div class="input-blocks-row">
     <div class="input-block input-block-alias">
       <label for="purchase-seller">{{ 'PURCHASE.SELLER' | translate }}</label>
       <input type="text" id="purchase-seller"
@@ -50,7 +50,6 @@
       </div>
     </div>
 
-    
     <div class="input-block">
       <label for="purchase-amount">{{ 'PURCHASE.AMOUNT' | translate }}</label>
       <input type="text" id="purchase-amount" formControlName="amount"
@@ -61,6 +60,7 @@
         *ngIf="purchaseForm.controls['amount'].invalid && !purchaseForm.controls['amount'].errors['required'] && (purchaseForm.controls['amount'].dirty || purchaseForm.controls['amount'].touched)">
         <div *ngIf="purchaseForm.controls['amount'].errors['amount_zero']">
           {{ 'PURCHASE.FORM_ERRORS.AMOUNT_ZERO' | translate }}
+        </div>
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit {
   ifSaved: boolean = false;
   scale: number;
   changeForm: any;
-  public currentNotificationsState;
+  public correntNotificationsState;
   languagesOptions = [
     {
       name: 'en',
@@ -132,7 +132,7 @@ export class SettingsComponent implements OnInit {
       this.ngZone.run(() => {
         this.currentBuild = version;
         this.variablesService.testnet = false;
-        if (type === 'testnet') {
+        if (type == 'testnet') {
           this.currentBuild += ' TESTNET';
           this.variablesService.testnet = true;
         }
@@ -140,7 +140,7 @@ export class SettingsComponent implements OnInit {
       });
     });
     this.backend.getIsDisabledNotifications((res) => {
-      this.currentNotificationsState = res;
+      this.correntNotificationsState = res
     });
   }
 
@@ -155,7 +155,7 @@ export class SettingsComponent implements OnInit {
 
   onSubmitChangePass() {
     if (this.changeForm.valid) {
-      this.onSave();
+      this.onSave()
       this.variablesService.appPass = this.changeForm.get('new_password').value;
       if (this.variablesService.appPass) {
         this.backend.setMasterPassword({ pass: this.variablesService.appPass }, (status, data) => {
@@ -179,12 +179,12 @@ export class SettingsComponent implements OnInit {
   }
 
   toggleNotifications() {
-    if (!this.currentNotificationsState) {
-      this.backend.setIsDisabledNotifications('true');
-      this.currentNotificationsState = true;
+    if (!this.correntNotificationsState) {
+      this.backend.setIsDisabledNotifications("true")
+      this.correntNotificationsState = true
     } else {
-      this.backend.setIsDisabledNotifications('false');
-      this.currentNotificationsState = false;
+      this.backend.setIsDisabledNotifications("false")
+      this.correntNotificationsState = false
     }
   }
 
@@ -192,7 +192,7 @@ export class SettingsComponent implements OnInit {
     this.ifSaved = true;
     setTimeout(() => {
       this.ifSaved = false;
-    }, 3000);
+    }, 3000)
   }
 
   onLockChange() {

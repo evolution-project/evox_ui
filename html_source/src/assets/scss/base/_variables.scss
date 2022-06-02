@@ -1,20 +1,3 @@
-:root {
-  /** Backgrounds */
-  --light-blue: #0F2055;
-  --light-blue-gray: #1B2B5E;
-  --light-blue-details: #11316B;
-
-  /** Text colors */
-  --blue-text-color: #1f8feb;
-  --white-text-color: #ffffff;
-
-
-  /** Borders */
-  --defaul-border-color: #33426E;
-  --defaul-border: 2px solid var(--defaul-border-color);
-  --default-border-radius: 0.8rem;
-}
-
 $bodyBackgroundColor: #0c0c3a;
 $sidebarBackgroundColor: rgba(31, 143, 235, 0.15);
 $sidebarBorderColor: rgba(31, 143, 235, 0.15);

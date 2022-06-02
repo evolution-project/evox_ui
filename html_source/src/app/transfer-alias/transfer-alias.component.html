@@ -17,7 +17,7 @@
       <label for="alias-name">
         {{ 'TRANSFER_ALIAS.NAME.LABEL' | translate }}
       </label>
-      <input type="text" name="alias-name" id="alias-name" [value]="alias.name"
+      <input type="text" id="alias-name" [value]="alias.name"
         placeholder="{{ 'EDIT_ALIAS.NAME.PLACEHOLDER' | translate }}" readonly>
     </div>
 
@@ -25,7 +25,7 @@
       <label for="alias-comment">
         {{ 'TRANSFER_ALIAS.COMMENT.LABEL' | translate }}
       </label>
-      <textarea id="alias-comment" name="alias-comment" [(ngModel)]="alias.comment"
+      <textarea id="alias-comment" [value]="alias.comment"
         placeholder="{{ 'EDIT_ALIAS.COMMENT.PLACEHOLDER' | translate }}"></textarea>
     </div>
 
@@ -33,7 +33,7 @@
       <label for="alias-transfer">
         {{ 'TRANSFER_ALIAS.ADDRESS.LABEL' | translate }}
       </label>
-      <input type="text" name="alias-transfer" id="alias-transfer" [(ngModel)]="transferAddress" [ngModelOptions]="{standalone: true}"
+      <input type="text" id="alias-transfer" [(ngModel)]="transferAddress" [ngModelOptions]="{standalone: true}"
         (ngModelChange)="changeAddress()" placeholder="{{ 'TRANSFER_ALIAS.ADDRESS.PLACEHOLDER' | translate }}"
         (contextmenu)="variablesService.onContextMenu($event)">
       <div class="error-block"

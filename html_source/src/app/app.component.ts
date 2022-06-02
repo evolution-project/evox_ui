@@ -381,7 +381,7 @@ export class AppComponent implements OnInit, OnDestroy {
         console.log('----------------- handle_deeplink_click -----------------');
         console.log(data);
         if (data) {
-          this.variablesService.deeplink$.next(data);
+          this.variablesService.deeplink$.next(data)
         }
       });
 
@@ -559,7 +559,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this.renderer.setStyle(app, 'min-width', width + 'px');
             this.renderer.setStyle(document.documentElement, 'font-size', this.variablesService.settings.scale + 'px');
           } else {
-            this.variablesService.settings.scale = 8;
+            this.variablesService.settings.scale = 8
             const width = this.utilsService.getMinWidthByScale(this.variablesService.settings.scale);
             const app = document.documentElement.querySelector('app-root');
             this.renderer.setStyle(app, 'min-width', width + 'px');
@@ -622,7 +622,7 @@ export class AppComponent implements OnInit, OnDestroy {
           this.getMoneyEquivalent();
         }, 30000);
       }
-    );
+    )
   }
 
   getAliases() {

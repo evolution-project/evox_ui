@@ -155,8 +155,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
           fee: this.variablesService.default_fee,
           time: 12,
           timeCancel: 12,
-          payment: this.currentContract.payment_id,
-          password: ''
+          payment: this.currentContract.payment_id
         });
         this.purchaseForm.get('sameAmount').disable();
         this.newPurchase = false;
