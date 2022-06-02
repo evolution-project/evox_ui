@@ -3263,9 +3263,9 @@ var RCV_ADDR_QR_SCALE = 1.5; // scale factor for QR code
 var AUDITABLE_WALLET_HELP_PAGE = 'docs.zano.org/docs/auditable-wallets';
 var CREATE_NEW_WALLET_HELP_PAGE = 'docs.zano.org/docs/getting-started-1#section-create-new-wallet';
 var LOCKED_BALANCE_HELP_PAGE = 'docs.zano.org/docs/locked-balance';
-var DOWNLOADS_PAGE_URL = 'zano.org/downloads.html';
-var BLOCK_EXPLORER_TX_URL_PREFIX = 'explorer.zano.org/transaction/';
-var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-explorer.zano.org/transaction/';
+var DOWNLOADS_PAGE_URL = 'evolution-network.org/#download';
+var BLOCK_EXPLORER_TX_URL_PREFIX = 'chain.evolution-network.org/transaction/';
+var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-chain.evolution-network.org/transaction/';
 
 
 /***/ }),
@@ -4356,8 +4356,8 @@ var AppComponent = /** @class */ (function () {
         var _this = this;
         this.http.get('https://api.coingecko.com/api/v3/ping').subscribe(function () {
             _this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-network&vs_currencies=usd&include_24hr_change=true').subscribe(function (data) {
-                _this.variablesService.moneyEquivalent = data['zano']['usd'];
-                _this.variablesService.moneyEquivalentPercent = data['zano']["usd_24h_change"];
+                _this.variablesService.moneyEquivalent = data['evolution-network']['usd'];
+                _this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
             }, function (error) {
                 console.warn('api.coingecko.com price error: ', error);
             });
