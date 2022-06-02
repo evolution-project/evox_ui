@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  NgZone,
-  HostListener,
-} from '@angular/core';
+import { Component, HostListener, NgZone, OnDestroy, OnInit, } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VariablesService } from '../_helpers/services/variables.service';
 import { BackendService } from '../_helpers/services/backend.service';
@@ -21,28 +15,6 @@ import { distinctUntilChanged, filter } from 'rxjs/operators';
   styleUrls: ['./wallet.component.scss'],
 })
 export class WalletComponent implements OnInit, OnDestroy {
-//  @HostListener('document:keydown.shift', ['$event.key'])
-//  onKeyPresed() {
-//    if (!this.openDropdown) {
-//      this.walletSynchVisible = true;
-//    }
-//  }
-//  @HostListener('document:keyup.shift', ['$event.key'])
-//  onKeyUpPresed() {
-//    if (!this.openDropdown) {
-//      this.walletSynchVisible = false;
-//    }
-//  }
-//  @HostListener('document:click', ['$event.target'])
-//  public onClick(targetElement) {
-//    if (targetElement.dataset.target !== 'wallet-dropdown-button' && this.openDropdown) {
-//      this.openDropdown = false;
-//      this.walletSynchVisible = false;
-//    }
-//  }
-//
-//  subRouting1;
-
   settingsButtonInterval;
   settingsButtonDisabled = true;
   copyAnimation = false;
@@ -54,7 +26,6 @@ export class WalletComponent implements OnInit, OnDestroy {
   delWalletDialogVisible = false;
   exportHistoryDialogVisible = false;
   closeWalletId: number;
-//  walletSynchVisible: boolean = false;
   walletSynchVisible = false;
   tabs = [
     {
@@ -286,8 +257,6 @@ export class WalletComponent implements OnInit, OnDestroy {
     clearTimeout(this.copyAnimationTimeout);
   }
 
-
-
   updateWalletStatus() {
     this.backend.eventSubscribe('wallet_sync_progress', (data) => {
       console.log(data, 'sync')
@@ -308,16 +277,16 @@ export class WalletComponent implements OnInit, OnDestroy {
               this.variablesService.getWallet(this.variablesService.currentWallet.wallet_id).loaded)
               ? true
               : false;
-              if (this.walletLoaded) {
-                this.setTabsDisabled(this.variablesService.currentWallet.balance.eq(0))
-              }
+          if (this.walletLoaded) {
+            this.setTabsDisabled(this.variablesService.currentWallet.balance.eq(0))
+          }
         } else {
           this.walletLoaded = false;
         }
       });
     });
   }
-  
+
   setTabsDisabled(disabled: boolean): void {
     this.tabs[1].disabled = disabled
     this.tabs[3].disabled = disabled

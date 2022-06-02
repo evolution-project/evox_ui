@@ -101,7 +101,7 @@
     <ng-container *ngFor="let tab of tabs; let index = index">
       <button class="tab" [routerLink]="['/wallet' + tab.link]" routerLinkActive="active"
         [ngClass]="{ 'hide': ((tab.link === '/send' || tab.link === '/contracts') && variablesService.currentWallet.is_watch_only && variablesService.currentWallet.is_auditable) }"
-        [disabled]="(tab.link === '/send' || tab.link === '/contracts' || tab.link === '/staking') && (variablesService.daemon_state !== 2 || !variablesService.currentWallet.loaded)">
+        [disabled]="tab.disabled">
         <i class="icon" [ngClass]="tab.icon"></i>
         <span>{{ tab.title | translate }}</span>
         <span class="indicator" *ngIf="tab.indicator">{{variablesService.currentWallet.new_contracts}}</span>
