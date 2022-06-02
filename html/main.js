@@ -4355,9 +4355,9 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.getMoneyEquivalent = function () {
         var _this = this;
         this.http.get('https://api.coingecko.com/api/v3/ping').subscribe(function () {
-            _this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=zano&vs_currencies=usd&include_24hr_change=true').subscribe(function (data) {
-                _this.variablesService.moneyEquivalent = data['zano']['usd'];
-                _this.variablesService.moneyEquivalentPercent = data['zano']["usd_24h_change"];
+            _this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-network&vs_currencies=usd&include_24hr_change=true').subscribe(function (data) {
+                _this.variablesService.moneyEquivalent = data['evolution-network']['usd'];
+                _this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
             }, function (error) {
                 console.warn('api.coingecko.com price error: ', error);
             });

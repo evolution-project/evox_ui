@@ -6,5 +6,5 @@ export const CREATE_NEW_WALLET_HELP_PAGE: string = 'docs.zano.org/docs/getting-s
 export const LOCKED_BALANCE_HELP_PAGE: string = 'docs.zano.org/docs/locked-balance';
 export const DOWNLOADS_PAGE_URL: string = 'zano.org/downloads.html';
 
-export const BLOCK_EXPLORER_TX_URL_PREFIX: string = 'explorer.zano.org/transaction/';
-export const BLOCK_EXPLORER_TN_TX_URL_PREFIX: string = 'testnet-explorer.zano.org/transaction/';
+export const BLOCK_EXPLORER_TX_URL_PREFIX: string = 'chain.evolution-network.org/transaction/';
+export const BLOCK_EXPLORER_TN_TX_URL_PREFIX: string = 'testnet-chain.evolution-network.org/transaction/';
