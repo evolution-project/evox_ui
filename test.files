@@ -128,7 +128,7 @@ html/details-settings.svg
 html/details.svg
 html/edit.svg
 html/favicon.ico
-html/files/EvoX.desktop
+html/files/Evox.desktop
 html/files/app22macos.png
 html/files/app22macos_blocked.png
 html/files/app22windows.png
@@ -455,7 +455,7 @@ html_source/src/browserslist
 html_source/src/environments/environment.prod.ts
 html_source/src/environments/environment.ts
 html_source/src/favicon.ico
-html_source/src/files/EvoX.desktop
+html_source/src/files/Evox.desktop
 html_source/src/files/app22macos.png
 html_source/src/files/app22macos_blocked.png
 html_source/src/files/app22windows.png

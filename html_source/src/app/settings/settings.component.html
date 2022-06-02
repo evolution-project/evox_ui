@@ -57,25 +57,14 @@
         (change)="onLogChange()">
       </ng-select>
     </div>
-
     <div class="lock-selection">
       <label class="lock-selection-title">{{ 'SETTINGS.NOTIFICATIONS' | translate }}</label>
       <div class="notifications-switch">
-        <div class="switch" (click)="toggleNotifications()" [ngClass]="currentNotificationsState ? 'off' : 'on'">
+        <div class="switch" (click)="toggleNotifications()" [ngClass]="correntNotificationsState ? 'off' : 'on'">
           <span class="circle"></span>
         </div>
       </div>
     </div>
-
-    <div class="lock-selection">
-      <label class="lock-selection-title">{{ 'SETTINGS.USE_TOR_TO_RELAY_TRANSACTIONS' | translate }}</label>
-      <div class="notifications-switch">
-        <div class="switch" (click)="toggleUseTor()" [ngClass]="appUseTor ? 'on' : 'off'">
-          <span class="circle"></span>
-        </div>
-      </div>
-    </div>
-
     <form class="master-password" [formGroup]="changeForm" (ngSubmit)="onSubmitChangePass()">
 
       <span class="master-password-title">{{ 'SETTINGS.MASTER_PASSWORD.TITLE' | translate }}</span>

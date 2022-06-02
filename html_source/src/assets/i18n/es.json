@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Create or open the wallet to start using EvoX",
+    "TITLE": "Create or open the wallet to start using Evox",
     "BUTTON_NEW_WALLET": "Create new wallet",
     "BUTTON_OPEN_WALLET": "Open existing wallet",
     "BUTTON_RESTORE_BACKUP": "Restore from backup",
@@ -461,7 +461,7 @@
   "CONFIRM": {
     "BUTTON_CONFIRM": "Send",
     "BUTTON_CANCEL": "Cancel",
-    "TITLE": "Transaction",
+    "TITLE": "Confirm transaction",
     "MESSAGE": {
       "SEND": "Send",
       "FROM": "From",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "There is no fee for deleting an offer, but in order to protect the network against flood transactions you need to have at least {{fee}} {{currency}} in your wallet",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mix-in number is too big for current blockchain state. There are not enough unspent outputs to mix with",
     "TRANSACTION_IS_TO_BIG": "Transaction exceeds network limit, send required amount with multiple transactions",
-    "TRANSFER_ATTEMPT": "There is no connection to EvoX network",
+    "TRANSFER_ATTEMPT": "There is no connection to Evox network",
     "ACCESS_DENIED": "Access denied",
     "TRANSACTION_ERROR": "Error. Transaction not completed.",
     "BAD_ARG": "Invalid argument",
@@ -585,25 +585,9 @@
     "INCOME_TRANSFER_CONFIRMED": "Payment received",
     "MINED": "Mined",
     "LOCKED": "Blocked",
-    "IS_MINIMIZE": "EvoX application is minimized to the system tray",
+    "IS_MINIMIZE": "Evox application is minimized to the system tray",
     "RESTORE": "You can recover it by clicking or using the context menu",
     "TRAY_MENU_SHOW": "Resize",
     "TRAY_MENU_MINIMIZE": "Minimize"
-  },
-  "TOR_LIB_STATE": {
-    "STATE_SENDING": "Sending transaction",
-    "STATE_SENT_SUCCESS": "Successfully sent!",
-    "STATE_SEND_FAILED": "Sending failed",
-    "STATE_INITIALIZING": "Initializing",
-    "STATE_DOWNLOADING_CONSENSUS": "Downloading consensus",
-    "STATE_MAKING_TUNNEL_A": "Building tunnel to A",
-    "STATE_MAKING_TUNNEL_B": "Building tunnel to B",
-    "STATE_CREATING_STREAM": "Creating stream",
-    "STATE_FAILED": "Failed created stream",
-    "STATE_SUCCESS": "Successfully created stream"
-  },
-  "SEND_DETAILS_MODAL": {
-    "TITLE1": "Transaction",
-    "TITLE2": "Transaction details"
   }
 }

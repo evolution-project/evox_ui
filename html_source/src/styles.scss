@@ -4,9 +4,6 @@
 @import "assets/scss/base/variables";
 @import "assets/scss/base/base";
 
-// HELPERS
-@import "assets/scss/helpers/helpers";
-
 // LAYOUT
 @import "assets/scss/layout/main";
 @import "assets/scss/layout/settings";
@@ -15,7 +12,6 @@
 @import "assets/scss/layout/wallet";
 @import "assets/scss/layout/contact";
 @import "assets/scss/layout/seed-phrase";
-@import "assets/scss/layout/loader";
 
 // MODULES
 @import "assets/scss/modules/head";

@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, NgZone, Renderer2, OnDestroy, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { BackendService } from './_helpers/services/backend.service';
@@ -10,8 +10,6 @@ import { BigNumber } from 'bignumber.js';
 import { ModalService } from './_helpers/services/modal.service';
 import { UtilsService } from './_helpers/services/utils.service';
 import { Store } from 'store';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +27,6 @@ export class AppComponent implements OnInit, OnDestroy {
   translateUsed = false;
 
   needOpenWallets = [];
-
-  private _destroy$: Subject<never> = new Subject<never>();
 
   @ViewChild('allContextMenu') public allContextMenu: ContextMenuComponent;
   @ViewChild('onlyCopyContextMenu') public onlyCopyContextMenu: ContextMenuComponent;
@@ -87,7 +83,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.backend.initService().subscribe(initMessage => {
       console.log('Init message: ', initMessage);
-      this.backend.getOptions();
+
       this.backend.webkitLaunchedScript();
 
       this.backend.start_backend(false, '127.0.0.1', 11512, (st2, dd2) => {
@@ -175,6 +171,7 @@ export class AppComponent implements OnInit, OnDestroy {
           });
         }
       });
+
 
 
       this.backend.eventSubscribe('update_daemon_state', (data) => {
@@ -548,6 +545,7 @@ export class AppComponent implements OnInit, OnDestroy {
         });
       });
 
+
       this.backend.getAppData((status, data) => {
         if (data && Object.keys(data).length > 0) {
           for (const key in data) {
@@ -572,7 +570,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this.setBackendLocalization();
 
         this.backend.setLogLevel(this.variablesService.settings.appLog);
-        this.backend.setEnableTor(this.variablesService.settings.appUseTor);
 
         if (this.router.url !== '/login') {
           this.backend.haveSecureAppData((statusPass) => {
@@ -596,37 +593,23 @@ export class AppComponent implements OnInit, OnDestroy {
           });
         }
       });
-
-      /** Start listening dispatchAsyncCallResult */
-      this.backend.dispatchAsyncCallResult();
-
-      /** Start listening handleCurrentActionState */
-      this.backend.handleCurrentActionState();
     }, error => {
       console.log(error);
     });
+    this.getMoneyEquivalent();
 
-    this.variablesService.disable_price_fetch$.pipe(takeUntil(this._destroy$)).subscribe((disable_price_fetch) => {
-      if (!disable_price_fetch) {
-        this.getMoneyEquivalent();
-        this.intervalUpdatePriceState = setInterval(() => {
-          this.getMoneyEquivalent();
-        }, 30000);
-      } else {
-        if (this.intervalUpdatePriceState) {
-          clearInterval(this.intervalUpdatePriceState);
-        }
-      }
-    });
+    this.intervalUpdatePriceState = setInterval(() => {
+      this.getMoneyEquivalent();
+    }, 30000);
   }
 
   getMoneyEquivalent() {
     this.http.get('https://api.coingecko.com/api/v3/ping').subscribe(
       () => {
-        this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-network&vs_currencies=usd&include_24hr_change=true').subscribe(
+        this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-project&vs_currencies=usd&include_24hr_change=true').subscribe(
           data => {
             this.variablesService.moneyEquivalent = data['evolution-network']['usd'];
-            this.variablesService.moneyEquivalentPercent = data['evolution-network']['usd_24h_change'];
+            this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
           },
           error => {
             console.warn('api.coingecko.com price error: ', error);
@@ -764,7 +747,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._destroy$.next();
     if (this.intervalUpdateContractsState) {
       clearInterval(this.intervalUpdateContractsState);
     }

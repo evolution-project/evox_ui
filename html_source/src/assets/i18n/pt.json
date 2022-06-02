@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Crie ou abra a carteira para começar a usar EvoX",
+    "TITLE": "Crie ou abra a carteira para começar a usar Evox",
     "BUTTON_NEW_WALLET": "Criar nova carteira",
     "BUTTON_OPEN_WALLET": "Abrir carteira existente",
     "BUTTON_RESTORE_BACKUP": "Restaurar de cópia",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Não há taxa para excluir uma oferta, mas para proteger a rede contra transações de inundação, é preciso ter pelo menos {{fee}} {{currency}} na sua carteira",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "O número de mixagem é muito grande para o estado atual da blockchain. Não há saídas não gastas suficientes para misturar",
     "TRANSACTION_IS_TO_BIG": "Transação excede o limite de rede, envie quantidade necessária com várias transações",
-    "TRANSFER_ATTEMPT": "Sem conexão à rede EvoX",
+    "TRANSFER_ATTEMPT": "Sem conexão à rede Evox",
     "ACCESS_DENIED": "Acesso negado",
     "TRANSACTION_ERROR": "Erro. Transação não completada.",
     "BAD_ARG": "Argumento inválido",
@@ -585,25 +585,9 @@
     "INCOME_TRANSFER_CONFIRMED": "Pagamento recebido",
     "MINED": "Minerado",
     "LOCKED": "Bloqueado",
-    "IS_MINIMIZE": "Aplicação EvoX foi minimizada na bandeja do sistema",
+    "IS_MINIMIZE": "Aplicação Evox foi minimizada na bandeja do sistema",
     "RESTORE": "Pode recuperá-lo ao clicar ou usar o menu de contexto",
     "TRAY_MENU_SHOW": "Redimensionar",
     "TRAY_MENU_MINIMIZE": "Minimizar"
-  },
-  "TOR_LIB_STATE": {
-    "STATE_SENDING": "Sending transaction",
-    "STATE_SENT_SUCCESS": "Successfully sent!",
-    "STATE_SEND_FAILED": "Sending failed",
-    "STATE_INITIALIZING": "Initializing",
-    "STATE_DOWNLOADING_CONSENSUS": "Downloading consensus",
-    "STATE_MAKING_TUNNEL_A": "Building tunnel to A",
-    "STATE_MAKING_TUNNEL_B": "Building tunnel to B",
-    "STATE_CREATING_STREAM": "Creating stream",
-    "STATE_FAILED": "Failed created stream",
-    "STATE_SUCCESS": "Successfully created stream"
-  },
-  "SEND_DETAILS_MODAL": {
-    "TITLE1": "Transaction",
-    "TITLE2": "Transaction details"
   }
 }

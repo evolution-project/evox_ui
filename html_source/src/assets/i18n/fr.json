@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Créer ou ouvrir le portefeuille pour commencer à utiliser EvoX",
+    "TITLE": "Créer ou ouvrir le portefeuille pour commencer à utiliser Evox",
     "BUTTON_NEW_WALLET": "Créer un nouveau portefeuille",
     "BUTTON_OPEN_WALLET": "Ouvrir un portefeuille existant",
     "BUTTON_RESTORE_BACKUP": "Restaurer depuis une sauvegarde",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Il n'y a pas de frais pour supprimer une offre, mais pour protéger le réseau contre les transactions de spam, vous devez avoir au moins {{fee}} {{currency}} dans votre portefeuille",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Le nombre de mixage est trop grand pour l'état actuel de la blockchain. Il n'y a pas assez de sorties non utilisées pour mélanger avec",
     "TRANSACTION_IS_TO_BIG": "La transaction dépasse la limite réseau, envoyez le montant requis avec plusieurs transactions",
-    "TRANSFER_ATTEMPT": "Il n'y a pas de connexion au réseau EvoX",
+    "TRANSFER_ATTEMPT": "Il n'y a pas de connexion au réseau Evox",
     "ACCESS_DENIED": "Accès refusé",
     "TRANSACTION_ERROR": "Erreur. Transaction non complétée.",
     "BAD_ARG": "Argument invalide",
@@ -585,25 +585,9 @@
     "INCOME_TRANSFER_CONFIRMED": "Paiement reçu",
     "MINED": "Miné",
     "LOCKED": "Bloqué",
-    "IS_MINIMIZE": "L'application EvoX est minimisée dans la barre d'état",
+    "IS_MINIMIZE": "L'application Evox est minimisée dans la barre d'état",
     "RESTORE": "Vous pouvez le récupérer en cliquant ou en utilisant le menu contextuel",
     "TRAY_MENU_SHOW": "Redimensionner",
     "TRAY_MENU_MINIMIZE": "Réduire"
-  },
-  "TOR_LIB_STATE": {
-    "STATE_SENDING": "Sending transaction",
-    "STATE_SENT_SUCCESS": "Successfully sent!",
-    "STATE_SEND_FAILED": "Sending failed",
-    "STATE_INITIALIZING": "Initializing",
-    "STATE_DOWNLOADING_CONSENSUS": "Downloading consensus",
-    "STATE_MAKING_TUNNEL_A": "Building tunnel to A",
-    "STATE_MAKING_TUNNEL_B": "Building tunnel to B",
-    "STATE_CREATING_STREAM": "Creating stream",
-    "STATE_FAILED": "Failed created stream",
-    "STATE_SUCCESS": "Successfully created stream"
-  },
-  "SEND_DETAILS_MODAL": {
-    "TITLE1": "Transaction",
-    "TITLE2": "Transaction details"
   }
 }

@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Buat atau buka dompet untuk mulai menggunakan EvoX",
+    "TITLE": "Buat atau buka dompet untuk mulai menggunakan Evox",
     "BUTTON_NEW_WALLET": "Buat dompet baru",
     "BUTTON_OPEN_WALLET": "Buka dompet yang telah dibuat",
     "BUTTON_RESTORE_BACKUP": "Pulihkan dari cadangan",
@@ -548,7 +548,7 @@
     "NO_MONEY_REMOVE_OFFER": "Tidak ada biaya untuk menghapus penawaran, tetapi untuk melindungi jaringan terhadap transaksi banjir/banyak, Anda harus memiliki setidaknya {{fee}} {{currency}} di dompet Anda",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mixin terlalu besar untuk keadaan blockchain saat ini. Tidak ada cukup keluaran yang tidak terpakai untuk digabungkan",
     "TRANSACTION_IS_TO_BIG": "Transaksi melebihi batas jaringan, mengirim jumlah yang diperlukan dengan banyak transaksi",
-    "TRANSFER_ATTEMPT": "Tidak ada koneksi ke jaringan EvoX",
+    "TRANSFER_ATTEMPT": "Tidak ada koneksi ke jaringan Evox",
     "ACCESS_DENIED": "Akses ditolak",
     "TRANSACTION_ERROR": "Kesalahan. Transaksi tidak selesai.",
     "BAD_ARG": "Argumen tidak valid",
@@ -579,25 +579,9 @@
     "INCOME_TRANSFER_CONFIRMED": "Pembayaran diterima",
     "MINED": "Ditambang",
     "LOCKED": "Diblokir",
-    "IS_MINIMIZE": "Aplikasi EvoX di minimalkan ke dalam sistem tray.",
+    "IS_MINIMIZE": "Aplikasi Evox di minimalkan ke dalam sistem tray.",
     "RESTORE": "Kamu dapat mengembalikannya dengan cara mengklik ke dalam menu konteks.",
     "TRAY_MENU_SHOW": "Ubah ukuran",
     "TRAY_MENU_MINIMIZE": "Minimalkan"
-  },
-  "TOR_LIB_STATE": {
-    "STATE_SENDING": "Sending transaction",
-    "STATE_SENT_SUCCESS": "Successfully sent!",
-    "STATE_SEND_FAILED": "Sending failed",
-    "STATE_INITIALIZING": "Initializing",
-    "STATE_DOWNLOADING_CONSENSUS": "Downloading consensus",
-    "STATE_MAKING_TUNNEL_A": "Building tunnel to A",
-    "STATE_MAKING_TUNNEL_B": "Building tunnel to B",
-    "STATE_CREATING_STREAM": "Creating stream",
-    "STATE_FAILED": "Failed created stream",
-    "STATE_SUCCESS": "Successfully created stream"
-  },
-  "SEND_DETAILS_MODAL": {
-    "TITLE1": "Transaction",
-    "TITLE2": "Transaction details"
   }
 }

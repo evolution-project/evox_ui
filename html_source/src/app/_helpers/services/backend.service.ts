@@ -1,5 +1,5 @@
-import { Injectable, NgZone } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { VariablesService } from './variables.service';
 import { ModalService } from './modal.service';
@@ -7,93 +7,17 @@ import { MoneyToIntPipe } from '../pipes/money-to-int.pipe';
 import JSONBigNumber from 'json-bignumber';
 import { BigNumber } from 'bignumber.js';
 
-export interface PramsObj {
-  [key: string]: any;
-}
-
-export type PramsArray = (string | PramsObj)[];
-
-export type Params = string | PramsObj | PramsArray;
-
-export enum ParamsType {
-  array = 'array',
-  object = 'object',
-  string = 'string'
-}
-
-export const getParamsType = (value: Params): ParamsType | null => {
-  if (!value) {
-    return null;
-  }
-  const array: false | ParamsType.array = Array.isArray(value) && ParamsType.array;
-  const object: false | ParamsType = Object.keys(ParamsType).includes(typeof value) && ParamsType[typeof value];
-  return array || object || null;
-};
-
-export type ConvertersObjectForTypes = {
-  [key in ParamsType]: (value: Params) => string | string[]
-};
-
-export const convertersObjectForTypes: ConvertersObjectForTypes = {
-  [ParamsType.string]: (value: string): string => value,
-  [ParamsType.object]: (value: PramsObj): string => JSONBigNumber.stringify(value),
-  [ParamsType.array]: (value: PramsArray): string[] => value.map(v => {
-    return typeof v === ParamsType.string ? v as string : JSONBigNumber.stringify(v);
-  }),
-};
-
-export const convertorParams = (value: Params): string | string[] => {
-  const type: ParamsType = getParamsType(value);
-  return convertersObjectForTypes[type](value);
-};
-
-export interface ResponseAsyncTransfer {
-  error_code: string;
-  response_data: {
-    success: boolean;
-    tx_blob_size: number,
-    tx_hash: string
-  };
-}
-
-export interface AsyncCommandResults {
-  job_id: number;
-  response: ResponseAsyncTransfer;
-}
-
-export enum StatusCurrentActionState {
-  STATE_SENDING = 'STATE_SENDING',
-  STATE_SENT_SUCCESS = 'STATE_SENT_SUCCESS',
-  STATE_SEND_FAILED = 'STATE_SEND_FAILED',
-  STATE_INITIALIZING = 'STATE_INITIALIZING',
-  STATE_DOWNLOADING_CONSENSUS = 'STATE_DOWNLOADING_CONSENSUS',
-  STATE_MAKING_TUNNEL_A = 'STATE_MAKING_TUNNEL_A',
-  STATE_MAKING_TUNNEL_B = 'STATE_MAKING_TUNNEL_B',
-  STATE_CREATING_STREAM = 'STATE_CREATING_STREAM',
-  STATE_FAILED = 'STATE_FAILED',
-  STATE_SUCCESS = 'STATE_SUCCESS'
-}
-
-export interface CurrentActionState {
-  status: StatusCurrentActionState;
-  wallet_id: number;
-}
-
 @Injectable()
 export class BackendService {
-  dispatchAsyncCallResult$ = new Subject<AsyncCommandResults>();
-  handleCurrentActionState$ = new Subject<CurrentActionState>();
 
   backendObject: any;
-
   backendLoaded = false;
 
   constructor(
     private translate: TranslateService,
     private variablesService: VariablesService,
     private modalService: ModalService,
-    private moneyToIntPipe: MoneyToIntPipe,
-    private ngZone: NgZone,
+    private moneyToIntPipe: MoneyToIntPipe
   ) {
   }
 
@@ -223,7 +147,7 @@ export class BackendService {
         error_translate = 'ERRORS.FILE_EXIST';
         break;
       case 'FAILED':
-        BackendService.Debug(0, `Error: (${ error }) was triggered by command: ${ command }`);
+        BackendService.Debug(0, `Error: (${error}) was triggered by command: ${command}`);
         break;
       default:
         error_translate = '';
@@ -240,6 +164,7 @@ export class BackendService {
     }
   }
 
+
   private commandDebug(command, params, result) {
     BackendService.Debug(2, '----------------- ' + command + ' -----------------');
     const debug = {
@@ -249,8 +174,8 @@ export class BackendService {
     BackendService.Debug(2, debug);
     try {
       BackendService.Debug(2, JSONBigNumber.parse(result, BackendService.bigNumberParser));
-    } catch ( e ) {
-      BackendService.Debug(2, {response_data: result, error_code: 'OK'});
+    } catch (e) {
+      BackendService.Debug(2, { response_data: result, error_code: 'OK' });
     }
   }
 
@@ -262,8 +187,8 @@ export class BackendService {
       } else {
         try {
           Result = JSONBigNumber.parse(resultStr, BackendService.bigNumberParser);
-        } catch ( e ) {
-          Result = {response_data: resultStr, error_code: 'OK'};
+        } catch (e) {
+          Result = { response_data: resultStr, error_code: 'OK' };
         }
       }
     } else {
@@ -315,42 +240,36 @@ export class BackendService {
     }
   }
 
-  private runCommand(command, params?: Params, callback?) {
-    if (!this.backendObject) {
-      return;
+
+  private runCommand(command, params?, callback?) {
+    if (this.backendObject) {
+      if (command === 'get_recent_transfers') {
+        this.variablesService.get_recent_transfers = true;
+      }
+      const Action = this.backendObject[command];
+      if (!Action) {
+        BackendService.Debug(0, 'Run Command Error! Command "' + command + '" don\'t found in backendObject');
+      } else {
+        const that = this;
+        params = (typeof params === 'string') ? params : JSONBigNumber.stringify(params);
+        if (params === undefined || params === '{}') {
+          if (command === 'get_recent_transfers') {
+            this.variablesService.get_recent_transfers = false;
+          }
+          Action(function (resultStr) {
+            that.commandDebug(command, params, resultStr);
+            return that.backendCallback(resultStr, params, callback, command);
+          });
+        } else {
+          Action(params, function (resultStr) {
+            that.commandDebug(command, params, resultStr);
+            return that.backendCallback(resultStr, params, callback, command);
+          });
+        }
+      }
     }
-
-    if (command === 'get_recent_transfers') {
-      this.variablesService.get_recent_transfers = true;
-    }
-
-    const Action = this.backendObject[command];
-
-    if (!Action) {
-      BackendService.Debug(0, 'Run Command Error! Command "' + command + '" don\'t found in backendObject');
-      return;
-    }
-
-    const that = this;
-    const type: ParamsType = getParamsType(params);
-    params = params && convertorParams(params);
-
-    if (type === ParamsType.array) {
-      Action(...(params as string[]), function (resultStr) {
-        that.commandDebug(command, params, resultStr);
-        return that.backendCallback(resultStr, params, callback, command);
-      });
-      return;
-    }
-
-    if (command === 'get_recent_transfers') {
-      this.variablesService.get_recent_transfers = false;
-    }
-    Action(params, function (resultStr) {
-      that.commandDebug(command, params, resultStr);
-      return that.backendCallback(resultStr, params, callback, command);
-    });
   }
+
 
   eventSubscribe(command, callback) {
     if (command === 'on_core_event') {
@@ -361,6 +280,7 @@ export class BackendService {
       });
     }
   }
+
 
   initService() {
     return new Observable(
@@ -382,6 +302,7 @@ export class BackendService {
     );
   }
 
+
   webkitLaunchedScript() {
     return this.runCommand('webkit_launched_script');
   }
@@ -398,7 +319,7 @@ export class BackendService {
     if (this.variablesService.wallets.length) {
       this.variablesService.settings.wallets = [];
       this.variablesService.wallets.forEach((wallet) => {
-        this.variablesService.settings.wallets.push({name: wallet.name, path: wallet.path});
+        this.variablesService.settings.wallets.push({ name: wallet.name, path: wallet.path });
       });
     }
     this.runCommand('store_app_data', this.variablesService.settings, callback);
@@ -430,12 +351,12 @@ export class BackendService {
     const wallets = [];
     const contacts = [];
     this.variablesService.wallets.forEach((wallet) => {
-      wallets.push({name: wallet.name, pass: wallet.pass, path: wallet.path, staking: wallet.staking});
+      wallets.push({ name: wallet.name, pass: wallet.pass, path: wallet.path, staking: wallet.staking });
     });
     this.variablesService.contacts.forEach((contact) => {
-      contacts.push({name: contact.name, address: contact.address, notes: contact.notes});
+      contacts.push({ name: contact.name, address: contact.address, notes: contact.notes });
     });
-    data = {wallets: wallets, contacts: contacts};
+    data = { wallets: wallets, contacts: contacts };
     this.backendObject['store_secure_app_data'](JSON.stringify(data), this.variablesService.appPass, (dataStore) => {
       this.backendCallback(dataStore, {}, callback, 'store_secure_app_data');
     });
@@ -506,11 +427,11 @@ export class BackendService {
   }
 
   closeWallet(wallet_id, callback?) {
-    this.runCommand('close_wallet', {wallet_id: +wallet_id}, callback);
+    this.runCommand('close_wallet', { wallet_id: +wallet_id }, callback);
   }
 
-  getSmartWalletInfo({wallet_id, seed_password}, callback) {
-    this.runCommand('get_smart_wallet_info', {wallet_id: +wallet_id, seed_password}, callback);
+  getSmartWalletInfo({ wallet_id, seed_password }, callback) {
+    this.runCommand('get_smart_wallet_info', { wallet_id: +wallet_id, seed_password }, callback);
   }
 
   getSeedPhraseInfo(param, callback) {
@@ -518,7 +439,7 @@ export class BackendService {
   }
 
   runWallet(wallet_id, callback?) {
-    this.runCommand('run_wallet', {wallet_id: +wallet_id}, callback);
+    this.runCommand('run_wallet', { wallet_id: +wallet_id }, callback);
   }
 
   isValidRestoreWalletText(param, callback) {
@@ -550,8 +471,7 @@ export class BackendService {
       comment: comment,
       push_payer: !hide
     };
-
-    this.asyncCall('transfer', params, callback);
+    this.runCommand('transfer', params, callback);
   }
 
   validateAddress(address, callback) {
@@ -635,15 +555,15 @@ export class BackendService {
   }
 
   getMiningHistory(wallet_id, callback) {
-    this.runCommand('get_mining_history', {wallet_id: parseInt(wallet_id, 10)}, callback);
+    this.runCommand('get_mining_history', { wallet_id: parseInt(wallet_id, 10) }, callback);
   }
 
   startPosMining(wallet_id, callback?) {
-    this.runCommand('start_pos_mining', {wallet_id: parseInt(wallet_id, 10)}, callback);
+    this.runCommand('start_pos_mining', { wallet_id: parseInt(wallet_id, 10) }, callback);
   }
 
   stopPosMining(wallet_id, callback?) {
-    this.runCommand('stop_pos_mining', {wallet_id: parseInt(wallet_id, 10)}, callback);
+    this.runCommand('stop_pos_mining', { wallet_id: parseInt(wallet_id, 10) }, callback);
   }
 
   openUrlInBrowser(url, callback?) {
@@ -713,11 +633,11 @@ export class BackendService {
   }
 
   getAliasCoast(alias, callback) {
-    this.runCommand('get_alias_coast', {v: alias}, callback);
+    this.runCommand('get_alias_coast', { v: alias }, callback);
   }
 
   resyncWallet(id) {
-    this.runCommand('resync_wallet', {wallet_id: id});
+    this.runCommand('resync_wallet', { wallet_id: id });
   }
 
   getWalletAlias(address) {
@@ -779,53 +699,16 @@ export class BackendService {
 
   getVersion(callback) {
     this.runCommand('get_version', {}, (status, version) => {
-      this.runCommand('get_network_type', {}, (status_network, type) => {
+      this.runCommand('get_network_type', {}, (status, type) => {
         callback(version, type);
       });
     });
   }
 
   setLogLevel(level) {
-    return this.runCommand('set_log_level', {v: level});
+    return this.runCommand('set_log_level', { v: level });
   }
 
-  asyncCall(command: string, params: PramsObj, callback?: (job_id?: number) => void | any) {
-    return this.runCommand('async_call', [command, params], (status, {job_id}: { job_id: number }) => {
-      callback(job_id);
-    });
-  }
-
-  dispatchAsyncCallResult() {
-    this.backendObject['dispatch_async_call_result'].connect((job_id: string, json_resp: string) => {
-      const asyncCommandResults: AsyncCommandResults = {
-        job_id: +job_id,
-        response: JSON.parse(json_resp)
-      };
-      this.ngZone.run(() => this.dispatchAsyncCallResult$.next(asyncCommandResults));
-    });
-  }
-
-  handleCurrentActionState() {
-    this.backendObject['handle_current_action_state']
-      .connect((response: string) => {
-        const currentActionState: CurrentActionState = JSON.parse(response);
-        this.ngZone.run(() => this.handleCurrentActionState$.next(currentActionState));
-      });
-  }
-
-  setEnableTor(value: boolean) {
-    return this.runCommand('set_enable_tor', <{ v: boolean }>{v: value});
-  }
-
-  getOptions() {
-    return this.runCommand(
-      'get_options',
-      {},
-      (status, {disable_price_fetch, use_debug_mode}: { disable_price_fetch: boolean; use_debug_mode: boolean }) => {
-        this.variablesService.disable_price_fetch$.next(disable_price_fetch);
-        this.variablesService.use_debug_mode$.next(use_debug_mode);
-      });
-  }
 }
 
 

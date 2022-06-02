@@ -1,10 +1,10 @@
-import {Component, NgZone, OnInit, Renderer2} from '@angular/core';
-import {VariablesService} from '../_helpers/services/variables.service';
-import {BackendService} from '../_helpers/services/backend.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Location} from '@angular/common';
-import {TranslateService} from '@ngx-translate/core';
-import {UtilsService} from '../_helpers/services/utils.service';
+import { Component, NgZone, OnInit, Renderer2 } from '@angular/core';
+import { VariablesService } from '../_helpers/services/variables.service';
+import { BackendService } from '../_helpers/services/backend.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { UtilsService } from '../_helpers/services/utils.service';
 
 @Component({
   selector: 'app-settings',
@@ -13,9 +13,8 @@ import {UtilsService} from '../_helpers/services/utils.service';
   providers: [UtilsService]
 })
 export class SettingsComponent implements OnInit {
-  ifSaved = false;
+  ifSaved: boolean = false;
   scale: number;
-  appUseTor: boolean;
   changeForm: any;
   public currentNotificationsState;
   languagesOptions = [
@@ -114,16 +113,15 @@ export class SettingsComponent implements OnInit {
     private utilsService: UtilsService
   ) {
     this.scale = this.variablesService.settings.scale;
-    this.appUseTor = this.variablesService.settings.appUseTor;
     this.changeForm = new FormGroup({
       password: new FormControl(''),
       new_password: new FormControl('', Validators.pattern(this.variablesService.pattern)),
       new_confirmation: new FormControl('')
     }, [(g: FormGroup) => {
-      return g.get('new_password').value === g.get('new_confirmation').value ? null : {'confirm_mismatch': true};
+      return g.get('new_password').value === g.get('new_confirmation').value ? null : { 'confirm_mismatch': true };
     }, (g: FormGroup) => {
       if (this.variablesService.appPass) {
-        return g.get('password').value === this.variablesService.appPass ? null : {'pass_mismatch': true};
+        return g.get('password').value === this.variablesService.appPass ? null : { 'pass_mismatch': true };
       }
       return null;
     }]);
@@ -160,9 +158,9 @@ export class SettingsComponent implements OnInit {
       this.onSave();
       this.variablesService.appPass = this.changeForm.get('new_password').value;
       if (this.variablesService.appPass) {
-        this.backend.setMasterPassword({pass: this.variablesService.appPass}, (status, data) => {
+        this.backend.setMasterPassword({ pass: this.variablesService.appPass }, (status, data) => {
           if (status) {
-            this.backend.storeSecureAppData({pass: this.variablesService.appPass});
+            this.backend.storeSecureAppData({ pass: this.variablesService.appPass });
             this.variablesService.appLogin = true;
             this.variablesService.dataIsLoaded = true;
             if (this.variablesService.settings.appLockTime) {
@@ -173,8 +171,8 @@ export class SettingsComponent implements OnInit {
           }
         });
       } else {
-        // this.backend.dropSecureAppData((status, data) => {
-        // });
+        this.backend.dropSecureAppData((status, data) => {
+        });
       }
       this.changeForm.reset();
     }
@@ -188,13 +186,6 @@ export class SettingsComponent implements OnInit {
       this.backend.setIsDisabledNotifications('false');
       this.currentNotificationsState = false;
     }
-  }
-
-  toggleUseTor() {
-    this.appUseTor = !this.appUseTor;
-    this.variablesService.settings.appUseTor = this.appUseTor;
-    this.backend.setEnableTor(this.appUseTor);
-    this.backend.storeAppData();
   }
 
   onSave() {
