@@ -606,10 +606,10 @@ export class AppComponent implements OnInit, OnDestroy {
   getMoneyEquivalent() {
     this.http.get('https://api.coingecko.com/api/v3/ping').subscribe(
       () => {
-        this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-project&vs_currencies=usd&include_24hr_change=true').subscribe(
+        this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=zano&vs_currencies=usd&include_24hr_change=true').subscribe(
           data => {
-            this.variablesService.moneyEquivalent = data['evolution-network']['usd'];
-            this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
+            this.variablesService.moneyEquivalent = data['zano']['usd'];
+            this.variablesService.moneyEquivalentPercent = data['zano']["usd_24h_change"];
           },
           error => {
             console.warn('api.coingecko.com price error: ', error);
