@@ -38,8 +38,8 @@
         <div *ngIf="sendForm.controls['amount'].errors['great_than_unwraped_coins']">
           {{ 'SEND.FORM_ERRORS.GREAT_THAN_UNWRAPPED_COINS' | translate }}
         </div>
-        <div *ngIf="sendForm.controls['amount'].errors['less_than_evox_needed']">
-          {{ 'SEND.FORM_ERRORS.LESS_THAN_EVOX_NEEDED' | translate }}
+        <div *ngIf="sendForm.controls['amount'].errors['less_than_EvoX_needed']">
+          {{ 'SEND.FORM_ERRORS.LESS_THAN_EvoX_NEEDED' | translate }}
         </div>
         <div *ngIf="sendForm.controls['amount'].errors['wrap_info_null']">
           {{ 'SEND.FORM_ERRORS.WRAP_INFO_NULL' | translate }}
@@ -72,15 +72,15 @@
     <table class="text-wrap">
       <tr>
         <td>{{ 'SEND.WRAP.WILL_RECEIVE' | translate }}</td>
-        <td *ngIf="!sendForm.controls['amount'].errors">{{getReceivedValue() | intToMoney}} {{ 'SEND.WRAP.wZANO' |
+        <td *ngIf="!sendForm.controls['amount'].errors">{{getReceivedValue() | intToMoney}} {{ 'SEND.WRAP.wEvoX' |
           translate }}</td>
         <td *ngIf="sendForm.controls['amount'].errors">-</td>
       </tr>
       <tr>
         <td>{{ 'SEND.WRAP.FEE' | translate }}</td>
         <td>
-          {{wrapInfo?.tx_cost?.evox_needed_for_erc20 | intToMoney: 3 }}
-          {{ 'SEND.WRAP.EVOX' | translate }}(${{wrapInfo?.tx_cost?.usd_needed_for_erc20}})</td>
+          {{wrapInfo?.tx_cost?.EvoX_needed_for_erc20 | intToMoney: 3 }}
+          {{ 'SEND.WRAP.EvoX' | translate }}(${{wrapInfo?.tx_cost?.usd_needed_for_erc20}})</td>
       </tr>
     </table>
   </div>

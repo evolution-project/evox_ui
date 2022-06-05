@@ -1,2 +1,2 @@
-# evox_ui
-UI development from Evox  project
+# EvoX_ui
+UI development from EvoX  project
