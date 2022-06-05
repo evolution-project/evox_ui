@@ -94,7 +94,9 @@
     {{variablesService.defaultCurrency}}</span>
   <span>${{variablesService.currentWallet.getMoneyEquivalent(variablesService.moneyEquivalent) | intToMoney | number :
     '1.2-2'}}</span>
-  <span class="price-percent">+4.6%</span>
+  <span class="price-percent">{{wallet.getMoneyEquivalent(variablesService.moneyEquivalentPercent) |
+    intToMoney | number :
+    '1.2-2'}}%</span>
 </div>
 <div class="tabs">
   <div class="tabs-header">

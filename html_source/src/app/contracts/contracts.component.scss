@@ -5,9 +5,7 @@
   font-size: 1.5rem;
 }
 .wrap-table {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-x: auto;
   table {
     tbody {
       tr {
