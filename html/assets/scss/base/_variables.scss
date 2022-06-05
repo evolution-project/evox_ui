@@ -1,89 +1,89 @@
-$bodyBackgroundColor: #0c0c3a;
-$sidebarBackgroundColor: rgba(31, 143, 235, 0.15);
-$sidebarBorderColor: rgba(31, 143, 235, 0.15);
+$bodyBackgroundColor: linear-gradient(#000 10%,#3b178a 50%,#000 90%);
+$sidebarBackgroundColor: rgba(31, 143, 235, 0);
+$sidebarBorderColor: rgba(31, 143, 235, 0);
 
-$onlineColor: #16d1d6;
+$onlineColor: #1ba100;
 $offlineColor: #ff0000;
-$contentBackgroundColor: rgba(31, 143, 235, 0.15);
+$contentBackgroundColor: rgba(31, 143, 235, 0);
 
-$mainTextColor: #ffffff;
-$alternativeTextColor: rgba(253, 254, 255, 0.3);
-$optionalTextColor: #0c0c3a;
-$blueTextColor: #1f8feb;
-$greenTextColor: #16d1d6;
+$mainTextColor: #b6b6b6;
+$alternativeTextColor: rgba(254, 253, 255, 0.3);
+$optionalTextColor: #2b0c3a;
+$blueTextColor: #771feb;
+$greenTextColor: #10a01c;
 $orangeTextColor: #ff6f00;
 $redTextColor: #ff0000;
-$addressTextColor: rgba(31, 143, 235, 0.5);
+$addressTextColor: rgb(153, 47, 252);
 $placeholderTextColor: rgba(255, 255, 255, 0.2);
 
-$blueButtonBackgroundColor: #1f8feb;
-$blueButtonBoxShadow: 0px 10px 40px rgba(30, 151, 233, 0.4);
-$blueButtonHoverColor: #4aaeff;
-$blueButtonHoverBoxShadow: 0px 10px 50px rgba(30, 151, 233, 0.7);
-$blueButtonFocusColor: #0075d5;
-$blueButtonFocusBoxShadow: 0px 10px 20px rgba(30, 151, 233, 0.2);
-$blueButtondisabledColor: rgba(31, 143, 235, 0.2);
+$blueButtonBackgroundColor: linear-gradient(to right,#000,#6a2ec1,#000, 0.7);
+$blueButtonBoxShadow: 0px 10px 40px rgba(96, 3, 158, 0.788);
+$blueButtonHoverColor: linear-gradient(to right,#000,#6a2ec1,#000);
+$blueButtonHoverBoxShadow: 0px 10px 50px rgba(96, 3, 158, 0.788);
+$blueButtonFocusColor: linear-gradient(to right,#000,#6a2ec1,#000);
+$blueButtonFocusBoxShadow: 0px 10px 20px rgba(96, 3, 158, 0.788);
+$blueButtondisabledColor: linear-gradient(to right,#000,#6a2ec1,#000, 0.5);
 
 $resetButtonBackgroundColor: transparent;
-$resetButtonColor: #1f8feb;
-$resetButtonHoverColor: #4aaeff;
-$resetButtonFocusColor: #0075d5;
-$resetButtonDisabledColor: rgba(31, 143, 235, 0.2);
+$resetButtonColor: #6e00d5a1;
+$resetButtonHoverColor: #8f4aff;
+$resetButtonFocusColor: #8604ff;
+$resetButtonDisabledColor: rgba(170, 31, 235, 0.2);
 
 $paginationButtonColor: rgba(253, 254, 255, 0.7);
 $paginationButtonHoverColor: rgba(253, 254, 255, 0.4);
 
 $inputBackgroundColor: transparent;
-$selectDropdownBackgroundColor: #123673;
+$selectDropdownBackgroundColor: #45016d;
 
 $selectHoverColor: rgba(58, 69, 85, 0.5);
 $selectSelectedColor: rgba(43, 54, 68, 0.5);
 
-$switchOnBackgroundColor: #16d1d6;
+$switchOnBackgroundColor: #7016d6;
 $switchOffBackgroundColor: rgba(255, 255, 255, 0.2);
 $switchCirceleBoxShadow: 0px 2.11765px 5.64706px rgba(0, 0, 0, 0.15), 0px 2.11765px 0.705882px rgba(0, 0, 0, 0.06);
 
-$accountBoxShadow: 0px 10px 20px rgba(30, 151, 233, 0.3);
+$accountBoxShadow: 0px 10px 20px rgba(135, 30, 233, 0.3);
 $accountDragBoxShadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
   0 3px 14px 2px rgba(0, 0, 0, 0.12);
-$accountBackgroundColor: rgba(30, 151, 233, 0.3);
+$accountBackgroundColor: rgba(125, 30, 233, 0.3);
 $accountWatchOnlyBorderColor: #9a69f7;
 $accountAuditableBorderColor: #ffffff;
-$accountBackgroundColor: rgba(30, 151, 233, 0.3);
-$accountActiveBackgroundColor: radial-gradient(100% 188.88% at 0% 0%, #16d1d6 0%, #274cff 100%);
-$accountHoverBackgroundColor: #1e81d1;
+$accountBackgroundColor: rgba(101, 30, 233, 0.3);
+$accountActiveBackgroundColor: radial-gradient(100% 188.88% at 0% 0%, #7016d648 0%, #7700ff 100%);
+$accountHoverBackgroundColor: #5d1ed1;
 $accountMainTextColor: #ffffff;
 
-$seedPhraseFormBackgroundColor: rgba(31, 143, 235, 0.15);
+$seedPhraseFormBackgroundColor: rgba(136, 31, 235, 0.15);
 $securedSeed: #e0e0e0;
 $seedItemText: #e0e0e0;
-$copyBackground: rgba(30, 151, 233, 0.6);
-$copyBackgroundHover: rgba(30, 151, 233, 0.9);
+$copyBackground: rgba(118, 30, 233, 0.6);
+$copyBackgroundHover: rgba(118, 30, 233, 0.9);
 $seedItemBackgroundColor: #18202a;
 $accountOptionalTextColor: #556576;
-$accountIndicatorTextColor: #0c0c3a;
+$accountIndicatorTextColor: #280c3a;
 $accountIndicatorBackgroundColor: #ffffff;
 
-$tabInactiveBackgroundColor: rgba(31, 143, 235, 0.05);
-$tabHoverBackgroundColor: rgba(31, 143, 235, 0.1);
-$tableBackgroundColor: rgba(31, 143, 235, 0.15);
-$messageMyBackgroundColor: #2a3544;
-$messageBuddyBackgroundColor: #18202a;
-$progressBarBackgroundColor: rgba(31, 143, 235, 0.33);
+$tabInactiveBackgroundColor: rgba(143, 31, 235, 0.1);
+$tabHoverBackgroundColor: rgba(143, 31, 235, 0.1);
+$tableBackgroundColor: rgba(143, 31, 235, 0.1);
+$messageMyBackgroundColor: #352a44;
+$messageBuddyBackgroundColor: #24182a;
+$progressBarBackgroundColor: rgba(143, 31, 235, 0.1);
 $progressBarAccountColor: rgba(255, 255, 255, 0.2);
 $progressBarAccountActiveColor: rgba(255, 255, 255, 0.2);
-$progressBarFullBackgroundColor: #1f8feb;
-$chartOptionsBackgroundColor: #2b3644;
-$chartOptionsHoverColor: #556576;
-$tooltipBackgroundColor: #123673;
+$progressBarFullBackgroundColor: #6d1feb;
+$chartOptionsBackgroundColor: #372b44;
+$chartOptionsHoverColor: #625576;
+$tooltipBackgroundColor: #3f1273;
 $tooltipTextColor: rgba(255, 255, 255, 0.5);
 $tooltipImportantTextColor: #ff6f00;
 $tooltipImportantBackgroundColor: #5f2b11;
 $tooltipCriticalTextColor: #ff5252;
 $tooltipCriticalBackgroundColor: #5f1d1d;
 $tooltipShadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-$modalBackground: #123673;
-$closeButtonColor: #556576;
-$hoverPage: rgba(58, 72, 90, 0.247);
+$modalBackground: #441273;
+$closeButtonColor: #6d5576;
+$hoverPage: rgba(72, 58, 90, 0.247);
 
-$aliasDropdownBackground: #175aa4;
+$aliasDropdownBackground: #5417a4;
