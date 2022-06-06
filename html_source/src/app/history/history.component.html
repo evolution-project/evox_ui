@@ -29,7 +29,7 @@
                   </svg>
                 </ng-container>
                 <ng-container *ngIf="getHeight(item) === 10">
-                  <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send.svg" alt="">
+                  <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send-tab.svg" alt="">
                   <img *ngIf="item.is_income" class="status-transaction" src="./assets/icons/receive.svg" alt="">
                 </ng-container>
                 <span class="status-transaction-text">{{ (item.is_income ? 'HISTORY.RECEIVED' : 'HISTORY.SEND') |

@@ -14,9 +14,6 @@
         <ng-container *ngIf="variablesService.currentWallet.alias_available">
           <i class="icon edit" [routerLink]="['/edit-alias']" tooltip="{{ 'WALLET.TOOLTIPS.EDIT_ALIAS' | translate }}"
             placement="bottom-right" tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
-          <i class="icon transfer" [routerLink]="['/transfer-alias']"
-            tooltip="{{ 'WALLET.TOOLTIPS.TRANSFER_ALIAS' | translate }}" placement="right"
-            tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
         </ng-container>
       </div>
     </div>
@@ -92,10 +89,9 @@
   <span [tooltip]="getTooltip()" [placement]="'bottom'" [tooltipClass]="'balance-tooltip'" [delay]="150" [timeout]="0"
     (onHide)="onHideTooltip()">{{variablesService.currentWallet.balance | intToMoney : '3'}}
     {{variablesService.defaultCurrency}}</span>
-  <span>${{variablesService.currentWallet.getMoneyEquivalent(variablesService.moneyEquivalent) | intToMoney | number :
-    '1.2-2'}}</span>
-  <span class="price-percent">{{ variablesService.moneyEquivalentPercent | number : '1.1-2' }}%</span>
-</div>
+    <span>${{variablesService.currentWallet.getMoneyEquivalent(variablesService.moneyEquivalent) | intToMoney | number :
+      '1.2-2'}}</span>
+  </div>
 <div class="tabs">
   <div class="tabs-header">
     <ng-container *ngFor="let tab of tabs; let index = index">

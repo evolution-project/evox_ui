@@ -736,6 +736,7 @@ app-progress-container {
 
 app-open-wallet-modal {
   .modal {
+    box-shadow: 0px 0px 15px 3px rgb(159, 7, 255);
     border-radius: 2rem;
     background: $modalBackground;
     color: $mainTextColor;

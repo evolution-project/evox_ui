@@ -1352,24 +1352,24 @@ input[type=checkbox].style-checkbox:checked + label:before {
   color: #43454b;
 }
 .theme-dark app-send-modal .modal .title {
-  border-bottom: 0.2rem solid #2b3644;
+  border-bottom: 0.2rem solid #352b44;
 }
 .theme-gray app-send-modal .modal .title {
-  border-bottom: 0.2rem solid #2f3438;
+  border-bottom: 0.2rem solid #342f38;
 }
 .theme-white app-send-modal .modal .title {
   border-bottom: 0.2rem solid #ebebeb;
 }
 .theme-dark app-send-modal .modal .action-button {
-  background-color: #4db1ff;
-  color: #111921;
+  background-color: #793fc5;
+  color: #1c1121;
 }
 .theme-gray app-send-modal .modal .action-button {
-  background-color: #42a5f5;
+  background-color: #793fc5;
   color: #1a1a1a;
 }
 .theme-white app-send-modal .modal .action-button {
-  background-color: #2c95f1;
+  background-color: #793fc5;
   color: #fefefe;
 }
 
@@ -2152,13 +2152,13 @@ app-wallet .header button:disabled {
   color: #43454b;
 }
 .theme-dark app-send .form-send .send-select .icon {
-  background-color: #4db1ff;
+  background-color: #793fc5;
 }
 .theme-gray app-send .form-send .send-select .icon {
-  background-color: #42a5f5;
+  background-color: #793fc5;
 }
 .theme-white app-send .form-send .send-select .icon {
-  background-color: #2c95f1;
+  background-color: #793fc5;
 }
 .theme-dark app-send .form-send .additional-details {
   border: 0.2rem solid #2b3644;

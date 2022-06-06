@@ -64,8 +64,8 @@
   cursor: not-allowed;
 }
 .form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {
-  background-color: #556576;
-  border: 0.1rem solid #556576;
+  background-color: #695576;
+  border: 0.1rem solid #695576;
 }
 .form-send button {
   margin: 2.4rem 0;

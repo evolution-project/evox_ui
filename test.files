@@ -85,6 +85,7 @@ html/assets/icons/secured.svg
 html/assets/icons/sell.svg
 html/assets/icons/send-red.svg
 html/assets/icons/send.svg
+html/assets/icons/send-tab.svg
 html/assets/icons/settings.svg
 html/assets/icons/staking.svg
 html/assets/icons/time.svg
@@ -162,6 +163,7 @@ html/secured.svg
 html/sell.svg
 html/send-red.svg
 html/send.svg
+html/send-tab.svg
 html/settings.svg
 html/staking.svg
 html/styles.js
@@ -424,6 +426,7 @@ html_source/src/assets/icons/secured.svg
 html_source/src/assets/icons/sell.svg
 html_source/src/assets/icons/send-red.svg
 html_source/src/assets/icons/send.svg
+html_source/src/assets/icons/send-tab.svg
 html_source/src/assets/icons/settings.svg
 html_source/src/assets/icons/staking.svg
 html_source/src/assets/icons/time.svg
