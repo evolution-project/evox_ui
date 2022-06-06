@@ -577,13 +577,13 @@ input[type=checkbox].style-checkbox:checked + label:before {
   background-color: #e0e0e0;
 }
 .theme-dark .switch .circle.on {
-  background-color: #4db1ff;
+  background-color: #169c04;
 }
 .theme-gray .switch .circle.on {
-  background-color: #42a5f5;
+  background-color: #169c04;
 }
 .theme-white .switch .circle.on {
-  background-color: #2c95f1;
+  background-color: #169c04;
 }
 .theme-dark .switch .circle.off {
   background-color: #556576;
