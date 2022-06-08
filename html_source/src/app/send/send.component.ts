@@ -188,7 +188,7 @@ export class SendComponent implements OnInit, OnDestroy {
   }
 
   private getWrapInfo() {
-    this.http.get<WrapInfo>('#cosmos')
+    this.http.get<WrapInfo>('#https://wrapped.zano.org/api2/get_wrap_info')
       .pipe(finalize(() => {
         this.isLoading = false;
       }))

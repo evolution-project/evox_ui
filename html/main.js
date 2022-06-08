@@ -3260,10 +3260,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_EXPLORER_TN_TX_URL_PREFIX", function() { return BLOCK_EXPLORER_TN_TX_URL_PREFIX; });
 var MIXIN = 10; // default mixin value
 var RCV_ADDR_QR_SCALE = 1.5; // scale factor for QR code
-var AUDITABLE_WALLET_HELP_PAGE = '#cosmos';
-var CREATE_NEW_WALLET_HELP_PAGE = '#cosmos';
-var LOCKED_BALANCE_HELP_PAGE = '#cosmos';
-var DOWNLOADS_PAGE_URL = '#cosmos';
+var AUDITABLE_WALLET_HELP_PAGE = '#docs.zano.org/docs/auditable-wallets';
+var CREATE_NEW_WALLET_HELP_PAGE = '#docs.zano.org/docs/getting-started-1#section-create-new-wallet';
+var LOCKED_BALANCE_HELP_PAGE = '#docs.zano.org/docs/locked-balance';
+var DOWNLOADS_PAGE_URL = '#zano.org/downloads.html';
 var BLOCK_EXPLORER_TX_URL_PREFIX = 'chain.evolution-network.org/transaction/';
 var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-chain.evolution-network.org/transaction/';
 
@@ -8522,7 +8522,7 @@ var SendComponent = /** @class */ (function () {
     };
     SendComponent.prototype.getWrapInfo = function () {
         var _this = this;
-        this.http.get('#cosmos')
+        this.http.get('#https://wrapped.zano.org/api2/get_wrap_info')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["finalize"])(function () {
             _this.isLoading = false;
         }))
