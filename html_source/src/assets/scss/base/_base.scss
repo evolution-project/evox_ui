@@ -687,14 +687,14 @@ app-sync-modal {
   }
   .modal.select-wallet {
     .ng-select.custom-select .ng-dropdown-panel {
-      border: 1px solid #1f8feb;
+      border: 1px solid #9422ff;
       font-weight: normal;
       font-size: 1.8rem;
       line-height: 2.1rem;
-      background-color: rgba(29, 129, 216, 0.6);
+      background-color: rgba(116, 29, 216, 0.6);
       .ng-dropdown-panel-items {
         .ng-option:not(:last-child) {
-          border-bottom: 1px solid #0c0c3a;
+          border-bottom: 1px solid #240c3a;
         }
         .ng-option {
           border-radius: 0;
