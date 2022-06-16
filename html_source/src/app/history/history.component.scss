@@ -1,13 +1,19 @@
 :host {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .history-wrap {
-  height: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .wrap-table {
   height: 100%;
   overflow-x: hidden;
   overflow-y: overlay;
+  display:flex;
+  flex-direction: column;
   table.history-table {
     tbody {
       font-weight: 500;
@@ -75,6 +81,8 @@
   }
 }
 .pagination-wrapper {
+  display:flex;
+  flex-direction:column;
   margin-right: 1rem;
   .pagination {
     > div {
