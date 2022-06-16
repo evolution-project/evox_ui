@@ -14,9 +14,6 @@
         <ng-container *ngIf="variablesService.currentWallet.alias_available">
           <i class="icon edit" [routerLink]="['/edit-alias']" tooltip="{{ 'WALLET.TOOLTIPS.EDIT_ALIAS' | translate }}"
             placement="bottom-right" tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
-          <i class="icon transfer" [routerLink]="['/transfer-alias']"
-            tooltip="{{ 'WALLET.TOOLTIPS.TRANSFER_ALIAS' | translate }}" placement="right"
-            tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
         </ng-container>
       </div>
     </div>
@@ -28,7 +25,7 @@
           xmlns="http://www.w3.org/2000/svg">
           <path data-target="wallet-dropdown-button"
             d="M0.96875 1.22266C0.96875 1.64258 1.31055 1.96484 1.7207 1.96484L18.4395 1.96484C18.8496 1.96484 19.1816 1.64258 19.1816 1.22266C19.1816 0.8125 18.8496 0.490234 18.4395 0.490234L1.7207 0.490234C1.31055 0.490234 0.96875 0.8125 0.96875 1.22266ZM0.96875 6.0957C0.96875 6.51562 1.31055 6.83789 1.7207 6.83789L18.4395 6.83789C18.8496 6.83789 19.1816 6.51562 19.1816 6.0957C19.1816 5.68555 18.8496 5.36328 18.4395 5.36328L1.7207 5.36328C1.31055 5.36328 0.96875 5.68555 0.96875 6.0957ZM0.96875 10.9687C0.96875 11.3887 1.31055 11.7109 1.7207 11.7109L18.4395 11.7109C18.8496 11.7109 19.1816 11.3887 19.1816 10.9688C19.1816 10.5586 18.8496 10.2363 18.4395 10.2363L1.7207 10.2363C1.31055 10.2363 0.96875 10.5586 0.96875 10.9687ZM7.08203 16.8965L9.24023 20.1289C9.63086 20.7051 10.4609 20.6855 10.8516 20.1289L13.0488 16.8965C13.5566 16.1445 13.2734 15.3535 12.375 15.3633L7.74609 15.3633C6.87695 15.3535 6.61328 16.1836 7.08203 16.8965Z"
-            fill="#1F8FEB" />
+            fill="#9422ff" />
         </svg>
       </i>
     </button>
@@ -92,10 +89,9 @@
   <span [tooltip]="getTooltip()" [placement]="'bottom'" [tooltipClass]="'balance-tooltip'" [delay]="150" [timeout]="0"
     (onHide)="onHideTooltip()">{{variablesService.currentWallet.balance | intToMoney : '3'}}
     {{variablesService.defaultCurrency}}</span>
-  <span>${{variablesService.currentWallet.getMoneyEquivalent(variablesService.moneyEquivalent) | intToMoney | number :
-    '1.2-2'}}</span>
-  <span class="price-percent">{{ variablesService.moneyEquivalentPercent | number : '1.1-2' }}%</span>
-</div>
+    <span>${{variablesService.currentWallet.getMoneyEquivalent(variablesService.moneyEquivalent) | intToMoney | number :
+      '1.2-2'}}</span>
+  </div>
 <div class="tabs">
   <div class="tabs-header">
     <ng-container *ngFor="let tab of tabs; let index = index">

@@ -45,6 +45,7 @@ button {
     font-weight: 500;
     min-width: 20rem;
     border-radius: 2rem;
+    border: 1px solid #441273;
     height: 7rem;
     background-color: $resetButtonBackgroundColor;
     border: 0.4rem solid;
@@ -686,14 +687,14 @@ app-sync-modal {
   }
   .modal.select-wallet {
     .ng-select.custom-select .ng-dropdown-panel {
-      border: 1px solid #1f8feb;
+      border: 1px solid #9422ff;
       font-weight: normal;
       font-size: 1.8rem;
       line-height: 2.1rem;
-      background-color: rgba(29, 129, 216, 0.6);
+      background-color: rgba(116, 29, 216, 0.6);
       .ng-dropdown-panel-items {
         .ng-option:not(:last-child) {
-          border-bottom: 1px solid #0c0c3a;
+          border-bottom: 1px solid #240c3a;
         }
         .ng-option {
           border-radius: 0;
@@ -736,6 +737,7 @@ app-progress-container {
 
 app-open-wallet-modal {
   .modal {
+    box-shadow: 0px 0px 15px 3px rgb(159, 7, 255);
     border-radius: 2rem;
     background: $modalBackground;
     color: $mainTextColor;
