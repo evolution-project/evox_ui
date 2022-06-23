@@ -72,7 +72,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     const spaceSymbolRex = new RegExp(/%20/g);
     const newobj = {};
 
-    const newstring = string.substr(5) // delete evox:;
+    const newstring = string.substr(5) // delete EvoX:;
     newstring.split('&').forEach((string) => {
       const [key, value] = string.split('=');
       newobj[key] = value.replace(qoutesRex, '').replace(spaceSymbolRex, " ").trim();
@@ -103,7 +103,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         lci: '',
         lco: 'World Wide',
         ot: 1,
-        pt: 'Credit cards, BTC, EVOX, ETH',
+        pt: 'Credit cards, BTC, EvoX, ETH',
         t: this.actionData.title || '',
         url: this.actionData.url || this.actionData.img_url || '',
       },

@@ -24,7 +24,7 @@ app-wallet {
     color: $mainTextColor;
     .price-percent {
       &.negative-percent {
-        color: $redTextColor;
+        color: #BEBEBE;
       }
       margin-left: 0.7rem;
       color: $greenTextColor;
@@ -98,7 +98,7 @@ app-history {
       tr {
         .status.send {
           .status-transaction-text {
-            color: $blueTextColor;
+            color: #EB253F;
           }
         }
         .status.received {

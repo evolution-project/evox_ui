@@ -69,7 +69,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Create or open the wallet to start using Evox",
+    "TITLE": "Create or open the wallet to start using EvoX",
     "BUTTON_NEW_WALLET": "Create New Wallet",
     "BUTTON_OPEN_WALLET": "Open Existing Wallet",
     "BUTTON_RESTORE_BACKUP": "Restore from Backup",
@@ -202,6 +202,7 @@
     "LANGUAGE": {
       "TITLE": "Language",
       "EN": "English",
+      "RU": "Russia",
       "FR": "French",
       "DE": "Deutsch",
       "ID": "Indonesian",
@@ -351,12 +352,12 @@
     "SUCCESS_SENT": "Transaction sent",
     "WRAP": {
       "TITLE": "Wrap",
-      "MAIN_TEXT": "This transaction will create wEvox (\"Wrapped Evox\") which will be sent to the specified address on the Ethereum network.",
+      "MAIN_TEXT": "This transaction will create wEvoX (\"Wrapped EvoX\") which will be sent to the specified address on the Ethereum network.",
       "ESTIMATE": "Transaction Estimates",
       "WILL_RECEIVE": "You'll receive:",
       "FEE": "Ethereum Txn Fee:",
-      "EVOX": "EVOX",
-      "wZANO": "wZANO"
+      "EvoX": "EvoX",
+      "wEvoX": "wEvoX"
     },
     "FORM_ERRORS": {
       "ADDRESS_REQUIRED": "Address is required",
@@ -368,7 +369,7 @@
       "FEE_MINIMUM": "Minimum fee: {{fee}}",
       "MAX_LENGTH": "Maximum comment length reached",
       "GREAT_THAN_UNWRAPPED_COINS": "Amount is bigger than ERC20 tokens left available",
-      "LESS_THAN_EVOX_NEEDED": "Too small amount to cover ERC20 fee",
+      "LESS_THAN_EvoX_NEEDED": "Too small amount to cover ERC20 fee",
       "WRAP_INFO_NULL": "failed to request wrap state"
     }
   },
@@ -647,7 +648,7 @@
     "NO_MONEY_REMOVE_OFFER": "There is no fee for deleting an offer, but in order to protect the network against flood transactions you need to have at least {{fee}} {{currency}} in your wallet",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mix-in number is too big for current blockchain state. There are not enough unspent outputs to mix with",
     "TRANSACTION_IS_TO_BIG": "Transaction exceeds network limit, send required amount with multiple transactions",
-    "TRANSFER_ATTEMPT": "There is no connection to Evox network",
+    "TRANSFER_ATTEMPT": "There is no connection to EvoX network",
     "ACCESS_DENIED": "Access denied",
     "TRANSACTION_ERROR": "Error. Transaction not completed.",
     "BAD_ARG": "Invalid argument",
@@ -679,7 +680,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Payment received",
     "MINED": "Mined",
     "LOCKED": "Blocked",
-    "IS_MINIMIZE": "Evox application is minimized to the system tray",
+    "IS_MINIMIZE": "EvoX application is minimized to the system tray",
     "RESTORE": "You can recover it by clicking or using the context menu",
     "TRAY_MENU_SHOW": "Resize",
     "TRAY_MENU_MINIMIZE": "Minimize"

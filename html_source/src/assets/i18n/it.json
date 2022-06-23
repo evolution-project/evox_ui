@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Crea o apri il portafoglio per iniziare a usare Evox",
+    "TITLE": "Crea o apri il portafoglio per iniziare a usare EvoX",
     "BUTTON_NEW_WALLET": "Crea un nuovo portafoglio",
     "BUTTON_OPEN_WALLET": "Apri portafoglio esistente",
     "BUTTON_RESTORE_BACKUP": "Ripristina da backup",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Non c'è alcun costo per eliminare un'offerta ma, per proteggere la rete dalle molte transazioni, devi avere almeno {{fee}} {{currency}} nel tuo portafoglio",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Il numero di Mix-in è troppo grande per lo stato corrente della blockchain. Non ci sono abbastanza output non spesi per mescolare con",
     "TRANSACTION_IS_TO_BIG": "La transazione supera il limite di rete, invia l'importo richiesto con transazioni multiple",
-    "TRANSFER_ATTEMPT": "Non c'è connessione alla rete Evox",
+    "TRANSFER_ATTEMPT": "Non c'è connessione alla rete EvoX",
     "ACCESS_DENIED": "Accesso negato",
     "TRANSACTION_ERROR": "Errore. Transazione non completata.",
     "BAD_ARG": "Argomento non valido",
@@ -585,7 +585,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Pagamento ricevuto",
     "MINED": "Minato",
     "LOCKED": "Bloccato",
-    "IS_MINIMIZE": "L'applicazione Evox è minimizzata nella barra di sistema",
+    "IS_MINIMIZE": "L'applicazione EvoX è minimizzata nella barra di sistema",
     "RESTORE": "Puoi recuperarlo cliccando o utilizzando il menu contestuale",
     "TRAY_MENU_SHOW": "Ridimensiona",
     "TRAY_MENU_MINIMIZE": "Minimizza"

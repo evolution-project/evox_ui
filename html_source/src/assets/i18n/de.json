@@ -63,7 +63,7 @@
     }
   },
   "MAIN": {
-    "TITLE": "Erstellen oder öffnen Sie die Wallet, um Evox zu verwenden",
+    "TITLE": "Erstellen oder öffnen Sie die Wallet, um EvoX zu verwenden",
     "BUTTON_NEW_WALLET": "Neue Wallet erstellen",
     "BUTTON_OPEN_WALLET": "Vorhandene Wallet öffnen",
     "BUTTON_RESTORE_BACKUP": "Aus Backup wiederherstellen",
@@ -554,7 +554,7 @@
     "NO_MONEY_REMOVE_OFFER": "Es gibt keine Gebühr für das Löschen eines Angebots, aber um das Netzwerk vor Spam-Transaktionen zu schützen, müssen Sie mindestens {{fee}} {{currency}} in Ihrer Wallet haben",
     "NOT_ENOUGH_OUTPUTS_TO_MIX": "Mix-in-Nummer ist zu groß für den aktuellen Blockchain-Status. Nicht genügend unverbrauchte outputs zum Mischen",
     "TRANSACTION_IS_TO_BIG": "Transaktion überschreitet das Netzwerk-Limit. Sendet benötigten Betrag mit mehreren Transaktionen.",
-    "TRANSFER_ATTEMPT": "Keine Verbindung zum Evox-Netzwerk",
+    "TRANSFER_ATTEMPT": "Keine Verbindung zum EvoX-Netzwerk",
     "ACCESS_DENIED": "Zugriff verweigert",
     "TRANSACTION_ERROR": "Fehler. Transaktion nicht abgeschlossen.",
     "BAD_ARG": "Ungültiges Argument",
@@ -585,7 +585,7 @@
     "INCOME_TRANSFER_CONFIRMED": "Zahlung erhalten",
     "MINED": "Mined",
     "LOCKED": "Blockiert",
-    "IS_MINIMIZE": "Evox-Anwendung wird auf die Systemleiste minimiert",
+    "IS_MINIMIZE": "EvoX-Anwendung wird auf die Systemleiste minimiert",
     "RESTORE": "Sie können es wiederherstellen, indem Sie auf das Kontextmenü benutzen oder anklicken ",
     "TRAY_MENU_SHOW": "Größe ändern",
     "TRAY_MENU_MINIMIZE": "Minimieren"

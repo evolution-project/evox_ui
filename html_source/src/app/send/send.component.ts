@@ -13,7 +13,7 @@ import { finalize } from 'rxjs/operators';
 interface WrapInfo {
   tx_cost: {
     usd_needed_for_erc20: string;
-    evox_needed_for_erc20: string;
+    EvoX_needed_for_erc20: string;
   };
   unwraped_coins_left: string;
 }
@@ -113,8 +113,8 @@ export class SendComponent implements OnInit, OnDestroy {
         if (bigAmount.isGreaterThan(new BigNumber(this.wrapInfo.unwraped_coins_left))) {
           return { great_than_unwraped_coins: true };
         }
-        if (bigAmount.isLessThan(new BigNumber(this.wrapInfo.tx_cost.evox_needed_for_erc20))) {
-          return { less_than_evox_needed: true };
+        if (bigAmount.isLessThan(new BigNumber(this.wrapInfo.tx_cost.EvoX_needed_for_erc20))) {
+          return { less_than_EvoX_needed: true };
         }
       }
       return null;
@@ -188,7 +188,7 @@ export class SendComponent implements OnInit, OnDestroy {
   }
 
   private getWrapInfo() {
-    this.http.get<WrapInfo>('https://wrapped.zano.org/api2/get_wrap_info')
+    this.http.get<WrapInfo>('#https://wrapped.zano.org/api2/get_wrap_info')
       .pipe(finalize(() => {
         this.isLoading = false;
       }))
@@ -324,7 +324,7 @@ export class SendComponent implements OnInit, OnDestroy {
 
   public getReceivedValue() {
     const amount = this.moneyToInt.transform(this.sendForm.value.amount);
-    const needed = new BigNumber(this.wrapInfo.tx_cost.evox_needed_for_erc20);
+    const needed = new BigNumber(this.wrapInfo.tx_cost.EvoX_needed_for_erc20);
     if (amount && needed) { return (amount as BigNumber).minus(needed); }
     return 0;
   }
