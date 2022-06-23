@@ -202,6 +202,7 @@
     "LANGUAGE": {
       "TITLE": "Language",
       "EN": "English",
+      "RU": "Russia",
       "FR": "French",
       "DE": "Deutsch",
       "ID": "Indonesian",
@@ -355,8 +356,8 @@
       "ESTIMATE": "Transaction Estimates",
       "WILL_RECEIVE": "You'll receive:",
       "FEE": "Ethereum Txn Fee:",
-      "EVOX": "EVOX",
-      "wZANO": "wZANO"
+      "EvoX": "EvoX",
+      "wEvoX": "wEvoX"
     },
     "FORM_ERRORS": {
       "ADDRESS_REQUIRED": "Address is required",
@@ -368,7 +369,7 @@
       "FEE_MINIMUM": "Minimum fee: {{fee}}",
       "MAX_LENGTH": "Maximum comment length reached",
       "GREAT_THAN_UNWRAPPED_COINS": "Amount is bigger than ERC20 tokens left available",
-      "LESS_THAN_EVOX_NEEDED": "Too small amount to cover ERC20 fee",
+      "LESS_THAN_EvoX_NEEDED": "Too small amount to cover ERC20 fee",
       "WRAP_INFO_NULL": "failed to request wrap state"
     }
   },

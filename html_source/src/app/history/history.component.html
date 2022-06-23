@@ -20,16 +20,16 @@
                     tooltip="{{ 'HISTORY.STATUS_TOOLTIP' | translate : {'current': getHeight(item), 'total': 10} }}"
                     placement="bottom-left" tooltipClass="table-tooltip" [delay]="500">
                     <circle stroke-dasharray="100" fill="transparent" stroke-dashoffset="0" cx="50%" cy="50%"
-                      stroke="rgba(31, 143, 235, 0.33)" r="0.7rem" stroke-width="0.3rem">
+                      stroke="rgba(178, 0, 255, 0.33)" r="0.7rem" stroke-width="0.3rem">
                     </circle>
                     <circle class="progress-circle" cx="50%" cy="50%"
-                      [style.stroke]="item.is_income ? '#16d1d6' : '#1f8feb'" r="0.7rem" fill="transparent"
+                      [style.stroke]="item.is_income ? '#E111D6' : '#AC8FEB'" r="0.7rem" fill="transparent"
                       stroke-width="0.3rem" stroke-dasharray="4.5rem" stroke-dashoffset="4.5rem" stroke-linecap="round"
                       [style.stroke-dashoffset]="strokeSize(item)"></circle>
                   </svg>
                 </ng-container>
                 <ng-container *ngIf="getHeight(item) === 10">
-                  <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send.svg" alt="">
+                  <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send-tab.svg" alt="">
                   <img *ngIf="item.is_income" class="status-transaction" src="./assets/icons/receive.svg" alt="">
                 </ng-container>
                 <span class="status-transaction-text">{{ (item.is_income ? 'HISTORY.RECEIVED' : 'HISTORY.SEND') |
