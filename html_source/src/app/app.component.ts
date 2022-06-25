@@ -604,25 +604,42 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   getMoneyEquivalent() {
-    this.http.get('https://api.coingecko.com/api/v3/ping').subscribe(
+    var status = function (response) {
+      if (response.status !== 200) {
+        return Promise.reject(new Error(response.statusText))
+        }
+      return Promise.resolve(response)
+      }
+      var json = function (response) {
+        return response.json()
+      }
+    this.http.get("https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD").subscribe(
       () => {
-        this.http.get('https://api.coingecko.com/api/v3/simple/price?ids=evolution-network&vs_currencies=usd&include_24hr_change=true').subscribe(
+        this.http.get('https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD').subscribe(
           data => {
-            this.variablesService.moneyEquivalent = data['evolution-network']['usd'];
-            this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
+      this.variablesService.moneyEquivalent = data['data'][0]['price'];
+    })})
+    /*.catch(function (error) {
+      console.log('error', error)}*/
+    /*this.http.get('https://api.livecoinwatch.com/coins/single').subscribe(
+      () => {
+        this.http.get('https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD').subscribe(
+          data => {
+            this.variablesService.moneyEquivalent = data ['data']['price'];
+            //this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
           },
           error => {
-            console.warn('api.coingecko.com price error: ', error);
+            console.warn('api.livecoinwatch.com price error: ', error);
           }
         );
       },
       error => {
-        console.warn('api.coingecko.com error: ', error);
+        console.warn('api.livecoinwatch.com error: ', error);
         setTimeout(() => {
           this.getMoneyEquivalent();
         }, 30000);
       }
-    )
+    )*/
   }
 
   getAliases() {

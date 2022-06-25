@@ -34,7 +34,9 @@
           <span class="balance"> {{variablesService.defaultCurrency}}</span>
         </div>
         <div class="sidebar-account-row account-price">
-          <span class="price"></span>
+          <span class="price">${{wallet.getMoneyEquivalent(variablesService.moneyEquivalent) |
+            intToMoney | number :
+            '1.2-2'}}</span>
           <span class="price-percent"></span>
         </div>
 
