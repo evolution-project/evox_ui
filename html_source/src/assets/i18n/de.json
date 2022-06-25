@@ -151,7 +151,8 @@
       "75": "75% Rahmen",
       "100": "100% Rahmen",
       "125": "125% Rahmen",
-      "150": "150% Rahmen"
+      "150": "150% Rahmen",
+      "200": "200% Rahmen"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Master-Passwort aktualisieren",

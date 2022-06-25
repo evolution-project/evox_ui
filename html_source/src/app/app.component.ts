@@ -553,7 +553,7 @@ export class AppComponent implements OnInit, OnDestroy {
               this.variablesService.settings[key] = data[key];
             }
           }
-          if (this.variablesService.settings.hasOwnProperty('scale') && [6, 8, 10, 12].indexOf(this.variablesService.settings.scale) !== -1) {
+          if (this.variablesService.settings.hasOwnProperty('scale') && [6, 8, 10, 12, 14].indexOf(this.variablesService.settings.scale) !== -1) {
             const width = this.utilsService.getMinWidthByScale(this.variablesService.settings.scale);
             const app = document.documentElement.querySelector('app-root');
             this.renderer.setStyle(app, 'min-width', width + 'px');

@@ -151,7 +151,8 @@
       "75": "75% escala",
       "100": "100% escala",
       "125": "125% escala",
-      "150": "150% escala"
+      "150": "150% escala",
+      "200": "200% escala"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Atualizar password mestra",
