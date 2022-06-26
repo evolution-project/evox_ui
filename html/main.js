@@ -4305,7 +4305,7 @@ var AppComponent = /** @class */ (function () {
                             _this.variablesService.settings[key] = data[key];
                         }
                     }
-                    if (_this.variablesService.settings.hasOwnProperty('scale') && [6, 8, 10, 12, 14].indexOf(_this.variablesService.settings.scale) !== -1) {
+                    if (_this.variablesService.settings.hasOwnProperty('scale') && [6, 8, 9, 10, 11, 12, 13, 14].indexOf(_this.variablesService.settings.scale) !== -1) {
                         var width = _this.utilsService.getMinWidthByScale(_this.variablesService.settings.scale);
                         var app = document.documentElement.querySelector('app-root');
                         _this.renderer.setStyle(app, 'min-width', width + 'px');
@@ -8821,16 +8821,28 @@ var SettingsComponent = /** @class */ (function () {
                 name: 'SETTINGS.SCALE.100'
             },
             {
-                id: 10,
+                id: 9,
                 name: 'SETTINGS.SCALE.125'
             },
             {
-                id: 12,
+                id: 10,
                 name: 'SETTINGS.SCALE.150'
             },
             {
-                id: 14,
+                id: 11,
+                name: 'SETTINGS.SCALE.175'
+            },
+            {
+                id: 12,
                 name: 'SETTINGS.SCALE.200'
+            },
+            {
+                id: 13,
+                name: 'SETTINGS.SCALE.225'
+            },
+            {
+                id: 14,
+                name: 'SETTINGS.SCALE.250'
             }
         ];
         this.appLogOptions = [
