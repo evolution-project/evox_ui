@@ -81,6 +81,10 @@ export class SettingsComponent implements OnInit {
     {
       id: 12,
       name: 'SETTINGS.SCALE.150'
+    },
+    {
+      id: 14,
+      name: 'SETTINGS.SCALE.200'
     }
   ];
   appLogOptions = [
