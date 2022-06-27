@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private utilsService: UtilsService,
     private store: Store
   ) {
-    translate.addLangs(['en', 'fr', 'de', 'it', 'pt']);
+    translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru']);
     translate.setDefaultLang('en');
     // const browserLang = translate.getBrowserLang();
     // translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');

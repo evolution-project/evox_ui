@@ -3529,21 +3529,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/messages/messages.component.ts");
 /* harmony import */ var _typing_message_typing_message_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./typing-message/typing-message.component */ "./src/app/typing-message/typing-message.component.ts");
 /* harmony import */ var _staking_staking_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./staking/staking.component */ "./src/app/staking/staking.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./create-wallet/create-wallet.component */ "./src/app/create-wallet/create-wallet.component.ts");
-/* harmony import */ var _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./open-wallet/open-wallet.component */ "./src/app/open-wallet/open-wallet.component.ts");
-/* harmony import */ var _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./restore-wallet/restore-wallet.component */ "./src/app/restore-wallet/restore-wallet.component.ts");
-/* harmony import */ var _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./seed-phrase/seed-phrase.component */ "./src/app/seed-phrase/seed-phrase.component.ts");
-/* harmony import */ var _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./wallet-details/wallet-details.component */ "./src/app/wallet-details/wallet-details.component.ts");
-/* harmony import */ var _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assign-alias/assign-alias.component */ "./src/app/assign-alias/assign-alias.component.ts");
-/* harmony import */ var _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./edit-alias/edit-alias.component */ "./src/app/edit-alias/edit-alias.component.ts");
-/* harmony import */ var _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./transfer-alias/transfer-alias.component */ "./src/app/transfer-alias/transfer-alias.component.ts");
-/* harmony import */ var _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./contacts/contacts.component */ "./src/app/contacts/contacts.component.ts");
-/* harmony import */ var _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./add-contacts/add-contacts.component */ "./src/app/add-contacts/add-contacts.component.ts");
-/* harmony import */ var _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./contact-send/contact-send.component */ "./src/app/contact-send/contact-send.component.ts");
-/* harmony import */ var _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./export-import/export-import.component */ "./src/app/export-import/export-import.component.ts");
-/* harmony import */ var _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./deeplink/deeplink.component */ "./src/app/deeplink/deeplink.component.ts");
-/* harmony import */ var _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./contracts/contracts-tab/contracts-tab.component */ "./src/app/contracts/contracts-tab/contracts-tab.component.ts");
+/* harmony import */ var _price_price_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./price/price.component */ "./src/app/price/price.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./create-wallet/create-wallet.component */ "./src/app/create-wallet/create-wallet.component.ts");
+/* harmony import */ var _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./open-wallet/open-wallet.component */ "./src/app/open-wallet/open-wallet.component.ts");
+/* harmony import */ var _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./restore-wallet/restore-wallet.component */ "./src/app/restore-wallet/restore-wallet.component.ts");
+/* harmony import */ var _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./seed-phrase/seed-phrase.component */ "./src/app/seed-phrase/seed-phrase.component.ts");
+/* harmony import */ var _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./wallet-details/wallet-details.component */ "./src/app/wallet-details/wallet-details.component.ts");
+/* harmony import */ var _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./assign-alias/assign-alias.component */ "./src/app/assign-alias/assign-alias.component.ts");
+/* harmony import */ var _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./edit-alias/edit-alias.component */ "./src/app/edit-alias/edit-alias.component.ts");
+/* harmony import */ var _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./transfer-alias/transfer-alias.component */ "./src/app/transfer-alias/transfer-alias.component.ts");
+/* harmony import */ var _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./contacts/contacts.component */ "./src/app/contacts/contacts.component.ts");
+/* harmony import */ var _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./add-contacts/add-contacts.component */ "./src/app/add-contacts/add-contacts.component.ts");
+/* harmony import */ var _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./contact-send/contact-send.component */ "./src/app/contact-send/contact-send.component.ts");
+/* harmony import */ var _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./export-import/export-import.component */ "./src/app/export-import/export-import.component.ts");
+/* harmony import */ var _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./deeplink/deeplink.component */ "./src/app/deeplink/deeplink.component.ts");
+/* harmony import */ var _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./contracts/contracts-tab/contracts-tab.component */ "./src/app/contracts/contracts-tab/contracts-tab.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3553,6 +3554,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // Components
+
 
 
 
@@ -3610,7 +3612,7 @@ var routes = [
             },
             {
                 path: 'contracts',
-                component: _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_27__["ContractsTabComponent"],
+                component: _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_28__["ContractsTabComponent"],
                 children: [
                     {
                         path: '',
@@ -3642,6 +3644,10 @@ var routes = [
                 component: _staking_staking_component__WEBPACK_IMPORTED_MODULE_12__["StakingComponent"]
             },
             {
+                path: 'price',
+                component: _price_price_component__WEBPACK_IMPORTED_MODULE_13__["PriceComponent"]
+            },
+            {
                 path: '',
                 redirectTo: 'history',
                 pathMatch: 'full'
@@ -3650,63 +3656,63 @@ var routes = [
     },
     {
         path: 'create',
-        component: _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_14__["CreateWalletComponent"]
+        component: _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_15__["CreateWalletComponent"]
     },
     {
         path: 'open',
-        component: _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_15__["OpenWalletComponent"]
+        component: _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_16__["OpenWalletComponent"]
     },
     {
         path: 'restore',
-        component: _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_16__["RestoreWalletComponent"]
+        component: _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_17__["RestoreWalletComponent"]
     },
     {
         path: 'seed-phrase',
-        component: _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_17__["SeedPhraseComponent"]
+        component: _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_18__["SeedPhraseComponent"]
     },
     {
         path: 'details',
-        component: _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_18__["WalletDetailsComponent"]
+        component: _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_19__["WalletDetailsComponent"]
     },
     {
         path: 'assign-alias',
-        component: _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_19__["AssignAliasComponent"]
+        component: _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_20__["AssignAliasComponent"]
     },
     {
         path: 'edit-alias',
-        component: _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_20__["EditAliasComponent"]
+        component: _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_21__["EditAliasComponent"]
     },
     {
         path: 'transfer-alias',
-        component: _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_21__["TransferAliasComponent"]
+        component: _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_22__["TransferAliasComponent"]
     },
     {
         path: 'settings',
-        component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_13__["SettingsComponent"]
+        component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_14__["SettingsComponent"]
     },
     {
         path: 'contacts',
-        component: _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_22__["ContactsComponent"]
+        component: _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_23__["ContactsComponent"]
     },
     {
         path: 'add-contacts',
-        component: _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_23__["AddContactsComponent"]
+        component: _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_24__["AddContactsComponent"]
     },
     {
         path: 'edit-contacts/:id',
-        component: _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_23__["AddContactsComponent"]
+        component: _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_24__["AddContactsComponent"]
     },
     {
         path: 'contact-send/:id',
-        component: _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_24__["ContactSendComponent"]
+        component: _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_25__["ContactSendComponent"]
     },
     {
         path: 'import',
-        component: _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_25__["ExportImportComponent"]
+        component: _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_26__["ExportImportComponent"]
     },
     {
         path: 'deeplink',
-        component: _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_26__["DeeplinkComponent"]
+        component: _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_27__["DeeplinkComponent"]
     },
     {
         path: '',
@@ -3737,7 +3743,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-sidebar *ngIf=\"variablesService.appLogin\"></app-sidebar>\r\n\r\n<div class=\"app-content scrolled-content\">\r\n  <router-outlet *ngIf=\"[0, 1, 2, 6].indexOf(variablesService.daemon_state) !== -1\"></router-outlet>\r\n  <div class=\"preloader\" *ngIf=\"[3, 4, 5].indexOf(variablesService.daemon_state) !== -1\">\r\n    <span *ngIf=\"variablesService.daemon_state === 3\">{{ 'SIDEBAR.SYNCHRONIZATION.LOADING' | translate }}</span>\r\n    <span *ngIf=\"variablesService.daemon_state === 4\">{{ 'SIDEBAR.SYNCHRONIZATION.ERROR' | translate }}</span>\r\n    <span *ngIf=\"variablesService.daemon_state === 5\">{{ 'SIDEBAR.SYNCHRONIZATION.COMPLETE' | translate }}</span>\r\n    <span class=\"loading-bar\"></span>\r\n  </div>\r\n</div>\r\n<context-menu #allContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuCopy($event.item)\">{{ 'CONTEXT_MENU.COPY' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuPaste($event.item)\">{{ 'CONTEXT_MENU.PASTE' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuSelect($event.item)\">{{ 'CONTEXT_MENU.SELECT' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n<context-menu #onlyCopyContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuOnlyCopy($event.item)\">{{ 'CONTEXT_MENU.COPY' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n<context-menu #pasteSelectContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuPaste($event.item)\">{{ 'CONTEXT_MENU.PASTE' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuSelect($event.item)\">{{ 'CONTEXT_MENU.SELECT' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n\r\n<app-open-wallet-modal *ngIf=\"needOpenWallets.length\" [wallets]=\"needOpenWallets\"></app-open-wallet-modal>\r\n"
+module.exports = "<app-sidebar *ngIf=\"variablesService.appLogin\"></app-sidebar>\r\n\r\n<div class=\"app-content scrolled-content\">\r\n  <router-outlet *ngIf=\"[0, 1, 2, 6].indexOf(variablesService.daemon_state) !== -1\"></router-outlet>\r\n  <div class=\"preloader\" *ngIf=\"[3, 4, 5].indexOf(variablesService.daemon_state) !== -1\">\r\n    <span *ngIf=\"variablesService.daemon_state === 3\">{{ 'SIDEBAR.SYNCHRONIZATION.LOADING' | translate }}</span>\r\n    <span *ngIf=\"variablesService.daemon_state === 4\">{{ 'SIDEBAR.SYNCHRONIZATION.ERROR' | translate }}</span>\r\n    <span *ngIf=\"variablesService.daemon_state === 5\">{{ 'SIDEBAR.SYNCHRONIZATION.COMPLETE' | translate }}</span>\r\n    <span class=\"loading-bar\"></span>\r\n  </div>\r\n</div>\r\n<context-menu #allContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuCopy($event.item)\">{{ 'CONTEXT_MENU.COPY' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuPaste($event.item)\">{{ 'CONTEXT_MENU.PASTE' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuSelect($event.item)\">{{ 'CONTEXT_MENU.SELECT' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n<context-menu #onlyCopyContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuOnlyCopy($event.item)\">{{ 'CONTEXT_MENU.COPY' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n<context-menu #pasteSelectContextMenu>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuPaste($event.item)\">{{ 'CONTEXT_MENU.PASTE' | translate }}</ng-template>\r\n  <ng-template contextMenuItem (execute)=\"contextMenuSelect($event.item)\">{{ 'CONTEXT_MENU.SELECT' | translate }}</ng-template>\r\n</context-menu>\r\n\r\n\r\n<app-open-wallet-modal *ngIf=\"needOpenWallets.length\" [wallets]=\"needOpenWallets\"></app-open-wallet-modal>\r\n\r\n"
 
 /***/ }),
 
@@ -3814,7 +3820,7 @@ var AppComponent = /** @class */ (function () {
         this.firstOnlineState = false;
         this.translateUsed = false;
         this.needOpenWallets = [];
-        translate.addLangs(['en', 'fr', 'de', 'it', 'pt']);
+        translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru']);
         translate.setDefaultLang('en');
         // const browserLang = translate.getBrowserLang();
         // translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
@@ -4569,76 +4575,88 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
-/* harmony import */ var _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./create-wallet/create-wallet.component */ "./src/app/create-wallet/create-wallet.component.ts");
-/* harmony import */ var _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./open-wallet/open-wallet.component */ "./src/app/open-wallet/open-wallet.component.ts");
-/* harmony import */ var _open_wallet_modal_open_wallet_modal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./open-wallet-modal/open-wallet-modal.component */ "./src/app/open-wallet-modal/open-wallet-modal.component.ts");
-/* harmony import */ var _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./restore-wallet/restore-wallet.component */ "./src/app/restore-wallet/restore-wallet.component.ts");
-/* harmony import */ var _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./seed-phrase/seed-phrase.component */ "./src/app/seed-phrase/seed-phrase.component.ts");
-/* harmony import */ var _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./wallet-details/wallet-details.component */ "./src/app/wallet-details/wallet-details.component.ts");
-/* harmony import */ var _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./assign-alias/assign-alias.component */ "./src/app/assign-alias/assign-alias.component.ts");
-/* harmony import */ var _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./edit-alias/edit-alias.component */ "./src/app/edit-alias/edit-alias.component.ts");
-/* harmony import */ var _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./transfer-alias/transfer-alias.component */ "./src/app/transfer-alias/transfer-alias.component.ts");
-/* harmony import */ var _wallet_wallet_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./wallet/wallet.component */ "./src/app/wallet/wallet.component.ts");
-/* harmony import */ var _send_send_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./send/send.component */ "./src/app/send/send.component.ts");
-/* harmony import */ var _receive_receive_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./receive/receive.component */ "./src/app/receive/receive.component.ts");
-/* harmony import */ var _history_history_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./history/history.component */ "./src/app/history/history.component.ts");
-/* harmony import */ var _contracts_contracts_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./contracts/contracts.component */ "./src/app/contracts/contracts.component.ts");
-/* harmony import */ var _purchase_purchase_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./purchase/purchase.component */ "./src/app/purchase/purchase.component.ts");
-/* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/messages/messages.component.ts");
-/* harmony import */ var _typing_message_typing_message_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./typing-message/typing-message.component */ "./src/app/typing-message/typing-message.component.ts");
-/* harmony import */ var _staking_staking_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./staking/staking.component */ "./src/app/staking/staking.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/fesm5/ngx-translate-http-loader.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @ng-select/ng-select */ "./node_modules/@ng-select/ng-select/fesm5/ng-select.js");
-/* harmony import */ var _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./_helpers/services/backend.service */ "./src/app/_helpers/services/backend.service.ts");
-/* harmony import */ var _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./_helpers/services/modal.service */ "./src/app/_helpers/services/modal.service.ts");
-/* harmony import */ var _helpers_services_pagination_store__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./_helpers/services/pagination.store */ "./src/app/_helpers/services/pagination.store.ts");
-/* harmony import */ var store__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! store */ "./src/store.ts");
-/* harmony import */ var _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./_helpers/pipes/money-to-int.pipe */ "./src/app/_helpers/pipes/money-to-int.pipe.ts");
-/* harmony import */ var _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./_helpers/pipes/int-to-money.pipe */ "./src/app/_helpers/pipes/int-to-money.pipe.ts");
-/* harmony import */ var _helpers_pipes_history_type_messages_pipe__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./_helpers/pipes/history-type-messages.pipe */ "./src/app/_helpers/pipes/history-type-messages.pipe.ts");
-/* harmony import */ var _helpers_pipes_contract_status_messages_pipe__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./_helpers/pipes/contract-status-messages.pipe */ "./src/app/_helpers/pipes/contract-status-messages.pipe.ts");
-/* harmony import */ var _helpers_pipes_contract_time_left_pipe__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./_helpers/pipes/contract-time-left.pipe */ "./src/app/_helpers/pipes/contract-time-left.pipe.ts");
-/* harmony import */ var _helpers_pipes_safe_html_pipe__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./_helpers/pipes/safe-html.pipe */ "./src/app/_helpers/pipes/safe-html.pipe.ts");
-/* harmony import */ var _helpers_directives_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./_helpers/directives/tooltip.directive */ "./src/app/_helpers/directives/tooltip.directive.ts");
-/* harmony import */ var _helpers_directives_input_validate_input_validate_directive__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./_helpers/directives/input-validate/input-validate.directive */ "./src/app/_helpers/directives/input-validate/input-validate.directive.ts");
-/* harmony import */ var _helpers_directives_staking_switch_staking_switch_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./_helpers/directives/staking-switch/staking-switch.component */ "./src/app/_helpers/directives/staking-switch/staking-switch.component.ts");
-/* harmony import */ var _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./_helpers/modals/modal-container/modal-container.component */ "./src/app/_helpers/modals/modal-container/modal-container.component.ts");
-/* harmony import */ var _helpers_directives_transaction_details_transaction_details_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./_helpers/directives/transaction-details/transaction-details.component */ "./src/app/_helpers/directives/transaction-details/transaction-details.component.ts");
-/* harmony import */ var ngx_contextmenu__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ngx-contextmenu */ "./node_modules/ngx-contextmenu/fesm5/ngx-contextmenu.js");
-/* harmony import */ var angular_highcharts__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! angular-highcharts */ "./node_modules/angular-highcharts/fesm5/angular-highcharts.js");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
-/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_48___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_48__);
-/* harmony import */ var highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! highcharts/modules/exporting.src */ "./node_modules/highcharts/modules/exporting.src.js");
-/* harmony import */ var highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_49___default = /*#__PURE__*/__webpack_require__.n(highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_49__);
-/* harmony import */ var _helpers_directives_progress_container_progress_container_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./_helpers/directives/progress-container/progress-container.component */ "./src/app/_helpers/directives/progress-container/progress-container.component.ts");
-/* harmony import */ var _helpers_directives_input_disable_selection_input_disable_selection_directive__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./_helpers/directives/input-disable-selection/input-disable-selection.directive */ "./src/app/_helpers/directives/input-disable-selection/input-disable-selection.directive.ts");
-/* harmony import */ var _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./send-modal/send-modal.component */ "./src/app/send-modal/send-modal.component.ts");
-/* harmony import */ var _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./contacts/contacts.component */ "./src/app/contacts/contacts.component.ts");
-/* harmony import */ var _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./add-contacts/add-contacts.component */ "./src/app/add-contacts/add-contacts.component.ts");
-/* harmony import */ var _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./contact-send/contact-send.component */ "./src/app/contact-send/contact-send.component.ts");
-/* harmony import */ var _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./export-import/export-import.component */ "./src/app/export-import/export-import.component.ts");
-/* harmony import */ var _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./_helpers/modals/confirm-modal/confirm-modal.component */ "./src/app/_helpers/modals/confirm-modal/confirm-modal.component.ts");
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! @angular/cdk/drag-drop */ "./node_modules/@angular/cdk/esm5/drag-drop.es5.js");
-/* harmony import */ var ngx_papaparse__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ngx-papaparse */ "./node_modules/ngx-papaparse/fesm5/ngx-papaparse.js");
-/* harmony import */ var _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./_helpers/modals/export-history-modal/export-history-modal.component */ "./src/app/_helpers/modals/export-history-modal/export-history-modal.component.ts");
-/* harmony import */ var cdk_drag_scroll__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! cdk-drag-scroll */ "./node_modules/cdk-drag-scroll/fesm5/cdk-drag-scroll.js");
-/* harmony import */ var _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./deeplink/deeplink.component */ "./src/app/deeplink/deeplink.component.ts");
-/* harmony import */ var _helpers_modals_sync_modal_sync_modal_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./_helpers/modals/sync-modal/sync-modal.component */ "./src/app/_helpers/modals/sync-modal/sync-modal.component.ts");
-/* harmony import */ var _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./contracts/contracts-tab/contracts-tab.component */ "./src/app/contracts/contracts-tab/contracts-tab.component.ts");
+/* harmony import */ var _price_muscleman_muscle_widget_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./price/muscleman/muscle-widget.module */ "./src/app/price/muscleman/muscle-widget.module.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm5/select.es5.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sidebar/sidebar.component */ "./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./create-wallet/create-wallet.component */ "./src/app/create-wallet/create-wallet.component.ts");
+/* harmony import */ var _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./open-wallet/open-wallet.component */ "./src/app/open-wallet/open-wallet.component.ts");
+/* harmony import */ var _open_wallet_modal_open_wallet_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./open-wallet-modal/open-wallet-modal.component */ "./src/app/open-wallet-modal/open-wallet-modal.component.ts");
+/* harmony import */ var _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./restore-wallet/restore-wallet.component */ "./src/app/restore-wallet/restore-wallet.component.ts");
+/* harmony import */ var _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./seed-phrase/seed-phrase.component */ "./src/app/seed-phrase/seed-phrase.component.ts");
+/* harmony import */ var _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./wallet-details/wallet-details.component */ "./src/app/wallet-details/wallet-details.component.ts");
+/* harmony import */ var _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assign-alias/assign-alias.component */ "./src/app/assign-alias/assign-alias.component.ts");
+/* harmony import */ var _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./edit-alias/edit-alias.component */ "./src/app/edit-alias/edit-alias.component.ts");
+/* harmony import */ var _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./transfer-alias/transfer-alias.component */ "./src/app/transfer-alias/transfer-alias.component.ts");
+/* harmony import */ var _wallet_wallet_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./wallet/wallet.component */ "./src/app/wallet/wallet.component.ts");
+/* harmony import */ var _send_send_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./send/send.component */ "./src/app/send/send.component.ts");
+/* harmony import */ var _receive_receive_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./receive/receive.component */ "./src/app/receive/receive.component.ts");
+/* harmony import */ var _history_history_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./history/history.component */ "./src/app/history/history.component.ts");
+/* harmony import */ var _price_price_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./price/price.component */ "./src/app/price/price.component.ts");
+/* harmony import */ var _contracts_contracts_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./contracts/contracts.component */ "./src/app/contracts/contracts.component.ts");
+/* harmony import */ var _purchase_purchase_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./purchase/purchase.component */ "./src/app/purchase/purchase.component.ts");
+/* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/messages/messages.component.ts");
+/* harmony import */ var _typing_message_typing_message_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./typing-message/typing-message.component */ "./src/app/typing-message/typing-message.component.ts");
+/* harmony import */ var _staking_staking_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./staking/staking.component */ "./src/app/staking/staking.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
+/* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/fesm5/ngx-translate-http-loader.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @ng-select/ng-select */ "./node_modules/@ng-select/ng-select/fesm5/ng-select.js");
+/* harmony import */ var _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./_helpers/services/backend.service */ "./src/app/_helpers/services/backend.service.ts");
+/* harmony import */ var _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./_helpers/services/modal.service */ "./src/app/_helpers/services/modal.service.ts");
+/* harmony import */ var _helpers_services_pagination_store__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./_helpers/services/pagination.store */ "./src/app/_helpers/services/pagination.store.ts");
+/* harmony import */ var store__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! store */ "./src/store.ts");
+/* harmony import */ var _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./_helpers/pipes/money-to-int.pipe */ "./src/app/_helpers/pipes/money-to-int.pipe.ts");
+/* harmony import */ var _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./_helpers/pipes/int-to-money.pipe */ "./src/app/_helpers/pipes/int-to-money.pipe.ts");
+/* harmony import */ var _helpers_pipes_history_type_messages_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./_helpers/pipes/history-type-messages.pipe */ "./src/app/_helpers/pipes/history-type-messages.pipe.ts");
+/* harmony import */ var _helpers_pipes_contract_status_messages_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./_helpers/pipes/contract-status-messages.pipe */ "./src/app/_helpers/pipes/contract-status-messages.pipe.ts");
+/* harmony import */ var _helpers_pipes_contract_time_left_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./_helpers/pipes/contract-time-left.pipe */ "./src/app/_helpers/pipes/contract-time-left.pipe.ts");
+/* harmony import */ var _helpers_pipes_safe_html_pipe__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./_helpers/pipes/safe-html.pipe */ "./src/app/_helpers/pipes/safe-html.pipe.ts");
+/* harmony import */ var _helpers_directives_tooltip_directive__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./_helpers/directives/tooltip.directive */ "./src/app/_helpers/directives/tooltip.directive.ts");
+/* harmony import */ var _helpers_directives_input_validate_input_validate_directive__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./_helpers/directives/input-validate/input-validate.directive */ "./src/app/_helpers/directives/input-validate/input-validate.directive.ts");
+/* harmony import */ var _helpers_directives_staking_switch_staking_switch_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./_helpers/directives/staking-switch/staking-switch.component */ "./src/app/_helpers/directives/staking-switch/staking-switch.component.ts");
+/* harmony import */ var _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./_helpers/modals/modal-container/modal-container.component */ "./src/app/_helpers/modals/modal-container/modal-container.component.ts");
+/* harmony import */ var _helpers_directives_transaction_details_transaction_details_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./_helpers/directives/transaction-details/transaction-details.component */ "./src/app/_helpers/directives/transaction-details/transaction-details.component.ts");
+/* harmony import */ var ngx_contextmenu__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ngx-contextmenu */ "./node_modules/ngx-contextmenu/fesm5/ngx-contextmenu.js");
+/* harmony import */ var angular_highcharts__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! angular-highcharts */ "./node_modules/angular-highcharts/fesm5/angular-highcharts.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! highcharts */ "./node_modules/highcharts/highcharts.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_54___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_54__);
+/* harmony import */ var highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! highcharts/modules/exporting.src */ "./node_modules/highcharts/modules/exporting.src.js");
+/* harmony import */ var highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_55___default = /*#__PURE__*/__webpack_require__.n(highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_55__);
+/* harmony import */ var _helpers_directives_progress_container_progress_container_component__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./_helpers/directives/progress-container/progress-container.component */ "./src/app/_helpers/directives/progress-container/progress-container.component.ts");
+/* harmony import */ var _helpers_directives_input_disable_selection_input_disable_selection_directive__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./_helpers/directives/input-disable-selection/input-disable-selection.directive */ "./src/app/_helpers/directives/input-disable-selection/input-disable-selection.directive.ts");
+/* harmony import */ var _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./send-modal/send-modal.component */ "./src/app/send-modal/send-modal.component.ts");
+/* harmony import */ var _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./contacts/contacts.component */ "./src/app/contacts/contacts.component.ts");
+/* harmony import */ var _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./add-contacts/add-contacts.component */ "./src/app/add-contacts/add-contacts.component.ts");
+/* harmony import */ var _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./contact-send/contact-send.component */ "./src/app/contact-send/contact-send.component.ts");
+/* harmony import */ var _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./export-import/export-import.component */ "./src/app/export-import/export-import.component.ts");
+/* harmony import */ var _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./_helpers/modals/confirm-modal/confirm-modal.component */ "./src/app/_helpers/modals/confirm-modal/confirm-modal.component.ts");
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! @angular/cdk/drag-drop */ "./node_modules/@angular/cdk/esm5/drag-drop.es5.js");
+/* harmony import */ var ngx_papaparse__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ngx-papaparse */ "./node_modules/ngx-papaparse/fesm5/ngx-papaparse.js");
+/* harmony import */ var _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./_helpers/modals/export-history-modal/export-history-modal.component */ "./src/app/_helpers/modals/export-history-modal/export-history-modal.component.ts");
+/* harmony import */ var cdk_drag_scroll__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! cdk-drag-scroll */ "./node_modules/cdk-drag-scroll/fesm5/cdk-drag-scroll.js");
+/* harmony import */ var _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! ./deeplink/deeplink.component */ "./src/app/deeplink/deeplink.component.ts");
+/* harmony import */ var _helpers_modals_sync_modal_sync_modal_component__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! ./_helpers/modals/sync-modal/sync-modal.component */ "./src/app/_helpers/modals/sync-modal/sync-modal.component.ts");
+/* harmony import */ var _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! ./contracts/contracts-tab/contracts-tab.component */ "./src/app/contracts/contracts-tab/contracts-tab.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
 
 
 
@@ -4709,19 +4727,19 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 function HttpLoaderFactory(httpClient) {
-    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_28__["TranslateHttpLoader"](httpClient, './assets/i18n/', '.json');
+    return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_34__["TranslateHttpLoader"](httpClient, './assets/i18n/', '.json');
 }
 // import * as more from 'highcharts/highcharts-more.src';
 // import * as exporting from 'highcharts/modules/exporting.src';
 // import * as highstock from 'highcharts/modules/stock.src';
 function highchartsFactory() {
     // Default options.
-    highcharts__WEBPACK_IMPORTED_MODULE_48__["setOptions"]({
+    highcharts__WEBPACK_IMPORTED_MODULE_54__["setOptions"]({
         time: {
             useUTC: false
         }
     });
-    return [highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_49___default.a];
+    return [highcharts_modules_exporting_src__WEBPACK_IMPORTED_MODULE_55___default.a];
 }
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -4729,90 +4747,99 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_5__["SettingsComponent"],
-                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_6__["SidebarComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_7__["MainComponent"],
-                _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_8__["CreateWalletComponent"],
-                _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_9__["OpenWalletComponent"],
-                _open_wallet_modal_open_wallet_modal_component__WEBPACK_IMPORTED_MODULE_10__["OpenWalletModalComponent"],
-                _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_11__["RestoreWalletComponent"],
-                _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_12__["SeedPhraseComponent"],
-                _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_13__["WalletDetailsComponent"],
-                _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_14__["AssignAliasComponent"],
-                _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_15__["EditAliasComponent"],
-                _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_16__["TransferAliasComponent"],
-                _wallet_wallet_component__WEBPACK_IMPORTED_MODULE_17__["WalletComponent"],
-                _send_send_component__WEBPACK_IMPORTED_MODULE_18__["SendComponent"],
-                _receive_receive_component__WEBPACK_IMPORTED_MODULE_19__["ReceiveComponent"],
-                _history_history_component__WEBPACK_IMPORTED_MODULE_20__["HistoryComponent"],
-                _contracts_contracts_component__WEBPACK_IMPORTED_MODULE_21__["ContractsComponent"],
-                _purchase_purchase_component__WEBPACK_IMPORTED_MODULE_22__["PurchaseComponent"],
-                _messages_messages_component__WEBPACK_IMPORTED_MODULE_23__["MessagesComponent"],
-                _staking_staking_component__WEBPACK_IMPORTED_MODULE_25__["StakingComponent"],
-                _typing_message_typing_message_component__WEBPACK_IMPORTED_MODULE_24__["TypingMessageComponent"],
-                _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_35__["MoneyToIntPipe"],
-                _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_36__["IntToMoneyPipe"],
-                _helpers_directives_staking_switch_staking_switch_component__WEBPACK_IMPORTED_MODULE_43__["StakingSwitchComponent"],
-                _helpers_pipes_history_type_messages_pipe__WEBPACK_IMPORTED_MODULE_37__["HistoryTypeMessagesPipe"],
-                _helpers_pipes_contract_status_messages_pipe__WEBPACK_IMPORTED_MODULE_38__["ContractStatusMessagesPipe"],
-                _helpers_pipes_contract_time_left_pipe__WEBPACK_IMPORTED_MODULE_39__["ContractTimeLeftPipe"],
-                _helpers_directives_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__["TooltipDirective"],
-                _helpers_directives_input_validate_input_validate_directive__WEBPACK_IMPORTED_MODULE_42__["InputValidateDirective"],
-                _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_44__["ModalContainerComponent"],
-                _helpers_directives_transaction_details_transaction_details_component__WEBPACK_IMPORTED_MODULE_45__["TransactionDetailsComponent"],
-                _helpers_directives_progress_container_progress_container_component__WEBPACK_IMPORTED_MODULE_50__["ProgressContainerComponent"],
-                _helpers_directives_input_disable_selection_input_disable_selection_directive__WEBPACK_IMPORTED_MODULE_51__["InputDisableSelectionDirective"],
-                _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_52__["SendModalComponent"],
-                _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_53__["ContactsComponent"],
-                _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_54__["AddContactsComponent"],
-                _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_55__["ContactSendComponent"],
-                _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_56__["ExportImportComponent"],
-                _helpers_pipes_safe_html_pipe__WEBPACK_IMPORTED_MODULE_40__["SafeHTMLPipe"],
-                _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_57__["ConfirmModalComponent"],
-                _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_60__["ExportHistoryModalComponent"],
-                _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_62__["DeeplinkComponent"],
-                _helpers_modals_sync_modal_sync_modal_component__WEBPACK_IMPORTED_MODULE_63__["SyncModalComponent"],
-                _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_64__["ContractsTabComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_10__["SettingsComponent"],
+                _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["SidebarComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_12__["MainComponent"],
+                _create_wallet_create_wallet_component__WEBPACK_IMPORTED_MODULE_13__["CreateWalletComponent"],
+                _open_wallet_open_wallet_component__WEBPACK_IMPORTED_MODULE_14__["OpenWalletComponent"],
+                _open_wallet_modal_open_wallet_modal_component__WEBPACK_IMPORTED_MODULE_15__["OpenWalletModalComponent"],
+                _restore_wallet_restore_wallet_component__WEBPACK_IMPORTED_MODULE_16__["RestoreWalletComponent"],
+                _seed_phrase_seed_phrase_component__WEBPACK_IMPORTED_MODULE_17__["SeedPhraseComponent"],
+                _wallet_details_wallet_details_component__WEBPACK_IMPORTED_MODULE_18__["WalletDetailsComponent"],
+                _assign_alias_assign_alias_component__WEBPACK_IMPORTED_MODULE_19__["AssignAliasComponent"],
+                _edit_alias_edit_alias_component__WEBPACK_IMPORTED_MODULE_20__["EditAliasComponent"],
+                _transfer_alias_transfer_alias_component__WEBPACK_IMPORTED_MODULE_21__["TransferAliasComponent"],
+                _wallet_wallet_component__WEBPACK_IMPORTED_MODULE_22__["WalletComponent"],
+                _send_send_component__WEBPACK_IMPORTED_MODULE_23__["SendComponent"],
+                _receive_receive_component__WEBPACK_IMPORTED_MODULE_24__["ReceiveComponent"],
+                _history_history_component__WEBPACK_IMPORTED_MODULE_25__["HistoryComponent"],
+                _contracts_contracts_component__WEBPACK_IMPORTED_MODULE_27__["ContractsComponent"],
+                _purchase_purchase_component__WEBPACK_IMPORTED_MODULE_28__["PurchaseComponent"],
+                _messages_messages_component__WEBPACK_IMPORTED_MODULE_29__["MessagesComponent"],
+                _staking_staking_component__WEBPACK_IMPORTED_MODULE_31__["StakingComponent"],
+                _price_price_component__WEBPACK_IMPORTED_MODULE_26__["PriceComponent"],
+                _typing_message_typing_message_component__WEBPACK_IMPORTED_MODULE_30__["TypingMessageComponent"],
+                _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_41__["MoneyToIntPipe"],
+                _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_42__["IntToMoneyPipe"],
+                _helpers_directives_staking_switch_staking_switch_component__WEBPACK_IMPORTED_MODULE_49__["StakingSwitchComponent"],
+                _helpers_pipes_history_type_messages_pipe__WEBPACK_IMPORTED_MODULE_43__["HistoryTypeMessagesPipe"],
+                _helpers_pipes_contract_status_messages_pipe__WEBPACK_IMPORTED_MODULE_44__["ContractStatusMessagesPipe"],
+                _helpers_pipes_contract_time_left_pipe__WEBPACK_IMPORTED_MODULE_45__["ContractTimeLeftPipe"],
+                _helpers_directives_tooltip_directive__WEBPACK_IMPORTED_MODULE_47__["TooltipDirective"],
+                _helpers_directives_input_validate_input_validate_directive__WEBPACK_IMPORTED_MODULE_48__["InputValidateDirective"],
+                _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_50__["ModalContainerComponent"],
+                _helpers_directives_transaction_details_transaction_details_component__WEBPACK_IMPORTED_MODULE_51__["TransactionDetailsComponent"],
+                _helpers_directives_progress_container_progress_container_component__WEBPACK_IMPORTED_MODULE_56__["ProgressContainerComponent"],
+                _helpers_directives_input_disable_selection_input_disable_selection_directive__WEBPACK_IMPORTED_MODULE_57__["InputDisableSelectionDirective"],
+                _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_58__["SendModalComponent"],
+                _contacts_contacts_component__WEBPACK_IMPORTED_MODULE_59__["ContactsComponent"],
+                _add_contacts_add_contacts_component__WEBPACK_IMPORTED_MODULE_60__["AddContactsComponent"],
+                _contact_send_contact_send_component__WEBPACK_IMPORTED_MODULE_61__["ContactSendComponent"],
+                _export_import_export_import_component__WEBPACK_IMPORTED_MODULE_62__["ExportImportComponent"],
+                _helpers_pipes_safe_html_pipe__WEBPACK_IMPORTED_MODULE_46__["SafeHTMLPipe"],
+                _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_63__["ConfirmModalComponent"],
+                _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_66__["ExportHistoryModalComponent"],
+                _deeplink_deeplink_component__WEBPACK_IMPORTED_MODULE_68__["DeeplinkComponent"],
+                _helpers_modals_sync_modal_sync_modal_component__WEBPACK_IMPORTED_MODULE_69__["SyncModalComponent"],
+                _contracts_contracts_tab_contracts_tab_component__WEBPACK_IMPORTED_MODULE_70__["ContractsTabComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_26__["HttpClientModule"],
-                _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_58__["DragDropModule"],
-                cdk_drag_scroll__WEBPACK_IMPORTED_MODULE_61__["DragScrollModule"],
-                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_27__["TranslateModule"].forRoot({
+                angular_highcharts__WEBPACK_IMPORTED_MODULE_53__["ChartModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_32__["HttpClientModule"],
+                _price_muscleman_muscle_widget_module__WEBPACK_IMPORTED_MODULE_3__["MuscleWidgetModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
+                _angular_material_select__WEBPACK_IMPORTED_MODULE_5__["MatSelectModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_35__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_35__["ReactiveFormsModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"],
+                _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_64__["DragDropModule"],
+                cdk_drag_scroll__WEBPACK_IMPORTED_MODULE_67__["DragScrollModule"],
+                _ngx_translate_core__WEBPACK_IMPORTED_MODULE_33__["TranslateModule"].forRoot({
                     loader: {
-                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_27__["TranslateLoader"],
+                        provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_33__["TranslateLoader"],
                         useFactory: HttpLoaderFactory,
-                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_26__["HttpClient"]]
+                        deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_32__["HttpClient"]]
                     }
                 }),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_29__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_29__["ReactiveFormsModule"],
-                _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_30__["NgSelectModule"],
-                angular_highcharts__WEBPACK_IMPORTED_MODULE_47__["ChartModule"],
-                ngx_papaparse__WEBPACK_IMPORTED_MODULE_59__["PapaParseModule"],
-                ngx_contextmenu__WEBPACK_IMPORTED_MODULE_46__["ContextMenuModule"].forRoot()
+                _angular_forms__WEBPACK_IMPORTED_MODULE_35__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_35__["ReactiveFormsModule"],
+                _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_36__["NgSelectModule"],
+                angular_highcharts__WEBPACK_IMPORTED_MODULE_53__["ChartModule"],
+                ngx_papaparse__WEBPACK_IMPORTED_MODULE_65__["PapaParseModule"],
+                ngx_contextmenu__WEBPACK_IMPORTED_MODULE_52__["ContextMenuModule"].forRoot()
             ],
             providers: [
-                store__WEBPACK_IMPORTED_MODULE_34__["Store"],
-                _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_31__["BackendService"],
-                _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_32__["ModalService"],
-                _helpers_services_pagination_store__WEBPACK_IMPORTED_MODULE_33__["PaginationStore"],
-                _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_35__["MoneyToIntPipe"],
-                _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_36__["IntToMoneyPipe"],
-                { provide: angular_highcharts__WEBPACK_IMPORTED_MODULE_47__["HIGHCHARTS_MODULES"], useFactory: highchartsFactory }
+                store__WEBPACK_IMPORTED_MODULE_40__["Store"],
+                _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_37__["BackendService"],
+                _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_38__["ModalService"],
+                _helpers_services_pagination_store__WEBPACK_IMPORTED_MODULE_39__["PaginationStore"],
+                _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_41__["MoneyToIntPipe"],
+                _helpers_pipes_int_to_money_pipe__WEBPACK_IMPORTED_MODULE_42__["IntToMoneyPipe"],
+                { provide: angular_highcharts__WEBPACK_IMPORTED_MODULE_53__["HIGHCHARTS_MODULES"], useFactory: highchartsFactory }
                 // {provide: HIGHCHARTS_MODULES, useFactory: () => [ highstock, more, exporting ] }
             ],
             entryComponents: [
-                _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_44__["ModalContainerComponent"],
-                _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_52__["SendModalComponent"],
-                _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_57__["ConfirmModalComponent"],
-                _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_60__["ExportHistoryModalComponent"],
+                _helpers_modals_modal_container_modal_container_component__WEBPACK_IMPORTED_MODULE_50__["ModalContainerComponent"],
+                _send_modal_send_modal_component__WEBPACK_IMPORTED_MODULE_58__["SendModalComponent"],
+                _helpers_modals_confirm_modal_confirm_modal_component__WEBPACK_IMPORTED_MODULE_63__["ConfirmModalComponent"],
+                _helpers_modals_export_history_modal_export_history_modal_component__WEBPACK_IMPORTED_MODULE_66__["ExportHistoryModalComponent"],
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -7153,6 +7180,597 @@ var OpenWalletComponent = /** @class */ (function () {
             _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateService"]])
     ], OpenWalletComponent);
     return OpenWalletComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/models/chart-model.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/price/muscleman/models/chart-model.ts ***!
+  \*******************************************************/
+/*! exports provided: ChartModel, ChartData, Currency, CurrencyData, PeriodData, SelectValue, ChartConfiguration */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartModel", function() { return ChartModel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartData", function() { return ChartData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Currency", function() { return Currency; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrencyData", function() { return CurrencyData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PeriodData", function() { return PeriodData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectValue", function() { return SelectValue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartConfiguration", function() { return ChartConfiguration; });
+var ChartModel = /** @class */ (function () {
+    function ChartModel() {
+        this.data = new Array();
+    }
+    return ChartModel;
+}());
+
+var ChartData = /** @class */ (function () {
+    function ChartData() {
+    }
+    return ChartData;
+}());
+
+var Currency = /** @class */ (function () {
+    function Currency() {
+        this.data = new Array();
+        this.only = new Array();
+    }
+    return Currency;
+}());
+
+var CurrencyData = /** @class */ (function () {
+    function CurrencyData() {
+    }
+    return CurrencyData;
+}());
+
+var PeriodData = /** @class */ (function () {
+    function PeriodData() {
+    }
+    return PeriodData;
+}());
+
+var SelectValue = /** @class */ (function () {
+    function SelectValue(displayName, coinName, dataSeriesName, imageLocation) {
+        this.displayName = displayName;
+        this.coinName = coinName;
+        this.dataSeriesName = dataSeriesName;
+        this.imageLocation = imageLocation;
+    }
+    return SelectValue;
+}());
+
+var ChartConfiguration = /** @class */ (function () {
+    function ChartConfiguration(points, days, primaryPercentageLabelXPosition, primaryPercentageLabelYPosition, primaryPercentageLabelStyle, primaryDecimalPlaces, primaryPercentDecimalPlaces, secondaryPercentageLabelXPosition, secondaryPercentageLabelYPosition, secondaryPercentageLabelStyle, secondaryPercentDecimalPlaces, secondaryDecimalPlaces, imageXPosition, imageYPosition, imageWidth, imageHeight, imageLocation, coinXPosition, coinYPosition, coin, coinStyle, coinNameXPosition, coinNameYPosition, coinName, coinNameStyle, dataSeriesName, backgroundColor, xAxisStyle, xAxisText, yAxisStyle, yAxisText, colors, refreshRateMs) {
+        if (points === void 0) { points = 24; }
+        if (days === void 0) { days = 7; }
+        if (primaryPercentageLabelXPosition === void 0) { primaryPercentageLabelXPosition = 200; }
+        if (primaryPercentageLabelYPosition === void 0) { primaryPercentageLabelYPosition = 10; }
+        if (primaryPercentageLabelStyle === void 0) { primaryPercentageLabelStyle = { fontSize: '16px', color: 'white', fontWeight: '600' }; }
+        if (primaryDecimalPlaces === void 0) { primaryDecimalPlaces = 5; }
+        if (primaryPercentDecimalPlaces === void 0) { primaryPercentDecimalPlaces = 2; }
+        if (secondaryPercentageLabelXPosition === void 0) { secondaryPercentageLabelXPosition = 200; }
+        if (secondaryPercentageLabelYPosition === void 0) { secondaryPercentageLabelYPosition = 25; }
+        if (secondaryPercentageLabelStyle === void 0) { secondaryPercentageLabelStyle = { fontSize: '12px', color: 'white' }; }
+        if (secondaryPercentDecimalPlaces === void 0) { secondaryPercentDecimalPlaces = 2; }
+        if (secondaryDecimalPlaces === void 0) { secondaryDecimalPlaces = 8; }
+        if (imageXPosition === void 0) { imageXPosition = 100; }
+        if (imageYPosition === void 0) { imageYPosition = 20; }
+        if (imageWidth === void 0) { imageWidth = 50; }
+        if (imageHeight === void 0) { imageHeight = 50; }
+        if (imageLocation === void 0) { imageLocation = '/assets/images/256x256.png'; }
+        if (coinXPosition === void 0) { coinXPosition = 160; }
+        if (coinYPosition === void 0) { coinYPosition = 15; }
+        if (coin === void 0) { coin = 'EVOX'; }
+        if (coinStyle === void 0) { coinStyle = { fontSize: '16px', color: 'white', fontWeight: '600' }; }
+        if (coinNameXPosition === void 0) { coinNameXPosition = 160; }
+        if (coinNameYPosition === void 0) { coinNameYPosition = 30; }
+        if (coinName === void 0) { coinName = 'Evolution'; }
+        if (coinNameStyle === void 0) { coinNameStyle = { fontSize: '12px', color: 'white' }; }
+        if (dataSeriesName === void 0) { dataSeriesName = 'Evox Price'; }
+        if (backgroundColor === void 0) { backgroundColor = 'black'; }
+        if (xAxisStyle === void 0) { xAxisStyle = { color: 'white', fontSize: '12px', fontWeight: '600' }; }
+        if (xAxisText === void 0) { xAxisText = 'Date'; }
+        if (yAxisStyle === void 0) { yAxisStyle = { color: 'white', fontSize: '12px', fontWeight: '600' }; }
+        if (yAxisText === void 0) { yAxisText = 'Price'; }
+        if (colors === void 0) { colors = new Array('blueviolet'); }
+        if (refreshRateMs === void 0) { refreshRateMs = 60000; }
+        this.points = points;
+        this.days = days;
+        this.primaryPercentageLabelXPosition = primaryPercentageLabelXPosition;
+        this.primaryPercentageLabelYPosition = primaryPercentageLabelYPosition;
+        this.primaryPercentageLabelStyle = primaryPercentageLabelStyle;
+        this.primaryDecimalPlaces = primaryDecimalPlaces;
+        this.primaryPercentDecimalPlaces = primaryPercentDecimalPlaces;
+        this.secondaryPercentageLabelXPosition = secondaryPercentageLabelXPosition;
+        this.secondaryPercentageLabelYPosition = secondaryPercentageLabelYPosition;
+        this.secondaryPercentageLabelStyle = secondaryPercentageLabelStyle;
+        this.secondaryPercentDecimalPlaces = secondaryPercentDecimalPlaces;
+        this.secondaryDecimalPlaces = secondaryDecimalPlaces;
+        this.imageXPosition = imageXPosition;
+        this.imageYPosition = imageYPosition;
+        this.imageWidth = imageWidth;
+        this.imageHeight = imageHeight;
+        this.imageLocation = imageLocation;
+        this.coinXPosition = coinXPosition;
+        this.coinYPosition = coinYPosition;
+        this.coin = coin;
+        this.coinStyle = coinStyle;
+        this.coinNameXPosition = coinNameXPosition;
+        this.coinNameYPosition = coinNameYPosition;
+        this.coinName = coinName;
+        this.coinNameStyle = coinNameStyle;
+        this.dataSeriesName = dataSeriesName;
+        this.backgroundColor = backgroundColor;
+        this.xAxisStyle = xAxisStyle;
+        this.xAxisText = xAxisText;
+        this.yAxisStyle = yAxisStyle;
+        this.yAxisText = yAxisText;
+        this.colors = colors;
+        this.refreshRateMs = refreshRateMs;
+    }
+    return ChartConfiguration;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/muscle-service/muscle-widget.service.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/price/muscleman/muscle-service/muscle-widget.service.ts ***!
+  \*************************************************************************/
+/*! exports provided: MuscleWidgetService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MuscleWidgetService", function() { return MuscleWidgetService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MuscleWidgetService = /** @class */ (function () {
+    function MuscleWidgetService(httpClient) {
+        this.httpClient = httpClient;
+    }
+    MuscleWidgetService.prototype.handleError = function (error) {
+        var errorMessage = 'Unknown error!';
+        if (error.error instanceof ErrorEvent) {
+            // Client-side errors
+            errorMessage = "Error: " + error.error.message;
+        }
+        else {
+            // Server-side errors
+            errorMessage = "Error Code: " + error.status + "\nMessage: " + error.message;
+        }
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(errorMessage);
+    };
+    MuscleWidgetService.prototype.getChartData = function (days, pointPerDay, coin) {
+        if (days === void 0) { days = 7; }
+        if (pointPerDay === void 0) { pointPerDay = 24; }
+        if (coin === void 0) { coin = 'EVOX'; }
+        var now = new Date();
+        var end = now.getTime();
+        var start = new Date().setDate(now.getDate() - days);
+        var points = pointPerDay * days;
+        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins/history/range?coin=" + coin + "&start=" + start + "&end=" + end + "&currency=USD&points=" + points).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+    };
+    MuscleWidgetService.prototype.getCurrencyData = function (coin) {
+        if (coin === void 0) { coin = 'EVOX'; }
+        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins?only=" + coin + ",BTC&currency=USD").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+    };
+    MuscleWidgetService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], MuscleWidgetService);
+    return MuscleWidgetService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/muscle-widget.module.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/price/muscleman/muscle-widget.module.ts ***!
+  \*********************************************************/
+/*! exports provided: MuscleWidgetModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MuscleWidgetModule", function() { return MuscleWidgetModule; });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _muscle_service_muscle_widget_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./muscle-service/muscle-widget.service */ "./src/app/price/muscleman/muscle-service/muscle-widget.service.ts");
+/* harmony import */ var _muscle_widget_muscle_widget_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./muscle-widget/muscle-widget.component */ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.ts");
+/* harmony import */ var angular_highcharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-highcharts */ "./node_modules/angular-highcharts/fesm5/angular-highcharts.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var MuscleWidgetModule = /** @class */ (function () {
+    function MuscleWidgetModule() {
+    }
+    MuscleWidgetModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+                angular_highcharts__WEBPACK_IMPORTED_MODULE_4__["ChartModule"]
+            ],
+            declarations: [
+                _muscle_widget_muscle_widget_component__WEBPACK_IMPORTED_MODULE_3__["MuscleWidgetComponent"]
+            ],
+            exports: [
+                _muscle_widget_muscle_widget_component__WEBPACK_IMPORTED_MODULE_3__["MuscleWidgetComponent"]
+            ],
+            entryComponents: [
+                _muscle_widget_muscle_widget_component__WEBPACK_IMPORTED_MODULE_3__["MuscleWidgetComponent"]
+            ],
+            providers: [_muscle_service_muscle_widget_service__WEBPACK_IMPORTED_MODULE_2__["MuscleWidgetService"]]
+        })
+    ], MuscleWidgetModule);
+    return MuscleWidgetModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/price/muscleman/muscle-widget/muscle-widget.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div [chart]=\"chart\"></div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.scss":
+/*!****************************************************************************!*\
+  !*** ./src/app/price/muscleman/muscle-widget/muscle-widget.component.scss ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL211c2NsZW1hbi9tdXNjbGUtd2lkZ2V0L211c2NsZS13aWRnZXQuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/price/muscleman/muscle-widget/muscle-widget.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: MuscleWidgetComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MuscleWidgetComponent", function() { return MuscleWidgetComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angular_highcharts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-highcharts */ "./node_modules/angular-highcharts/fesm5/angular-highcharts.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _models_chart_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/chart-model */ "./src/app/price/muscleman/models/chart-model.ts");
+/* harmony import */ var _muscle_service_muscle_widget_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../muscle-service/muscle-widget.service */ "./src/app/price/muscleman/muscle-service/muscle-widget.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MuscleWidgetComponent = /** @class */ (function () {
+    function MuscleWidgetComponent(muscleWidgetService) {
+        this.muscleWidgetService = muscleWidgetService;
+        this.width1 = 0;
+        this.width1a = 0;
+        this.width2 = 0;
+        this.width2a = 0;
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subscription"]();
+        this.chartsData = [];
+    }
+    Object.defineProperty(MuscleWidgetComponent.prototype, "chartConfig", {
+        set: function (chartConfig) {
+            this._chartConfig = chartConfig;
+            this.setupChart();
+            this.renderChart();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MuscleWidgetComponent.prototype.resizeWindow = function () {
+        this.width1 = (window.innerWidth - this._chartConfig.primaryPercentageLabelXPosition);
+        this.width1a = (window.innerWidth - this._chartConfig.primaryPercentageLabelXPosition + 100);
+        this.width2 = (window.innerWidth - this._chartConfig.secondaryPercentageLabelXPosition);
+        this.width2a = (window.innerWidth - this._chartConfig.secondaryPercentageLabelXPosition + 100);
+        if (this.group) {
+            this.label1.attr('translateX', this.width1);
+            this.label1a.attr('translateX', this.width1 + 85);
+            this.label2.attr('translateX', this.width2);
+            this.label2a.attr('translateX', this.width2 + 85);
+        }
+    };
+    MuscleWidgetComponent.prototype.ngOnDestroy = function () {
+        if (this.subscription)
+            this.subscription.unsubscribe();
+    };
+    MuscleWidgetComponent.prototype.ngOnInit = function () {
+    };
+    MuscleWidgetComponent.prototype.setupChart = function () {
+        if (this.chart) {
+            this.chart.destroy();
+            this.group = null;
+            this.label1 = null;
+            this.label1a = null;
+            this.label2 = null;
+            this.label2a = null;
+        }
+        this.chart = new angular_highcharts__WEBPACK_IMPORTED_MODULE_1__["Chart"]({
+            chart: {
+                backgroundColor: this._chartConfig.backgroundColor,
+                type: 'line',
+                height: 600
+            },
+            accessibility: {
+                enabled: false
+            },
+            title: {
+                text: null
+            },
+            credits: {
+                enabled: false
+            },
+            series: this.chartsData,
+            xAxis: {
+                lineWidth: 0,
+                gridLineWidth: 0,
+                type: 'datetime',
+                ordinal: true,
+                labels: {
+                    enabled: false,
+                    style: this._chartConfig.xAxisStyle
+                },
+                title: {
+                    text: this._chartConfig.xAxisText,
+                    style: this._chartConfig.xAxisStyle
+                }
+            },
+            colors: this._chartConfig.colors,
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            yAxis: {
+                lineWidth: 0,
+                floor: 0,
+                labels: {
+                    enabled: false
+                },
+                title: {
+                    text: this._chartConfig.yAxisText,
+                    style: this._chartConfig.yAxisStyle
+                }
+            },
+            navigator: { enabled: true },
+            responsive: {
+                rules: [
+                    {
+                        condition: {
+                            maxWidth: 575
+                        },
+                        chartOptions: {
+                            chart: {
+                                width: 575
+                            },
+                            rangeSelector: {
+                                inputPosition: {
+                                    align: 'left'
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        });
+    };
+    MuscleWidgetComponent.prototype.renderChart = function () {
+        var _this = this;
+        this.width1 = (window.innerWidth - this._chartConfig.primaryPercentageLabelXPosition);
+        this.width1a = (window.innerWidth - this._chartConfig.primaryPercentageLabelXPosition + 100);
+        this.width2 = (window.innerWidth - this._chartConfig.secondaryPercentageLabelXPosition);
+        this.width2a = (window.innerWidth - this._chartConfig.secondaryPercentageLabelXPosition + 100);
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["timer"])(0, this._chartConfig.refreshRateMs).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (_) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])([
+            _this.muscleWidgetService.getCurrencyData(_this._chartConfig.coin),
+            _this.muscleWidgetService.getChartData(_this._chartConfig.days, _this._chartConfig.points, _this._chartConfig.coin)
+        ]); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (_) { return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"]; }))
+            .subscribe(function (_a) {
+            var currency = _a[0], chartData = _a[1];
+            var data = [];
+            for (var _i = 0, _b = chartData.data; _i < _b.length; _i++) {
+                var value = _b[_i];
+                data.push([value.date, value.rate]);
+            }
+            _this.chartsData = [
+                { type: 'area', name: _this._chartConfig.dataSeriesName, data: data }
+            ];
+            if (_this.chart && _this.chart.ref.series) {
+                while (_this.chart.ref.series.length > 0)
+                    _this.chart.ref.series[0].remove(false);
+            }
+            _this.chart.addSeries(_this.chartsData[0], true, true);
+            var price = currency.data[0].price;
+            var FV = data[data.length - 1][1];
+            var IV = data[data.length - _this._chartConfig.points][1];
+            var priceChange = (FV - IV) / IV * 100;
+            var btc = currency.data[0].price / currency.data[1].price;
+            // FV = data[data.length - 1][1]
+            // IV = data[data.length - this._chartConfig.points - 1][1]
+            var btcChange = 0; //(FV - IV) / IV * 100
+            var primaryPercentage = { fontSize: '16px', color: priceChange >= 0 ? 'green' : 'red', fontWeight: '600' };
+            var secondaryPercentage = { fontSize: '12px', color: btcChange >= 0 ? 'green' : 'red' };
+            if (!_this.group) {
+                _this.group = _this.chart.ref.renderer.g('customLabels');
+                _this.group.renderer.image(_this._chartConfig.imageLocation, _this._chartConfig.imageXPosition, _this._chartConfig.imageYPosition, _this._chartConfig.imageHeight, _this._chartConfig.imageWidth).add();
+                _this.group.renderer.label(_this._chartConfig.coin, _this._chartConfig.coinXPosition, _this._chartConfig.coinYPosition).css(_this._chartConfig.coinStyle).add();
+                _this.group.renderer.label(_this._chartConfig.coinName, _this._chartConfig.coinNameXPosition, _this._chartConfig.coinNameYPosition).css(_this._chartConfig.coinNameStyle).add();
+                _this.label1 = _this.group.renderer.label("$ " + price.toFixed(_this._chartConfig.primaryDecimalPlaces), _this.width1, _this._chartConfig.primaryPercentageLabelYPosition).css(_this._chartConfig.primaryPercentageLabelStyle).add();
+                _this.label1a = _this.group.renderer.label(priceChange.toFixed(_this._chartConfig.primaryPercentDecimalPlaces) + "%", _this.width1a, _this._chartConfig.primaryPercentageLabelYPosition).css(primaryPercentage).add();
+                _this.label2 = _this.group.renderer.label("B " + btc.toFixed(_this._chartConfig.secondaryDecimalPlaces), _this.width2, _this._chartConfig.secondaryPercentageLabelYPosition).css(_this._chartConfig.secondaryPercentageLabelStyle).add();
+                _this.label2 = _this.group.renderer.label(btcChange.toFixed(_this._chartConfig.secondaryPercentDecimalPlaces) + "%", _this.width2a, _this._chartConfig.secondaryPercentageLabelYPosition).css(secondaryPercentage).add();
+            }
+            else {
+                _this.label1.attr({ text: "$ " + price.toFixed(_this._chartConfig.primaryDecimalPlaces) + "  " + priceChange.toFixed(_this._chartConfig.primaryPercentDecimalPlaces) + "%" });
+                _this.label2.attr({ text: "B " + btc.toFixed(_this._chartConfig.secondaryDecimalPlaces) + "    " + btcChange.toFixed(_this._chartConfig.secondaryPercentDecimalPlaces) + "%" });
+            }
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _models_chart_model__WEBPACK_IMPORTED_MODULE_4__["ChartConfiguration"]),
+        __metadata("design:paramtypes", [_models_chart_model__WEBPACK_IMPORTED_MODULE_4__["ChartConfiguration"]])
+    ], MuscleWidgetComponent.prototype, "chartConfig", null);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], MuscleWidgetComponent.prototype, "resizeWindow", null);
+    MuscleWidgetComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'muscle-widget',
+            template: __webpack_require__(/*! ./muscle-widget.component.html */ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.html"),
+            styles: [__webpack_require__(/*! ./muscle-widget.component.scss */ "./src/app/price/muscleman/muscle-widget/muscle-widget.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_muscle_service_muscle_widget_service__WEBPACK_IMPORTED_MODULE_5__["MuscleWidgetService"]])
+    ], MuscleWidgetComponent);
+    return MuscleWidgetComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/price/price.component.html":
+/*!********************************************!*\
+  !*** ./src/app/price/price.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <muscle-widget [chartConfig]=\"chartConfiguration\"></muscle-widget>\r\n    <div>\r\n        <mat-form-field appearance=\"fill\">\r\n            <mat-select [(value)]=\"coin\"\r\n                disableOptionCentering>\r\n                <mat-option *ngFor=\"let coin of coins\" [value]=\"coin\">\r\n                    {{coin.displayName}}\r\n                </mat-option>\r\n            </mat-select>\r\n        </mat-form-field>\r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/price/price.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/price/price.component.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL3ByaWNlLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/price/price.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/price/price.component.ts ***!
+  \******************************************/
+/*! exports provided: PriceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PriceComponent", function() { return PriceComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./muscleman/models/chart-model */ "./src/app/price/muscleman/models/chart-model.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PriceComponent = /** @class */ (function () {
+    function PriceComponent() {
+        this.title = 'widget';
+        this.coins = [new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ARQ', 'RandomArq', 'Arqma Price', '/assets/arqma-310x310.png'),
+            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ETH', 'Ethereum', 'Ethereum Price', '/assets/ethereum.webp'),
+            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('EVOX', 'Evolution', 'Evox Price', '/assets/images/256x256.png'),
+            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ZANO', 'Progpow', 'Zano Price', '/assets/zano.webp')];
+        this.coin = this.coins[0];
+    }
+    Object.defineProperty(PriceComponent.prototype, "coin", {
+        get: function () {
+            return this._value;
+        },
+        set: function (value) {
+            this._value = value;
+            this.chartConfiguration = new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["ChartConfiguration"]();
+            this.chartConfiguration.coin = value.displayName;
+            this.chartConfiguration.coinName = value.coinName;
+            this.chartConfiguration.imageLocation = value.imageLocation;
+            this.chartConfiguration.dataSeriesName = value.dataSeriesName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PriceComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-root',
+            template: __webpack_require__(/*! ./price.component.html */ "./src/app/price/price.component.html"),
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
+            styles: [__webpack_require__(/*! ./price.component.scss */ "./src/app/price/price.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PriceComponent);
+    return PriceComponent;
 }());
 
 
@@ -10058,7 +10676,7 @@ module.exports = "<div class=\"header\">\r\n  <div>\r\n    <h3 tooltip=\"{{ vari
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  padding: 2.8rem 3rem;\n  min-width: 95rem;\n  width: 100%;\n  height: 100%;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 0 0 auto;\n  margin-bottom: 2.8rem;\n}\n\n.header > div {\n  display: flex;\n  align-items: center;\n}\n\n.header > div :not(:last-child) {\n  margin-right: 3.2rem;\n}\n\n.header .settings-block {\n  position: relative;\n}\n\n.header .settings-block button {\n  margin: 0;\n}\n\n.header .settings-block button:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.header .settings-block .settings-dropdown {\n  position: absolute;\n  border-radius: 0.6rem;\n  top: 3rem;\n  right: 0;\n  width: 19rem;\n}\n\n.header .settings-block .settings-dropdown button {\n  height: 4rem;\n  display: flex;\n  padding-left: 1.1rem;\n  align-items: center;\n  width: 100%;\n}\n\n.header .settings-block .settings-dropdown button:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.header .settings-block .settings-dropdown button:disabled .icon svg path,\n.header .settings-block .settings-dropdown button:disabled .icon svg .st0 {\n  fill: rgba(255, 255, 255, 0.4);\n}\n\n.header .settings-block .settings-dropdown button:disabled span {\n  color: rgba(255, 255, 255, 0.4);\n}\n\n.header .settings-block .settings-dropdown button.dark-line {\n  border-bottom: 1px solid #0c0c3a;\n}\n\n.header .settings-block .settings-dropdown button span {\n  font-size: 1.4rem;\n  line-height: 1.7rem;\n}\n\n.header .settings-block .settings-dropdown button .icon {\n  height: 1.8rem;\n  width: 1.8rem;\n  margin-right: 1rem;\n}\n\n.header .settings-block .settings-dropdown button .icon svg {\n  height: 100%;\n  width: 100%;\n}\n\n.header .settings-block .settings-dropdown button .icon.resync-wallet {\n  height: 1.7rem;\n  width: 1.7rem;\n}\n\n.header .settings-block .settings-dropdown button .icon.close-wallet {\n  background: center/contain no-repeat url('close-wallet-dropdown.svg');\n}\n\n.header h3 {\n  font-size: 2rem;\n  line-height: 2.4rem;\n  font-weight: 400;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n  max-width: 30rem;\n}\n\n.header button {\n  font-size: 2rem;\n  line-height: 2.4rem;\n  display: flex;\n  align-items: center;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  font-weight: 400;\n  outline: none;\n  padding: 0;\n}\n\n.header button .icon {\n  margin-right: 0.8rem;\n  width: 2.4rem;\n  height: 2.4rem;\n}\n\n.header button .icon.account {\n  height: 1.6rem;\n  background: center/contain no-repeat url('account.svg');\n}\n\n.header button .icon.lock {\n  background: center/contain no-repeat url('lock.svg');\n}\n\n.header button .icon.details {\n  margin-right: 0;\n}\n\n.header button .icon.close-wallet {\n  background: center/contain no-repeat url('close-wallet.svg');\n  margin-right: 0;\n}\n\n.header .alias {\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n}\n\n.header .alias .icon {\n  cursor: pointer;\n  margin-right: 1.2rem;\n  width: 2.4rem;\n  height: 2.4rem;\n}\n\n.header .alias .icon.edit {\n  background: center/contain no-repeat url('details.svg');\n}\n\n.header .alias .icon.transfer {\n  background: center/contain no-repeat url('send.svg');\n}\n\n.address {\n  display: flex;\n  align-items: center;\n  flex: 0 0 auto;\n  font-size: 1.6rem;\n  line-height: 1.9rem;\n}\n\n.address .icon {\n  cursor: pointer;\n  margin-left: 1rem;\n}\n\n.address .icon.copy {\n  transition: all 0.25s ease;\n  width: 2.4rem;\n  height: 2.4rem;\n  background: center/contain no-repeat url('copy.svg');\n}\n\n.address .icon.copied {\n  background: center/contain no-repeat url('complete-testwallet.svg');\n}\n\n.balance {\n  display: flex;\n  align-items: flex-end;\n  justify-content: flex-start;\n  flex: 0 0 auto;\n  margin: 1.6rem 0 2.5rem 0;\n}\n\n.balance :first-child {\n  font-size: 4rem;\n  font-weight: 500;\n  line-height: 3.8rem;\n  margin-right: 1rem;\n}\n\n.balance :last-child {\n  font-size: 2rem;\n  font-weight: 400;\n  line-height: 2.4rem;\n}\n\n.tabs {\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 auto;\n  box-shadow: 0px 0px 30px 1px rgb(159, 7, 255);\n  border-radius: 5px;\n}\n\n.tabs .tabs-header {\n  display: flex;\n  justify-content: space-between;\n  flex: 0 0 auto;\n}\n\n.tabs .tabs-header .tab {\n  border-radius: 1rem 1rem 0px 0px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 2rem;\n  line-height: 2.4rem;\n  flex: 1 0 auto;\n  cursor: pointer;\n  padding: 0 1rem;\n  height: 5rem;\n}\n\n.tabs .tabs-header .tab.hide {\n  display: none;\n}\n\n.tabs .tabs-header .tab:hover .icon {\n  transition: all 0.25s ease;\n  margin-top: -1rem;\n}\n\n.tabs .tabs-header .tab .icon {\n  transition: all 0.25s ease;\n  margin-right: 0.5rem;\n  width: 2rem;\n  height: 2.4rem;\n}\n\n.tabs .tabs-header .tab .icon.send {\n  background: center/contain no-repeat url('send.svg');\n}\n\n.tabs .tabs-header .tab .icon.receive {\n  background: center/contain no-repeat url('receive-blue.svg');\n}\n\n.tabs .tabs-header .tab .icon.history {\n  background: center/contain no-repeat url('history.svg');\n}\n\n.tabs .tabs-header .tab .icon.contracts {\n  background: center/contain no-repeat url('contracts.svg');\n}\n\n.tabs .tabs-header .tab .icon.messages {\n  background: center/contain no-repeat url('message.svg');\n}\n\n.tabs .tabs-header .tab .icon.staking {\n  background: center/contain no-repeat url('staking.svg');\n}\n\n.tabs .tabs-header .tab .indicator {\n  margin-left: 0.5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 2rem;\n  font-size: 1.2rem;\n  line-height: 1.4rem;\n  min-width: 2.4rem;\n  height: 1.6rem;\n}\n\n.tabs .tabs-header .tab:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.tabs .tabs-header .tab:not(:last-child) {\n  margin-right: 0.3rem;\n}\n\n.tabs .tabs-content {\n  display: flex;\n  padding: 1.5rem;\n  flex: 1 1 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2FsbGV0L0M6XFxVc2Vyc1xcY29zbW9zXFxEb2N1bWVudHNcXEdpdEh1YlxcRXZvWF91aVxcaHRtbF9zb3VyY2Uvc3JjXFxhcHBcXHdhbGxldFxcd2FsbGV0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC93YWxsZXQvd2FsbGV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxvQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDRjs7QURDQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsY0FBQTtFQUNBLHFCQUFBO0FDRUY7O0FEREU7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QUNHSjs7QURESTtFQUNFLG9CQUFBO0FDR047O0FEQUU7RUFDRSxrQkFBQTtBQ0VKOztBRERJO0VBSUUsU0FBQTtBQ0FOOztBREhNO0VBQ0UsMkNBQUE7QUNLUjs7QURESTtFQUNFLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLFlBQUE7QUNHTjs7QURGTTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7QUNJUjs7QURIUTtFQUNFLDJDQUFBO0FDS1Y7O0FESFU7O0VBRUUsOEJBQUE7QUNLWjs7QURIVTtFQUNFLCtCQUFBO0FDS1o7O0FERlE7RUFDRSxnQ0FBQTtBQ0lWOztBREZRO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQ0lWOztBREZRO0VBQ0UsY0FBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtBQ0lWOztBREhVO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNLWjs7QURIVTtFQUNFLGNBQUE7RUFDQSxhQUFBO0FDS1o7O0FESFU7RUFDRSxxRUFBQTtBQ0taOztBRENFO0VBQ0UsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQ0NKOztBRENFO0VBQ0UsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLFVBQUE7QUNDSjs7QURBSTtFQUNFLG9CQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7QUNFTjs7QURETTtFQUNFLGNBQUE7RUFDQSx1REFBQTtBQ0dSOztBRERNO0VBQ0Usb0RBQUE7QUNHUjs7QURETTtFQUNFLGVBQUE7QUNHUjs7QURETTtFQUNFLDREQUFBO0VBQ0EsZUFBQTtBQ0dSOztBRENFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUNDSjs7QURBSTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLGFBQUE7RUFDQSxjQUFBO0FDRU47O0FERE07RUFDRSx1REFBQTtBQ0dSOztBRERNO0VBQ0Usb0RBQUE7QUNHUjs7QURFQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0FDQ0Y7O0FEQUU7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUNFSjs7QURESTtFQUNFLDBCQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxvREFBQTtBQ0dOOztBRERJO0VBQ0UsbUVBQUE7QUNHTjs7QURDQTtFQUNFLGFBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0FDRUY7O0FEREU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDR0o7O0FEREU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtBQ0dKOztBREFBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLDZDQUFBO0VBQ0Esa0JBQUE7QUNHRjs7QURGRTtFQUNFLGFBQUE7RUFDQSw4QkFBQTtFQUNBLGNBQUE7QUNJSjs7QURISTtFQUNFLGdDQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0FDS047O0FESk07RUFDRSxhQUFBO0FDTVI7O0FESFE7RUFDRSwwQkFBQTtFQUNBLGlCQUFBO0FDS1Y7O0FERk07RUFDRSwwQkFBQTtFQUNBLG9CQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7QUNJUjs7QURIUTtFQUNFLG9EQUFBO0FDS1Y7O0FESFE7RUFDRSw0REFBQTtBQ0tWOztBREhRO0VBQ0UsdURBQUE7QUNLVjs7QURIUTtFQUNFLHlEQUFBO0FDS1Y7O0FESFE7RUFDRSx1REFBQTtBQ0tWOztBREhRO0VBQ0UsdURBQUE7QUNLVjs7QURGTTtFQUNFLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQUNBLGNBQUE7QUNJUjs7QURGTTtFQUNFLDJDQUFBO0FDSVI7O0FERk07RUFDRSxvQkFBQTtBQ0lSOztBREFFO0VBQ0UsYUFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC93YWxsZXQvd2FsbGV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgcGFkZGluZzogMi44cmVtIDNyZW07XHJcbiAgbWluLXdpZHRoOiA5NXJlbTtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuLmhlYWRlciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICBmbGV4OiAwIDAgYXV0bztcclxuICBtYXJnaW4tYm90dG9tOiAyLjhyZW07XHJcbiAgPiBkaXYge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gICAgOm5vdCg6bGFzdC1jaGlsZCkge1xyXG4gICAgICBtYXJnaW4tcmlnaHQ6IDMuMnJlbTtcclxuICAgIH1cclxuICB9XHJcbiAgLnNldHRpbmdzLWJsb2NrIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGJ1dHRvbiB7XHJcbiAgICAgICY6ZGlzYWJsZWQge1xyXG4gICAgICAgIGN1cnNvcjogdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9ub3QtYWxsb3dlZC5zdmcpLCBub3QtYWxsb3dlZDtcclxuICAgICAgfVxyXG4gICAgICBtYXJnaW46IDA7XHJcbiAgICB9XHJcbiAgICAuc2V0dGluZ3MtZHJvcGRvd24ge1xyXG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDAuNnJlbTtcclxuICAgICAgdG9wOiAzcmVtO1xyXG4gICAgICByaWdodDogMDtcclxuICAgICAgd2lkdGg6IDE5cmVtO1xyXG4gICAgICBidXR0b24ge1xyXG4gICAgICAgIGhlaWdodDogNHJlbTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIHBhZGRpbmctbGVmdDogMS4xcmVtO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgJjpkaXNhYmxlZCB7XHJcbiAgICAgICAgICBjdXJzb3I6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbm90LWFsbG93ZWQuc3ZnKSwgbm90LWFsbG93ZWQ7XHJcblxyXG4gICAgICAgICAgLmljb24gc3ZnIHBhdGgsXHJcbiAgICAgICAgICAuaWNvbiBzdmcgLnN0MCB7XHJcbiAgICAgICAgICAgIGZpbGw6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC40KTtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgIHNwYW4ge1xyXG4gICAgICAgICAgICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpO1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgICAgICAmLmRhcmstbGluZSB7XHJcbiAgICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzBjMGMzYTtcclxuICAgICAgICB9XHJcbiAgICAgICAgc3BhbiB7XHJcbiAgICAgICAgICBmb250LXNpemU6IDEuNHJlbTtcclxuICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjdyZW07XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5pY29uIHtcclxuICAgICAgICAgIGhlaWdodDogMS44cmVtO1xyXG4gICAgICAgICAgd2lkdGg6IDEuOHJlbTtcclxuICAgICAgICAgIG1hcmdpbi1yaWdodDogMXJlbTtcclxuICAgICAgICAgIHN2ZyB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAmLnJlc3luYy13YWxsZXQge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEuN3JlbTtcclxuICAgICAgICAgICAgd2lkdGg6IDEuN3JlbTtcclxuICAgICAgICAgIH1cclxuICAgICAgICAgICYuY2xvc2Utd2FsbGV0IHtcclxuICAgICAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jbG9zZS13YWxsZXQtZHJvcGRvd24uc3ZnKTtcclxuICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgaDMge1xyXG4gICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgbGluZS1oZWlnaHQ6IDIuNHJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xyXG4gICAgbWF4LXdpZHRoOiAzMHJlbTtcclxuICB9XHJcbiAgYnV0dG9uIHtcclxuICAgIGZvbnQtc2l6ZTogMnJlbTtcclxuICAgIGxpbmUtaGVpZ2h0OiAyLjRyZW07XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIG91dGxpbmU6IG5vbmU7XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gICAgLmljb24ge1xyXG4gICAgICBtYXJnaW4tcmlnaHQ6IDAuOHJlbTtcclxuICAgICAgd2lkdGg6IDIuNHJlbTtcclxuICAgICAgaGVpZ2h0OiAyLjRyZW07XHJcbiAgICAgICYuYWNjb3VudCB7XHJcbiAgICAgICAgaGVpZ2h0OiAxLjZyZW07XHJcbiAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9hY2NvdW50LnN2Zyk7XHJcbiAgICAgIH1cclxuICAgICAgJi5sb2NrIHtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2xvY2suc3ZnKTtcclxuICAgICAgfVxyXG4gICAgICAmLmRldGFpbHMge1xyXG4gICAgICAgIG1hcmdpbi1yaWdodDogMDtcclxuICAgICAgfVxyXG4gICAgICAmLmNsb3NlLXdhbGxldCB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jbG9zZS13YWxsZXQuc3ZnKTtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDA7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgLmFsaWFzIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgZm9udC1zaXplOiAxLjNyZW07XHJcbiAgICAuaWNvbiB7XHJcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgbWFyZ2luLXJpZ2h0OiAxLjJyZW07XHJcbiAgICAgIHdpZHRoOiAyLjRyZW07XHJcbiAgICAgIGhlaWdodDogMi40cmVtO1xyXG4gICAgICAmLmVkaXQge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvZGV0YWlscy5zdmcpO1xyXG4gICAgICB9XHJcbiAgICAgICYudHJhbnNmZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc2VuZC5zdmcpO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbi5hZGRyZXNzIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgZmxleDogMCAwIGF1dG87XHJcbiAgZm9udC1zaXplOiAxLjZyZW07XHJcbiAgbGluZS1oZWlnaHQ6IDEuOXJlbTtcclxuICAuaWNvbiB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBtYXJnaW4tbGVmdDogMXJlbTtcclxuICAgICYuY29weSB7XHJcbiAgICAgIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xyXG4gICAgICB3aWR0aDogMi40cmVtO1xyXG4gICAgICBoZWlnaHQ6IDIuNHJlbTtcclxuICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jb3B5LnN2Zyk7XHJcbiAgICB9XHJcbiAgICAmLmNvcGllZCB7XHJcbiAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY29tcGxldGUtdGVzdHdhbGxldC5zdmcpO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4uYmFsYW5jZSB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XHJcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xyXG4gIGZsZXg6IDAgMCBhdXRvO1xyXG4gIG1hcmdpbjogMS42cmVtIDAgMi41cmVtIDA7XHJcbiAgOmZpcnN0LWNoaWxkIHtcclxuICAgIGZvbnQtc2l6ZTogNHJlbTtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBsaW5lLWhlaWdodDogMy44cmVtO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxcmVtO1xyXG4gIH1cclxuICA6bGFzdC1jaGlsZCB7XHJcbiAgICBmb250LXNpemU6IDJyZW07XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDIuNHJlbTtcclxuICB9XHJcbn1cclxuLnRhYnMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBmbGV4OiAxIDEgYXV0bztcclxuICBib3gtc2hhZG93OiAwcHggMHB4IDMwcHggMXB4IHJnYigxNTksIDcsIDI1NSk7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIC50YWJzLWhlYWRlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZmxleDogMCAwIGF1dG87XHJcbiAgICAudGFiIHtcclxuICAgICAgYm9yZGVyLXJhZGl1czogMXJlbSAxcmVtIDBweCAwcHg7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICBmb250LXNpemU6IDJyZW07XHJcbiAgICAgIGxpbmUtaGVpZ2h0OiAyLjRyZW07XHJcbiAgICAgIGZsZXg6IDEgMCBhdXRvO1xyXG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgIHBhZGRpbmc6IDAgMXJlbTtcclxuICAgICAgaGVpZ2h0OiA1cmVtO1xyXG4gICAgICAmLmhpZGUge1xyXG4gICAgICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgICAgIH1cclxuICAgICAgJjpob3ZlciB7XHJcbiAgICAgICAgLmljb24ge1xyXG4gICAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMjVzIGVhc2U7XHJcbiAgICAgICAgICBtYXJnaW4tdG9wOiAtMXJlbTtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgLmljb24ge1xyXG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xyXG4gICAgICAgIG1hcmdpbi1yaWdodDogMC41cmVtO1xyXG4gICAgICAgIHdpZHRoOiAycmVtO1xyXG4gICAgICAgIGhlaWdodDogMi40cmVtO1xyXG4gICAgICAgICYuc2VuZCB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3NlbmQuc3ZnKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi5yZWNlaXZlIHtcclxuICAgICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvcmVjZWl2ZS1ibHVlLnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICYuaGlzdG9yeSB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2hpc3Rvcnkuc3ZnKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi5jb250cmFjdHMge1xyXG4gICAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jb250cmFjdHMuc3ZnKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi5tZXNzYWdlcyB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL21lc3NhZ2Uuc3ZnKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi5zdGFraW5nIHtcclxuICAgICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc3Rha2luZy5zdmcpO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgICAuaW5kaWNhdG9yIHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMC41cmVtO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAycmVtO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMS4ycmVtO1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxLjRyZW07XHJcbiAgICAgICAgbWluLXdpZHRoOiAyLjRyZW07XHJcbiAgICAgICAgaGVpZ2h0OiAxLjZyZW07XHJcbiAgICAgIH1cclxuICAgICAgJjpkaXNhYmxlZCB7XHJcbiAgICAgICAgY3Vyc29yOiB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL25vdC1hbGxvd2VkLnN2ZyksIG5vdC1hbGxvd2VkO1xyXG4gICAgICB9XHJcbiAgICAgICY6bm90KDpsYXN0LWNoaWxkKSB7XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAwLjNyZW07XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgLnRhYnMtY29udGVudCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgcGFkZGluZzogMS41cmVtO1xyXG4gICAgZmxleDogMSAxIGF1dG87XHJcbiAgfVxyXG59XHJcbiIsIjpob3N0IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBwYWRkaW5nOiAyLjhyZW0gM3JlbTtcbiAgbWluLXdpZHRoOiA5NXJlbTtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLmhlYWRlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgZmxleDogMCAwIGF1dG87XG4gIG1hcmdpbi1ib3R0b206IDIuOHJlbTtcbn1cbi5oZWFkZXIgPiBkaXYge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuLmhlYWRlciA+IGRpdiA6bm90KDpsYXN0LWNoaWxkKSB7XG4gIG1hcmdpbi1yaWdodDogMy4ycmVtO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayBidXR0b24ge1xuICBtYXJnaW46IDA7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayBidXR0b246ZGlzYWJsZWQge1xuICBjdXJzb3I6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbm90LWFsbG93ZWQuc3ZnKSwgbm90LWFsbG93ZWQ7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvcmRlci1yYWRpdXM6IDAuNnJlbTtcbiAgdG9wOiAzcmVtO1xuICByaWdodDogMDtcbiAgd2lkdGg6IDE5cmVtO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbiB7XG4gIGhlaWdodDogNHJlbTtcbiAgZGlzcGxheTogZmxleDtcbiAgcGFkZGluZy1sZWZ0OiAxLjFyZW07XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbjpkaXNhYmxlZCB7XG4gIGN1cnNvcjogdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9ub3QtYWxsb3dlZC5zdmcpLCBub3QtYWxsb3dlZDtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b246ZGlzYWJsZWQgLmljb24gc3ZnIHBhdGgsXG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uOmRpc2FibGVkIC5pY29uIHN2ZyAuc3QwIHtcbiAgZmlsbDogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbjpkaXNhYmxlZCBzcGFuIHtcbiAgY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC40KTtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b24uZGFyay1saW5lIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMwYzBjM2E7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uIHNwYW4ge1xuICBmb250LXNpemU6IDEuNHJlbTtcbiAgbGluZS1oZWlnaHQ6IDEuN3JlbTtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b24gLmljb24ge1xuICBoZWlnaHQ6IDEuOHJlbTtcbiAgd2lkdGg6IDEuOHJlbTtcbiAgbWFyZ2luLXJpZ2h0OiAxcmVtO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbiAuaWNvbiBzdmcge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbiAuaWNvbi5yZXN5bmMtd2FsbGV0IHtcbiAgaGVpZ2h0OiAxLjdyZW07XG4gIHdpZHRoOiAxLjdyZW07XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uIC5pY29uLmNsb3NlLXdhbGxldCB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2Nsb3NlLXdhbGxldC1kcm9wZG93bi5zdmcpO1xufVxuLmhlYWRlciBoMyB7XG4gIGZvbnQtc2l6ZTogMnJlbTtcbiAgbGluZS1oZWlnaHQ6IDIuNHJlbTtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG1heC13aWR0aDogMzByZW07XG59XG4uaGVhZGVyIGJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMnJlbTtcbiAgbGluZS1oZWlnaHQ6IDIuNHJlbTtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIGJvcmRlcjogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBmb250LXdlaWdodDogNDAwO1xuICBvdXRsaW5lOiBub25lO1xuICBwYWRkaW5nOiAwO1xufVxuLmhlYWRlciBidXR0b24gLmljb24ge1xuICBtYXJnaW4tcmlnaHQ6IDAuOHJlbTtcbiAgd2lkdGg6IDIuNHJlbTtcbiAgaGVpZ2h0OiAyLjRyZW07XG59XG4uaGVhZGVyIGJ1dHRvbiAuaWNvbi5hY2NvdW50IHtcbiAgaGVpZ2h0OiAxLjZyZW07XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2FjY291bnQuc3ZnKTtcbn1cbi5oZWFkZXIgYnV0dG9uIC5pY29uLmxvY2sge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9sb2NrLnN2Zyk7XG59XG4uaGVhZGVyIGJ1dHRvbiAuaWNvbi5kZXRhaWxzIHtcbiAgbWFyZ2luLXJpZ2h0OiAwO1xufVxuLmhlYWRlciBidXR0b24gLmljb24uY2xvc2Utd2FsbGV0IHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY2xvc2Utd2FsbGV0LnN2Zyk7XG4gIG1hcmdpbi1yaWdodDogMDtcbn1cbi5oZWFkZXIgLmFsaWFzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZm9udC1zaXplOiAxLjNyZW07XG59XG4uaGVhZGVyIC5hbGlhcyAuaWNvbiB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgbWFyZ2luLXJpZ2h0OiAxLjJyZW07XG4gIHdpZHRoOiAyLjRyZW07XG4gIGhlaWdodDogMi40cmVtO1xufVxuLmhlYWRlciAuYWxpYXMgLmljb24uZWRpdCB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2RldGFpbHMuc3ZnKTtcbn1cbi5oZWFkZXIgLmFsaWFzIC5pY29uLnRyYW5zZmVyIHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc2VuZC5zdmcpO1xufVxuXG4uYWRkcmVzcyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGZsZXg6IDAgMCBhdXRvO1xuICBmb250LXNpemU6IDEuNnJlbTtcbiAgbGluZS1oZWlnaHQ6IDEuOXJlbTtcbn1cbi5hZGRyZXNzIC5pY29uIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBtYXJnaW4tbGVmdDogMXJlbTtcbn1cbi5hZGRyZXNzIC5pY29uLmNvcHkge1xuICB0cmFuc2l0aW9uOiBhbGwgMC4yNXMgZWFzZTtcbiAgd2lkdGg6IDIuNHJlbTtcbiAgaGVpZ2h0OiAyLjRyZW07XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2NvcHkuc3ZnKTtcbn1cbi5hZGRyZXNzIC5pY29uLmNvcGllZCB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2NvbXBsZXRlLXRlc3R3YWxsZXQuc3ZnKTtcbn1cblxuLmJhbGFuY2Uge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcbiAgZmxleDogMCAwIGF1dG87XG4gIG1hcmdpbjogMS42cmVtIDAgMi41cmVtIDA7XG59XG4uYmFsYW5jZSA6Zmlyc3QtY2hpbGQge1xuICBmb250LXNpemU6IDRyZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGxpbmUtaGVpZ2h0OiAzLjhyZW07XG4gIG1hcmdpbi1yaWdodDogMXJlbTtcbn1cbi5iYWxhbmNlIDpsYXN0LWNoaWxkIHtcbiAgZm9udC1zaXplOiAycmVtO1xuICBmb250LXdlaWdodDogNDAwO1xuICBsaW5lLWhlaWdodDogMi40cmVtO1xufVxuXG4udGFicyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGZsZXg6IDEgMSBhdXRvO1xuICBib3gtc2hhZG93OiAwcHggMHB4IDMwcHggMXB4IHJnYigxNTksIDcsIDI1NSk7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbn1cbi50YWJzIC50YWJzLWhlYWRlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgZmxleDogMCAwIGF1dG87XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYiB7XG4gIGJvcmRlci1yYWRpdXM6IDFyZW0gMXJlbSAwcHggMHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZm9udC1zaXplOiAycmVtO1xuICBsaW5lLWhlaWdodDogMi40cmVtO1xuICBmbGV4OiAxIDAgYXV0bztcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBwYWRkaW5nOiAwIDFyZW07XG4gIGhlaWdodDogNXJlbTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiLmhpZGUge1xuICBkaXNwbGF5OiBub25lO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWI6aG92ZXIgLmljb24ge1xuICB0cmFuc2l0aW9uOiBhbGwgMC4yNXMgZWFzZTtcbiAgbWFyZ2luLXRvcDogLTFyZW07XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYiAuaWNvbiB7XG4gIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xuICBtYXJnaW4tcmlnaHQ6IDAuNXJlbTtcbiAgd2lkdGg6IDJyZW07XG4gIGhlaWdodDogMi40cmVtO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24uc2VuZCB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3NlbmQuc3ZnKTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pY29uLnJlY2VpdmUge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9yZWNlaXZlLWJsdWUuc3ZnKTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pY29uLmhpc3Rvcnkge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9oaXN0b3J5LnN2Zyk7XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYiAuaWNvbi5jb250cmFjdHMge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jb250cmFjdHMuc3ZnKTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pY29uLm1lc3NhZ2VzIHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbWVzc2FnZS5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24uc3Rha2luZyB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3N0YWtpbmcuc3ZnKTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pbmRpY2F0b3Ige1xuICBtYXJnaW4tbGVmdDogMC41cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYm9yZGVyLXJhZGl1czogMnJlbTtcbiAgZm9udC1zaXplOiAxLjJyZW07XG4gIGxpbmUtaGVpZ2h0OiAxLjRyZW07XG4gIG1pbi13aWR0aDogMi40cmVtO1xuICBoZWlnaHQ6IDEuNnJlbTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiOmRpc2FibGVkIHtcbiAgY3Vyc29yOiB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL25vdC1hbGxvd2VkLnN2ZyksIG5vdC1hbGxvd2VkO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWI6bm90KDpsYXN0LWNoaWxkKSB7XG4gIG1hcmdpbi1yaWdodDogMC4zcmVtO1xufVxuLnRhYnMgLnRhYnMtY29udGVudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHBhZGRpbmc6IDEuNXJlbTtcbiAgZmxleDogMSAxIGF1dG87XG59Il19 */"
+module.exports = ":host {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  padding: 2.8rem 3rem;\n  min-width: 95rem;\n  width: 100%;\n  height: 100%;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 0 0 auto;\n  margin-bottom: 2.8rem;\n}\n\n.header > div {\n  display: flex;\n  align-items: center;\n}\n\n.header > div :not(:last-child) {\n  margin-right: 3.2rem;\n}\n\n.header .settings-block {\n  position: relative;\n}\n\n.header .settings-block button {\n  margin: 0;\n}\n\n.header .settings-block button:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.header .settings-block .settings-dropdown {\n  position: absolute;\n  border-radius: 0.6rem;\n  top: 3rem;\n  right: 0;\n  width: 19rem;\n}\n\n.header .settings-block .settings-dropdown button {\n  height: 4rem;\n  display: flex;\n  padding-left: 1.1rem;\n  align-items: center;\n  width: 100%;\n}\n\n.header .settings-block .settings-dropdown button:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.header .settings-block .settings-dropdown button:disabled .icon svg path,\n.header .settings-block .settings-dropdown button:disabled .icon svg .st0 {\n  fill: rgba(255, 255, 255, 0.4);\n}\n\n.header .settings-block .settings-dropdown button:disabled span {\n  color: rgba(255, 255, 255, 0.4);\n}\n\n.header .settings-block .settings-dropdown button.dark-line {\n  border-bottom: 1px solid #0c0c3a;\n}\n\n.header .settings-block .settings-dropdown button span {\n  font-size: 1.4rem;\n  line-height: 1.7rem;\n}\n\n.header .settings-block .settings-dropdown button .icon {\n  height: 1.8rem;\n  width: 1.8rem;\n  margin-right: 1rem;\n}\n\n.header .settings-block .settings-dropdown button .icon svg {\n  height: 100%;\n  width: 100%;\n}\n\n.header .settings-block .settings-dropdown button .icon.resync-wallet {\n  height: 1.7rem;\n  width: 1.7rem;\n}\n\n.header .settings-block .settings-dropdown button .icon.close-wallet {\n  background: center/contain no-repeat url('close-wallet-dropdown.svg');\n}\n\n.header h3 {\n  font-size: 2rem;\n  line-height: 2.4rem;\n  font-weight: 400;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  white-space: nowrap;\n  max-width: 30rem;\n}\n\n.header button {\n  font-size: 2rem;\n  line-height: 2.4rem;\n  display: flex;\n  align-items: center;\n  background: transparent;\n  border: none;\n  cursor: pointer;\n  font-weight: 400;\n  outline: none;\n  padding: 0;\n}\n\n.header button .icon {\n  margin-right: 0.8rem;\n  width: 2.4rem;\n  height: 2.4rem;\n}\n\n.header button .icon.account {\n  height: 1.6rem;\n  background: center/contain no-repeat url('account.svg');\n}\n\n.header button .icon.lock {\n  background: center/contain no-repeat url('lock.svg');\n}\n\n.header button .icon.details {\n  margin-right: 0;\n}\n\n.header button .icon.close-wallet {\n  background: center/contain no-repeat url('close-wallet.svg');\n  margin-right: 0;\n}\n\n.header .alias {\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n}\n\n.header .alias .icon {\n  cursor: pointer;\n  margin-right: 1.2rem;\n  width: 2.4rem;\n  height: 2.4rem;\n}\n\n.header .alias .icon.edit {\n  background: center/contain no-repeat url('details.svg');\n}\n\n.header .alias .icon.transfer {\n  background: center/contain no-repeat url('send.svg');\n}\n\n.address {\n  display: flex;\n  align-items: center;\n  flex: 0 0 auto;\n  font-size: 1.6rem;\n  line-height: 1.9rem;\n}\n\n.address .icon {\n  cursor: pointer;\n  margin-left: 1rem;\n}\n\n.address .icon.copy {\n  transition: all 0.25s ease;\n  width: 2.4rem;\n  height: 2.4rem;\n  background: center/contain no-repeat url('copy.svg');\n}\n\n.address .icon.copied {\n  background: center/contain no-repeat url('complete-testwallet.svg');\n}\n\n.balance {\n  display: flex;\n  align-items: flex-end;\n  justify-content: flex-start;\n  flex: 0 0 auto;\n  margin: 1.6rem 0 2.5rem 0;\n}\n\n.balance :first-child {\n  font-size: 4rem;\n  font-weight: 500;\n  line-height: 3.8rem;\n  margin-right: 1rem;\n}\n\n.balance :last-child {\n  font-size: 2rem;\n  font-weight: 400;\n  line-height: 2.4rem;\n}\n\n.tabs {\n  display: flex;\n  flex-direction: column;\n  flex: 1 1 auto;\n  box-shadow: 0px 0px 30px 1px rgb(159, 7, 255);\n  border-radius: 5px;\n}\n\n.tabs .tabs-header {\n  display: flex;\n  justify-content: space-between;\n  flex: 0 0 auto;\n}\n\n.tabs .tabs-header .tab {\n  border-radius: 1rem 1rem 0px 0px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 2rem;\n  line-height: 2.4rem;\n  flex: 1 0 auto;\n  cursor: pointer;\n  padding: 0 1rem;\n  height: 5rem;\n}\n\n.tabs .tabs-header .tab.hide {\n  display: none;\n}\n\n.tabs .tabs-header .tab:hover .icon {\n  transition: all 0.25s ease;\n  margin-top: -1rem;\n}\n\n.tabs .tabs-header .tab .icon {\n  transition: all 0.25s ease;\n  margin-right: 0.5rem;\n  width: 2rem;\n  height: 2.4rem;\n}\n\n.tabs .tabs-header .tab .icon.send {\n  background: center/contain no-repeat url('send.svg');\n}\n\n.tabs .tabs-header .tab .icon.receive {\n  background: center/contain no-repeat url('receive-blue.svg');\n}\n\n.tabs .tabs-header .tab .icon.history {\n  background: center/contain no-repeat url('history.svg');\n}\n\n.tabs .tabs-header .tab .icon.contracts {\n  background: center/contain no-repeat url('contracts.svg');\n}\n\n.tabs .tabs-header .tab .icon.messages {\n  background: center/contain no-repeat url('message.svg');\n}\n\n.tabs .tabs-header .tab .icon.staking {\n  background: center/contain no-repeat url('staking.svg');\n}\n\n.tabs .tabs-header .tab .icon.price {\n  background: center/contain no-repeat url('price.svg');\n}\n\n.tabs .tabs-header .tab .indicator {\n  margin-left: 0.5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 2rem;\n  font-size: 1.2rem;\n  line-height: 1.4rem;\n  min-width: 2.4rem;\n  height: 1.6rem;\n}\n\n.tabs .tabs-header .tab:disabled {\n  cursor: url('not-allowed.svg'), not-allowed;\n}\n\n.tabs .tabs-header .tab:not(:last-child) {\n  margin-right: 0.3rem;\n}\n\n.tabs .tabs-content {\n  display: flex;\n  padding: 1.5rem;\n  flex: 1 1 auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd2FsbGV0L0M6XFxVc2Vyc1xcY29zbW9zXFxEb2N1bWVudHNcXEdpdEh1YlxcRXZvWF91aVxcaHRtbF9zb3VyY2Uvc3JjXFxhcHBcXHdhbGxldFxcd2FsbGV0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC93YWxsZXQvd2FsbGV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxvQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDRjs7QURDQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsY0FBQTtFQUNBLHFCQUFBO0FDRUY7O0FEREU7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QUNHSjs7QURESTtFQUNFLG9CQUFBO0FDR047O0FEQUU7RUFDRSxrQkFBQTtBQ0VKOztBRERJO0VBSUUsU0FBQTtBQ0FOOztBREhNO0VBQ0UsMkNBQUE7QUNLUjs7QURESTtFQUNFLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLFlBQUE7QUNHTjs7QURGTTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7QUNJUjs7QURIUTtFQUNFLDJDQUFBO0FDS1Y7O0FESFU7O0VBRUUsOEJBQUE7QUNLWjs7QURIVTtFQUNFLCtCQUFBO0FDS1o7O0FERlE7RUFDRSxnQ0FBQTtBQ0lWOztBREZRO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQ0lWOztBREZRO0VBQ0UsY0FBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtBQ0lWOztBREhVO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUNLWjs7QURIVTtFQUNFLGNBQUE7RUFDQSxhQUFBO0FDS1o7O0FESFU7RUFDRSxxRUFBQTtBQ0taOztBRENFO0VBQ0UsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQ0NKOztBRENFO0VBQ0UsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLFVBQUE7QUNDSjs7QURBSTtFQUNFLG9CQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7QUNFTjs7QURETTtFQUNFLGNBQUE7RUFDQSx1REFBQTtBQ0dSOztBRERNO0VBQ0Usb0RBQUE7QUNHUjs7QURETTtFQUNFLGVBQUE7QUNHUjs7QURETTtFQUNFLDREQUFBO0VBQ0EsZUFBQTtBQ0dSOztBRENFO0VBQ0UsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUNDSjs7QURBSTtFQUNFLGVBQUE7RUFDQSxvQkFBQTtFQUNBLGFBQUE7RUFDQSxjQUFBO0FDRU47O0FERE07RUFDRSx1REFBQTtBQ0dSOztBRERNO0VBQ0Usb0RBQUE7QUNHUjs7QURFQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0FDQ0Y7O0FEQUU7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUNFSjs7QURESTtFQUNFLDBCQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxvREFBQTtBQ0dOOztBRERJO0VBQ0UsbUVBQUE7QUNHTjs7QURDQTtFQUNFLGFBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0FDRUY7O0FEREU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDR0o7O0FEREU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtBQ0dKOztBREFBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTtFQUNBLDZDQUFBO0VBQ0Esa0JBQUE7QUNHRjs7QURGRTtFQUNFLGFBQUE7RUFDQSw4QkFBQTtFQUNBLGNBQUE7QUNJSjs7QURISTtFQUNFLGdDQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0FDS047O0FESk07RUFDRSxhQUFBO0FDTVI7O0FESFE7RUFDRSwwQkFBQTtFQUNBLGlCQUFBO0FDS1Y7O0FERk07RUFDRSwwQkFBQTtFQUNBLG9CQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7QUNJUjs7QURIUTtFQUNFLG9EQUFBO0FDS1Y7O0FESFE7RUFDRSw0REFBQTtBQ0tWOztBREhRO0VBQ0UsdURBQUE7QUNLVjs7QURIUTtFQUNFLHlEQUFBO0FDS1Y7O0FESFE7RUFDRSx1REFBQTtBQ0tWOztBREhRO0VBQ0UsdURBQUE7QUNLVjs7QURIUTtFQUNFLHFEQUFBO0FDS1Y7O0FERk07RUFDRSxtQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FDSVI7O0FERk07RUFDRSwyQ0FBQTtBQ0lSOztBREZNO0VBQ0Usb0JBQUE7QUNJUjs7QURBRTtFQUNFLGFBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ0VKIiwiZmlsZSI6InNyYy9hcHAvd2FsbGV0L3dhbGxldC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIHBhZGRpbmc6IDIuOHJlbSAzcmVtO1xyXG4gIG1pbi13aWR0aDogOTVyZW07XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG59XHJcbi5oZWFkZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgZmxleDogMCAwIGF1dG87XHJcbiAgbWFyZ2luLWJvdHRvbTogMi44cmVtO1xyXG4gID4gZGl2IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cclxuICAgIDpub3QoOmxhc3QtY2hpbGQpIHtcclxuICAgICAgbWFyZ2luLXJpZ2h0OiAzLjJyZW07XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5zZXR0aW5ncy1ibG9jayB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBidXR0b24ge1xyXG4gICAgICAmOmRpc2FibGVkIHtcclxuICAgICAgICBjdXJzb3I6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbm90LWFsbG93ZWQuc3ZnKSwgbm90LWFsbG93ZWQ7XHJcbiAgICAgIH1cclxuICAgICAgbWFyZ2luOiAwO1xyXG4gICAgfVxyXG4gICAgLnNldHRpbmdzLWRyb3Bkb3duIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiAwLjZyZW07XHJcbiAgICAgIHRvcDogM3JlbTtcclxuICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgIHdpZHRoOiAxOXJlbTtcclxuICAgICAgYnV0dG9uIHtcclxuICAgICAgICBoZWlnaHQ6IDRyZW07XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBwYWRkaW5nLWxlZnQ6IDEuMXJlbTtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICY6ZGlzYWJsZWQge1xyXG4gICAgICAgICAgY3Vyc29yOiB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL25vdC1hbGxvd2VkLnN2ZyksIG5vdC1hbGxvd2VkO1xyXG5cclxuICAgICAgICAgIC5pY29uIHN2ZyBwYXRoLFxyXG4gICAgICAgICAgLmljb24gc3ZnIC5zdDAge1xyXG4gICAgICAgICAgICBmaWxsOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNCk7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICBzcGFuIHtcclxuICAgICAgICAgICAgY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC40KTtcclxuICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgICAgJi5kYXJrLWxpbmUge1xyXG4gICAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMwYzBjM2E7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIHNwYW4ge1xyXG4gICAgICAgICAgZm9udC1zaXplOiAxLjRyZW07XHJcbiAgICAgICAgICBsaW5lLWhlaWdodDogMS43cmVtO1xyXG4gICAgICAgIH1cclxuICAgICAgICAuaWNvbiB7XHJcbiAgICAgICAgICBoZWlnaHQ6IDEuOHJlbTtcclxuICAgICAgICAgIHdpZHRoOiAxLjhyZW07XHJcbiAgICAgICAgICBtYXJnaW4tcmlnaHQ6IDFyZW07XHJcbiAgICAgICAgICBzdmcge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgICAgJi5yZXN5bmMtd2FsbGV0IHtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxLjdyZW07XHJcbiAgICAgICAgICAgIHdpZHRoOiAxLjdyZW07XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgICAmLmNsb3NlLXdhbGxldCB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY2xvc2Utd2FsbGV0LWRyb3Bkb3duLnN2Zyk7XHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIGgzIHtcclxuICAgIGZvbnQtc2l6ZTogMnJlbTtcclxuICAgIGxpbmUtaGVpZ2h0OiAyLjRyZW07XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgIG1heC13aWR0aDogMzByZW07XHJcbiAgfVxyXG4gIGJ1dHRvbiB7XHJcbiAgICBmb250LXNpemU6IDJyZW07XHJcbiAgICBsaW5lLWhlaWdodDogMi40cmVtO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG4gICAgcGFkZGluZzogMDtcclxuICAgIC5pY29uIHtcclxuICAgICAgbWFyZ2luLXJpZ2h0OiAwLjhyZW07XHJcbiAgICAgIHdpZHRoOiAyLjRyZW07XHJcbiAgICAgIGhlaWdodDogMi40cmVtO1xyXG4gICAgICAmLmFjY291bnQge1xyXG4gICAgICAgIGhlaWdodDogMS42cmVtO1xyXG4gICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvYWNjb3VudC5zdmcpO1xyXG4gICAgICB9XHJcbiAgICAgICYubG9jayB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9sb2NrLnN2Zyk7XHJcbiAgICAgIH1cclxuICAgICAgJi5kZXRhaWxzIHtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDA7XHJcbiAgICAgIH1cclxuICAgICAgJi5jbG9zZS13YWxsZXQge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY2xvc2Utd2FsbGV0LnN2Zyk7XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAwO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5hbGlhcyB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGZvbnQtc2l6ZTogMS4zcmVtO1xyXG4gICAgLmljb24ge1xyXG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgIG1hcmdpbi1yaWdodDogMS4ycmVtO1xyXG4gICAgICB3aWR0aDogMi40cmVtO1xyXG4gICAgICBoZWlnaHQ6IDIuNHJlbTtcclxuICAgICAgJi5lZGl0IHtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2RldGFpbHMuc3ZnKTtcclxuICAgICAgfVxyXG4gICAgICAmLnRyYW5zZmVyIHtcclxuICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3NlbmQuc3ZnKTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4uYWRkcmVzcyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGZsZXg6IDAgMCBhdXRvO1xyXG4gIGZvbnQtc2l6ZTogMS42cmVtO1xyXG4gIGxpbmUtaGVpZ2h0OiAxLjlyZW07XHJcbiAgLmljb24ge1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDFyZW07XHJcbiAgICAmLmNvcHkge1xyXG4gICAgICB0cmFuc2l0aW9uOiBhbGwgMC4yNXMgZWFzZTtcclxuICAgICAgd2lkdGg6IDIuNHJlbTtcclxuICAgICAgaGVpZ2h0OiAyLjRyZW07XHJcbiAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY29weS5zdmcpO1xyXG4gICAgfVxyXG4gICAgJi5jb3BpZWQge1xyXG4gICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2NvbXBsZXRlLXRlc3R3YWxsZXQuc3ZnKTtcclxuICAgIH1cclxuICB9XHJcbn1cclxuLmJhbGFuY2Uge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xyXG4gIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDtcclxuICBmbGV4OiAwIDAgYXV0bztcclxuICBtYXJnaW46IDEuNnJlbSAwIDIuNXJlbSAwO1xyXG4gIDpmaXJzdC1jaGlsZCB7XHJcbiAgICBmb250LXNpemU6IDRyZW07XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDMuOHJlbTtcclxuICAgIG1hcmdpbi1yaWdodDogMXJlbTtcclxuICB9XHJcbiAgOmxhc3QtY2hpbGQge1xyXG4gICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgIGxpbmUtaGVpZ2h0OiAyLjRyZW07XHJcbiAgfVxyXG59XHJcbi50YWJzIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgZmxleDogMSAxIGF1dG87XHJcbiAgYm94LXNoYWRvdzogMHB4IDBweCAzMHB4IDFweCByZ2IoMTU5LCA3LCAyNTUpO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAudGFicy1oZWFkZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGZsZXg6IDAgMCBhdXRvO1xyXG4gICAgLnRhYiB7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDFyZW0gMXJlbSAwcHggMHB4O1xyXG4gICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgZm9udC1zaXplOiAycmVtO1xyXG4gICAgICBsaW5lLWhlaWdodDogMi40cmVtO1xyXG4gICAgICBmbGV4OiAxIDAgYXV0bztcclxuICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICBwYWRkaW5nOiAwIDFyZW07XHJcbiAgICAgIGhlaWdodDogNXJlbTtcclxuICAgICAgJi5oaWRlIHtcclxuICAgICAgICBkaXNwbGF5OiBub25lO1xyXG4gICAgICB9XHJcbiAgICAgICY6aG92ZXIge1xyXG4gICAgICAgIC5pY29uIHtcclxuICAgICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xyXG4gICAgICAgICAgbWFyZ2luLXRvcDogLTFyZW07XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICAgIC5pY29uIHtcclxuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4yNXMgZWFzZTtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDAuNXJlbTtcclxuICAgICAgICB3aWR0aDogMnJlbTtcclxuICAgICAgICBoZWlnaHQ6IDIuNHJlbTtcclxuICAgICAgICAmLnNlbmQge1xyXG4gICAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9zZW5kLnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICYucmVjZWl2ZSB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3JlY2VpdmUtYmx1ZS5zdmcpO1xyXG4gICAgICAgIH1cclxuICAgICAgICAmLmhpc3Rvcnkge1xyXG4gICAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9oaXN0b3J5LnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICYuY29udHJhY3RzIHtcclxuICAgICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY29udHJhY3RzLnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICYubWVzc2FnZXMge1xyXG4gICAgICAgICAgYmFja2dyb3VuZDogY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9tZXNzYWdlLnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICAgICYuc3Rha2luZyB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3N0YWtpbmcuc3ZnKTtcclxuICAgICAgICB9XHJcbiAgICAgICAgJi5wcmljZSB7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3ByaWNlLnN2Zyk7XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICAgIC5pbmRpY2F0b3Ige1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAwLjVyZW07XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDJyZW07XHJcbiAgICAgICAgZm9udC1zaXplOiAxLjJyZW07XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDEuNHJlbTtcclxuICAgICAgICBtaW4td2lkdGg6IDIuNHJlbTtcclxuICAgICAgICBoZWlnaHQ6IDEuNnJlbTtcclxuICAgICAgfVxyXG4gICAgICAmOmRpc2FibGVkIHtcclxuICAgICAgICBjdXJzb3I6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbm90LWFsbG93ZWQuc3ZnKSwgbm90LWFsbG93ZWQ7XHJcbiAgICAgIH1cclxuICAgICAgJjpub3QoOmxhc3QtY2hpbGQpIHtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IDAuM3JlbTtcclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxuICAudGFicy1jb250ZW50IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBwYWRkaW5nOiAxLjVyZW07XHJcbiAgICBmbGV4OiAxIDEgYXV0bztcclxuICB9XHJcbn1cclxuIiwiOmhvc3Qge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIHBhZGRpbmc6IDIuOHJlbSAzcmVtO1xuICBtaW4td2lkdGg6IDk1cmVtO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uaGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBmbGV4OiAwIDAgYXV0bztcbiAgbWFyZ2luLWJvdHRvbTogMi44cmVtO1xufVxuLmhlYWRlciA+IGRpdiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4uaGVhZGVyID4gZGl2IDpub3QoOmxhc3QtY2hpbGQpIHtcbiAgbWFyZ2luLXJpZ2h0OiAzLjJyZW07XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIGJ1dHRvbiB7XG4gIG1hcmdpbjogMDtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIGJ1dHRvbjpkaXNhYmxlZCB7XG4gIGN1cnNvcjogdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9ub3QtYWxsb3dlZC5zdmcpLCBub3QtYWxsb3dlZDtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm9yZGVyLXJhZGl1czogMC42cmVtO1xuICB0b3A6IDNyZW07XG4gIHJpZ2h0OiAwO1xuICB3aWR0aDogMTlyZW07XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uIHtcbiAgaGVpZ2h0OiA0cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xuICBwYWRkaW5nLWxlZnQ6IDEuMXJlbTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgd2lkdGg6IDEwMCU7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uOmRpc2FibGVkIHtcbiAgY3Vyc29yOiB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL25vdC1hbGxvd2VkLnN2ZyksIG5vdC1hbGxvd2VkO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbjpkaXNhYmxlZCAuaWNvbiBzdmcgcGF0aCxcbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b246ZGlzYWJsZWQgLmljb24gc3ZnIC5zdDAge1xuICBmaWxsOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNCk7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uOmRpc2FibGVkIHNwYW4ge1xuICBjb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbi5kYXJrLWxpbmUge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzBjMGMzYTtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b24gc3BhbiB7XG4gIGZvbnQtc2l6ZTogMS40cmVtO1xuICBsaW5lLWhlaWdodDogMS43cmVtO1xufVxuLmhlYWRlciAuc2V0dGluZ3MtYmxvY2sgLnNldHRpbmdzLWRyb3Bkb3duIGJ1dHRvbiAuaWNvbiB7XG4gIGhlaWdodDogMS44cmVtO1xuICB3aWR0aDogMS44cmVtO1xuICBtYXJnaW4tcmlnaHQ6IDFyZW07XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uIC5pY29uIHN2ZyB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG59XG4uaGVhZGVyIC5zZXR0aW5ncy1ibG9jayAuc2V0dGluZ3MtZHJvcGRvd24gYnV0dG9uIC5pY29uLnJlc3luYy13YWxsZXQge1xuICBoZWlnaHQ6IDEuN3JlbTtcbiAgd2lkdGg6IDEuN3JlbTtcbn1cbi5oZWFkZXIgLnNldHRpbmdzLWJsb2NrIC5zZXR0aW5ncy1kcm9wZG93biBidXR0b24gLmljb24uY2xvc2Utd2FsbGV0IHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY2xvc2Utd2FsbGV0LWRyb3Bkb3duLnN2Zyk7XG59XG4uaGVhZGVyIGgzIHtcbiAgZm9udC1zaXplOiAycmVtO1xuICBsaW5lLWhlaWdodDogMi40cmVtO1xuICBmb250LXdlaWdodDogNDAwO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgbWF4LXdpZHRoOiAzMHJlbTtcbn1cbi5oZWFkZXIgYnV0dG9uIHtcbiAgZm9udC1zaXplOiAycmVtO1xuICBsaW5lLWhlaWdodDogMi40cmVtO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgYm9yZGVyOiBub25lO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIG91dGxpbmU6IG5vbmU7XG4gIHBhZGRpbmc6IDA7XG59XG4uaGVhZGVyIGJ1dHRvbiAuaWNvbiB7XG4gIG1hcmdpbi1yaWdodDogMC44cmVtO1xuICB3aWR0aDogMi40cmVtO1xuICBoZWlnaHQ6IDIuNHJlbTtcbn1cbi5oZWFkZXIgYnV0dG9uIC5pY29uLmFjY291bnQge1xuICBoZWlnaHQ6IDEuNnJlbTtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvYWNjb3VudC5zdmcpO1xufVxuLmhlYWRlciBidXR0b24gLmljb24ubG9jayB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2xvY2suc3ZnKTtcbn1cbi5oZWFkZXIgYnV0dG9uIC5pY29uLmRldGFpbHMge1xuICBtYXJnaW4tcmlnaHQ6IDA7XG59XG4uaGVhZGVyIGJ1dHRvbiAuaWNvbi5jbG9zZS13YWxsZXQge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9jbG9zZS13YWxsZXQuc3ZnKTtcbiAgbWFyZ2luLXJpZ2h0OiAwO1xufVxuLmhlYWRlciAuYWxpYXMge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBmb250LXNpemU6IDEuM3JlbTtcbn1cbi5oZWFkZXIgLmFsaWFzIC5pY29uIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBtYXJnaW4tcmlnaHQ6IDEuMnJlbTtcbiAgd2lkdGg6IDIuNHJlbTtcbiAgaGVpZ2h0OiAyLjRyZW07XG59XG4uaGVhZGVyIC5hbGlhcyAuaWNvbi5lZGl0IHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvZGV0YWlscy5zdmcpO1xufVxuLmhlYWRlciAuYWxpYXMgLmljb24udHJhbnNmZXIge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9zZW5kLnN2Zyk7XG59XG5cbi5hZGRyZXNzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleDogMCAwIGF1dG87XG4gIGZvbnQtc2l6ZTogMS42cmVtO1xuICBsaW5lLWhlaWdodDogMS45cmVtO1xufVxuLmFkZHJlc3MgLmljb24ge1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFkZHJlc3MgLmljb24uY29weSB7XG4gIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xuICB3aWR0aDogMi40cmVtO1xuICBoZWlnaHQ6IDIuNHJlbTtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY29weS5zdmcpO1xufVxuLmFkZHJlc3MgLmljb24uY29waWVkIHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvY29tcGxldGUtdGVzdHdhbGxldC5zdmcpO1xufVxuXG4uYmFsYW5jZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICBmbGV4OiAwIDAgYXV0bztcbiAgbWFyZ2luOiAxLjZyZW0gMCAyLjVyZW0gMDtcbn1cbi5iYWxhbmNlIDpmaXJzdC1jaGlsZCB7XG4gIGZvbnQtc2l6ZTogNHJlbTtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgbGluZS1oZWlnaHQ6IDMuOHJlbTtcbiAgbWFyZ2luLXJpZ2h0OiAxcmVtO1xufVxuLmJhbGFuY2UgOmxhc3QtY2hpbGQge1xuICBmb250LXNpemU6IDJyZW07XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIGxpbmUtaGVpZ2h0OiAyLjRyZW07XG59XG5cbi50YWJzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgZmxleDogMSAxIGF1dG87XG4gIGJveC1zaGFkb3c6IDBweCAwcHggMzBweCAxcHggcmdiKDE1OSwgNywgMjU1KTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBmbGV4OiAwIDAgYXV0bztcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIHtcbiAgYm9yZGVyLXJhZGl1czogMXJlbSAxcmVtIDBweCAwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBmb250LXNpemU6IDJyZW07XG4gIGxpbmUtaGVpZ2h0OiAyLjRyZW07XG4gIGZsZXg6IDEgMCBhdXRvO1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIHBhZGRpbmc6IDAgMXJlbTtcbiAgaGVpZ2h0OiA1cmVtO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIuaGlkZSB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYjpob3ZlciAuaWNvbiB7XG4gIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlO1xuICBtYXJnaW4tdG9wOiAtMXJlbTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pY29uIHtcbiAgdHJhbnNpdGlvbjogYWxsIDAuMjVzIGVhc2U7XG4gIG1hcmdpbi1yaWdodDogMC41cmVtO1xuICB3aWR0aDogMnJlbTtcbiAgaGVpZ2h0OiAyLjRyZW07XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYiAuaWNvbi5zZW5kIHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc2VuZC5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24ucmVjZWl2ZSB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL3JlY2VpdmUtYmx1ZS5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24uaGlzdG9yeSB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2hpc3Rvcnkuc3ZnKTtcbn1cbi50YWJzIC50YWJzLWhlYWRlciAudGFiIC5pY29uLmNvbnRyYWN0cyB7XG4gIGJhY2tncm91bmQ6IGNlbnRlci9jb250YWluIG5vLXJlcGVhdCB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2NvbnRyYWN0cy5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24ubWVzc2FnZXMge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9tZXNzYWdlLnN2Zyk7XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYiAuaWNvbi5zdGFraW5nIHtcbiAgYmFja2dyb3VuZDogY2VudGVyL2NvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc3Rha2luZy5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmljb24ucHJpY2Uge1xuICBiYWNrZ3JvdW5kOiBjZW50ZXIvY29udGFpbiBuby1yZXBlYXQgdXJsKC4uLy4uL2Fzc2V0cy9pY29ucy9wcmljZS5zdmcpO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWIgLmluZGljYXRvciB7XG4gIG1hcmdpbi1sZWZ0OiAwLjVyZW07XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBib3JkZXItcmFkaXVzOiAycmVtO1xuICBmb250LXNpemU6IDEuMnJlbTtcbiAgbGluZS1oZWlnaHQ6IDEuNHJlbTtcbiAgbWluLXdpZHRoOiAyLjRyZW07XG4gIGhlaWdodDogMS42cmVtO1xufVxuLnRhYnMgLnRhYnMtaGVhZGVyIC50YWI6ZGlzYWJsZWQge1xuICBjdXJzb3I6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvbm90LWFsbG93ZWQuc3ZnKSwgbm90LWFsbG93ZWQ7XG59XG4udGFicyAudGFicy1oZWFkZXIgLnRhYjpub3QoOmxhc3QtY2hpbGQpIHtcbiAgbWFyZ2luLXJpZ2h0OiAwLjNyZW07XG59XG4udGFicyAudGFicy1jb250ZW50IHtcbiAgZGlzcGxheTogZmxleDtcbiAgcGFkZGluZzogMS41cmVtO1xuICBmbGV4OiAxIDEgYXV0bztcbn0iXX0= */"
 
 /***/ }),
 
@@ -10146,6 +10764,12 @@ var WalletComponent = /** @class */ (function () {
                 link: '/staking',
                 indicator: false,
                 disabled: true
+            },
+            {
+                title: 'WALLET.TABS.PRICE',
+                icon: 'price',
+                link: '/price',
+                disabled: false
             },
         ];
         if (!this.variablesService.currentWallet && this.variablesService.wallets.length > 0) {

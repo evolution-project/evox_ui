@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { MuscleWidgetModule } from './price/muscleman/muscle-widget.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -21,6 +27,7 @@ import { WalletComponent } from './wallet/wallet.component';
 import { SendComponent } from './send/send.component';
 import { ReceiveComponent } from './receive/receive.component';
 import { HistoryComponent } from './history/history.component';
+import { PriceComponent } from './price/price.component';
 import { ContractsComponent } from './contracts/contracts.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -116,6 +123,7 @@ export function highchartsFactory() {
     PurchaseComponent,
     MessagesComponent,
     StakingComponent,
+    PriceComponent,
     TypingMessageComponent,
     MoneyToIntPipe,
     IntToMoneyPipe,
@@ -144,7 +152,15 @@ export function highchartsFactory() {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ChartModule,
     HttpClientModule,
+    MuscleWidgetModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     DragDropModule,
     DragScrollModule,
     TranslateModule.forRoot({

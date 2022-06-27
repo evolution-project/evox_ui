@@ -87,6 +87,12 @@ export class WalletComponent implements OnInit, OnDestroy {
       indicator: false,
       disabled: true
     },
+    {
+      title: 'WALLET.TABS.PRICE',
+      icon: 'price',
+      link: '/price',
+      disabled: false
+    },
   ];
   aliasSubscription: Subscription;
   walletsSubscription: Subscription;

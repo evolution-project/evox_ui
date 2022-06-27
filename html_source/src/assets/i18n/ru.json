@@ -216,7 +216,8 @@
       "HISTORY": "История",
       "CONTRACTS": "Контракты",
       "MESSAGES": "Сообщения",
-      "STAKING": "Стекинг"
+      "STAKING": "Стекинг",
+      "PRICE": "Цена"
     }
   },
   "WALLET_DETAILS": {

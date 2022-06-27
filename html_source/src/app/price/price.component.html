@@ -1,0 +1,13 @@
+<div>
+    <muscle-widget [chartConfig]="chartConfiguration"></muscle-widget>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-select [(value)]="coin"
+                disableOptionCentering>
+                <mat-option *ngFor="let coin of coins" [value]="coin">
+                    {{coin.displayName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
