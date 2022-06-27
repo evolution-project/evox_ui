@@ -7266,14 +7266,14 @@ var ChartConfiguration = /** @class */ (function () {
         if (imageLocation === void 0) { imageLocation = '/assets/images/256x256.png'; }
         if (coinXPosition === void 0) { coinXPosition = 160; }
         if (coinYPosition === void 0) { coinYPosition = 15; }
-        if (coin === void 0) { coin = 'EVOX'; }
+        if (coin === void 0) { coin = 'EvoX'; }
         if (coinStyle === void 0) { coinStyle = { fontSize: '16px', color: 'white', fontWeight: '600' }; }
         if (coinNameXPosition === void 0) { coinNameXPosition = 160; }
         if (coinNameYPosition === void 0) { coinNameYPosition = 30; }
         if (coinName === void 0) { coinName = 'Evolution'; }
         if (coinNameStyle === void 0) { coinNameStyle = { fontSize: '12px', color: 'white' }; }
-        if (dataSeriesName === void 0) { dataSeriesName = 'Evox Price'; }
-        if (backgroundColor === void 0) { backgroundColor = 'black'; }
+        if (dataSeriesName === void 0) { dataSeriesName = 'EvoX Price'; }
+        if (backgroundColor === void 0) { backgroundColor = ''; }
         if (xAxisStyle === void 0) { xAxisStyle = { color: 'white', fontSize: '12px', fontWeight: '600' }; }
         if (xAxisText === void 0) { xAxisText = 'Date'; }
         if (yAxisStyle === void 0) { yAxisStyle = { color: 'white', fontSize: '12px', fontWeight: '600' }; }
@@ -7367,16 +7367,16 @@ var MuscleWidgetService = /** @class */ (function () {
     MuscleWidgetService.prototype.getChartData = function (days, pointPerDay, coin) {
         if (days === void 0) { days = 7; }
         if (pointPerDay === void 0) { pointPerDay = 24; }
-        if (coin === void 0) { coin = 'EVOX'; }
+        if (coin === void 0) { coin = 'EvoX'; }
         var now = new Date();
         var end = now.getTime();
         var start = new Date().setDate(now.getDate() - days);
         var points = pointPerDay * days;
-        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins/history/range?coin=" + coin + "&start=" + start + "&end=" + end + "&currency=USD&points=" + points).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins/history/range?coin=EVOX&start=" + start + "&end=" + end + "&currency=USD&points=" + points).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
     MuscleWidgetService.prototype.getCurrencyData = function (coin) {
-        if (coin === void 0) { coin = 'EVOX'; }
-        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins?only=" + coin + ",BTC&currency=USD").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
+        if (coin === void 0) { coin = 'EvoX'; }
+        return this.httpClient.get("https://http-api.livecoinwatch.com/widgets/coins?only=EVOX,BTC&currency=USD").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
     };
     MuscleWidgetService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -7463,7 +7463,7 @@ module.exports = "<div [chart]=\"chart\"></div>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL211c2NsZW1hbi9tdXNjbGUtd2lkZ2V0L211c2NsZS13aWRnZXQuY29tcG9uZW50LnNjc3MifQ== */"
+module.exports = ":host {\n  width: 100%;\n}\n\n.muscle-widget {\n  display: flex;\n  flex: 0 0 auto;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvQzpcXFVzZXJzXFxjb3Ntb3NcXERvY3VtZW50c1xcR2l0SHViXFxFdm9YX3VpXFxodG1sX3NvdXJjZS9zcmNcXGFwcFxccHJpY2VcXG11c2NsZW1hblxcbXVzY2xlLXdpZGdldFxcbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUNDSjs7QURFQTtFQUNFLGFBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICB9XHJcbi5tdXNjbGUtd2lkZ2V0IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXg6IDAgMCBhdXRvO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcbiAgIiwiOmhvc3Qge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm11c2NsZS13aWRnZXQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4OiAwIDAgYXV0bztcbiAgd2lkdGg6IDEwMCU7XG59Il19 */"
 
 /***/ }),
 
@@ -7699,7 +7699,7 @@ var MuscleWidgetComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <muscle-widget [chartConfig]=\"chartConfiguration\"></muscle-widget>\r\n    <div>\r\n        <mat-form-field appearance=\"fill\">\r\n            <mat-select [(value)]=\"coin\"\r\n                disableOptionCentering>\r\n                <mat-option *ngFor=\"let coin of coins\" [value]=\"coin\">\r\n                    {{coin.displayName}}\r\n                </mat-option>\r\n            </mat-select>\r\n        </mat-form-field>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"muscle-widget\">\r\n    <muscle-widget [chartConfig]=\"chartConfiguration\"></muscle-widget>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -7710,7 +7710,7 @@ module.exports = "<div>\r\n    <muscle-widget [chartConfig]=\"chartConfiguration
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL3ByaWNlLmNvbXBvbmVudC5zY3NzIn0= */"
+module.exports = ":host {\n  width: 100%;\n}\n\n.muscle-widget {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  flex-grow: 1;\n  font-size: 1.3rem;\n  margin: -0.5rem 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJpY2UvQzpcXFVzZXJzXFxjb3Ntb3NcXERvY3VtZW50c1xcR2l0SHViXFxFdm9YX3VpXFxodG1sX3NvdXJjZS9zcmNcXGFwcFxccHJpY2VcXHByaWNlLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wcmljZS9wcmljZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUNDRjs7QURDQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtBQ0VBIiwiZmlsZSI6InNyYy9hcHAvcHJpY2UvcHJpY2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuLm11c2NsZS13aWRnZXQge1xyXG5kaXNwbGF5OiBmbGV4O1xyXG5mbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5hbGlnbi1pdGVtczogZmxleC1zdGFydDtcclxuanVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbmZsZXgtZ3JvdzogMTtcclxuZm9udC1zaXplOiAxLjNyZW07XHJcbm1hcmdpbjogLTAuNXJlbSAwO1xyXG59IiwiOmhvc3Qge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLm11c2NsZS13aWRnZXQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogZmxleC1zdGFydDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZsZXgtZ3JvdzogMTtcbiAgZm9udC1zaXplOiAxLjNyZW07XG4gIG1hcmdpbjogLTAuNXJlbSAwO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -7726,6 +7726,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PriceComponent", function() { return PriceComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./muscleman/models/chart-model */ "./src/app/price/muscleman/models/chart-model.ts");
+/* harmony import */ var _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_helpers/services/backend.service */ "./src/app/_helpers/services/backend.service.ts");
+/* harmony import */ var _helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_helpers/services/variables.service */ "./src/app/_helpers/services/variables.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7737,14 +7739,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var PriceComponent = /** @class */ (function () {
-    function PriceComponent() {
+    function PriceComponent(backend, variablesService) {
+        this.backend = backend;
+        this.variablesService = variablesService;
         this.title = 'widget';
-        this.coins = [new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ARQ', 'RandomArq', 'Arqma Price', '/assets/arqma-310x310.png'),
-            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ETH', 'Ethereum', 'Ethereum Price', '/assets/ethereum.webp'),
-            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('EVOX', 'Evolution', 'Evox Price', '/assets/images/256x256.png'),
-            new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('ZANO', 'Progpow', 'Zano Price', '/assets/zano.webp')];
-        this.coin = this.coins[0];
+        this.coins = new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('EvoX', 'Evolution', 'EvoX Price', '/assets/images/256x256.png');
+        this.coin = this.coins;
     }
     Object.defineProperty(PriceComponent.prototype, "coin", {
         get: function () {
@@ -7763,12 +7766,13 @@ var PriceComponent = /** @class */ (function () {
     });
     PriceComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-root',
+            selector: 'app-price',
             template: __webpack_require__(/*! ./price.component.html */ "./src/app/price/price.component.html"),
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
             styles: [__webpack_require__(/*! ./price.component.scss */ "./src/app/price/price.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"],
+            _helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_3__["VariablesService"]])
     ], PriceComponent);
     return PriceComponent;
 }());

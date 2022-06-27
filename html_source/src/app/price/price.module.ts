@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 
-import { AppRoutingModule } from './price-routing.module';
+import { PriceRoutingModule } from './price-routing.module';
 import { PriceComponent } from './price.component';
 
 import { ChartModule } from 'angular-highcharts';
@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    PriceRoutingModule,
     ChartModule,
     HttpClientModule,
     MuscleWidgetModule,
@@ -33,4 +33,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [PriceComponent]
 })
-export class AppModule { }
+export class PriceModule { }
