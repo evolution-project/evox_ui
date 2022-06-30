@@ -3160,4 +3160,13 @@ body app-root {
   mask: url(assets/icons/update-alert.svg) no-repeat center;
 }
 
+app-price {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100% !important;
+    height: 100% !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

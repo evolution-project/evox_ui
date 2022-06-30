@@ -1,10 +1,24 @@
-:host {
-    width: 100%;
+// :host {
+//   flex: 1 1 100%;
+//   align-items: stretch;
+//   justify-content: stretch;
+//   width: 100% !important;
+//   height: 100% !important;
+//   display: flex;
+// }
 
-  }
-.muscle-widget {
-  display: flex;
-  flex: 0 0 auto;
-  width: 100%;
+.container {
+  width: 95%;
+  height: 75%;
+  position: absolute;
 }
+
+// .highcharts-container {
+//   display: flex;
+//   flex: 1 1 100%;
+//   align-items: stretch;
+//   justify-content: stretch;
+//   width: 100% !important;
+//   height: 100% !important;
+// }
   

@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartConfiguration, SelectValue } from './muscleman/models/chart-model';
-import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { VariablesService } from '../_helpers/services/variables.service';
 
 export class PriceComponent {
   title = 'widget';
-  coins = new SelectValue('EvoX', 'Evolution', 'EvoX Price', '/assets/images/256x256.png')
+  coins = new SelectValue('EvoX', 'Evolution', 'EvoX Price', 'assets/images/256x256.png')
 
   private _value: any
   set coin(value: any) {
@@ -21,7 +20,8 @@ export class PriceComponent {
     this.chartConfiguration.coin = value.displayName
     this.chartConfiguration.coinName = value.coinName
     this.chartConfiguration.imageLocation = value.imageLocation
-    this.chartConfiguration.dataSeriesName = value.dataSeriesName  
+    this.chartConfiguration.dataSeriesName = value.dataSeriesName
+    this.chartConfiguration.xAxisText = ''
   }
   get coin(): any {
     return this._value
@@ -29,7 +29,6 @@ export class PriceComponent {
   chartConfiguration: ChartConfiguration
 
   constructor(
-    private backend: BackendService,
     public variablesService: VariablesService
   ) {
     this.coin = this.coins
