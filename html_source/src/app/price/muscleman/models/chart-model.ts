@@ -71,7 +71,7 @@ export class ChartConfiguration
                 public imageYPosition: number=12,
                 public imageWidth: number=50,
                 public imageHeight: number=50,
-                public imageLocation: string='/assets/images/256x256.png',
+                public imageLocation: string='/assets/scripts/lcw-widget.js',
                 public coinXPosition: number=160,
                 public coinYPosition: number=10,
                 public coin: string='EVOX',

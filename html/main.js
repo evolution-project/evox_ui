@@ -7254,7 +7254,7 @@ var ChartConfiguration = /** @class */ (function () {
         if (imageYPosition === void 0) { imageYPosition = 12; }
         if (imageWidth === void 0) { imageWidth = 50; }
         if (imageHeight === void 0) { imageHeight = 50; }
-        if (imageLocation === void 0) { imageLocation = '/assets/images/256x256.png'; }
+        if (imageLocation === void 0) { imageLocation = '/assets/scripts/lcw-widget.js'; }
         if (coinXPosition === void 0) { coinXPosition = 160; }
         if (coinYPosition === void 0) { coinYPosition = 10; }
         if (coin === void 0) { coin = 'EVOX'; }
@@ -7768,7 +7768,7 @@ var PriceComponent = /** @class */ (function () {
     });
     PriceComponent.prototype.ngOnInit = function () {
         this.textScript = this.renderer2.createElement('script');
-        this.textScript.src = 'C:/Users/cosmos/Documents/GitHub/EvoX_ui/html_source/src/assets/scripts/lcw-widget.js';
+        this.textScript.src = 'assets/scripts/lcw-widget.js';
         this.renderer2.appendChild(this.document.body, this.textScript);
     };
     PriceComponent.prototype.ngOnDestroy = function () {

@@ -42,7 +42,7 @@ export class PriceComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     this.textScript = this.renderer2.createElement('script');
-    this.textScript.src = 'C:/Users/cosmos/Documents/GitHub/EvoX_ui/html_source/src/assets/scripts/lcw-widget.js';
+    this.textScript.src = 'assets/scripts/lcw-widget.js';
     this.renderer2.appendChild(this.document.body, this.textScript);
   }
   ngOnDestroy(): void {
