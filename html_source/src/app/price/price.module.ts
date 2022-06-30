@@ -8,9 +8,6 @@ import { PriceComponent } from './price.component';
 import { ChartModule } from 'angular-highcharts';
 import { MuscleWidgetModule } from './muscleman/muscle-widget.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule } from '@angular/material/select'
-import { MatFormFieldModule } from '@angular/material'
-import { MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -24,11 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MuscleWidgetModule,
     BrowserAnimationsModule,
-    MatSelectModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [PriceComponent]

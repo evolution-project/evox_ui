@@ -1,12 +1,8 @@
-:host {
+.price-widget {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: stretch;
+  justify-content: stretch;
   width: 100%;
-}
-.muscle-widget {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: center;
-flex-grow: 1;
-font-size: 1.3rem;
-margin: -0.5rem 0;
+  height: 100%;
 }
