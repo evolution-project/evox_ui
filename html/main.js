@@ -3820,7 +3820,7 @@ var AppComponent = /** @class */ (function () {
         this.firstOnlineState = false;
         this.translateUsed = false;
         this.needOpenWallets = [];
-        translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru']);
+        translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru', 'ro']);
         translate.setDefaultLang('en');
         // const browserLang = translate.getBrowserLang();
         // translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
@@ -7251,13 +7251,13 @@ var ChartConfiguration = /** @class */ (function () {
         if (secondaryPercentDecimalPlaces === void 0) { secondaryPercentDecimalPlaces = 2; }
         if (secondaryDecimalPlaces === void 0) { secondaryDecimalPlaces = 8; }
         if (imageXPosition === void 0) { imageXPosition = 100; }
-        if (imageYPosition === void 0) { imageYPosition = 10; }
+        if (imageYPosition === void 0) { imageYPosition = 12; }
         if (imageWidth === void 0) { imageWidth = 50; }
         if (imageHeight === void 0) { imageHeight = 50; }
         if (imageLocation === void 0) { imageLocation = '/assets/images/256x256.png'; }
         if (coinXPosition === void 0) { coinXPosition = 160; }
         if (coinYPosition === void 0) { coinYPosition = 10; }
-        if (coin === void 0) { coin = 'EvoX'; }
+        if (coin === void 0) { coin = 'EVOX'; }
         if (coinStyle === void 0) { coinStyle = { fontSize: '16px', color: 'white', fontWeight: '600' }; }
         if (coinNameXPosition === void 0) { coinNameXPosition = 160; }
         if (coinNameYPosition === void 0) { coinNameYPosition = 25; }
@@ -7454,7 +7454,7 @@ module.exports = "<div class=\"container\" [chart]=\"chart\"></div>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  width: 95%;\n  height: 75%;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvQzpcXFVzZXJzXFxjb3Ntb3NcXERvY3VtZW50c1xcR2l0SHViXFxFdm9YX3VpXFxodG1sX3NvdXJjZS9zcmNcXGFwcFxccHJpY2VcXG11c2NsZW1hblxcbXVzY2xlLXdpZGdldFxcbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFTQTtFQUNFLFVBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUNSRiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL211c2NsZW1hbi9tdXNjbGUtd2lkZ2V0L211c2NsZS13aWRnZXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyA6aG9zdCB7XHJcbi8vICAgZmxleDogMSAxIDEwMCU7XHJcbi8vICAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbi8vICAganVzdGlmeS1jb250ZW50OiBzdHJldGNoO1xyXG4vLyAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbi8vICAgaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XHJcbi8vICAgZGlzcGxheTogZmxleDtcclxuLy8gfVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgd2lkdGg6IDk1JTtcclxuICBoZWlnaHQ6IDc1JTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcbi8vIC5oaWdoY2hhcnRzLWNvbnRhaW5lciB7XHJcbi8vICAgZGlzcGxheTogZmxleDtcclxuLy8gICBmbGV4OiAxIDEgMTAwJTtcclxuLy8gICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuLy8gICBqdXN0aWZ5LWNvbnRlbnQ6IHN0cmV0Y2g7XHJcbi8vICAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcclxuLy8gICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcclxuLy8gfVxyXG4gICIsIi5jb250YWluZXIge1xuICB3aWR0aDogOTUlO1xuICBoZWlnaHQ6IDc1JTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xufSJdfQ== */"
+module.exports = ".container {\n  width: 93%;\n  height: 55%;\n  position: absolute;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvQzpcXFVzZXJzXFxjb3Ntb3NcXERvY3VtZW50c1xcR2l0SHViXFxFdm9YX3VpXFxodG1sX3NvdXJjZS9zcmNcXGFwcFxccHJpY2VcXG11c2NsZW1hblxcbXVzY2xlLXdpZGdldFxcbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvcHJpY2UvbXVzY2xlbWFuL211c2NsZS13aWRnZXQvbXVzY2xlLXdpZGdldC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFTQTtFQUNFLFVBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUNSRiIsImZpbGUiOiJzcmMvYXBwL3ByaWNlL211c2NsZW1hbi9tdXNjbGUtd2lkZ2V0L211c2NsZS13aWRnZXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyA6aG9zdCB7XHJcbi8vICAgZmxleDogMSAxIDEwMCU7XHJcbi8vICAgYWxpZ24taXRlbXM6IHN0cmV0Y2g7XHJcbi8vICAganVzdGlmeS1jb250ZW50OiBzdHJldGNoO1xyXG4vLyAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XHJcbi8vICAgaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XHJcbi8vICAgZGlzcGxheTogZmxleDtcclxuLy8gfVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgd2lkdGg6IDkzJTtcclxuICBoZWlnaHQ6IDU1JTtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbn1cclxuXHJcbi8vIC5oaWdoY2hhcnRzLWNvbnRhaW5lciB7XHJcbi8vICAgZGlzcGxheTogZmxleDtcclxuLy8gICBmbGV4OiAxIDEgMTAwJTtcclxuLy8gICBhbGlnbi1pdGVtczogc3RyZXRjaDtcclxuLy8gICBqdXN0aWZ5LWNvbnRlbnQ6IHN0cmV0Y2g7XHJcbi8vICAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcclxuLy8gICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcclxuLy8gfVxyXG4gICIsIi5jb250YWluZXIge1xuICB3aWR0aDogOTMlO1xuICBoZWlnaHQ6IDU1JTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -7692,7 +7692,7 @@ var MuscleWidgetComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"price-widget\">\r\n    <muscle-widget [chartConfig]=\"chartConfiguration\"></muscle-widget>\r\n</div>\r\n"
+module.exports = "<div class=\"livecoinwatch-widget-5\" lcw-base=\"USD\" lcw-color-tx=\"#abb8c3\" lcw-marquee-1=\"coins\" lcw-marquee-2=\"movers\" lcw-marquee-items=\"30\" ></div>\r\n<div class=\"price-widget\">\r\n    <muscle-widget [chartConfig]=\"chartConfiguration\"></muscle-widget>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -7720,6 +7720,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./muscleman/models/chart-model */ "./src/app/price/muscleman/models/chart-model.ts");
 /* harmony import */ var _helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_helpers/services/variables.service */ "./src/app/_helpers/services/variables.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_helpers/services/backend.service */ "./src/app/_helpers/services/backend.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7729,14 +7731,23 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
 
 
 
 var PriceComponent = /** @class */ (function () {
-    function PriceComponent(variablesService) {
+    function PriceComponent(variablesService, backend, document, renderer2) {
         this.variablesService = variablesService;
+        this.backend = backend;
+        this.document = document;
+        this.renderer2 = renderer2;
         this.title = 'widget';
-        this.coins = new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('EvoX', 'Evolution', 'EvoX Price', 'assets/images/256x256.png');
+        this.coins = new _muscleman_models_chart_model__WEBPACK_IMPORTED_MODULE_1__["SelectValue"]('EVOX', 'Evolution', 'EvoX Price', 'assets/images/256x256.png');
+        this.textScript = null;
         this.coin = this.coins;
     }
     Object.defineProperty(PriceComponent.prototype, "coin", {
@@ -7755,6 +7766,14 @@ var PriceComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    PriceComponent.prototype.ngOnInit = function () {
+        this.textScript = this.renderer2.createElement('script');
+        this.textScript.src = 'C:/Users/cosmos/Documents/GitHub/EvoX_ui/html_source/src/assets/scripts/lcw-widget.js';
+        this.renderer2.appendChild(this.document.body, this.textScript);
+    };
+    PriceComponent.prototype.ngOnDestroy = function () {
+        this.renderer2.removeChild(this.document.body, this.textScript);
+    };
     PriceComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-price',
@@ -7762,7 +7781,11 @@ var PriceComponent = /** @class */ (function () {
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
             styles: [__webpack_require__(/*! ./price.component.scss */ "./src/app/price/price.component.scss")]
         }),
-        __metadata("design:paramtypes", [_helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_2__["VariablesService"]])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"])),
+        __metadata("design:paramtypes", [_helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_2__["VariablesService"],
+            _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_4__["BackendService"],
+            Document,
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
     ], PriceComponent);
     return PriceComponent;
 }());

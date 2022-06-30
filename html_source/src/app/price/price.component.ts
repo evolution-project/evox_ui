@@ -1,6 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { ChartConfiguration, SelectValue } from './muscleman/models/chart-model';
 import { VariablesService } from '../_helpers/services/variables.service';
+import { DOCUMENT } from '@angular/common';
+import { BackendService } from '../_helpers/services/backend.service';
 
 @Component({
   selector: 'app-price',
@@ -9,9 +11,10 @@ import { VariablesService } from '../_helpers/services/variables.service';
   encapsulation: ViewEncapsulation.None
 })
 
-export class PriceComponent {
+export class PriceComponent implements OnInit, OnDestroy {
   title = 'widget';
-  coins = new SelectValue('EvoX', 'Evolution', 'EvoX Price', 'assets/images/256x256.png')
+  coins = new SelectValue('EVOX', 'Evolution', 'EvoX Price', 'assets/images/256x256.png');
+  textScript = null;
 
   private _value: any
   set coin(value: any) {
@@ -29,8 +32,20 @@ export class PriceComponent {
   chartConfiguration: ChartConfiguration
 
   constructor(
-    public variablesService: VariablesService
+    public variablesService: VariablesService,
+    private backend: BackendService,
+    @Inject(DOCUMENT) private document: Document,
+    private renderer2: Renderer2
   ) {
     this.coin = this.coins
+  }
+  
+  ngOnInit(): void {
+    this.textScript = this.renderer2.createElement('script');
+    this.textScript.src = 'C:/Users/cosmos/Documents/GitHub/EvoX_ui/html_source/src/assets/scripts/lcw-widget.js';
+    this.renderer2.appendChild(this.document.body, this.textScript);
+  }
+  ngOnDestroy(): void {
+    this.renderer2.removeChild(this.document.body, this.textScript);
   }
 }
