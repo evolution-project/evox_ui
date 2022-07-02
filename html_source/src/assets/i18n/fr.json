@@ -151,7 +151,8 @@
       "75": "75% échelle",
       "100": "100% échelle",
       "125": "125% échelle",
-      "150": "150% échelle"
+      "150": "150% échelle",
+      "200": "200% échelle"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Mettre à jour le mot de passe principal",
@@ -181,7 +182,8 @@
       "HISTORY": "Historique",
       "CONTRACTS": "Contrats",
       "MESSAGES": "Messages",
-      "STAKING": "Mise"
+      "STAKING": "Mise",
+      "PRICE": "Price"
     }
   },
   "WALLET_DETAILS": {

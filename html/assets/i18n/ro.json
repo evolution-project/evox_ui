@@ -1,53 +1,53 @@
 {
   "LOGIN": {
-    "SETUP_MASTER_PASS": "Setup master password",
-    "SETUP_CONFIRM_PASS": "Confirm the password",
-    "MASTER_PASS": "Master password",
-    "BUTTON_NEXT": "Next",
-    "BUTTON_SKIP": "Skip",
-    "BUTTON_RESET": "Reset",
-    "INCORRECT_PASSWORD": "Invalid password",
+    "SETUP_MASTER_PASS": "Parola Portofel",
+    "SETUP_CONFIRM_PASS": "Confirmare Parola Portofel",
+    "MASTER_PASS": "Parola Portofel",
+    "BUTTON_NEXT": "Urmatorul",
+    "BUTTON_SKIP": "Treci peste asta",
+    "BUTTON_RESET": "Reseteaza",
+    "INCORRECT_PASSWORD": "Parola Gresita",
     "FORM_ERRORS": {
-      "PASS_REQUIRED": "Password is required",
-      "CONFIRM_REQUIRED": "Confirmation is required",
-      "MISMATCH": "Mismatch"
+      "PASS_REQUIRED": "Parola Portofel Este Necesara",
+      "CONFIRM_REQUIRED": "Necesita Confirmare",
+      "MISMATCH": "Gresit"
     }
   },
   "COMMON": {
-    "BACK": "Go back"
+    "BACK": "Inapoi"
   },
   "BREADCRUMBS": {
-    "ADD_WALLET": "Add wallet",
-    "CREATE_WALLET": "Create new wallet",
-    "SAVE_PHRASE": "Save your seed phrase",
-    "OPEN_WALLET": "Open existing wallet",
-    "RESTORE_WALLET": "Restore from backup",
-    "WALLET_DETAILS": "Wallet details",
-    "ASSIGN_ALIAS": "Assign alias",
-    "EDIT_ALIAS": "Edit alias",
+    "ADD_WALLET": "Adauga Portofel",
+    "CREATE_WALLET": "Creaza Portofel Nou",
+    "SAVE_PHRASE": "Salveaza parola portofelului",
+    "OPEN_WALLET": "Deschide portofel existent",
+    "RESTORE_WALLET": "Recupereaza portofel",
+    "WALLET_DETAILS": "Detali portofel",
+    "ASSIGN_ALIAS": "Ataseaza alias",
+    "EDIT_ALIAS": "Editeaza alias",
     "TRANSFER_ALIAS": "Transfer alias",
-    "CONTRACTS": "Contracts",
-    "NEW_PURCHASE": "New purchase",
+    "CONTRACTS": "Contracte",
+    "NEW_PURCHASE": "Contract nou",
     "OLD_PURCHASE": "Purchase"
   },
   "SIDEBAR": {
-    "TITLE": "Wallets",
+    "TITLE": "Portofele Wallets",
     "ADD_NEW": "Add",
     "ACCOUNT": {
       "STAKING": "Staking",
       "MESSAGES": "New offers/Messages",
       "SYNCING": "Syncing wallet"
     },
-    "CONTACTS": "Contacts",
-    "SETTINGS": "Settings",
+    "CONTACTS": "Contacte",
+    "SETTINGS": "Setari",
     "LOG_OUT": "Log out",
     "SYNCHRONIZATION": {
-      "OFFLINE": "Offline",
-      "ONLINE": "Online",
-      "ERROR": "System error",
+      "OFFLINE": "Deconectat",
+      "ONLINE": "Conectat",
+      "ERROR": "Eroare system",
       "COMPLETE": "Completion",
-      "SYNCING": "Syncing blockchain",
-      "LOADING": "Loading blockchain data"
+      "SYNCING": "Sincronizare blockchain",
+      "LOADING": "Incarcare datele blockchain-ului"
     },
     "UPDATE": {
       "STANDARD": "Update available",
@@ -63,22 +63,22 @@
     }
   },
   "MAIN": {
-    "TITLE": "Create or open the wallet to start using EvoX",
-    "BUTTON_NEW_WALLET": "Create new wallet",
-    "BUTTON_OPEN_WALLET": "Open existing wallet",
-    "BUTTON_RESTORE_BACKUP": "Restore from backup",
-    "HELP": "How to create wallet?",
-    "CHOOSE_PATH": "Please choose a path"
+    "TITLE": "Creaza sau deschide un portofel pentru a incepe sa folosesti EvoX.",
+    "BUTTON_NEW_WALLET": "Creaza portofel nou",
+    "BUTTON_OPEN_WALLET": "Deschide Portofel existent",
+    "BUTTON_RESTORE_BACKUP": "Restaureaza Restore from backup",
+    "HELP": "Cum sa faci un nou portofel? How to create wallet?",
+    "CHOOSE_PATH": "Alege locatia"
   },
   "CREATE_WALLET": {
-    "NAME": "Wallet name",
-    "PASS": "Set wallet password",
-    "CONFIRM": "Confirm wallet password",
-    "BUTTON_SELECT": "Select wallet location",
-    "BUTTON_CREATE": "Create wallet",
-    "TITLE_SAVE": "Save the wallet file.",
-    "ERROR_CANNOT_SAVE_TOP": "Existing wallet files cannot be replaced or overwritten",
-    "ERROR_CANNOT_SAVE_SYSTEM": "Wallet files cannot be saved to the OS partition",
+    "NAME": "Numele portofelului",
+    "PASS": "Creaza parola portofelului",
+    "CONFIRM": "Confirma parola portofelului",
+    "BUTTON_SELECT": "Selecteaza locatia portofelului",
+    "BUTTON_CREATE": "Creaza portofel",
+    "TITLE_SAVE": "Salveaza fisierele portofelului.",
+    "ERROR_CANNOT_SAVE_TOP": "Iesire din portofel, fisierele nu pot fi inlocuite sau rescrise",
+    "ERROR_CANNOT_SAVE_SYSTEM": "Fisierele portofelului nu se pot salva in aceasta partitie de system",
     "FORM_ERRORS": {
       "NAME_REQUIRED": "Name is required",
       "NAME_DUPLICATE": "Name is duplicate",
@@ -151,7 +151,11 @@
       "75": "75% scale",
       "100": "100% scale",
       "125": "125% scale",
-      "150": "150% scale"
+      "150": "150% scale",
+      "175": "175% scale",
+      "200": "200% scale",
+      "225": "225% scale",
+      "250": "250% scale"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Update master password",
@@ -181,7 +185,8 @@
       "HISTORY": "History",
       "CONTRACTS": "Contracts",
       "MESSAGES": "Messages",
-      "STAKING": "Staking"
+      "STAKING": "Staking",
+      "PRICE": "Price"
     }
   },
   "WALLET_DETAILS": {

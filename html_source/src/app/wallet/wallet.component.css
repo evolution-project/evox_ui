@@ -181,6 +181,9 @@
 .tabs .tabs-header .tab .icon.staking {
   mask: url(../../assets/icons/staking.svg) no-repeat center;
 }
+.tabs .tabs-header .tab .icon.price {
+  mask: url(../../assets/icons/price.svg) no-repeat center;
+}
 .tabs .tabs-header .tab .indicator {
   display: flex;
   align-items: center;

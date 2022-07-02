@@ -23,6 +23,10 @@ export class SettingsComponent implements OnInit {
       language: 'SETTINGS.LANGUAGE.EN'
     },
     {
+      name: 'ro',
+      language: 'SETTINGS.LANGUAGE.RO'
+    },
+    {
       name: 'ru',
       language: 'SETTINGS.LANGUAGE.RU'
     },
@@ -75,12 +79,28 @@ export class SettingsComponent implements OnInit {
       name: 'SETTINGS.SCALE.100'
     },
     {
-      id: 10,
+      id: 9,
       name: 'SETTINGS.SCALE.125'
     },
     {
-      id: 12,
+      id: 10,
       name: 'SETTINGS.SCALE.150'
+    },
+    {
+      id: 11,
+      name: 'SETTINGS.SCALE.175'
+    },
+    {
+      id: 12,
+      name: 'SETTINGS.SCALE.200'
+    },
+    {
+      id: 13,
+      name: 'SETTINGS.SCALE.225'
+    },
+    {
+      id: 14,
+      name: 'SETTINGS.SCALE.250'
     }
   ];
   appLogOptions = [

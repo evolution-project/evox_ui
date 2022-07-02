@@ -34,7 +34,7 @@
     "TITLE": "Кошелек",
     "ADD_NEW": "Добавить",
     "ACCOUNT": {
-      "STAKING": "Стекинг",
+      "STAKING": "Стейкинг",
       "MESSAGES": "Новые предложения/Сообщения",
       "SYNCING": "Синхронизация кошелька"
     },
@@ -69,6 +69,29 @@
     "BUTTON_RESTORE_BACKUP": "Восстановление из резервной копии",
     "HELP": "Как создать кошелек?",
     "CHOOSE_PATH": "Пожалуйста, выберите путь"
+  },
+  "PLACEHOLDERS": {
+    "COMMENT_PLACEHOLDER": "Введите свой комментарий здесь",
+    "WALLET_NAME_PLACEHOLDER": "Введите здесь Имя кошелька",
+    "MASTER_PASS_PLACEHOLDER": "Введите мастер-пароль здесь",
+    "NAME_PLACEHOLDER": "Введите имя здесь",
+    "ADRESS_PLACEHOLDER": "Введите адрес здесь",
+    "NOTES_PLACEHOLDER": "Введите примечания здесь",
+    "DESCRIPTION_PLACEHOLDER": "Введите описание здесь",
+    "SELLER_PLACEHOLDER": "Введите продавца здесь",
+    "PLACEHOLDER_OLD": "Введите текущий пароль здесь",
+    "AMOUNT_PLACEHOLDER": "Введите сумму здесь",
+    "DEPOSIT_PLACEHOLDER": "Введите свой депозит здесь",
+    "SELLER_DEPOSIT_PLACEHOLDER": "Введите депозит продавца здесь",
+    "PLACEHOLDER_NEW": "Введите новый пароль здесь",
+    "WALET_PASSWORD_PLACEHOLDER": "Введите пароль кошелька здесь",
+    "CONFIRM_WALET_PASSWORD_PLACEHOLDER": "Подтвердите пароль кошелька здесь",
+    "PLACEHOLDER_CONFIRM": "Подтвердите новый пароль здесь",
+    "PASSWORD_PLACEHOLDER": "Введите пароль здесь",
+    "SEED_PHRASE_PLACEHOLDER": "Введите seed фразу здесь",
+    "SEED_PASSWORD_PLACEHOLDER": "Введите seed пароль здесь",
+    "PURCHASE_PAYMENT_PLACEHOLDER": "Введите идентификатор платежа здесь",
+    "FEE_PLACEHOLDER": "Введите плату здесь"
   },
   "CREATE_WALLET": {
     "NAME": "Имя кошелька",
@@ -148,10 +171,23 @@
       "TIME4": "Никогда"
     },
     "SCALE": {
+      "TITLE": "Масштаб интерфейса",
       "75": "75% масштаб",
       "100": "100% масштаб",
       "125": "125% масштаб",
-      "150": "150% масштаб"
+      "150": "150% масштаб",
+      "200": "200% масштаб"
+    },
+    "LANGUAGE": {
+      "TITLE": "Язык интерфейса",
+      "EN": "English",
+      "RO": "Romania",
+      "RU": "Русский",
+      "FR": "French",
+      "DE": "Deutsch",
+      "ID": "Indonesian",
+      "IT": "Italian",
+      "PT": "Portuguese"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Обновить мастер-пароль",
@@ -181,7 +217,8 @@
       "HISTORY": "История",
       "CONTRACTS": "Контракты",
       "MESSAGES": "Сообщения",
-      "STAKING": "Стекинг"
+      "STAKING": "Стейкинг",
+      "PRICE": "Цена"
     }
   },
   "WALLET_DETAILS": {

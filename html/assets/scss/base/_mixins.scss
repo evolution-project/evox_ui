@@ -48,6 +48,9 @@
   -ms-user-select: none;
   user-select: none;
 }
+@mixin max1920 { // maket 1920
+  @media (max-width: 1920px) { @content; }
+}
 @mixin max1199 { // maket 1171
   @media (max-width: 1199px) { @content; }
 }

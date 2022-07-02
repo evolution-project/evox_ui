@@ -151,7 +151,8 @@
       "75": "75% scala",
       "100": "100% scala",
       "125": "125% scala",
-      "150": "150% scala"
+      "150": "150% scala",
+      "200": "200% scala"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Aggiorna password principale",
@@ -181,7 +182,8 @@
       "HISTORY": "Storico",
       "CONTRACTS": "Contratti",
       "MESSAGES": "Messaggi",
-      "STAKING": "Staking"
+      "STAKING": "Staking",
+      "PRICE": "Price"
     }
   },
   "WALLET_DETAILS": {
