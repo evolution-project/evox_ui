@@ -91,7 +91,7 @@ export class MuscleWidgetComponent implements OnInit, OnDestroy {
         type: 'line',
         events: {
           redraw: function(event: any) {
-            window.dispatchEvent(new CustomEvent('redrawLabels', {detail: {containerWidth: event.target.containerWidth, containerHeight: event.target.containerHeight}}))
+            //window.dispatchEvent(new CustomEvent('redrawLabels', {detail: {containerWidth: event.target.containerWidth, containerHeight: event.target.containerHeight}}))
           }
         }
       },
@@ -195,16 +195,16 @@ export class MuscleWidgetComponent implements OnInit, OnDestroy {
           this.label1 = this.group.renderer.label(`$ ${price.toFixed(this._chartConfig.primaryDecimalPlaces)}`, this.width1, this._chartConfig.primaryPercentageLabelYPosition).css(this._chartConfig.primaryPercentageLabelStyle).attr({zIndex: 93}).add()
           this.label1a = this.group.renderer.label(`${priceChange.toFixed(this._chartConfig.primaryPercentDecimalPlaces)}%`, this.width1a, this._chartConfig.primaryPercentageLabelYPosition).css(primaryPercentage).attr({zIndex: 94}).add()
           
-          this.label2 = this.group.renderer.label(`B ${btc.toFixed(this._chartConfig.secondaryDecimalPlaces)}`, this.width2, this._chartConfig.secondaryPercentageLabelYPosition).css(this._chartConfig.secondaryPercentageLabelStyle).attr({zIndex: 95}).add()
-          this.label2a = this.group.renderer.label(`${btcChange.toFixed(this._chartConfig.secondaryPercentDecimalPlaces)}%`, this.width2a, this._chartConfig.secondaryPercentageLabelYPosition).css(secondaryPercentage).attr({zIndex: 96}).add()
+          this.label2 = this.group.renderer.label(`BTC ${btc.toFixed(this._chartConfig.secondaryDecimalPlaces)}`, this.width2, this._chartConfig.secondaryPercentageLabelYPosition).css(this._chartConfig.secondaryPercentageLabelStyle).attr({zIndex: 95}).add()
+          //this.label2a = this.group.renderer.label(`${btcChange.toFixed(this._chartConfig.secondaryPercentDecimalPlaces)}%`, this.width2a, this._chartConfig.secondaryPercentageLabelYPosition).css(secondaryPercentage).attr({zIndex: 96}).add()
 
-          this.label3 = this.group.renderer.label(`This widget fetch data from Live Coin Watch [LCW]`, 50, this.height3).css({fontSize: '14px', color: 'white', fontWeight: '800'}).attr({zIndex: 97}).add()
+          this.label3 = this.group.renderer.label(`This widget fetch data from Live Coin Watch [LCW]`, 50, this.height3).css({fontSize: '14px', color: 'white', fontWeight: '600'}).attr({zIndex: 97}).add()
 
         }
         else {
           this.label1.attr({text: `$ ${price.toFixed(this._chartConfig.primaryDecimalPlaces)}`})
           this.label1a.attr({text: `${priceChange.toFixed(this._chartConfig.primaryPercentDecimalPlaces)}%`})
-          this.label2.attr({text: `B ${btc.toFixed(this._chartConfig.secondaryDecimalPlaces)}`})
+          this.label2.attr({text: `BTC ${btc.toFixed(this._chartConfig.secondaryDecimalPlaces)}`})
           this.label2a.attr({text: `${btcChange.toFixed(this._chartConfig.secondaryPercentDecimalPlaces)}%`})
         }
 
