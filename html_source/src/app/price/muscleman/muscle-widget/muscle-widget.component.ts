@@ -91,7 +91,7 @@ export class MuscleWidgetComponent implements OnInit, OnDestroy {
         type: 'line',
         events: {
           redraw: function(event: any) {
-            //window.dispatchEvent(new CustomEvent('redrawLabels', {detail: {containerWidth: event.target.containerWidth, containerHeight: event.target.containerHeight}}))
+            window.dispatchEvent(new CustomEvent('redrawLabels', {detail: {containerWidth: event.target.containerWidth, containerHeight: event.target.containerHeight}}))
           }
         }
       },

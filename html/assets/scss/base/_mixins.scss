@@ -48,7 +48,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-@mixin max1920 { // maket > 1200
+@mixin max1920 { // maket 1920
   @media (max-width: 1920px) { @content; }
 }
 @mixin max1199 { // maket 1171
