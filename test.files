@@ -334,6 +334,10 @@ html_source/src/app/staking/staking.component.html
 html_source/src/app/staking/staking.component.scss
 html_source/src/app/staking/staking.component.spec.ts
 html_source/src/app/staking/staking.component.ts
+html_source/src/app/price/price.component.html
+html_source/src/app/price/price.component.scss
+html_source/src/app/price/price.component.spec.ts
+html_source/src/app/price/price.component.ts
 html_source/src/app/transfer-alias/transfer-alias.component.html
 html_source/src/app/transfer-alias/transfer-alias.component.scss
 html_source/src/app/transfer-alias/transfer-alias.component.spec.ts

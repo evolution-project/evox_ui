@@ -206,6 +206,7 @@
     "LANGUAGE": {
       "TITLE": "Language",
       "EN": "English",
+      "RO": "Romania",
       "RU": "Russia",
       "FR": "French",
       "DE": "Deutsch",
@@ -245,7 +246,8 @@
       "HISTORY": "History",
       "CONTRACTS": "Contracts",
       "MESSAGES": "Messages",
-      "STAKING": "Staking"
+      "STAKING": "Staking",
+      "PRICE": "Price"
     },
     "TOOLTIPS": {
       "EDIT_ALIAS": "Edit alias",

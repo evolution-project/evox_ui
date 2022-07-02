@@ -34,7 +34,7 @@
     "TITLE": "Кошелек",
     "ADD_NEW": "Добавить",
     "ACCOUNT": {
-      "STAKING": "Стекинг",
+      "STAKING": "Стейкинг",
       "MESSAGES": "Новые предложения/Сообщения",
       "SYNCING": "Синхронизация кошелька"
     },
@@ -181,6 +181,7 @@
     "LANGUAGE": {
       "TITLE": "Язык интерфейса",
       "EN": "English",
+      "RO": "Romania",
       "RU": "Русский",
       "FR": "French",
       "DE": "Deutsch",
@@ -216,7 +217,8 @@
       "HISTORY": "История",
       "CONTRACTS": "Контракты",
       "MESSAGES": "Сообщения",
-      "STAKING": "Стекинг"
+      "STAKING": "Стейкинг",
+      "PRICE": "Цена"
     }
   },
   "WALLET_DETAILS": {

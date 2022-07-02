@@ -175,7 +175,8 @@
       "HISTORY": "History",
       "CONTRACTS": "Contracts",
       "MESSAGES": "Messages",
-      "STAKING": "Staking"
+      "STAKING": "Staking",
+      "PRICE": "Price"
     }
   },
   "WALLET_DETAILS": {

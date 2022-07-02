@@ -70,3 +70,13 @@ body {
     }
   }
 }
+
+app-price {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100% ;
+  height: 100%;
+}

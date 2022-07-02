@@ -182,7 +182,8 @@
       "HISTORY": "Verlauf",
       "CONTRACTS": "Verträge",
       "MESSAGES": "Nachrichten",
-      "STAKING": "Staking"
+      "STAKING": "Staking",
+      "PRICE": "Price"
     }
   },
   "WALLET_DETAILS": {
