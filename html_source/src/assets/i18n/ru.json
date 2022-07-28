@@ -323,7 +323,7 @@
     "STATUS_TOOLTIP": "Подтверждения {{current}}/{{total}}",
     "LOCK_TOOLTIP": "Заперт до тех пор, пока {{date}}",
     "SEND": "Отправленно",
-    "RECEIVED": "Полученно",
+    "RECEIVED": "Получено",
     "DATE": "Дата",
     "AMOUNT": "Сумма",
     "FEE": "Комиссия",
