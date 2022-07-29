@@ -11159,7 +11159,7 @@ var Store = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\cosmos\Documents\GitHub\EvoX_ui\html_source\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__("./src/main.ts");
 
 
 /***/ })
