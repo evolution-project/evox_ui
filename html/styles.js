@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./src/styles.scss");
+module.exports = __webpack_require__(/*! C:\Users\cosmos\Documents\GitHub\EvoX_ui\html_source\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })
