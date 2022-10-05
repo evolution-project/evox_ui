@@ -100,19 +100,19 @@ button {
   input[type="password"],
   select {
     &::placeholder {
-      color: black;
+      color: rgb(255, 255, 255);
       font-size: 2rem;
       line-height: 2rem;
     }
-    background: none;
+    //background: none;
     border: 3px solid #57008d6b;
     font-size: 2rem;
     line-height: 2rem;
     outline: none;
     padding: 0.2rem 0;
     width: 100%;
-    background-color: #e6e6e6;
-    color: black;
+    background-color: #8500b040;
+    color: #ffffff;
   }
   &.textarea {
     height: auto;
