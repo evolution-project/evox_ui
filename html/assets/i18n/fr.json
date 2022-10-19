@@ -90,7 +90,7 @@
     "NAME": "Nom du portefeuille",
     "PASS": "Mot de passe du portefeuille",
     "BUTTON": "Ouvrir un portefeuille",
-    "WITH_ADDRESS_ALREADY_OPEN": "Un portefeuille avec cette adresse est déjà ouvert",
+    "WITH_ADDRESS_ALREADY_OPEN": "Un portefeuille avec cette addresse est déjà ouvert",
     "FILE_NOT_FOUND1": "Fichier de portefeuille introuvable",
     "FILE_NOT_FOUND2": "<br/><br/> Il aurait peut-être été renommé ou déplacé. <br/> Pour l'ouvrir, utilisez le bouton \"Ouvrir le portefeuille\".",
     "FORM_ERRORS": {
@@ -269,7 +269,7 @@
     "DETAILS": "Détails supplémentaires",
     "MIXIN": "Mélange",
     "FEE": "Frais",
-    "HIDE": "Masquer votre adresse de portefeuille au destinataire",
+    "HIDE": "Masquer votre addresse de portefeuille au destinataire",
     "BUTTON": "Envoyer",
     "SUCCESS_SENT": "Transaction envoyée",
     "FORM_ERRORS": {
