@@ -3265,9 +3265,9 @@ var RCV_ADDR_QR_SCALE = 1.5; // scale factor for QR code
 var AUDITABLE_WALLET_HELP_PAGE = 'docs.evolution-network.org/user-guide/audible-wallet/';
 var CREATE_NEW_WALLET_HELP_PAGE = 'docs.evolution-network.org/user-guide/manage-wallet/';
 var LOCKED_BALANCE_HELP_PAGE = 'docs.evolution-network.org/user-guide/locked-balance/';
-var DOWNLOADS_PAGE_URL = '#zano.org/downloads.html';
-var BLOCK_EXPLORER_TX_URL_PREFIX = 'explorer.evolution-network.org/transaction/';
-var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-explorer.evolution-network.org/transaction/';
+var DOWNLOADS_PAGE_URL = 'evolution-network.org/#download';
+var BLOCK_EXPLORER_TX_URL_PREFIX = 'chain.evolution-network.org/transaction/';
+var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-chain.evolution-network.org/transaction/';
 
 
 /***/ }),
@@ -4376,27 +4376,6 @@ var AppComponent = /** @class */ (function () {
                 _this.variablesService.moneyEquivalent = data['data'][0]['price'];
             });
         });
-        /*.catch(function (error) {
-          console.log('error', error)}*/
-        /*this.http.get('https://api.livecoinwatch.com/coins/single').subscribe(
-          () => {
-            this.http.get('https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD').subscribe(
-              data => {
-                this.variablesService.moneyEquivalent = data ['data']['price'];
-                //this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
-              },
-              error => {
-                console.warn('api.livecoinwatch.com price error: ', error);
-              }
-            );
-          },
-          error => {
-            console.warn('api.livecoinwatch.com error: ', error);
-            setTimeout(() => {
-              this.getMoneyEquivalent();
-            }, 30000);
-          }
-        )*/
     };
     AppComponent.prototype.getAliases = function () {
         var _this = this;
@@ -9182,7 +9161,7 @@ var SendComponent = /** @class */ (function () {
     };
     SendComponent.prototype.getWrapInfo = function () {
         var _this = this;
-        this.http.get('#https://wrapped.zano.org/api2/get_wrap_info')
+        this.http.get('#')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["finalize"])(function () {
             _this.isLoading = false;
         }))

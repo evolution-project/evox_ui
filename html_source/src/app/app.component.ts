@@ -619,27 +619,6 @@ export class AppComponent implements OnInit, OnDestroy {
           data => {
       this.variablesService.moneyEquivalent = data['data'][0]['price'];
     })})
-    /*.catch(function (error) {
-      console.log('error', error)}*/
-    /*this.http.get('https://api.livecoinwatch.com/coins/single').subscribe(
-      () => {
-        this.http.get('https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD').subscribe(
-          data => {
-            this.variablesService.moneyEquivalent = data ['data']['price'];
-            //this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
-          },
-          error => {
-            console.warn('api.livecoinwatch.com price error: ', error);
-          }
-        );
-      },
-      error => {
-        console.warn('api.livecoinwatch.com error: ', error);
-        setTimeout(() => {
-          this.getMoneyEquivalent();
-        }, 30000);
-      }
-    )*/
   }
 
   getAliases() {
