@@ -1,6 +1,6 @@
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { DeeplinkParams, PushOffer, CancelOffer, Wallet } from './../_helpers/models/wallet.model';
+import { DeeplinkParams, PushOffer, CancelOffer, UpdateOffer, Wallet } from './../_helpers/models/wallet.model';
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -99,7 +99,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         com: this.actionData.comment || this.actionData.comments || '',
         do: this.actionData.description || '',
         et: 10,
-        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
+        fee: new BigNumber(this.variablesService.default_fee),
         lci: '',
         lco: 'World Wide',
         ot: 1,
@@ -121,13 +121,45 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   marketplaceCancelSend() {
     let cancelOfferObject: CancelOffer = {
       wallet_id: this.walletToPayId,
-      od: {
-        tx_id: this.actionData.tx_id,
-        fee: new BigNumber((this.variablesService.default_fee)),
+      no: 0,
+      tx_id: this.actionData.tx_id,
+      fee: new BigNumber(this.variablesService.default_fee),
         
-      },
+
     }
     this.backend.cancel_offer(cancelOfferObject, (Status, data) => {
+      if (data.success) {
+        this.marketplaceModalShow = false;
+        this.marketplaceConfirmHash = data.tx_hash
+      } else {
+        this.canselAction()
+      }
+    })
+  }
+
+  marketplaceUpdateSend() {
+    let updateOfferObject: UpdateOffer = {
+      wallet_id: this.walletToPayId,
+      no: 0,
+      tx_id: '',
+      od: {
+        ap: this.actionData.price || '',
+        at: '1',
+        cat: this.actionData.category || '',
+        cnt: this.actionData.contact || '',
+        com: this.actionData.comment || this.actionData.comments || '',
+        do: this.actionData.description || '',
+        et: 10,
+        fee: new BigNumber(this.variablesService.default_fee),
+        lci: '',
+        lco: 'World Wide',
+        ot: 1,
+        pt: 'Credit cards, BTC, EvoX, ETH',
+        t: this.actionData.title || '',
+        url: this.actionData.url || this.actionData.img_url || '',
+      },
+    }
+    this.backend.update_offer(updateOfferObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash

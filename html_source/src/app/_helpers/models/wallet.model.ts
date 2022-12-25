@@ -291,8 +291,29 @@ export interface PushOffer {
 
 export interface CancelOffer {
   wallet_id: number,
+  no: number,
+  tx_id: string,
+  fee: BigNumber 
+}
+
+export interface UpdateOffer {
+  wallet_id: number,
+  no: number,
+  tx_id: string,
   od: {
-    tx_id: string,
-    fee: BigNumber
+    ap: string,
+    at: string,
+    cat: string,
+    cnt: string,
+    com: string,
+    do: string,
+    et: number,
+    fee: BigNumber,
+    lci: string,
+    lco: string,
+    ot: number,
+    pt: string,
+    t: string,
+    url: string,
   }
 }
