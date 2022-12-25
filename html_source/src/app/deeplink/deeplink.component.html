@@ -57,6 +57,27 @@
         </div>
       </div>
     </ng-container>
+    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->
+    <ng-container *ngIf="secondStep && marketplaceModalShow && actionData.action === 'marketplace_cancel_offer'">
+      <div class="modal marketplace">
+        <div class="title">
+          <span>Cancel a marketplace offer</span>
+        </div>
+        <div class="data-container">
+          <div class="row"><span>Tx_id:</span> {{actionData.tx_id}}</div>
+          <div class="row"><span>Transaction fee:</span> {{actionData.price * (actionData.fee ||
+            this.variablesService.default_fee)}}
+            {{this.variablesService.defaultCurrency}}
+          </div>
+        </div>
+        <div class="wrapper-buttons">
+          <button type="button" class="blue-button" (click)="canselAction()">{{ 'EXPORT_HISTORY.CANCEL' | translate
+            }}</button>
+          <button type="submit" class="blue-button" (click)="marketplaceCancelSend()">Sign & Send</button>
+        </div>
+      </div>
+    </ng-container>
+    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->
     <ng-container *ngIf="marketplaceConfirmHash">
       <div class="modal marketplace--success">
         <div class="title">

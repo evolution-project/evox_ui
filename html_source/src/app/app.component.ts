@@ -422,13 +422,13 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.translate.instant('ERRORS.TX_TYPE_NORMAL_END');
               break;
             case 1:
-              // this.translate.instant('ERRORS.TX_TYPE_PUSH_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_PUSH_OFFER');
               break;
             case 2:
-              // this.translate.instant('ERRORS.TX_TYPE_UPDATE_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_UPDATE_OFFER');
               break;
             case 3:
-              // this.translate.instant('ERRORS.TX_TYPE_CANCEL_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_CANCEL_OFFER');
               break;
             case 4:
               error_tr = this.translate.instant('ERRORS.TX_TYPE_NEW_ALIAS') + '<br>' +

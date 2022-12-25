@@ -1,6 +1,6 @@
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { DeeplinkParams, PushOffer, Wallet } from './../_helpers/models/wallet.model';
+import { DeeplinkParams, PushOffer, CancelOffer, Wallet } from './../_helpers/models/wallet.model';
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -109,6 +109,26 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
       },
     }
     this.backend.push_offer(offerObject, (Status, data) => {
+      if (data.success) {
+        this.marketplaceModalShow = false;
+        this.marketplaceConfirmHash = data.tx_hash
+      } else {
+        this.canselAction()
+      }
+    })
+  }
+
+  marketplaceCancelSend() {
+    let offerObject: CancelOffer = {
+      wallet_id: this.walletToPayId,
+      od: {
+        on: '0',
+        tx_id: '',
+        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
+        
+      },
+    }
+    this.backend.cancel_offer(offerObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash

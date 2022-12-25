@@ -287,3 +287,12 @@ export interface PushOffer {
     url: string,
   }
 }
+
+export interface CancelOffer {
+  wallet_id: number,
+  od: {
+    on: string,
+    tx_id: string,
+    fee: BigNumber
+  }
+}
