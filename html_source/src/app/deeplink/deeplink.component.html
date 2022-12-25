@@ -64,10 +64,8 @@
           <span>Cancel a marketplace offer</span>
         </div>
         <div class="data-container">
-          <div class="row"><span>Tx_id:</span> {{actionData.tx_id}}</div>
-          <div class="row"><span>Transaction fee:</span> {{actionData.price * (actionData.fee ||
-            this.variablesService.default_fee)}}
-            {{this.variablesService.defaultCurrency}}
+          <div class="row"><span style="font-size: 8;">Tx_id:</span> {{actionData.tx_id}}</div>
+          <div class="row"><span>Transaction fee:</span> {{this.variablesService.default_fee}}
           </div>
         </div>
         <div class="wrapper-buttons">

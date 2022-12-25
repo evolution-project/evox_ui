@@ -119,16 +119,16 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceCancelSend() {
-    let offerObject: CancelOffer = {
+    let cancelOfferObject: CancelOffer = {
       wallet_id: this.walletToPayId,
       od: {
-        on: '0',
+
         tx_id: '',
-        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
+        fee: new BigNumber((this.variablesService.default_fee)),
         
       },
     }
-    this.backend.cancel_offer(offerObject, (Status, data) => {
+    this.backend.cancel_offer(cancelOfferObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash
