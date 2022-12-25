@@ -122,8 +122,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     let cancelOfferObject: CancelOffer = {
       wallet_id: this.walletToPayId,
       od: {
-
-        tx_id: '',
+        tx_id: this.actionData.tx_id || '',
         fee: new BigNumber((this.variablesService.default_fee)),
         
       },

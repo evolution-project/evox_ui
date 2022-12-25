@@ -5674,7 +5674,7 @@ var DeeplinkComponent = /** @class */ (function () {
         var cancelOfferObject = {
             wallet_id: this.walletToPayId,
             od: {
-                tx_id: '',
+                tx_id: this.actionData.tx_id || '',
                 fee: new bignumber_js__WEBPACK_IMPORTED_MODULE_7__["BigNumber"]((this.variablesService.default_fee)),
             },
         };

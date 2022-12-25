@@ -266,6 +266,7 @@ export interface DeeplinkParams {
   comments?: string;
   mixins?: string;
   fee?: string;
+  tx_id?: string;
 }
 
 export interface PushOffer {
@@ -291,7 +292,6 @@ export interface PushOffer {
 export interface CancelOffer {
   wallet_id: number,
   od: {
-
     tx_id: string,
     fee: BigNumber
   }
