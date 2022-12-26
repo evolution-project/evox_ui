@@ -119,7 +119,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceCancelSend() {
-    let cancelOfferObject: CancelOffer = {
+    let offerObject: CancelOffer = {
       wallet_id: this.walletToPayId,
       no: 0,
       tx_id: this.actionData.tx_id,
@@ -127,7 +127,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         
 
     }
-    this.backend.cancel_offer(cancelOfferObject, (Status, data) => {
+    this.backend.cancel_offer(offerObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash
@@ -138,7 +138,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceUpdateSend() {
-    let updateOfferObject: UpdateOffer = {
+    let offerObject: UpdateOffer = {
       wallet_id: this.walletToPayId,
       no: 0,
       tx_id: '',
@@ -159,7 +159,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         url: this.actionData.url || this.actionData.img_url || '',
       },
     }
-    this.backend.update_offer(updateOfferObject, (Status, data) => {
+    this.backend.update_offer(offerObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash

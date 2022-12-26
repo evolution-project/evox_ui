@@ -5674,13 +5674,13 @@ var DeeplinkComponent = /** @class */ (function () {
     };
     DeeplinkComponent.prototype.marketplaceCancelSend = function () {
         var _this = this;
-        var cancelOfferObject = {
+        var offerObject = {
             wallet_id: this.walletToPayId,
             no: 0,
             tx_id: this.actionData.tx_id,
             fee: new bignumber_js__WEBPACK_IMPORTED_MODULE_7__["BigNumber"](this.variablesService.default_fee),
         };
-        this.backend.cancel_offer(cancelOfferObject, function (Status, data) {
+        this.backend.cancel_offer(offerObject, function (Status, data) {
             if (data.success) {
                 _this.marketplaceModalShow = false;
                 _this.marketplaceConfirmHash = data.tx_hash;
@@ -5692,7 +5692,7 @@ var DeeplinkComponent = /** @class */ (function () {
     };
     DeeplinkComponent.prototype.marketplaceUpdateSend = function () {
         var _this = this;
-        var updateOfferObject = {
+        var offerObject = {
             wallet_id: this.walletToPayId,
             no: 0,
             tx_id: '',
@@ -5713,7 +5713,7 @@ var DeeplinkComponent = /** @class */ (function () {
                 url: this.actionData.url || this.actionData.img_url || '',
             },
         };
-        this.backend.update_offer(updateOfferObject, function (Status, data) {
+        this.backend.update_offer(offerObject, function (Status, data) {
             if (data.success) {
                 _this.marketplaceModalShow = false;
                 _this.marketplaceConfirmHash = data.tx_hash;
