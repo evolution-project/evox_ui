@@ -2308,18 +2308,12 @@ var BackendService = /** @class */ (function () {
     };
     BackendService.prototype.push_offer = function (params, callback) {
         this.runCommand('push_offer', params, callback);
-        //cosmos
-        console.log(this.push_offer);
     };
     BackendService.prototype.cancel_offer = function (params, callback) {
         this.runCommand('cancel_offer', params, callback);
-        //cosmos
-        console.log(this.cancel_offer);
     };
     BackendService.prototype.update_offer = function (params, callback) {
         this.runCommand('push_update_offer', params, callback);
-        //cosmos
-        console.log(this.update_offer);
     };
     BackendService.prototype.generateWallet = function (path, pass, callback) {
         var params = {
