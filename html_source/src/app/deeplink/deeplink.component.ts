@@ -17,7 +17,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   deeplink: string | null = null;
   secondStep = false;
   walletToPayId = 0;
-  nextStepInterval
+  nextStepInterval;
   marketplaceModalShow = true;
   copyAnimation = false;
   marketplaceConfirmHash: any = null
@@ -25,7 +25,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   actionData: DeeplinkParams = {}
   defaultMixin = MIXIN
   walletsTopay: Array<Wallet> = [];
-  private destroy$ = new Subject<never>();
+  private destroy$ = new Subject<void>();
   constructor(
     private _router: Router,
     public variablesService: VariablesService,
@@ -80,7 +80,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     return newobj
   }
 
-  canselAction() {
+  canselAction(): void {
     this.deeplink = null
     this.variablesService.deeplink$.next(null)
     this.variablesService.sendActionData$.next({});
@@ -121,7 +121,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   marketplaceCancelSend() {
     let cancelOfferObject: CancelOffer = {
       wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id,
+      tx_id: this.actionData.tx_id || '',
       no: 0,
     }
     this.backend.cancel_offer(cancelOfferObject, (Status, data) => {
@@ -137,7 +137,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   marketplaceUpdateSend() {
     let updateOfferObject: UpdateOffer = {
       wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id,
+      tx_id: this.actionData.tx_id || '',
       no: 0,
       od: {
         ap: this.actionData.price || '',

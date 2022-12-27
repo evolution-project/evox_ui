@@ -5668,8 +5668,6 @@ var DeeplinkComponent = /** @class */ (function () {
                 url: this.actionData.url || this.actionData.img_url || '',
             },
         };
-        //cosmos
-        console.log(pushOfferObject);
         this.backend.push_offer(pushOfferObject, function (Status, data) {
             if (data.success) {
                 _this.marketplaceModalShow = false;
@@ -5684,7 +5682,7 @@ var DeeplinkComponent = /** @class */ (function () {
         var _this = this;
         var cancelOfferObject = {
             wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id,
+            tx_id: this.actionData.tx_id || '',
             no: 0,
         };
         this.backend.cancel_offer(cancelOfferObject, function (Status, data) {
@@ -5701,7 +5699,7 @@ var DeeplinkComponent = /** @class */ (function () {
         var _this = this;
         var updateOfferObject = {
             wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id,
+            tx_id: this.actionData.tx_id || '',
             no: 0,
             od: {
                 ap: this.actionData.price || '',
