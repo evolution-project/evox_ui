@@ -402,14 +402,20 @@ export class BackendService {
 
   push_offer(params, callback) {
     this.runCommand('push_offer', params, callback);
+    //cosmos
+    console.log(this.push_offer);
   }
 
   cancel_offer(params, callback) {
     this.runCommand('cancel_offer', params, callback);
+    //cosmos
+    console.log(this.cancel_offer);
   }
 
   update_offer(params, callback) {
     this.runCommand('push_update_offer', params, callback);
+    //cosmos
+    console.log(this.update_offer);
   }
 
   generateWallet(path, pass, callback) {

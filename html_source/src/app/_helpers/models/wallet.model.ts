@@ -291,15 +291,14 @@ export interface PushOffer {
 
 export interface CancelOffer {
   wallet_id: number,
-  no: number,
   tx_id: string,
-  fee: BigNumber 
+  no: number
 }
 
 export interface UpdateOffer {
   wallet_id: number,
-  no: number,
   tx_id: string,
+  no: number,
   od: {
     ap: string,
     at: string,

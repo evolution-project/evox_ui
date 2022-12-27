@@ -89,7 +89,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceSend() {
-    let offerObject: PushOffer = {
+    let pushOfferObject: PushOffer = {
       wallet_id: this.walletToPayId,
       od: {
         ap: this.actionData.price || '',
@@ -99,7 +99,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         com: this.actionData.comment || this.actionData.comments || '',
         do: this.actionData.description || '',
         et: 10,
-        fee: new BigNumber(this.variablesService.default_fee),
+        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
         lci: '',
         lco: 'World Wide',
         ot: 1,
@@ -108,7 +108,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         url: this.actionData.url || this.actionData.img_url || '',
       },
     }
-    this.backend.push_offer(offerObject, (Status, data) => {
+    this.backend.push_offer(pushOfferObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash
@@ -119,15 +119,12 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceCancelSend() {
-    let offerObject: CancelOffer = {
+    let cancelOfferObject: CancelOffer = {
       wallet_id: this.walletToPayId,
-      no: 0,
       tx_id: this.actionData.tx_id,
-      fee: new BigNumber(this.variablesService.default_fee),
-        
-
+      no: 0,
     }
-    this.backend.cancel_offer(offerObject, (Status, data) => {
+    this.backend.cancel_offer(cancelOfferObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash
@@ -138,10 +135,10 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceUpdateSend() {
-    let offerObject: UpdateOffer = {
+    let updateOfferObject: UpdateOffer = {
       wallet_id: this.walletToPayId,
+      tx_id: this.actionData.tx_id,
       no: 0,
-      tx_id: '',
       od: {
         ap: this.actionData.price || '',
         at: '1',
@@ -150,7 +147,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         com: this.actionData.comment || this.actionData.comments || '',
         do: this.actionData.description || '',
         et: 10,
-        fee: new BigNumber(this.variablesService.default_fee),
+        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
         lci: '',
         lco: 'World Wide',
         ot: 1,
@@ -159,7 +156,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         url: this.actionData.url || this.actionData.img_url || '',
       },
     }
-    this.backend.update_offer(offerObject, (Status, data) => {
+    this.backend.update_offer(updateOfferObject, (Status, data) => {
       if (data.success) {
         this.marketplaceModalShow = false;
         this.marketplaceConfirmHash = data.tx_hash
