@@ -3826,7 +3826,7 @@ var AppComponent = /** @class */ (function () {
         this.firstOnlineState = false;
         this.translateUsed = false;
         this.needOpenWallets = [];
-        translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru', 'ro']);
+        translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru', 'ro', 'tr']);
         translate.setDefaultLang('en');
         // const browserLang = translate.getBrowserLang();
         // translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
@@ -9445,6 +9445,10 @@ var SettingsComponent = /** @class */ (function () {
             {
                 name: 'ru',
                 language: 'SETTINGS.LANGUAGE.RU'
+            },
+            {
+                name: 'tr',
+                language: 'SETTINGS.LANGUAGE.TR'
             },
             {
                 name: 'fr',

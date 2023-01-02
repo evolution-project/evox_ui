@@ -212,7 +212,8 @@
       "DE": "Deutsch",
       "ID": "Indonesian",
       "IT": "Italian",
-      "PT": "Portuguese"
+      "PT": "Portuguese",
+	    "TR": "Türkçe"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Обновить мастер-пароль",
