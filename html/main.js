@@ -5519,7 +5519,7 @@ var CreateWalletComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"host-container\"\r\n  *ngIf=\"deeplink && (variablesService.daemon_state === 2 && variablesService.sync_started === false)\">\r\n  <div class=\"container\">\r\n    <ng-container *ngIf=\"this.walletsTopay.length > 1 && !secondStep\">\r\n      <div class=\"modal select-wallet\">\r\n        <div class=\"content\">\r\n          <div class=\"title\">\r\n            <span>Select wallet for action:</span>\r\n          </div>\r\n          <div class=\"inputs-container\">\r\n            <div class=\"lock-selection\">\r\n              <ng-select class=\"custom-select\" [items]=\"walletsTopay\" bindValue=\"wallet_id\" bindLabel=\"name\"\r\n                [(ngModel)]=\"walletToPayId\" [clearable]=\"false\" [searchable]=\"false\">\r\n                <ng-template ng-label-tmp let-item=\"item\">\r\n                  {{item.name}}\r\n                </ng-template>\r\n                <ng-template ng-option-tmp let-item=\"item\" let-index=\"index\">\r\n                  {{item.name}}\r\n                </ng-template>\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' |\r\n            translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"nextStep()\">Next...</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'marketplace_offer_create'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Creating a marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>Offer title:</span> {{actionData.title}}</div>\r\n          <div class=\"row\"><span>Description:</span> {{actionData.description}}</div>\r\n          <div class=\"row\"><span>Category:</span> {{actionData.category}}</div>\r\n          <div class=\"row\"><span>Price:</span> {{actionData.price}} {{this.variablesService.defaultCurrency}}</div>\r\n          <div class=\"row\"><span>Preview url:</span> {{actionData.url || actionData.img_url}}</div>\r\n          <div class=\"row\"><span>Contacts:</span> {{actionData.contact}}</div>\r\n          <div class=\"row\"><span>Comments:</span>{{actionData.comment || actionData.comments}}</div>\r\n          <div class=\"row mixins\"><span>Mixins:</span> {{actionData.mixins || defaultMixin}}</div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceSend()\">Sign & Send...</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->\r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'marketplace_cancel_offer'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Cancel a marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>tx_id:</span><span style=\"font-size: 16px;\">{{actionData.tx_id}}</span></div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceCancelSend()\">Sign & Send</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    \r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'push_update_offer'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Update marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>tx_id:</span><span style=\"font-size: 16px;\">{{actionData.tx_id}}</span></div>\r\n          <div class=\"row\"><span>Offer title:</span> {{actionData.title}}</div>\r\n          <div class=\"row\"><span>Description:</span> {{actionData.description}}</div>\r\n          <div class=\"row\"><span>Category:</span> {{actionData.category}}</div>\r\n          <div class=\"row\"><span>Price:</span> {{actionData.price}} {{this.variablesService.defaultCurrency}}</div>\r\n          <div class=\"row\"><span>Preview url:</span> {{actionData.url || actionData.img_url}}</div>\r\n          <div class=\"row\"><span>Contacts:</span> {{actionData.contact}}</div>\r\n          <div class=\"row\"><span>Comments:</span>{{actionData.comment || actionData.comments}}</div>\r\n          <div class=\"row mixins\"><span>Mixins:</span> {{actionData.mixins || defaultMixin}}</div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceUpdateSend()\">Sign & Send</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->\r\n    <ng-container *ngIf=\"marketplaceConfirmHash\">\r\n      <div class=\"modal marketplace--success\">\r\n        <div class=\"title\">\r\n          <span>Operation successful</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>Operation hash:</span>\r\n            <p (contextmenu)=\"variablesService.onContextMenuOnlyCopy($event, marketplaceConfirmHash)\">\r\n              {{marketplaceConfirmHash}}<i class=\"icon\" [class.copy]=\"!copyAnimation\" [class.copied]=\"copyAnimation\"\r\n                (click)=\"copyHash()\"></i></p>\r\n          </div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">Close</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n  </div>\r\n</div>\r\n<app-sync-modal *ngIf=\"deeplink && (variablesService.daemon_state !== 2 || variablesService.sync_started === true)\">\r\n</app-sync-modal>\r\n"
+module.exports = "<div class=\"host-container\"\r\n  *ngIf=\"deeplink && (variablesService.daemon_state === 2 && variablesService.sync_started === false)\">\r\n  <div class=\"container\">\r\n    <ng-container *ngIf=\"this.walletsTopay.length > 1 && !secondStep\">\r\n      <div class=\"modal select-wallet\">\r\n        <div class=\"content\">\r\n          <div class=\"title\">\r\n            <span>Select wallet for action:</span>\r\n          </div>\r\n          <div class=\"inputs-container\">\r\n            <div class=\"lock-selection\">\r\n              <ng-select class=\"custom-select\" [items]=\"walletsTopay\" bindValue=\"wallet_id\" bindLabel=\"name\"\r\n                [(ngModel)]=\"walletToPayId\" [clearable]=\"false\" [searchable]=\"false\">\r\n                <ng-template ng-label-tmp let-item=\"item\">\r\n                  {{item.name}}\r\n                </ng-template>\r\n                <ng-template ng-option-tmp let-item=\"item\" let-index=\"index\">\r\n                  {{item.name}}\r\n                </ng-template>\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' |\r\n            translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"nextStep()\">Next...</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'marketplace_offer_create'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Creating a marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>Offer title:</span> {{actionData.title}}</div>\r\n          <div class=\"row\"><span>Description:</span> {{actionData.description}}</div>\r\n          <div class=\"row\"><span>Category:</span> {{actionData.category}}</div>\r\n          <div class=\"row\"><span>Price:</span> {{actionData.price}} {{this.variablesService.defaultCurrency}}</div>\r\n          <div class=\"row\"><span>Preview url:</span> {{actionData.url || actionData.img_url}}</div>\r\n          <div class=\"row\"><span>Contacts:</span> {{actionData.contact}}</div>\r\n          <div class=\"row\"><span>Comments:</span>{{actionData.comment || actionData.comments}}</div>\r\n          <div class=\"row mixins\"><span>Mixins:</span> {{actionData.mixins || defaultMixin}}</div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceSend()\">Sign & Send...</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->\r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'marketplace_cancel_offer'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Cancel a marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>tx_id:</span><span style=\"font-size: 16px;\">{{actionData.tx_id}}</span></div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceCancelSend()\">Sign & Send</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    \r\n    <ng-container *ngIf=\"secondStep && marketplaceModalShow && actionData.action === 'marketplace_update_offer'\">\r\n      <div class=\"modal marketplace\">\r\n        <div class=\"title\">\r\n          <span>Update marketplace offer</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>tx_id:</span><span style=\"font-size: 16px;\">{{actionData.tx_id}}</span></div>\r\n          <div class=\"row\"><span>Offer title:</span> {{actionData.title}}</div>\r\n          <div class=\"row\"><span>Description:</span> {{actionData.description}}</div>\r\n          <div class=\"row\"><span>Category:</span> {{actionData.category}}</div>\r\n          <div class=\"row\"><span>Price:</span> {{actionData.price}} {{this.variablesService.defaultCurrency}}</div>\r\n          <div class=\"row\"><span>Preview url:</span> {{actionData.url || actionData.img_url}}</div>\r\n          <div class=\"row\"><span>Contacts:</span> {{actionData.contact}}</div>\r\n          <div class=\"row\"><span>Comments:</span>{{actionData.comment || actionData.comments}}</div>\r\n          <div class=\"row mixins\"><span>Mixins:</span> {{actionData.mixins || defaultMixin}}</div>\r\n          <div class=\"row\"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">{{ 'EXPORT_HISTORY.CANCEL' | translate\r\n            }}</button>\r\n          <button type=\"submit\" class=\"blue-button\" (click)=\"marketplaceUpdateSend()\">Sign & Send</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n    <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->\r\n    <ng-container *ngIf=\"marketplaceConfirmHash\">\r\n      <div class=\"modal marketplace--success\">\r\n        <div class=\"title\">\r\n          <span>Operation successful</span>\r\n        </div>\r\n        <div class=\"data-container\">\r\n          <div class=\"row\"><span>Operation hash:</span>\r\n            <p (contextmenu)=\"variablesService.onContextMenuOnlyCopy($event, marketplaceConfirmHash)\">\r\n              {{marketplaceConfirmHash}}<i class=\"icon\" [class.copy]=\"!copyAnimation\" [class.copied]=\"copyAnimation\"\r\n                (click)=\"copyHash()\"></i></p>\r\n          </div>\r\n        </div>\r\n        <div class=\"wrapper-buttons\">\r\n          <button type=\"button\" class=\"blue-button\" (click)=\"canselAction()\">Close</button>\r\n        </div>\r\n      </div>\r\n    </ng-container>\r\n  </div>\r\n</div>\r\n<app-sync-modal *ngIf=\"deeplink && (variablesService.daemon_state !== 2 || variablesService.sync_started === true)\">\r\n</app-sync-modal>\r\n"
 
 /***/ }),
 
@@ -5643,7 +5643,7 @@ var DeeplinkComponent = /** @class */ (function () {
     };
     DeeplinkComponent.prototype.marketplaceSend = function () {
         var _this = this;
-        var pushOfferObject = {
+        var offerObject = {
             wallet_id: this.walletToPayId,
             od: {
                 ap: this.actionData.price || '',
@@ -5653,47 +5653,53 @@ var DeeplinkComponent = /** @class */ (function () {
                 com: this.actionData.comment || this.actionData.comments || '',
                 do: this.actionData.description || '',
                 et: 10,
-                fee: new bignumber_js__WEBPACK_IMPORTED_MODULE_7__["BigNumber"]('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
+                fee: new bignumber_js__WEBPACK_IMPORTED_MODULE_7__["BigNumber"]('' +
+                    (+this.actionData.fee || +this.variablesService.default_fee) *
+                        1000000000000),
                 lci: '',
                 lco: 'World Wide',
                 ot: 1,
-                pt: 'Credit cards, BTC, EvoX, ETH',
+                pt: 'Credit cards, BTC, ZANO, ETH',
                 t: this.actionData.title || '',
                 url: this.actionData.url || this.actionData.img_url || '',
             },
         };
-        this.backend.push_offer(pushOfferObject, function (Status, data) {
-            if (data.success) {
-                _this.marketplaceModalShow = false;
-                _this.marketplaceConfirmHash = data.tx_hash;
-            }
-            else {
-                _this.canselAction();
-            }
+        this.backend.push_offer(offerObject, function (status, data) {
+            _this.ngZone.run(function () {
+                if (data.success) {
+                    _this.marketplaceModalShow = false;
+                    _this.marketplaceConfirmHash = data.tx_hash;
+                }
+                else {
+                    _this.canselAction();
+                }
+            });
         });
     };
     DeeplinkComponent.prototype.marketplaceCancelSend = function () {
         var _this = this;
-        var cancelOfferObject = {
+        var offerObject = {
             wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id || '',
+            tx_id: this.actionData.tx_id || this.actionData.tx_id,
             no: 0,
         };
-        this.backend.cancel_offer(cancelOfferObject, function (Status, data) {
-            if (data.success) {
-                _this.marketplaceModalShow = false;
-                _this.marketplaceConfirmHash = data.tx_hash;
-            }
-            else {
-                _this.canselAction();
-            }
+        this.backend.cancel_offer(offerObject, function (status, data) {
+            _this.ngZone.run(function () {
+                if (data.success) {
+                    _this.marketplaceModalShow = false;
+                    _this.marketplaceConfirmHash = data.tx_hash;
+                }
+                else {
+                    _this.canselAction();
+                }
+            });
         });
     };
     DeeplinkComponent.prototype.marketplaceUpdateSend = function () {
         var _this = this;
-        var updateOfferObject = {
+        var offerObject = {
             wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id || '',
+            tx_id: this.actionData.tx_id || this.actionData.tx_id,
             no: 0,
             od: {
                 ap: this.actionData.price || '',
@@ -5712,43 +5718,38 @@ var DeeplinkComponent = /** @class */ (function () {
                 url: this.actionData.url || this.actionData.img_url || '',
             },
         };
-        this.backend.update_offer(updateOfferObject, function (Status, data) {
-            if (data.success) {
-                _this.marketplaceModalShow = false;
-                _this.marketplaceConfirmHash = data.tx_hash;
-            }
-            else {
-                _this.canselAction();
-            }
+        this.backend.update_offer(offerObject, function (status, data) {
+            _this.ngZone.run(function () {
+                if (data.success) {
+                    _this.marketplaceModalShow = false;
+                    _this.marketplaceConfirmHash = data.tx_hash;
+                }
+                else {
+                    _this.canselAction();
+                }
+            });
         });
     };
     DeeplinkComponent.prototype.copyHash = function () {
         var _this = this;
         this.backend.setClipboard(this.marketplaceConfirmHash);
         this.copyAnimation = true;
-        setTimeout(function () {
-            _this.copyAnimation = false;
-        }, 2000);
+        setTimeout(function () { return (_this.copyAnimation = false); }, 2000);
     };
     DeeplinkComponent.prototype.nextStep = function () {
-        var _this = this;
-        if (this.actionData.action === "send") {
-            this.ngZone.run(function () {
-                _this.variablesService.sendActionData$.next(_this.actionData);
-                _this.variablesService.deeplink$.next(null);
-                _this.variablesService.setCurrentWallet(_this.walletToPayId);
-                _this._router.navigate(['/wallet/send']);
-                _this.secondStep = false;
-            });
+        if (this.actionData.action === 'send') {
+            this.variablesService.sendActionData$.next(this.actionData);
+            this.variablesService.deeplink$.next(null);
+            this.variablesService.setCurrentWallet(this.walletToPayId);
+            this._router.navigate(['/wallet/send']).then();
+            this.secondStep = false;
         }
-        else if (this.actionData.action === "escrow") {
-            this.ngZone.run(function () {
-                _this.variablesService.sendActionData$.next(_this.actionData);
-                _this.variablesService.deeplink$.next(null);
-                _this.variablesService.setCurrentWallet(_this.walletToPayId);
-                _this._router.navigate(['/wallet/contracts/purchase']);
-                _this.secondStep = false;
-            });
+        else if (this.actionData.action === 'escrow') {
+            this.variablesService.sendActionData$.next(this.actionData);
+            this.variablesService.deeplink$.next(null);
+            this.variablesService.setCurrentWallet(this.walletToPayId);
+            this._router.navigate(['/wallet/contracts/purchase']).then();
+            this.secondStep = false;
         }
         else {
             this.secondStep = true;
