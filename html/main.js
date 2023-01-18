@@ -3266,7 +3266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOWNLOADS_PAGE_URL", function() { return DOWNLOADS_PAGE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_EXPLORER_TX_URL_PREFIX", function() { return BLOCK_EXPLORER_TX_URL_PREFIX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_EXPLORER_TN_TX_URL_PREFIX", function() { return BLOCK_EXPLORER_TN_TX_URL_PREFIX; });
-var MIXIN = 10; // default mixin value
+var MIXIN = 0; // default mixin value
 var RCV_ADDR_QR_SCALE = 1.5; // scale factor for QR code
 var AUDITABLE_WALLET_HELP_PAGE = 'docs.evolution-network.org/user-guide/audible-wallet/';
 var CREATE_NEW_WALLET_HELP_PAGE = 'docs.evolution-network.org/user-guide/manage-wallet/';

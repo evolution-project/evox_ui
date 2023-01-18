@@ -89,7 +89,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   }
 
   marketplaceSend(): void {
-    const offerObject: PushOffer = {
+    let offerObject: PushOffer = {
       wallet_id: this.walletToPayId,
       od: {
         ap: this.actionData.price || '',
