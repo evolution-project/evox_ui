@@ -1,6 +1,6 @@
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { DeeplinkParams, PushOffer, Wallet } from './../_helpers/models/wallet.model';
+import { DeeplinkParams, PushOffer, CancelOffer, UpdateOffer, Wallet } from './../_helpers/models/wallet.model';
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -17,7 +17,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   deeplink: string | null = null;
   secondStep = false;
   walletToPayId = 0;
-  nextStepInterval
+  nextStepInterval;
   marketplaceModalShow = true;
   copyAnimation = false;
   marketplaceConfirmHash: any = null
@@ -25,7 +25,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   actionData: DeeplinkParams = {}
   defaultMixin = MIXIN
   walletsTopay: Array<Wallet> = [];
-  private destroy$ = new Subject<never>();
+  private destroy$ = new Subject<void>();
   constructor(
     private _router: Router,
     public variablesService: VariablesService,
@@ -80,7 +80,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     return newobj
   }
 
-  canselAction() {
+  canselAction(): void {
     this.deeplink = null
     this.variablesService.deeplink$.next(null)
     this.variablesService.sendActionData$.next({});
@@ -88,9 +88,65 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     this.secondStep = false;
   }
 
-  marketplaceSend() {
+  marketplaceSend(): void {
     let offerObject: PushOffer = {
       wallet_id: this.walletToPayId,
+      od: {
+        ap: this.actionData.price || '',
+        at: '1',
+        cat: this.actionData.category || '',
+        cnt: this.actionData.contact || '',
+        com: this.actionData.comment || this.actionData.comments || '',
+        do: this.actionData.description || '',
+        et: 10,
+        fee: new BigNumber(
+          '' +
+            (+this.actionData.fee || +this.variablesService.default_fee) *
+              1000000000000
+        ),
+        lci: '',
+        lco: 'World Wide',
+        ot: 1,
+        pt: 'Credit cards, BTC, ZANO, ETH',
+        t: this.actionData.title || '',
+        url: this.actionData.url || this.actionData.img_url || '',
+      },
+    };
+    this.backend.push_offer(offerObject, (status, data) => {
+      this.ngZone.run(() => {
+        if (data.success) {
+          this.marketplaceModalShow = false;
+          this.marketplaceConfirmHash = data.tx_hash;
+        } else {
+          this.canselAction();
+        }
+      });
+    });
+  }
+
+  marketplaceCancelSend() {
+    let offerObject: CancelOffer = {
+      wallet_id: this.walletToPayId,
+      tx_id: this.actionData.tx_id || this.actionData.tx_id,
+      no: 0,
+    }
+    this.backend.cancel_offer(offerObject, (status, data) => {
+      this.ngZone.run(() => {
+        if (data.success) {
+          this.marketplaceModalShow = false;
+          this.marketplaceConfirmHash = data.tx_hash;
+        } else {
+          this.canselAction();
+        }
+      });
+    });
+  }
+
+  marketplaceUpdateSend() {
+    let offerObject: UpdateOffer = {
+      wallet_id: this.walletToPayId,
+      tx_id: this.actionData.tx_id || this.actionData.tx_id,
+      no: 0,
       od: {
         ap: this.actionData.price || '',
         at: '1',
@@ -108,44 +164,40 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         url: this.actionData.url || this.actionData.img_url || '',
       },
     }
-    this.backend.push_offer(offerObject, (Status, data) => {
-      if (data.success) {
-        this.marketplaceModalShow = false;
-        this.marketplaceConfirmHash = data.tx_hash
-      } else {
-        this.canselAction()
-      }
-    })
+    this.backend.update_offer(offerObject, (status, data) => {
+      this.ngZone.run(() => {
+        if (data.success) {
+          this.marketplaceModalShow = false;
+          this.marketplaceConfirmHash = data.tx_hash;
+        } else {
+          this.canselAction();
+        }
+      });
+    });
   }
 
 
-  copyHash() {
+  copyHash(): void {
     this.backend.setClipboard(this.marketplaceConfirmHash);
     this.copyAnimation = true;
-    setTimeout(() => {
-      this.copyAnimation = false;
-    }, 2000);
+    setTimeout(() => (this.copyAnimation = false), 2000);
   }
 
-  nextStep() {
-    if (this.actionData.action === "send") {
-      this.ngZone.run(() => {
-        this.variablesService.sendActionData$.next(this.actionData)
-        this.variablesService.deeplink$.next(null)
-        this.variablesService.setCurrentWallet(this.walletToPayId)
-        this._router.navigate(['/wallet/send'])
-        this.secondStep = false
-      })
-    } else if (this.actionData.action === "escrow") {
-      this.ngZone.run(() => {
-        this.variablesService.sendActionData$.next(this.actionData)
-        this.variablesService.deeplink$.next(null)
-        this.variablesService.setCurrentWallet(this.walletToPayId)
-        this._router.navigate(['/wallet/contracts/purchase'])
-        this.secondStep = false
-      })
+  nextStep(): void {
+    if (this.actionData.action === 'send') {
+      this.variablesService.sendActionData$.next(this.actionData);
+      this.variablesService.deeplink$.next(null);
+      this.variablesService.setCurrentWallet(this.walletToPayId);
+      this._router.navigate(['/wallet/send']).then();
+      this.secondStep = false;
+    } else if (this.actionData.action === 'escrow') {
+      this.variablesService.sendActionData$.next(this.actionData);
+      this.variablesService.deeplink$.next(null);
+      this.variablesService.setCurrentWallet(this.walletToPayId);
+      this._router.navigate(['/wallet/contracts/purchase']).then();
+      this.secondStep = false;
     } else {
-      this.secondStep = true
+      this.secondStep = true;
     }
   }
 

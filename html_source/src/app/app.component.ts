@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private utilsService: UtilsService,
     private store: Store
   ) {
-    translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru', 'ro']);
+    translate.addLangs(['en', 'fr', 'de', 'it', 'pt', 'ru', 'ro', 'tr']);
     translate.setDefaultLang('en');
     // const browserLang = translate.getBrowserLang();
     // translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
@@ -422,13 +422,13 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.translate.instant('ERRORS.TX_TYPE_NORMAL_END');
               break;
             case 1:
-              // this.translate.instant('ERRORS.TX_TYPE_PUSH_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_PUSH_OFFER');
               break;
             case 2:
-              // this.translate.instant('ERRORS.TX_TYPE_UPDATE_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_UPDATE_OFFER');
               break;
             case 3:
-              // this.translate.instant('ERRORS.TX_TYPE_CANCEL_OFFER');
+              this.translate.instant('ERRORS.TX_TYPE_CANCEL_OFFER');
               break;
             case 4:
               error_tr = this.translate.instant('ERRORS.TX_TYPE_NEW_ALIAS') + '<br>' +
@@ -619,27 +619,6 @@ export class AppComponent implements OnInit, OnDestroy {
           data => {
       this.variablesService.moneyEquivalent = data['data'][0]['price'];
     })})
-    /*.catch(function (error) {
-      console.log('error', error)}*/
-    /*this.http.get('https://api.livecoinwatch.com/coins/single').subscribe(
-      () => {
-        this.http.get('https://http-api.livecoinwatch.com/widgets/coins?only=EVOX&currency=USD').subscribe(
-          data => {
-            this.variablesService.moneyEquivalent = data ['data']['price'];
-            //this.variablesService.moneyEquivalentPercent = data['evolution-network']["usd_24h_change"];
-          },
-          error => {
-            console.warn('api.livecoinwatch.com price error: ', error);
-          }
-        );
-      },
-      error => {
-        console.warn('api.livecoinwatch.com error: ', error);
-        setTimeout(() => {
-          this.getMoneyEquivalent();
-        }, 30000);
-      }
-    )*/
   }
 
   getAliases() {

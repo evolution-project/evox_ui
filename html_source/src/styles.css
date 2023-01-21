@@ -93,6 +93,7 @@ input[type=submit] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+  border: 1px solid #9d00ff91;
 }
 
 button::-moz-focus-inner,
@@ -348,7 +349,7 @@ button.transparent-button .icon {
   outline: none;
   padding: 0 1rem;
   width: 100%;
-  height: 4.2rem;
+  height: 5.2rem;
 }
 .theme-dark .input-block input[type=text], .theme-dark .input-block input[type=password], .theme-dark .input-block select {
   background-color: #171e27;

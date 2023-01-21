@@ -14,6 +14,9 @@
         <ng-container *ngIf="variablesService.currentWallet.alias_available">
           <i class="icon edit" [routerLink]="['/edit-alias']" tooltip="{{ 'WALLET.TOOLTIPS.EDIT_ALIAS' | translate }}"
             placement="bottom-right" tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
+          <i class="icon transfer" [routerLink]="['/transfer-alias']"
+            tooltip="{{ 'WALLET.TOOLTIPS.TRANSFER_ALIAS' | translate }}" placement="right"
+            tooltipClass="table-tooltip account-tooltip" [delay]="500" [timeDelay]="500"></i>
         </ng-container>
       </div>
     </div>

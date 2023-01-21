@@ -90,7 +90,7 @@
   'height:\x2060px',
   'white-space:\x20nowrap',
   'border-spacing\x20:\x200',
-  'cursor:\x20pointer',
+  'cursor:\x20default',
   'capNow',
   'border-radius\x20:\x200',
   'transform-style\x20:\x20flat',

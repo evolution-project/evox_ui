@@ -96,6 +96,7 @@
     button {
       &.disabled {
         cursor: url(../../assets/icons/not-allowed.svg), not-allowed;
+        border: none;
       }
       svg {
         margin-top: 0.3rem;
@@ -106,6 +107,7 @@
       padding: 0;
       font-size: 1.6rem;
       transition: all 0.3s;
+      border: none;
     }
   }
 }

@@ -404,6 +404,14 @@ export class BackendService {
     this.runCommand('push_offer', params, callback);
   }
 
+  cancel_offer(params, callback) {
+    this.runCommand('cancel_offer', params, callback);
+  }
+
+  update_offer(params, callback) {
+    this.runCommand('push_update_offer', params, callback);
+  }
+
   generateWallet(path, pass, callback) {
     const params = {
       path: path,

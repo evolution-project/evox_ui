@@ -2,15 +2,16 @@
   "LOGIN": {
     "SETUP_MASTER_PASS": "Настройка мастер-пароля",
     "SETUP_CONFIRM_PASS": "Подтвердите пароль",
-    "MASTER_PASS": "Мстер-пароль",
+    "MASTER_PASS": "Мастер-пароль",
     "BUTTON_NEXT": "Далее",
-    "BUTTON_SKIP": "Пропустить",
+    "BUTTON_SKIP": "Пропуск",
     "BUTTON_RESET": "Сброс",
     "INCORRECT_PASSWORD": "Неверный пароль",
     "FORM_ERRORS": {
       "PASS_REQUIRED": "Требуется ввести пароль",
+      "INVALID_PASS": "Неверный пароль, повторите попытку",
       "CONFIRM_REQUIRED": "Требуется подтверждение",
-      "MISMATCH": "Несоответсвие"
+      "MISMATCH": "Несоответствие"
     }
   },
   "COMMON": {
@@ -39,15 +40,20 @@
       "SYNCING": "Синхронизация кошелька"
     },
     "CONTACTS": "Контакты",
+    "CONTACTS_TOOLTIP": "Опция Контакты доступна только при включенном мастер-пароле",
     "SETTINGS": "Настройки",
     "LOG_OUT": "Выйти",
+    "LOG_OUT_TOOLTIP": "Опция выхода из системы доступна только при включенном мастер-пароле",
     "SYNCHRONIZATION": {
       "OFFLINE": "Offline",
       "ONLINE": "Online",
       "ERROR": "Системная ошибка",
       "COMPLETE": "Завершение",
       "SYNCING": "Синхронизация блокчейна",
-      "LOADING": "Загрузка данных блокчейна"
+      "LOADING": "Загрузка данных блокчейна",
+	  "DOWNLOADING": "Загрузка",
+      "SLASH": "/",
+      "MB": "MB"
     },
     "UPDATE": {
       "STANDARD": "Доступно обновление",
@@ -138,20 +144,34 @@
     "BUTTON_CREATE": "Создать кошелек",
     "NOT_CORRECT_FILE_OR_PASSWORD": "Неверный файл кошелька или пароль не совпадают",
     "CHOOSE_PATH": "Пожалуйста, выберите путь",
+    "SEED_PASSWORD": "Начальный пароль",
+    "OK": "OK",
     "FORM_ERRORS": {
       "NAME_REQUIRED": "Имя обязательно",
       "NAME_DUPLICATE": "Имя дублируется",
       "MAX_LENGTH": "Достигнутая максимальная длина имени",
       "CONFIRM_NOT_MATCH": "пароль не совпадает",
       "KEY_REQUIRED": "Требуется ключ",
-      "KEY_NOT_VALID": "Ключ недействителен"
+      "KEY_NOT_VALID": "Ключ недействителен",
+      "INCORRECT_PASSWORD": "Неверный пароль"
     }
+	},
+  "EXPORT_HISTORY": {
+    "TOOLTIP": "Экспорт истории транзакций кошелька в файл",
+    "TITLE": "Экспорт истории кошелька",
+    "FORMAT:": "Формат",
+    "FILTER": "Фильтровать POS-транзакции",
+    "CANCEL": "Отмена",
+    "EXPORT": "Экспорт в файл...",
+    "EXPORT_BUTTON": "Экспорт истории...",
+    "SAVED_FILE": "Выберите путь для сохранения истории транзакций "
   },
   "SEED_PHRASE": {
     "TITLE": "Убедитесь, что ваша seed фраза хранится в надежном месте. Если вы забудете свою seed фразу, вы не сможете восстановить свой кошелек.",
     "BUTTON_CREATE_ACCOUNT": "Создать кошелек",
-    "BUTTON_COPY": "Копировать"
-  },
+    "BUTTON_COPY": "Копировать",
+    "BUTTON_COPIED": "Скопированно"  
+    },
   "PROGRESS": {
     "ADD_WALLET": "Добавить кошелек",
     "SELECT_LOCATION": "Выберите местоположение кошелька",
@@ -163,7 +183,9 @@
     "DARK_THEME": "Темная тема",
     "WHITE_THEME": "Белая тема",
     "GRAY_THEME": "Серая тема",
-    "APP_LOCK": {
+    "NOTIFICATIONS": "Уведомления",
+    "SETTINGS_SAVED": "Настройки обновлены",
+   "APP_LOCK": {
       "TITLE": "Блокировка приложения после:",
       "TIME1": "5 мин",
       "TIME2": "15 мин",
@@ -176,7 +198,10 @@
       "100": "100% масштаб",
       "125": "125% масштаб",
       "150": "150% масштаб",
-      "200": "200% масштаб"
+      "175": "175% масштаб",
+      "200": "200% масштаб",
+      "225": "225% масштаб",
+      "250": "250% масштаб"
     },
     "LANGUAGE": {
       "TITLE": "Язык интерфейса",
@@ -187,7 +212,8 @@
       "DE": "Deutsch",
       "ID": "Indonesian",
       "IT": "Italian",
-      "PT": "Portuguese"
+      "PT": "Portuguese",
+	    "TR": "Türkçe"
     },
     "MASTER_PASSWORD": {
       "TITLE": "Обновить мастер-пароль",
@@ -201,7 +227,7 @@
       "PASS_NOT_MATCH": "Старый пароль не совпадает",
       "CONFIRM_NOT_MATCH": "Пароль не совпадает"
     },
-    "LAST_BUILD": "Current build: {{value}}",
+    "LAST_BUILD": "Текущая сборка: {{value}}",
     "APP_LOG_TITLE": "Уровень журнала:"
   },
   "WALLET": {
@@ -211,6 +237,10 @@
     "AVAILABLE_BALANCE": "Доступно <b>{{available}} {{currency}}<b/>",
     "LOCKED_BALANCE": "Недоступно <b>{{locked}} {{currency}}<b/>",
     "LOCKED_BALANCE_LINK": "Что это значит?",
+    "CONFIRM": {
+      "TITLE": "Удалить кошелек из списка?",
+      "MESSAGE": "Чтобы получить к нему доступ, вам придется добавить его снова"
+    },
     "TABS": {
       "SEND": "Отправить",
       "RECEIVE": "Получить",
@@ -219,6 +249,12 @@
       "MESSAGES": "Сообщения",
       "STAKING": "Стейкинг",
       "PRICE": "Цена"
+    },
+    "TOOLTIPS": {
+      "EDIT_ALIAS": "Редактировать псевдоним",
+      "TRANSFER_ALIAS": "Передать псевдоним",
+      "SETTINGS": "Настройки",
+      "CLOSE": "Закрыть кошелёк"
     }
   },
   "WALLET_DETAILS": {
@@ -226,12 +262,26 @@
     "LABEL_FILE_LOCATION": "Расположение файла кошелька",
     "LABEL_SEED_PHRASE": "Seed фраза",
     "SEED_PHRASE_HINT": "Нажмите, чтобы открыть seed фразу",
+    "RESYNC_WALLET": "Повторная синхронизация данных кошелька",
+    "RESYNC_WALLET_BUTTON": "Повторная синхронизация кошелька",
     "BUTTON_SAVE": "Сохранить",
     "BUTTON_REMOVE": "Закрыть",
+    "CREATE_PASSWORD_SECURE": "Создайте пароль для защиты вашего seed",
+    "INFO": "Инфо",
+    "SEED_IS_UNSECURED": "Seed является необеспеченным",
+    "SEED_IS_SECURED": "Seed обеспечен",
+    "REMEMBER_YOU_WILL_REQUIRE": "Для восстановления Secure seed потребуется пароль.",
+    "WALLET_OPTIONS": "Опции кошелька...",
+    "FORM": {
+      "CONFIRM_PASSWORD": "Подтвердите пароль",
+      "GENERATE_SECURE_SEED": "Создание Seed",
+      "SECURED_SEED_WILL_REQUIRE": "Secure seed потребуется этот пароль для восстановления."
+    },
     "FORM_ERRORS": {
       "NAME_REQUIRED": "Имя обязательно",
       "NAME_DUPLICATE": "Имя дублируется",
-      "MAX_LENGTH": "Достигнутая максимальная длина имени"
+      "MAX_LENGTH": "Достигнутая максимальная длина имени",
+      "PASSWORDS_DONT_MATCH": "Пароли не совпадают"
     }
   },
   "ASSIGN_ALIAS": {
@@ -242,7 +292,7 @@
     },
     "COMMENT": {
       "LABEL": "Комментарий",
-      "PLACEHOLDER": "",
+      "PLACEHOLDER": "Введите свой комментарий здесь",
       "TOOLTIP": "Комментарий будет виден любому, кто захочет произвести платеж на ваш псевдоним. Вы можете предоставить подробную информацию о своем бизнесе, контактах или включить любой текст. Комментарии могут быть отредактированы позже."
     },
     "COST": "Плата за псевдоним {{value}} {{currency}}",
@@ -265,7 +315,7 @@
     },
     "COMMENT": {
       "LABEL": "Комментарий",
-      "PLACEHOLDER": ""
+      "PLACEHOLDER": "Введите свой комментарий здесь"
     },
     "FORM_ERRORS": {
       "NO_MONEY": "У вас недостаточно средств, чтобы изменить комментарий на этот псевдоним",
@@ -281,11 +331,11 @@
     },
     "COMMENT": {
       "LABEL": "Комментарий",
-      "PLACEHOLDER": ""
+      "PLACEHOLDER": "Введите свой комментарий здесь"
     },
     "ADDRESS": {
       "LABEL": "Перевод в",
-      "PLACEHOLDER": ""
+      "PLACEHOLDER": "Введите свой комментарий здесь"
     },
     "FORM_ERRORS": {
       "WRONG_ADDRESS": "Кошелька с этой учетной записью не существует",
@@ -307,6 +357,15 @@
     "HIDE": "Скрыть адрес вашего кошелька от получателя",
     "BUTTON": "Отправить",
     "SUCCESS_SENT": "Транзакция отправлена",
+    "WRAP": {
+      "TITLE": "Wrap",
+      "MAIN_TEXT": "Эта транзакция создаст wEvoX (\"Wrapped EvoX\") который будет отправлен на указанный адрес в сети Ethereum.",
+      "ESTIMATE": "Оценки операций",
+      "WILL_RECEIVE": "Вы получите:",
+      "FEE": "Ethereum Txn Fee:",
+      "EvoX": "EvoX",
+      "wEvoX": "wEvoX"
+    },
     "FORM_ERRORS": {
       "ADDRESS_REQUIRED": "Адрес является обязательным",
       "ADDRESS_NOT_VALID": "Адрес недействителен",
@@ -315,15 +374,18 @@
       "AMOUNT_ZERO": "Сумма равна нулю",
       "FEE_REQUIRED": "Требуется плата",
       "FEE_MINIMUM": "Минимальная плата:{{fee}}",
-      "MAX_LENGTH": "Достигнутая максимальная длина комментария"
+      "MAX_LENGTH": "Достигнутая максимальная длина комментария",
+      "GREAT_THAN_UNWRAPPED_COINS": "Сумма больше, чем осталось доступных токенов ERC20",
+      "LESS_THAN_EvoX_NEEDED": "Слишком маленькая сумма для покрытия комиссии ERC20",
+      "WRAP_INFO_NULL": "не удалось запросить состояние переноса"
     }
   },
   "HISTORY": {
     "STATUS": "Статус",
     "STATUS_TOOLTIP": "Подтверждения {{current}}/{{total}}",
     "LOCK_TOOLTIP": "Заперт до тех пор, пока {{date}}",
-    "SEND": "Отправленно",
-    "RECEIVED": "Полученно",
+    "SEND": "Отправлено",
+    "RECEIVED": "Получено",
     "DATE": "Дата",
     "AMOUNT": "Сумма",
     "FEE": "Комиссия",
@@ -493,7 +555,8 @@
     "ERROR": "Ошибка",
     "SUCCESS": "Выполнено",
     "INFO": "Информация",
-    "OK": "OK"
+    "OK": "OK",
+    "CANCEL": "Отмена"
   },
   "CONFIRM": {
     "BUTTON_CONFIRM": "Отправить",
@@ -532,6 +595,7 @@
     }
   },
   "CONTACTS": {
+  	"ADD_CONTACT": "Добавить контракт",
     "TITLE": "Список контактов",
     "IMPORT_EXPORT": "Импорт или экспорт контактов",
     "IMPORT": "Импорт",
@@ -596,6 +660,7 @@
     "TRANSACTION_ERROR": "Ошибка. Транзакция не завершена.",
     "BAD_ARG": "Недопустимый аргумент",
     "WALLET_WRONG_ID": "Недействительный кошелек ID",
+    "WALLET_WATCH_ONLY_NOT_SUPPORTED": "Кошельки, доступные только для просмотра, можно открыть только с помощью простого кошелька",
     "WRONG_PASSWORD": "Неверный пароль",
     "FILE_RESTORED": "Файл кошелька был поврежден. Мы восстановили ключи и кошелек из блокчейна",
     "FILE_NOT_FOUND": "Файл не найден",

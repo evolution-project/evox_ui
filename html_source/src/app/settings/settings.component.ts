@@ -31,6 +31,10 @@ export class SettingsComponent implements OnInit {
       language: 'SETTINGS.LANGUAGE.RU'
     },
     {
+      name: 'tr',
+      language: 'SETTINGS.LANGUAGE.TR'
+    },
+    {
       name: 'fr',
       language: 'SETTINGS.LANGUAGE.FR'
     },

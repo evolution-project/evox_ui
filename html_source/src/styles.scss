@@ -48,7 +48,9 @@ body {
   line-height: 2.4rem;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(#000 10%,#36157e 50%,#000 90%);
+  //background: linear-gradient(#000 10%,#36157e 50%,#000 90%);
+  background-image: url(assets/icons/fon.jpg);
+  background-size: cover;
   i {
     display: inline-block;
     svg {

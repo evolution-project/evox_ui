@@ -135,13 +135,13 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
     .item {
-      color: $blueTextColor;
+      color: #ebd2fe;
       display: flex;
       align-items: center;
       padding: 0 2rem;
       width: calc(100% / 7);
       min-height: 35px;
-      font-size: 1.6rem;
+      font-size: 17px;
       line-height: 1.9rem;
     }
   }
