@@ -5659,7 +5659,7 @@ var DeeplinkComponent = /** @class */ (function () {
                 lci: '',
                 lco: 'World Wide',
                 ot: 1,
-                pt: 'Credit cards, BTC, ZANO, ETH',
+                pt: 'Credit cards, BTC, EvoX, ETH',
                 t: this.actionData.title || '',
                 url: this.actionData.url || this.actionData.img_url || '',
             },
@@ -5669,6 +5669,7 @@ var DeeplinkComponent = /** @class */ (function () {
                 if (data.success) {
                     _this.marketplaceModalShow = false;
                     _this.marketplaceConfirmHash = data.tx_hash;
+                    _this.canselAction();
                 }
                 else {
                     _this.canselAction();
@@ -5679,8 +5680,7 @@ var DeeplinkComponent = /** @class */ (function () {
     DeeplinkComponent.prototype.marketplaceCancelSend = function () {
         var _this = this;
         var offerObject = {
-            wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id || this.actionData.tx_id,
+            tx_id: this.actionData.tx_id,
             no: 0,
         };
         this.backend.cancel_offer(offerObject, function (status, data) {
@@ -5688,6 +5688,7 @@ var DeeplinkComponent = /** @class */ (function () {
                 if (data.success) {
                     _this.marketplaceModalShow = false;
                     _this.marketplaceConfirmHash = data.tx_hash;
+                    _this.canselAction();
                 }
                 else {
                     _this.canselAction();
@@ -5698,8 +5699,7 @@ var DeeplinkComponent = /** @class */ (function () {
     DeeplinkComponent.prototype.marketplaceUpdateSend = function () {
         var _this = this;
         var offerObject = {
-            wallet_id: this.walletToPayId,
-            tx_id: this.actionData.tx_id || this.actionData.tx_id,
+            tx_id: this.actionData.tx_id,
             no: 0,
             od: {
                 ap: this.actionData.price || '',
@@ -5723,6 +5723,7 @@ var DeeplinkComponent = /** @class */ (function () {
                 if (data.success) {
                     _this.marketplaceModalShow = false;
                     _this.marketplaceConfirmHash = data.tx_hash;
+                    _this.canselAction();
                 }
                 else {
                     _this.canselAction();

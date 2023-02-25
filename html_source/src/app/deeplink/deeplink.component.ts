@@ -107,7 +107,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         lci: '',
         lco: 'World Wide',
         ot: 1,
-        pt: 'Credit cards, BTC, ZANO, ETH',
+        pt: 'Credit cards, BTC, EvoX, ETH',
         t: this.actionData.title || '',
         url: this.actionData.url || this.actionData.img_url || '',
       },
@@ -117,6 +117,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
+          this.canselAction();
         } else {
           this.canselAction();
         }
@@ -124,10 +125,9 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     });
   }
 
-  marketplaceCancelSend() {
+  marketplaceCancelSend(): void {
     let offerObject: CancelOffer = {
-      wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id || this.actionData.tx_id,
+      tx_id: this.actionData.tx_id,
       no: 0,
     }
     this.backend.cancel_offer(offerObject, (status, data) => {
@@ -135,6 +135,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
+          this.canselAction();
         } else {
           this.canselAction();
         }
@@ -142,10 +143,9 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
     });
   }
 
-  marketplaceUpdateSend() {
+  marketplaceUpdateSend(): void {
     let offerObject: UpdateOffer = {
-      wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id || this.actionData.tx_id,
+      tx_id: this.actionData.tx_id,
       no: 0,
       od: {
         ap: this.actionData.price || '',
@@ -169,6 +169,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
+          this.canselAction();
         } else {
           this.canselAction();
         }
