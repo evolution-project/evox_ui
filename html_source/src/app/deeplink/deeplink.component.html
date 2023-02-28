@@ -96,6 +96,22 @@
         </div>
       </div>
     </ng-container>
+    <ng-container *ngIf="marketplaceError">
+      <div class="modal marketplace--success">
+        <div class="title">
+          <span>Operation Error</span>
+        </div>
+        <div class="data-container">
+          <div class="row"><span>Transaction</span>
+            <p>{{marketplaceError}}</p>
+            <p>was not found in the wallet.</p>
+          </div>
+        </div>
+        <div class="wrapper-buttons">
+          <button type="button" class="blue-button" (click)="canselAction()">Close</button>
+        </div>
+      </div>
+    </ng-container>
     <!-----------------------------------------------------COSMOS--------------------------------------------------------------------------------->
     <ng-container *ngIf="marketplaceConfirmHash">
       <div class="modal marketplace--success">

@@ -21,6 +21,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
   marketplaceModalShow = true;
   copyAnimation = false;
   marketplaceConfirmHash: any = null
+  marketplaceError: any = null
   sendRoute = false;
   actionData: DeeplinkParams = {}
   defaultMixin = MIXIN
@@ -117,7 +118,6 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
-          this.canselAction();
         } else {
           this.canselAction();
         }
@@ -127,6 +127,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
 
   marketplaceCancelSend(): void {
     let offerObject: CancelOffer = {
+      wallet_id: this.walletToPayId,
       tx_id: this.actionData.tx_id,
       no: 0,
     }
@@ -135,9 +136,10 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
-          this.canselAction();
         } else {
-          this.canselAction();
+          this.marketplaceModalShow = false;
+          this.marketplaceError = this.actionData.tx_id;
+
         }
       });
     });
@@ -145,6 +147,7 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
 
   marketplaceUpdateSend(): void {
     let offerObject: UpdateOffer = {
+      wallet_id: this.walletToPayId,
       tx_id: this.actionData.tx_id,
       no: 0,
       od: {
@@ -169,9 +172,10 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
         if (data.success) {
           this.marketplaceModalShow = false;
           this.marketplaceConfirmHash = data.tx_hash;
-          this.canselAction();
         } else {
-          this.canselAction();
+          this.marketplaceModalShow = false;
+          this.marketplaceError = this.actionData.tx_id;
+
         }
       });
     });
