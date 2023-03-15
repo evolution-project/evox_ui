@@ -229,6 +229,13 @@
         }
         &.price {
           background: center / contain no-repeat url(../../assets/icons/price.svg);
+          width: 3rem;
+          height: 3rem;
+        }
+        &.acs {
+          background: center / contain no-repeat url(../../assets/icons/acs.svg);
+          width: 5rem;
+          height: 5rem;
         }
       }
       .indicator {

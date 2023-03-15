@@ -95,7 +95,7 @@ export class WalletComponent implements OnInit, OnDestroy {
     },
     {
       title: 'WALLET.TABS.ACS',
-      icon: 'price',
+      icon: 'acs',
       link: '/ACS',
       disabled: false
     }
