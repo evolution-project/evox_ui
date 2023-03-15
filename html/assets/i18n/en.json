@@ -248,7 +248,8 @@
       "CONTRACTS": "Contracts",
       "MESSAGES": "Messages",
       "STAKING": "Staking",
-      "PRICE": "Price"
+      "PRICE": "Price",
+      "ACS": "ACS"
     },
     "TOOLTIPS": {
       "EDIT_ALIAS": "Edit alias",

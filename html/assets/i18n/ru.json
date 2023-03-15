@@ -248,7 +248,8 @@
       "CONTRACTS": "Контракты",
       "MESSAGES": "Сообщения",
       "STAKING": "Стейкинг",
-      "PRICE": "Цена"
+      "PRICE": "Цена",
+      "ACS": "ACS"
     },
     "TOOLTIPS": {
       "EDIT_ALIAS": "Редактировать псевдоним",
