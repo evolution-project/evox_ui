@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, NgZone, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -8,6 +8,10 @@ import { MIXIN } from '../_shared/constants';
 import { HttpClient } from '@angular/common/http';
 import { MoneyToIntPipe } from '../_helpers/pipes/money-to-int.pipe';
 import { finalize } from 'rxjs/operators';
+import { Wallet } from '../_helpers/models/wallet.model';
+import { ActivatedRoute } from '@angular/router';
+import { PaginationService } from '../_helpers/services/pagination.service';
+import { PaginationStore } from '../_helpers/services/pagination.store';
 
 interface WrapInfo {
   tx_cost: {
@@ -23,13 +27,23 @@ interface WrapInfo {
   styleUrls: ['./acs.component.scss']
 })
 export class ACSComponent implements OnInit {
+  [x: string]: any;
   @HostListener('document:click', ['$event.target'])
   public onClick(targetElement) {
     if (targetElement.id !== 'send-address' && this.isOpen) {
       this.isOpen = false;
     }
   }
+  @ViewChild('head') head: ElementRef;
 
+  openedDetails = '';
+  calculatedWidth = [];
+  stop_paginate = false;
+  mining = false;
+  walletID;
+  wallet: Wallet;
+  x = new BigNumber(3);
+  y = new BigNumber(0.2);
   isOpen = false;
   localAliases = [];
   isModalDialogVisible = false;
@@ -136,7 +150,10 @@ export class ACSComponent implements OnInit {
     private modalService: ModalService,
     private ngZone: NgZone,
     private http: HttpClient,
+    private pagination: PaginationService,
     private moneyToInt: MoneyToIntPipe,
+    private route: ActivatedRoute,
+    private paginationStore: PaginationStore,
   ) {
   }
 
@@ -156,23 +173,108 @@ export class ACSComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mixin = this.variablesService.currentWallet.send_data['mixin'] || MIXIN;
-    if (this.variablesService.currentWallet.is_auditable) {
-      this.mixin = 0;
-      this.sendForm.controls['mixin'].disable();
-    }
-    this.hideWalletAddress = this.variablesService.currentWallet.is_auditable && !this.variablesService.currentWallet.is_watch_only;
-    if (this.hideWalletAddress) {
-      this.sendForm.controls['hide'].disable();
-    }
     this.sendForm.reset({
       address: this.variablesService.currentWallet.send_data['address'],
-      amount: this.variablesService.currentWallet.send_data['amount'],
       comment: this.variablesService.currentWallet.send_data['comment'],
-      mixin: this.mixin,
-      fee: this.variablesService.currentWallet.send_data['fee'] || this.variablesService.default_fee,
-      hide: this.variablesService.currentWallet.send_data['hide'] || false
     });
+
+    this.parentRouting = this.route.parent.params.subscribe(() => {
+      this.openedDetails = '';
+    });
+    let restore = false;
+    if (this.variablesService.after_sync_request.hasOwnProperty(this.variablesService.currentWallet.wallet_id)) { restore = this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id]; }
+    if (!this.variablesService.sync_started && restore && this.variablesService.currentWallet.wallet_id) {
+      this.wallet = this.variablesService.getNotLoadedWallet();
+      if (this.wallet) {
+        this.tick();
+      }
+      // if this is was restore wallet and it was selected on moment when sync completed
+      this.getRecentTransfers();
+      this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
+    }
+    let after_sync_request = false;
+    if (
+      this.variablesService.after_sync_request.hasOwnProperty(this.variablesService.currentWallet.wallet_id)
+    ) {
+      after_sync_request = this.variablesService.after_sync_request[
+        this.variablesService.currentWallet.wallet_id
+      ];
+    }
+    if (after_sync_request && !this.variablesService.sync_started) {
+      // if user click on the wallet at the first time after restore.
+      this.getRecentTransfers();
+    }
+
+    if (this.variablesService.stop_paginate.hasOwnProperty(this.variablesService.currentWallet.wallet_id)) {
+      this.stop_paginate = this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id];
+    } else {
+      this.stop_paginate = false;
+    }
+    // this will hide pagination a bit earlier
+    this.wallet = this.variablesService.getNotLoadedWallet();
+    if (this.wallet) {
+      this.tick();
+    }
+
+    function getRecentTransfers() {
+      const offset = this.pagination.getOffset(this.variablesService.currentWallet.wallet_id);
+      const value = this.paginationStore.value;
+      const pages = value
+        ? value.filter((item) => item.walletID === this.variablesService.currentWallet.wallet_id)
+        : [];
+  
+      this.backend.getRecentTransfers(
+        this.variablesService.currentWallet.wallet_id,
+        offset,
+        this.variablesService.count,
+        this.variablesService.currentWallet.exclude_mining_txs,
+        (status, data) => {
+          const isForward = this.paginationStore.isForward(
+            pages,
+            this.variablesService.currentWallet.currentPage
+          );
+          if (this.mining && isForward && pages && pages.length === 1) {
+            this.variablesService.currentWallet.currentPage = 1; // set init page after navigation back
+          }
+  
+          const history = data && data.history;
+          this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id] =
+            (history && history.length < this.variablesService.count) || !history;
+          this.stop_paginate = this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id];
+          if (!this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id]) {
+            const page = this.variablesService.currentWallet.currentPage + 1;
+            if (
+              isForward &&
+              this.mining &&
+              history &&
+              history.length === this.variablesService.count
+            ) {
+              this.paginationStore.setPage(
+                page,
+                data.last_item_index,
+                this.variablesService.currentWallet.wallet_id
+              ); // add back page for current page
+            }
+          }
+  
+          this.pagination.calcPages(data);
+          this.pagination.prepareHistory(data, status);
+  
+          this.ngZone.run(() => {
+            this.variablesService.get_recent_transfers = false;
+            if (
+              this.variablesService.after_sync_request.hasOwnProperty(
+                this.variablesService.currentWallet.wallet_id
+              )
+            ) {
+              // this is will complete get_recent_transfers request
+              // this will switch of
+              this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
+            }
+          });
+        }
+      );
+    }
 
     this.getWrapInfo();
     this.dLActionSubscribe = this.variablesService.sendActionData$.subscribe((res) => {
@@ -184,6 +286,27 @@ export class ACSComponent implements OnInit {
         this.variablesService.sendActionData$.next({});
       }
     })
+  }
+
+  tick() {
+    const walletInterval = setInterval(() => {
+      this.wallet = this.variablesService.getNotLoadedWallet();
+      if (!this.wallet) {
+        clearInterval(walletInterval);
+      }
+    }, 1000);
+  }
+
+  calculateWidth() {
+    this.calculatedWidth = [];
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[0].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[1].clientWidth + this.head.nativeElement.childNodes[2].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[3].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[4].clientWidth);
+  }
+
+  ngAfterViewChecked() {
+    this.calculateWidth();
   }
 
   private getWrapInfo() {
@@ -211,11 +334,7 @@ export class ACSComponent implements OnInit {
     this.additionalOptions = true;
     this.sendForm.reset({
       address: this.actionData.address,
-      amount: null,
       comment: this.actionData.comment || this.actionData.comments || '',
-      mixin: this.actionData.mixins || this.mixin,
-      fee: this.actionData.fee || this.variablesService.default_fee,
-      hide: this.actionData.hide_sender === "true" ? true : false
     });
   }
 
@@ -232,9 +351,9 @@ export class ACSComponent implements OnInit {
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
               this.sendForm.get('address').value,
-              this.sendForm.get('amount').value,
-              this.sendForm.get('fee').value,
-              this.sendForm.get('mixin').value,
+              this.sendForm.get('0.01').value,
+              this.sendForm.get('0.01').value,
+              this.sendForm.get('10').value,
               this.sendForm.get('comment').value,
               this.sendForm.get('hide').value,
               (send_status) => {
@@ -272,8 +391,8 @@ export class ACSComponent implements OnInit {
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
                 this.sendForm.get('amount').value,
-                this.sendForm.get('fee').value,
-                this.sendForm.get('mixin').value,
+                this.sendForm.get('0.01').value,
+                this.sendForm.get('0.01').value,
                 this.sendForm.get('comment').value,
                 this.sendForm.get('hide').value,
                 (send_status) => {
@@ -312,11 +431,7 @@ export class ACSComponent implements OnInit {
     this.dLActionSubscribe.unsubscribe();
     this.variablesService.currentWallet.send_data = {
       address: this.sendForm.get('address').value,
-      amount: this.sendForm.get('amount').value,
       comment: this.sendForm.get('comment').value,
-      mixin: this.sendForm.get('mixin').value,
-      fee: this.sendForm.get('fee').value,
-      hide: this.sendForm.get('hide').value
     };
     this.actionData = {}
   }
@@ -328,3 +443,7 @@ export class ACSComponent implements OnInit {
     return 0;
   }
 }
+function getRecentTransfers() {
+  throw new Error('Function not implemented.');
+}
+

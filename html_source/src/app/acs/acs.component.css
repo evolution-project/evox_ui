@@ -3,6 +3,9 @@
 }
 
 /*---------------------------------------------------message-form-------------------------------------*/
+.message-form{
+  
+}
 .message-form > .form-send .input-blocks-row {
   display: flex;
 }
@@ -75,6 +78,9 @@
 }
 
 /*--------------------------------------message-contact----------------------------------------------*/
+.message-contact{
+  
+}
 .message-contact > .contacts-title {
   font-size: 1.7rem;
 }
@@ -155,4 +161,97 @@
   mask: url(../../assets/icons/import-export.svg) no-repeat center;
   width: 0.9rem;
   height: 0.9rem;
+}
+
+/*-----------------------------------------------message-history---------------------------------------------*/
+.message-history{
+  
+}
+.message-history > .wrap-table {
+  margin: -3rem;
+}
+.message-history > .wrap-table table tbody tr td {
+  min-width: 10rem;
+}
+.message-history > .wrap-table table tbody tr .status {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.message-history > .wrap-table table tbody tr .status .confirmation {
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: flex-end;
+  width: 0.7rem;
+  height: 1.5rem;
+}
+.message-history > .wrap-table table tbody tr .status .confirmation .fill {
+  width: 100%;
+}
+.message-history > .wrap-table table tbody tr .status .lock-transaction {
+  position: absolute;
+  left: -2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.1rem;
+}
+.message-history > .wrap-table table tbody tr .status .unlock-transaction {
+  position: absolute;
+  left: -2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.1rem;
+}
+.message-history > .wrap-table table tbody tr .status .position {
+  position: static;
+}
+.message-history > .wrap-table table tbody tr .status .status-transaction {
+  margin-right: 1rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.message-history > .wrap-table table tbody tr .status.send .status-transaction {
+  background-color: transparent;
+}
+.message-history > .wrap-table table tbody tr .status.send .status-transaction::after {
+  display: block;
+  content: "";
+  width: 13px;
+  height: 13px;
+}
+.message-history > .wrap-table table tbody tr .status.received .status-transaction {
+  background-color: transparent;
+}
+.message-history > .wrap-table table tbody tr .status.received .status-transaction::after {
+  display: block;
+  content: "";
+  width: 13px;
+  height: 13px;
+}
+.message-history > .wrap-table table tbody tr .remote-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25vw;
+}
+.message-history > .wrap-table table tbody tr:not(.transaction-details) {
+  cursor: pointer;
+}
+.message-history > .wrap-table table tbody tr.transaction-details {
+  -webkit-transition: 0.5s height linear, 0s font-size;
+  transition: 0.5s height linear, 0s font-size;
+  transition-delay: 0s, 0.5s;
+  height: 0;
+}
+.message-history > .wrap-table table tbody tr.transaction-details.open {
+  height: 16.2rem;
+}
+.message-history > .wrap-table table tbody tr.transaction-details td {
+  position: relative;
+  overflow: hidden;
+  line-height: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
 }
