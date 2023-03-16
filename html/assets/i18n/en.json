@@ -78,6 +78,8 @@
   },
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Enter your comment here",
+    "MESSAGE_PLACEHOLDER": "Message...",
+    "TIPS_PLACEHOLDER": "Not obligatory",
     "WALLET_NAME_PLACEHOLDER": "Enter a Wallet Name here",
     "MASTER_PASS_PLACEHOLDER": "Enter a master password here",
     "NAME_PLACEHOLDER": "Enter a name here",
@@ -350,8 +352,10 @@
   },
   "SEND": {
     "ADDRESS": "Address",
+    "TIPS": "Tips",
     "AMOUNT": "Amount",
     "COMMENT": "Comment",
+    "MESSAGE": "Message",
     "DETAILS": "Additional details",
     "MIXIN": "Mixin",
     "FEE": "Fee",

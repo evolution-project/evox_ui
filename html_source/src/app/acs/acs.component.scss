@@ -1,38 +1,158 @@
 :host {
-    width: 100%;
-  }
-  .wrap-table {
-    margin: -3rem;
-    table {
-      tbody {
-        tr {
-          td {
-            &:first-child {
-              position: relative;
-              padding-right: 5rem;
-              width: 18rem;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              span {
-                display: block;
-                line-height: 3.5rem;
-                max-width: 10rem;
-              }
-              .icon {
-                position: absolute;
-                top: 50%;
-                right: 1rem;
-                transform: translateY(-50%);
-                display: block;
-                background: center / contain no-repeat url(../../assets/icons/alert.svg);
-                width: 1.2rem;
-                height: 1.2rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
+  width: 100%;
+}
+
+/*---------------------------------------------------message-form-------------------------------------*/
+.message-form > .form-send .input-blocks-row {
+  display: flex;
+}
+.message-form > .form-send .input-blocks-row > div {
+  flex-basis: 50%;
+}
+.message-form > .form-send .input-blocks-row > div:first-child {
+  margin-right: 1.5rem;
+}
+.message-form > .form-send .input-blocks-row > div:last-child {
+  margin-left: 1.5rem;
+}
+.message-form > .form-send .send-select {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 15rem;
+  height: 1.3rem;
+}
+.message-form > .form-send .send-select .arrow {
+  margin-left: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.message-form > .form-send .send-select .arrow.down {
+  mask: url(~src/assets/icons/arrow-down.svg) no-repeat center;
+}
+.message-form > .form-send .send-select .arrow.up {
+  mask: url(~src/assets/icons/arrow-up.svg) no-repeat center;
+}
+.message-form > .form-send .additional-details {
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0 2rem;
+}
+.message-form > .form-send .additional-details > div {
+  flex-basis: 25%;
+}
+.message-form > .form-send .additional-details > div:first-child {
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+.message-form > .form-send .additional-details > div:last-child {
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+}
+.message-form > .form-send .additional-details .checkbox-block {
+  flex-basis: 50%;
+}
+.message-form > .form-send .additional-details .checkbox-block > label {
+  top: 3.5rem;
+}
+.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label {
+  cursor: not-allowed;
+}
+.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {
+  background-color: #695576;
+  border: 0.1rem solid #695576;
+}
+.message-form > .form-send button {
+  margin: 2.4rem 0;
+  width: 100%;
+  max-width: 15rem;
+}
+
+/*--------------------------------------message-contact----------------------------------------------*/
+.message-contact > .contacts-title {
+  font-size: 1.7rem;
+}
+.message-contact > .wrap-table {
+  margin: 1rem -3rem;
+}
+.message-contact > .wrap-table table tbody tr td {
+  padding: 0 3rem 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.message-contact > .wrap-table table tbody tr td:first-child {
+  max-width: 10rem;
+  padding: 0 3rem 0 3rem;
+}
+.message-contact > .wrap-table table tbody tr td:nth-child(2) {
+  max-width: 10rem;
+}
+.message-contact > .wrap-table table tbody tr td .alias {
+  cursor: pointer;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper {
+  display: flex;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 3rem;
+  outline: none;
+  padding: 0;
+  height: auto;
+  margin-right: 1.8rem;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon {
+  cursor: pointer;
+  margin-right: 0.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.edit {
+  mask: url(../../assets/icons/edit.svg) no-repeat center;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.transfer {
+  mask: url(../../assets/icons/send.svg) no-repeat center;
+}
+.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.delete {
+  mask: url(../../assets/icons/delete.svg) no-repeat center;
+}
+.message-contact > .wrap-table .empty-list {
+  margin: 2.5rem 3rem;
+}
+.message-contact > .blue-button {
+  width: 100%;
+  max-width: 18rem;
+  margin-top: 3rem;
+}
+.message-contact > .footer {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.3rem;
+}
+.message-contact > .footer .import-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.3rem;
+  padding: 0;
+  height: auto;
+}
+.message-contact > .footer .import-btn .icon {
+  margin-right: 0.7rem;
+  mask: url(../../assets/icons/import-export.svg) no-repeat center;
+  width: 0.9rem;
+  height: 0.9rem;
+}

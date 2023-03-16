@@ -3285,7 +3285,7 @@ var BLOCK_EXPLORER_TN_TX_URL_PREFIX = 'testnet-chain.evolution-network.org/trans
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrap-table\">\n\n  <table class=\"messages-table\">\n    <thead>\n    <tr>\n      <th>{{ 'MESSAGES.ADDRESS' | translate }}</th>\n      <th>{{ 'MESSAGES.MESSAGE' | translate }}</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr *ngFor=\"let message of messages\" [routerLink]=\"[message.address]\">\n      <td>\n        <span>{{message.address}}</span>\n        <i class=\"icon\" *ngIf=\"message.is_new\"></i>\n      </td>\n      <td>\n        <span>{{message.message}}</span>\n      </td>\n    </tr>\n    </tbody>\n  </table>\n\n</div>"
+module.exports = "<div class=\"message-contact\">\r\n  <div class=\"content scrolled-content\">\r\n    <div>\r\n      <div class=\"head\">\r\n        <h3 class=\"contacts-title\">{{ 'CONTACTS.TITLE' | translate }}</h3>\r\n        <button type=\"button\" class=\"back-btn\" (click)=\"back()\">\r\n          <i class=\"icon back\"></i>\r\n          <span>{{ 'COMMON.BACK' | translate }}</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"wrap-table\">\r\n        <ng-container>\r\n          <table *ngIf=\"this.variablesService.contacts.length !== 0; else emptyList\">\r\n            <thead>\r\n              <tr #head (window:resize)=\"calculateWidth()\">\r\n                <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>\r\n                <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>\r\n                <th>{{ 'CONTACTS.TABLE.ADDRESS' | translate }}</th>\r\n                <th>{{ 'CONTACTS.TABLE.NOTES' | translate }}</th>\r\n                <th></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <ng-container *ngFor=\"\r\n                  let contact of this.variablesService.contacts;\r\n                  let i = index\r\n                \">\r\n                <tr>\r\n                  <td>\r\n                    {{ contact.name }}\r\n                  </td>\r\n                  <td>\r\n                    <ng-container *ngIf=\"contact.alias\">\r\n                      <span>{{ contact.alias }}</span>\r\n                    </ng-container>\r\n                  </td>\r\n                  <td class=\"remote-address\">\r\n                    {{ contact.address }}\r\n                  </td>\r\n                  <td class=\"remote-notes\">\r\n                    {{ contact.notes }}\r\n                  </td>\r\n                  <td>\r\n                    <div class=\"button-wrapper\">\r\n                      <button [routerLink]=\"['/contact-send/' + i]\" [queryParams]=\"{ address: contact.address }\">\r\n                        <i class=\"icon transfer\"></i>\r\n                        <span>{{ 'CONTACTS.BUTTON.SEND' | translate }}</span>\r\n                      </button>\r\n                      <button [routerLink]=\"['/edit-contacts/' + i]\" [queryParams]=\"{ id: i }\">\r\n                        <i class=\"icon edit\"></i>\r\n                        <span>{{ 'CONTACTS.BUTTON.EDIT' | translate }}</span>\r\n                      </button>\r\n                      <button (click)=\"delete(i)\">\r\n                        <i class=\"icon delete\"></i>\r\n                        <span>{{ 'CONTACTS.BUTTON.DELETE' | translate }}</span>\r\n                      </button>\r\n                    </div>\r\n                  </td>\r\n                </tr>\r\n                <div class=\"row-divider\"></div>\r\n              </ng-container>\r\n            </tbody>\r\n          </table>\r\n        </ng-container>\r\n  \r\n        <ng-template #emptyList>\r\n          <div class=\"empty-list\">\r\n            {{ 'CONTACTS.TABLE.EMPTY' | translate }}\r\n          </div>\r\n        </ng-template>\r\n      </div>\r\n  \r\n      <button [routerLink]=\"['/add-contacts']\" class=\"blue-button\">\r\n        {{ 'CONTACTS.BUTTON.ADD' | translate }}\r\n      </button>\r\n  \r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"message-history\">\r\n\r\n</div>\r\n\r\n<div class=\"message-form\">\r\n  <form *ngIf=\"!isLoading\" class=\"form-send\" [formGroup]=\"sendForm\" (ngSubmit)=\"showDialog()\">\r\n\r\n    <div class=\"input-block input-block-alias\">\r\n      <label for=\"send-address\">{{ 'SEND.ADDRESS' | translate }}</label>\r\n      <div class=\"adress-input-row\"><input type=\"text\" id=\"send-address\" formControlName=\"address\"\r\n          [class.required-error]=\"sendForm.controls['address'].dirty || sendForm.controls['address'].touched\"\r\n          [placeholder]=\"sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ADRESS_PLACEHOLDER' | translate)\"\r\n          (mousedown)=\"addressMouseDown($event)\" (contextmenu)=\"variablesService.onContextMenu($event)\"><span\r\n          *ngIf=\"currentAliasAdress\" class=\"curent-alias-adress\"\r\n          [class.padding-bottom-01]=\"variablesService.settings.scale > 7.5\"\r\n          [style.left]=\"lenghtOfAdress + 3 + 'rem'\">{{getShorterAdress()}}</span></div>\r\n      <div class=\"alias-dropdown scrolled-content\" *ngIf=\"isOpen\">\r\n        <div *ngFor=\"let item of localAliases\" (click)=\"setAlias(item.name)\">{{item.name}}</div>\r\n      </div>\r\n      <div class=\"error-block\"\r\n        *ngIf=\"sendForm.controls['address'].invalid && (sendForm.controls['address'].dirty || sendForm.controls['address'].touched)\">\r\n        <div *ngIf=\"sendForm.controls['address'].errors['address_not_valid']\">\r\n          {{ 'SEND.FORM_ERRORS.ADDRESS_NOT_VALID' | translate }}\r\n        </div>\r\n        <div *ngIf=\"sendForm.controls['address'].errors['alias_not_valid']\">\r\n          {{ 'SEND.FORM_ERRORS.ALIAS_NOT_VALID' | translate }}\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"input-blocks-row\">\r\n      <div class=\"input-block\">\r\n        <label for=\"send-amount\">{{ 'SEND.TIPS' | translate }}</label>\r\n        <input type=\"text\" id=\"send-amount\" formControlName=\"amount\"\r\n          placeholder=\"{{ 'PLACEHOLDERS.TIPS_PLACEHOLDER' | translate }}\"\r\n          appInputValidate=\"money\" (contextmenu)=\"variablesService.onContextMenu($event)\">\r\n      </div>\r\n\r\n      <div class=\"input-block\">\r\n        <label for=\"send-comment\">{{ 'SEND.MESSAGE' | translate }}</label>\r\n        <input type=\"text\" id=\"send-comment\" formControlName=\"comment\"\r\n          placeholder=\"{{ 'PLACEHOLDERS.MESSAGE_PLACEHOLDER' | translate }}\"\r\n          [maxLength]=\"variablesService.maxCommentLength\" (contextmenu)=\"variablesService.onContextMenu($event)\">\r\n        <div class=\"error-block\"\r\n          *ngIf=\"sendForm.get('comment').value && sendForm.get('comment').value.length >= variablesService.maxCommentLength\">\r\n          {{ 'SEND.FORM_ERRORS.MAX_LENGTH' | translate }}\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"additional-details\" *ngIf=\"additionalOptions\">\r\n      <div class=\"input-block\">\r\n        <label for=\"send-mixin\">{{ 'SEND.MIXIN' | translate }}</label>\r\n        <input type=\"text\" id=\"send-mixin\" formControlName=\"mixin\"\r\n          [class.required-error]=\"sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched\"\r\n          [placeholder]=\"sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched ? ('SEND.FORM_ERRORS.AMOUNT_REQUIRED' | translate ) : ('PLACEHOLDERS.AMOUNT_PLACEHOLDER' | translate)\"\r\n          appInputValidate=\"integer\" (contextmenu)=\"variablesService.onContextMenu($event)\">\r\n      </div>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"blue-button\" [disabled]=\"!sendForm.valid || !variablesService.currentWallet.loaded\">{{\r\n      'SEND.BUTTON' | translate }}</button>\r\n    <app-send-modal *ngIf=\"isModalDialogVisible\" [form]=\"sendForm\" (confirmed)=\"confirmed($event)\"></app-send-modal>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -3296,7 +3296,7 @@ module.exports = "<div class=\"wrap-table\">\n\n  <table class=\"messages-table\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  width: 100%; }\n\n.wrap-table {\n  margin: -3rem; }\n\n.wrap-table table tbody tr td:first-child {\n    position: relative;\n    padding-right: 5rem;\n    width: 18rem;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap; }\n\n.wrap-table table tbody tr td:first-child span {\n      display: block;\n      line-height: 3.5rem;\n      max-width: 10rem; }\n\n.wrap-table table tbody tr td:first-child .icon {\n      position: absolute;\n      top: 50%;\n      right: 1rem;\n      transform: translateY(-50%);\n      display: block;\n      background: center/contain no-repeat url('alert.svg');\n      width: 1.2rem;\n      height: 1.2rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNzL0M6XFxVc2Vyc1xcY29zbW9zXFxEb2N1bWVudHNcXEdpdEh1YlxcRXZvWF91aVxcaHRtbF9zb3VyY2Uvc3JjXFxhcHBcXGFjc1xcYWNzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBVyxFQUFBOztBQUViO0VBQ0UsYUFBYSxFQUFBOztBQURmO0lBT1ksa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLHVCQUF1QjtJQUN2QixtQkFBbUIsRUFBQTs7QUFaL0I7TUFjYyxjQUFjO01BQ2QsbUJBQW1CO01BQ25CLGdCQUFnQixFQUFBOztBQWhCOUI7TUFtQmMsa0JBQWtCO01BQ2xCLFFBQVE7TUFDUixXQUFXO01BQ1gsMkJBQTJCO01BQzNCLGNBQWM7TUFDZCxxREFBd0U7TUFDeEUsYUFBYTtNQUNiLGNBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Fjcy9hY3MuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgLndyYXAtdGFibGUge1xyXG4gICAgbWFyZ2luOiAtM3JlbTtcclxuICAgIHRhYmxlIHtcclxuICAgICAgdGJvZHkge1xyXG4gICAgICAgIHRyIHtcclxuICAgICAgICAgIHRkIHtcclxuICAgICAgICAgICAgJjpmaXJzdC1jaGlsZCB7XHJcbiAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDVyZW07XHJcbiAgICAgICAgICAgICAgd2lkdGg6IDE4cmVtO1xyXG4gICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgICBzcGFuIHtcclxuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDMuNXJlbTtcclxuICAgICAgICAgICAgICAgIG1heC13aWR0aDogMTByZW07XHJcbiAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgIC5pY29uIHtcclxuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAgICAgICAgIHRvcDogNTAlO1xyXG4gICAgICAgICAgICAgICAgcmlnaHQ6IDFyZW07XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgICAgICAgICAgIGJhY2tncm91bmQ6IGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0IHVybCguLi8uLi9hc3NldHMvaWNvbnMvYWxlcnQuc3ZnKTtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAxLjJyZW07XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEuMnJlbTtcclxuICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbiAgIl19 */"
+module.exports = ":host {\n  width: 100%; }\n\n/*---------------------------------------------------message-form-------------------------------------*/\n\n.message-form > .form-send .input-blocks-row {\n  display: flex; }\n\n.message-form > .form-send .input-blocks-row > div {\n  flex-basis: 50%; }\n\n.message-form > .form-send .input-blocks-row > div:first-child {\n  margin-right: 1.5rem; }\n\n.message-form > .form-send .input-blocks-row > div:last-child {\n  margin-left: 1.5rem; }\n\n.message-form > .form-send .send-select {\n  display: flex;\n  align-items: center;\n  background: transparent;\n  border: none;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  margin: 1.5rem 0 0;\n  padding: 0;\n  width: 100%;\n  max-width: 15rem;\n  height: 1.3rem; }\n\n.message-form > .form-send .send-select .arrow {\n  margin-left: 1rem;\n  width: 0.8rem;\n  height: 0.8rem; }\n\n.message-form > .form-send .send-select .arrow.down {\n  -webkit-mask: url('arrow-down.svg') no-repeat center;\n          mask: url('arrow-down.svg') no-repeat center; }\n\n.message-form > .form-send .send-select .arrow.up {\n  -webkit-mask: url('arrow-up.svg') no-repeat center;\n          mask: url('arrow-up.svg') no-repeat center; }\n\n.message-form > .form-send .additional-details {\n  display: flex;\n  margin-top: 1.5rem;\n  padding: 0.5rem 0 2rem; }\n\n.message-form > .form-send .additional-details > div {\n  flex-basis: 25%; }\n\n.message-form > .form-send .additional-details > div:first-child {\n  padding-left: 1.5rem;\n  padding-right: 1rem; }\n\n.message-form > .form-send .additional-details > div:last-child {\n  padding-left: 1rem;\n  padding-right: 1.5rem; }\n\n.message-form > .form-send .additional-details .checkbox-block {\n  flex-basis: 50%; }\n\n.message-form > .form-send .additional-details .checkbox-block > label {\n  top: 3.5rem; }\n\n.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label {\n  cursor: not-allowed; }\n\n.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {\n  background-color: #695576;\n  border: 0.1rem solid #695576; }\n\n.message-form > .form-send button {\n  margin: 2.4rem 0;\n  width: 100%;\n  max-width: 15rem; }\n\n/*--------------------------------------message-contact----------------------------------------------*/\n\n.message-contact > .contacts-title {\n  font-size: 1.7rem; }\n\n.message-contact > .wrap-table {\n  margin: 1rem -3rem; }\n\n.message-contact > .wrap-table table tbody tr td {\n  padding: 0 3rem 0 1rem;\n  overflow: hidden;\n  text-overflow: ellipsis; }\n\n.message-contact > .wrap-table table tbody tr td:first-child {\n  max-width: 10rem;\n  padding: 0 3rem 0 3rem; }\n\n.message-contact > .wrap-table table tbody tr td:nth-child(2) {\n  max-width: 10rem; }\n\n.message-contact > .wrap-table table tbody tr td .alias {\n  cursor: pointer; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper {\n  display: flex; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper button {\n  display: flex;\n  align-items: center;\n  background: transparent;\n  border: none;\n  font-size: 1.3rem;\n  font-weight: 400;\n  line-height: 3rem;\n  outline: none;\n  padding: 0;\n  height: auto;\n  margin-right: 1.8rem; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon {\n  cursor: pointer;\n  margin-right: 0.8rem;\n  width: 1.7rem;\n  height: 1.7rem; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.edit {\n  -webkit-mask: url('edit.svg') no-repeat center;\n          mask: url('edit.svg') no-repeat center; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.transfer {\n  -webkit-mask: url('send.svg') no-repeat center;\n          mask: url('send.svg') no-repeat center; }\n\n.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.delete {\n  -webkit-mask: url('delete.svg') no-repeat center;\n          mask: url('delete.svg') no-repeat center; }\n\n.message-contact > .wrap-table .empty-list {\n  margin: 2.5rem 3rem; }\n\n.message-contact > .blue-button {\n  width: 100%;\n  max-width: 18rem;\n  margin-top: 3rem; }\n\n.message-contact > .footer {\n  position: absolute;\n  bottom: 3rem;\n  font-size: 1.3rem; }\n\n.message-contact > .footer .import-btn {\n  display: flex;\n  align-items: center;\n  background-color: transparent;\n  font-size: inherit;\n  font-weight: 400;\n  line-height: 1.3rem;\n  padding: 0;\n  height: auto; }\n\n.message-contact > .footer .import-btn .icon {\n  margin-right: 0.7rem;\n  -webkit-mask: url('import-export.svg') no-repeat center;\n          mask: url('import-export.svg') no-repeat center;\n  width: 0.9rem;\n  height: 0.9rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNzL0M6XFxVc2Vyc1xcY29zbW9zXFxEb2N1bWVudHNcXEdpdEh1YlxcRXZvWF91aVxcaHRtbF9zb3VyY2Uvc3JjXFxhcHBcXGFjc1xcYWNzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVyxFQUFBOztBQUdiLHVHQUFBOztBQUNBO0VBQ0UsYUFBYSxFQUFBOztBQUVmO0VBQ0UsZUFBZSxFQUFBOztBQUVqQjtFQUNFLG9CQUFvQixFQUFBOztBQUV0QjtFQUNFLG1CQUFtQixFQUFBOztBQUVyQjtFQUNFLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixpQkFBaUI7RUFDakIsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsV0FBVztFQUNYLGdCQUFnQjtFQUNoQixjQUFjLEVBQUE7O0FBRWhCO0VBQ0UsaUJBQWlCO0VBQ2pCLGFBQWE7RUFDYixjQUFjLEVBQUE7O0FBRWhCO0VBQ0Usb0RBQTREO1VBQTVELDRDQUE0RCxFQUFBOztBQUU5RDtFQUNFLGtEQUEwRDtVQUExRCwwQ0FBMEQsRUFBQTs7QUFFNUQ7RUFDRSxhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLHNCQUFzQixFQUFBOztBQUV4QjtFQUNFLGVBQWUsRUFBQTs7QUFFakI7RUFDRSxvQkFBb0I7RUFDcEIsbUJBQW1CLEVBQUE7O0FBRXJCO0VBQ0Usa0JBQWtCO0VBQ2xCLHFCQUFxQixFQUFBOztBQUV2QjtFQUNFLGVBQWUsRUFBQTs7QUFFakI7RUFDRSxXQUFXLEVBQUE7O0FBRWI7RUFDRSxtQkFBbUIsRUFBQTs7QUFFckI7RUFDRSx5QkFBeUI7RUFDekIsNEJBQTRCLEVBQUE7O0FBRTlCO0VBQ0UsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxnQkFBZ0IsRUFBQTs7QUFHbEIsc0dBQUE7O0FBQ0E7RUFDRSxpQkFBaUIsRUFBQTs7QUFFbkI7RUFDRSxrQkFBa0IsRUFBQTs7QUFFcEI7RUFDRSxzQkFBc0I7RUFDdEIsZ0JBQWdCO0VBQ2hCLHVCQUF1QixFQUFBOztBQUV6QjtFQUNFLGdCQUFnQjtFQUNoQixzQkFBc0IsRUFBQTs7QUFFeEI7RUFDRSxnQkFBZ0IsRUFBQTs7QUFFbEI7RUFDRSxlQUFlLEVBQUE7O0FBRWpCO0VBQ0UsYUFBYSxFQUFBOztBQUVmO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLGFBQWE7RUFDYixVQUFVO0VBQ1YsWUFBWTtFQUNaLG9CQUFvQixFQUFBOztBQUV0QjtFQUNFLGVBQWU7RUFDZixvQkFBb0I7RUFDcEIsYUFBYTtFQUNiLGNBQWMsRUFBQTs7QUFFaEI7RUFDRSw4Q0FBdUQ7VUFBdkQsc0NBQXVELEVBQUE7O0FBRXpEO0VBQ0UsOENBQXVEO1VBQXZELHNDQUF1RCxFQUFBOztBQUV6RDtFQUNFLGdEQUF5RDtVQUF6RCx3Q0FBeUQsRUFBQTs7QUFFM0Q7RUFDRSxtQkFBbUIsRUFBQTs7QUFFckI7RUFDRSxXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGdCQUFnQixFQUFBOztBQUVsQjtFQUNFLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osaUJBQWlCLEVBQUE7O0FBRW5CO0VBQ0UsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQiw2QkFBNkI7RUFDN0Isa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsVUFBVTtFQUNWLFlBQVksRUFBQTs7QUFFZDtFQUNFLG9CQUFvQjtFQUNwQix1REFBZ0U7VUFBaEUsK0NBQWdFO0VBQ2hFLGFBQWE7RUFDYixjQUFjLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hY3MvYWNzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4vKi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLW1lc3NhZ2UtZm9ybS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0qL1xyXG4ubWVzc2FnZS1mb3JtID4gLmZvcm0tc2VuZCAuaW5wdXQtYmxvY2tzLXJvdyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxufVxyXG4ubWVzc2FnZS1mb3JtID4gLmZvcm0tc2VuZCAuaW5wdXQtYmxvY2tzLXJvdyA+IGRpdiB7XHJcbiAgZmxleC1iYXNpczogNTAlO1xyXG59XHJcbi5tZXNzYWdlLWZvcm0gPiAuZm9ybS1zZW5kIC5pbnB1dC1ibG9ja3Mtcm93ID4gZGl2OmZpcnN0LWNoaWxkIHtcclxuICBtYXJnaW4tcmlnaHQ6IDEuNXJlbTtcclxufVxyXG4ubWVzc2FnZS1mb3JtID4gLmZvcm0tc2VuZCAuaW5wdXQtYmxvY2tzLXJvdyA+IGRpdjpsYXN0LWNoaWxkIHtcclxuICBtYXJnaW4tbGVmdDogMS41cmVtO1xyXG59XHJcbi5tZXNzYWdlLWZvcm0gPiAuZm9ybS1zZW5kIC5zZW5kLXNlbGVjdCB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBmb250LXNpemU6IDEuM3JlbTtcclxuICBsaW5lLWhlaWdodDogMS4zcmVtO1xyXG4gIG1hcmdpbjogMS41cmVtIDAgMDtcclxuICBwYWRkaW5nOiAwO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogMTVyZW07XHJcbiAgaGVpZ2h0OiAxLjNyZW07XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLnNlbmQtc2VsZWN0IC5hcnJvdyB7XHJcbiAgbWFyZ2luLWxlZnQ6IDFyZW07XHJcbiAgd2lkdGg6IDAuOHJlbTtcclxuICBoZWlnaHQ6IDAuOHJlbTtcclxufVxyXG4ubWVzc2FnZS1mb3JtID4gLmZvcm0tc2VuZCAuc2VuZC1zZWxlY3QgLmFycm93LmRvd24ge1xyXG4gIG1hc2s6IHVybCh+c3JjL2Fzc2V0cy9pY29ucy9hcnJvdy1kb3duLnN2Zykgbm8tcmVwZWF0IGNlbnRlcjtcclxufVxyXG4ubWVzc2FnZS1mb3JtID4gLmZvcm0tc2VuZCAuc2VuZC1zZWxlY3QgLmFycm93LnVwIHtcclxuICBtYXNrOiB1cmwofnNyYy9hc3NldHMvaWNvbnMvYXJyb3ctdXAuc3ZnKSBuby1yZXBlYXQgY2VudGVyO1xyXG59XHJcbi5tZXNzYWdlLWZvcm0gPiAuZm9ybS1zZW5kIC5hZGRpdGlvbmFsLWRldGFpbHMge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgbWFyZ2luLXRvcDogMS41cmVtO1xyXG4gIHBhZGRpbmc6IDAuNXJlbSAwIDJyZW07XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLmFkZGl0aW9uYWwtZGV0YWlscyA+IGRpdiB7XHJcbiAgZmxleC1iYXNpczogMjUlO1xyXG59XHJcbi5tZXNzYWdlLWZvcm0gPiAuZm9ybS1zZW5kIC5hZGRpdGlvbmFsLWRldGFpbHMgPiBkaXY6Zmlyc3QtY2hpbGQge1xyXG4gIHBhZGRpbmctbGVmdDogMS41cmVtO1xyXG4gIHBhZGRpbmctcmlnaHQ6IDFyZW07XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLmFkZGl0aW9uYWwtZGV0YWlscyA+IGRpdjpsYXN0LWNoaWxkIHtcclxuICBwYWRkaW5nLWxlZnQ6IDFyZW07XHJcbiAgcGFkZGluZy1yaWdodDogMS41cmVtO1xyXG59XHJcbi5tZXNzYWdlLWZvcm0gPiAuZm9ybS1zZW5kIC5hZGRpdGlvbmFsLWRldGFpbHMgLmNoZWNrYm94LWJsb2NrIHtcclxuICBmbGV4LWJhc2lzOiA1MCU7XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLmFkZGl0aW9uYWwtZGV0YWlscyAuY2hlY2tib3gtYmxvY2sgPiBsYWJlbCB7XHJcbiAgdG9wOiAzLjVyZW07XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLmFkZGl0aW9uYWwtZGV0YWlscyAuY2hlY2tib3gtYmxvY2suZGlzYWJsZWQtY2hlY2tib3gtYmxvY2sgbGFiZWwge1xyXG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgLmFkZGl0aW9uYWwtZGV0YWlscyAuY2hlY2tib3gtYmxvY2suZGlzYWJsZWQtY2hlY2tib3gtYmxvY2sgbGFiZWw6YmVmb3JlIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjk1NTc2O1xyXG4gIGJvcmRlcjogMC4xcmVtIHNvbGlkICM2OTU1NzY7XHJcbn1cclxuLm1lc3NhZ2UtZm9ybSA+IC5mb3JtLXNlbmQgYnV0dG9uIHtcclxuICBtYXJnaW46IDIuNHJlbSAwO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogMTVyZW07XHJcbn1cclxuXHJcbi8qLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1tZXNzYWdlLWNvbnRhY3QtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKi9cclxuLm1lc3NhZ2UtY29udGFjdCA+IC5jb250YWN0cy10aXRsZSB7XHJcbiAgZm9udC1zaXplOiAxLjdyZW07XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHtcclxuICBtYXJnaW46IDFyZW0gLTNyZW07XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkIHtcclxuICBwYWRkaW5nOiAwIDNyZW0gMCAxcmVtO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkOmZpcnN0LWNoaWxkIHtcclxuICBtYXgtd2lkdGg6IDEwcmVtO1xyXG4gIHBhZGRpbmc6IDAgM3JlbSAwIDNyZW07XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkOm50aC1jaGlsZCgyKSB7XHJcbiAgbWF4LXdpZHRoOiAxMHJlbTtcclxufVxyXG4ubWVzc2FnZS1jb250YWN0ID4gLndyYXAtdGFibGUgdGFibGUgdGJvZHkgdHIgdGQgLmFsaWFzIHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkIC5idXR0b24td3JhcHBlciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxufVxyXG4ubWVzc2FnZS1jb250YWN0ID4gLndyYXAtdGFibGUgdGFibGUgdGJvZHkgdHIgdGQgLmJ1dHRvbi13cmFwcGVyIGJ1dHRvbiB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBmb250LXNpemU6IDEuM3JlbTtcclxuICBmb250LXdlaWdodDogNDAwO1xyXG4gIGxpbmUtaGVpZ2h0OiAzcmVtO1xyXG4gIG91dGxpbmU6IG5vbmU7XHJcbiAgcGFkZGluZzogMDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbiAgbWFyZ2luLXJpZ2h0OiAxLjhyZW07XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkIC5idXR0b24td3JhcHBlciBidXR0b24gLmljb24ge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBtYXJnaW4tcmlnaHQ6IDAuOHJlbTtcclxuICB3aWR0aDogMS43cmVtO1xyXG4gIGhlaWdodDogMS43cmVtO1xyXG59XHJcbi5tZXNzYWdlLWNvbnRhY3QgPiAud3JhcC10YWJsZSB0YWJsZSB0Ym9keSB0ciB0ZCAuYnV0dG9uLXdyYXBwZXIgYnV0dG9uIC5pY29uLmVkaXQge1xyXG4gIG1hc2s6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvZWRpdC5zdmcpIG5vLXJlcGVhdCBjZW50ZXI7XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkIC5idXR0b24td3JhcHBlciBidXR0b24gLmljb24udHJhbnNmZXIge1xyXG4gIG1hc2s6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvc2VuZC5zdmcpIG5vLXJlcGVhdCBjZW50ZXI7XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIHRhYmxlIHRib2R5IHRyIHRkIC5idXR0b24td3JhcHBlciBidXR0b24gLmljb24uZGVsZXRlIHtcclxuICBtYXNrOiB1cmwoLi4vLi4vYXNzZXRzL2ljb25zL2RlbGV0ZS5zdmcpIG5vLXJlcGVhdCBjZW50ZXI7XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC53cmFwLXRhYmxlIC5lbXB0eS1saXN0IHtcclxuICBtYXJnaW46IDIuNXJlbSAzcmVtO1xyXG59XHJcbi5tZXNzYWdlLWNvbnRhY3QgPiAuYmx1ZS1idXR0b24ge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1heC13aWR0aDogMThyZW07XHJcbiAgbWFyZ2luLXRvcDogM3JlbTtcclxufVxyXG4ubWVzc2FnZS1jb250YWN0ID4gLmZvb3RlciB7XHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGJvdHRvbTogM3JlbTtcclxuICBmb250LXNpemU6IDEuM3JlbTtcclxufVxyXG4ubWVzc2FnZS1jb250YWN0ID4gLmZvb3RlciAuaW1wb3J0LWJ0biB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gIGZvbnQtc2l6ZTogaW5oZXJpdDtcclxuICBmb250LXdlaWdodDogNDAwO1xyXG4gIGxpbmUtaGVpZ2h0OiAxLjNyZW07XHJcbiAgcGFkZGluZzogMDtcclxuICBoZWlnaHQ6IGF1dG87XHJcbn1cclxuLm1lc3NhZ2UtY29udGFjdCA+IC5mb290ZXIgLmltcG9ydC1idG4gLmljb24ge1xyXG4gIG1hcmdpbi1yaWdodDogMC43cmVtO1xyXG4gIG1hc2s6IHVybCguLi8uLi9hc3NldHMvaWNvbnMvaW1wb3J0LWV4cG9ydC5zdmcpIG5vLXJlcGVhdCBjZW50ZXI7XHJcbiAgd2lkdGg6IDAuOXJlbTtcclxuICBoZWlnaHQ6IDAuOXJlbTtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -3311,6 +3311,16 @@ module.exports = ":host {\n  width: 100%; }\n\n.wrap-table {\n  margin: -3rem; }
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACSComponent", function() { return ACSComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_helpers/services/backend.service */ "./src/app/_helpers/services/backend.service.ts");
+/* harmony import */ var _helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_helpers/services/variables.service */ "./src/app/_helpers/services/variables.service.ts");
+/* harmony import */ var _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_helpers/services/modal.service */ "./src/app/_helpers/services/modal.service.ts");
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bignumber.js */ "./node_modules/bignumber.js/bignumber.js");
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _shared_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_shared/constants */ "./src/app/_shared/constants.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../_helpers/pipes/money-to-int.pipe */ "./src/app/_helpers/pipes/money-to-int.pipe.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3321,35 +3331,312 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
+
+
+
+
 var ACSComponent = /** @class */ (function () {
-    function ACSComponent() {
-        this.messages = [
-            {
-                is_new: true,
-                address: '@bitmap',
-                message: 'No more miners for you!'
-            },
-            {
-                is_new: false,
-                address: 'Hjkwey36gHasdhkajshd4bxnb5mcvowyefb2633FdsFGGWbb',
-                message: 'Hey! What’s with our BBR deal?'
-            },
-            {
-                is_new: false,
-                address: '@john',
-                message: 'I’m coming!'
-            }
-        ];
+    function ACSComponent(backend, variablesService, modalService, ngZone, http, moneyToInt) {
+        var _this = this;
+        this.backend = backend;
+        this.variablesService = variablesService;
+        this.modalService = modalService;
+        this.ngZone = ngZone;
+        this.http = http;
+        this.moneyToInt = moneyToInt;
+        this.isOpen = false;
+        this.localAliases = [];
+        this.isModalDialogVisible = false;
+        this.hideWalletAddress = false;
+        this.isLoading = true;
+        this.isWrapShown = false;
+        this.additionalOptions = false;
+        this.sendForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            address: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, function (g) {
+                    _this.localAliases = [];
+                    if (g.value) {
+                        _this.currentAliasAdress = '';
+                        if (g.value.indexOf('@') !== 0) {
+                            _this.isOpen = false;
+                            _this.backend.validateAddress(g.value, function (valid_status, data) {
+                                _this.ngZone.run(function () {
+                                    _this.isWrapShown = (data.error_code === 'WRAP');
+                                    _this.sendForm.get('amount').setValue(_this.sendForm.get('amount').value);
+                                    if (valid_status === false && !_this.isWrapShown) {
+                                        g.setErrors(Object.assign({ 'address_not_valid': true }, g.errors));
+                                    }
+                                    else {
+                                        if (g.hasError('address_not_valid')) {
+                                            delete g.errors['address_not_valid'];
+                                            if (Object.keys(g.errors).length === 0) {
+                                                g.setErrors(null);
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                            return (g.hasError('address_not_valid')) ? { 'address_not_valid': true } : null;
+                        }
+                        else {
+                            _this.isOpen = true;
+                            _this.localAliases = _this.variablesService.aliases.filter(function (item) {
+                                return item.name.indexOf(g.value) > -1;
+                            });
+                            if (!(/^@?[a-z0-9\.\-]{6,25}$/.test(g.value))) {
+                                g.setErrors(Object.assign({ 'alias_not_valid': true }, g.errors));
+                            }
+                            else {
+                                _this.backend.getAliasByName(g.value.replace('@', ''), function (alias_status, alias_data) {
+                                    _this.ngZone.run(function () {
+                                        _this.currentAliasAdress = alias_data.address;
+                                        _this.lenghtOfAdress = g.value.length;
+                                        if (alias_status) {
+                                            if (g.hasError('alias_not_valid')) {
+                                                delete g.errors['alias_not_valid'];
+                                                if (Object.keys(g.errors).length === 0) {
+                                                    g.setErrors(null);
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            g.setErrors(Object.assign({ 'alias_not_valid': true }, g.errors));
+                                        }
+                                    });
+                                });
+                            }
+                            return (g.hasError('alias_not_valid')) ? { 'alias_not_valid': true } : null;
+                        }
+                    }
+                    return null;
+                }]),
+            amount: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](undefined, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, function (g) {
+                    if (!g.value) {
+                        return null;
+                    }
+                    if (g.value === 0) {
+                        return { 'zero': true };
+                    }
+                    var bigAmount = _this.moneyToInt.transform(g.value);
+                    if (_this.isWrapShown) {
+                        if (!_this.wrapInfo) {
+                            return { wrap_info_null: true };
+                        }
+                        if (bigAmount.isGreaterThan(new bignumber_js__WEBPACK_IMPORTED_MODULE_5__["BigNumber"](_this.wrapInfo.unwraped_coins_left))) {
+                            return { great_than_unwraped_coins: true };
+                        }
+                        if (bigAmount.isLessThan(new bignumber_js__WEBPACK_IMPORTED_MODULE_5__["BigNumber"](_this.wrapInfo.tx_cost.EvoX_needed_for_erc20))) {
+                            return { less_than_EvoX_needed: true };
+                        }
+                    }
+                    return null;
+                }]),
+            comment: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            mixin: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](_shared_constants__WEBPACK_IMPORTED_MODULE_6__["MIXIN"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            fee: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](this.variablesService.default_fee, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, function (g) {
+                    if ((new bignumber_js__WEBPACK_IMPORTED_MODULE_5__["BigNumber"](g.value)).isLessThan(_this.variablesService.default_fee)) {
+                        return { 'less_min': true };
+                    }
+                    return null;
+                }]),
+            hide: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](false)
+        });
     }
-    ACSComponent.prototype.ngOnInit = function () {
+    ACSComponent.prototype.onClick = function (targetElement) {
+        if (targetElement.id !== 'send-address' && this.isOpen) {
+            this.isOpen = false;
+        }
     };
+    ACSComponent.prototype.getShorterAdress = function () {
+        var tempArr = this.currentAliasAdress.split("");
+        return this.currentAliasAdress.split("", 34).join('') + "..." + tempArr.splice((tempArr.length - 13), 13).join('');
+    };
+    ACSComponent.prototype.addressMouseDown = function (e) {
+        if (e['button'] === 0 && this.sendForm.get('address').value && this.sendForm.get('address').value.indexOf('@') === 0) {
+            this.isOpen = true;
+        }
+    };
+    ACSComponent.prototype.setAlias = function (alias) {
+        this.sendForm.get('address').setValue(alias);
+    };
+    ACSComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mixin = this.variablesService.currentWallet.send_data['mixin'] || _shared_constants__WEBPACK_IMPORTED_MODULE_6__["MIXIN"];
+        if (this.variablesService.currentWallet.is_auditable) {
+            this.mixin = 0;
+            this.sendForm.controls['mixin'].disable();
+        }
+        this.hideWalletAddress = this.variablesService.currentWallet.is_auditable && !this.variablesService.currentWallet.is_watch_only;
+        if (this.hideWalletAddress) {
+            this.sendForm.controls['hide'].disable();
+        }
+        this.sendForm.reset({
+            address: this.variablesService.currentWallet.send_data['address'],
+            amount: this.variablesService.currentWallet.send_data['amount'],
+            comment: this.variablesService.currentWallet.send_data['comment'],
+            mixin: this.mixin,
+            fee: this.variablesService.currentWallet.send_data['fee'] || this.variablesService.default_fee,
+            hide: this.variablesService.currentWallet.send_data['hide'] || false
+        });
+        this.getWrapInfo();
+        this.dLActionSubscribe = this.variablesService.sendActionData$.subscribe(function (res) {
+            if (res.action === "send") {
+                _this.actionData = res;
+                setTimeout(function () {
+                    _this.fillDeepLinkData();
+                }, 100);
+                _this.variablesService.sendActionData$.next({});
+            }
+        });
+    };
+    ACSComponent.prototype.getWrapInfo = function () {
+        var _this = this;
+        this.http.get('#')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["finalize"])(function () {
+            _this.isLoading = false;
+        }))
+            .subscribe(function (info) {
+            _this.wrapInfo = info;
+        });
+    };
+    ACSComponent.prototype.showDialog = function () {
+        this.isModalDialogVisible = true;
+    };
+    ACSComponent.prototype.confirmed = function (confirmed) {
+        if (confirmed) {
+            this.onSend();
+        }
+        this.isModalDialogVisible = false;
+    };
+    ACSComponent.prototype.fillDeepLinkData = function () {
+        this.additionalOptions = true;
+        this.sendForm.reset({
+            address: this.actionData.address,
+            amount: null,
+            comment: this.actionData.comment || this.actionData.comments || '',
+            mixin: this.actionData.mixins || this.mixin,
+            fee: this.actionData.fee || this.variablesService.default_fee,
+            hide: this.actionData.hide_sender === "true" ? true : false
+        });
+    };
+    ACSComponent.prototype.onSend = function () {
+        var _this = this;
+        if (this.sendForm.valid) {
+            if (this.sendForm.get('address').value.indexOf('@') !== 0) {
+                this.backend.validateAddress(this.sendForm.get('address').value, function (valid_status, data) {
+                    console.log(valid_status, data.error_code === 'WRAP');
+                    if (valid_status === false && !(data.error_code === 'WRAP')) {
+                        _this.ngZone.run(function () {
+                            _this.sendForm.get('address').setErrors({ 'address_not_valid': true });
+                        });
+                    }
+                    else {
+                        _this.backend.sendMoney(_this.variablesService.currentWallet.wallet_id, _this.sendForm.get('address').value, _this.sendForm.get('amount').value, _this.sendForm.get('fee').value, _this.sendForm.get('mixin').value, _this.sendForm.get('comment').value, _this.sendForm.get('hide').value, function (send_status) {
+                            if (send_status) {
+                                _this.modalService.prepareModal('success', 'SEND.SUCCESS_SENT');
+                                _this.variablesService.currentWallet.send_data = {
+                                    address: null,
+                                    amount: null,
+                                    comment: null,
+                                    mixin: null,
+                                    fee: null,
+                                    hide: null
+                                };
+                                _this.sendForm.reset({
+                                    address: null,
+                                    amount: null,
+                                    comment: null,
+                                    mixin: _this.mixin,
+                                    fee: _this.variablesService.default_fee,
+                                    hide: false
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+            else {
+                this.backend.getAliasByName(this.sendForm.get('address').value.replace('@', ''), function (alias_status, alias_data) {
+                    _this.ngZone.run(function () {
+                        if (alias_status === false) {
+                            _this.ngZone.run(function () {
+                                _this.sendForm.get('address').setErrors({ 'alias_not_valid': true });
+                            });
+                        }
+                        else {
+                            _this.backend.sendMoney(_this.variablesService.currentWallet.wallet_id, alias_data.address, // this.sendForm.get('address').value,
+                            _this.sendForm.get('amount').value, _this.sendForm.get('fee').value, _this.sendForm.get('mixin').value, _this.sendForm.get('comment').value, _this.sendForm.get('hide').value, function (send_status) {
+                                if (send_status) {
+                                    _this.modalService.prepareModal('success', 'SEND.SUCCESS_SENT');
+                                    _this.variablesService.currentWallet.send_data = {
+                                        address: null,
+                                        amount: null,
+                                        comment: null,
+                                        mixin: null,
+                                        fee: null,
+                                        hide: null
+                                    };
+                                    _this.sendForm.reset({
+                                        address: null,
+                                        amount: null,
+                                        comment: null,
+                                        mixin: _this.mixin,
+                                        fee: _this.variablesService.default_fee,
+                                        hide: false
+                                    });
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        }
+    };
+    ACSComponent.prototype.toggleOptions = function () {
+        this.additionalOptions = !this.additionalOptions;
+    };
+    ACSComponent.prototype.ngOnDestroy = function () {
+        this.dLActionSubscribe.unsubscribe();
+        this.variablesService.currentWallet.send_data = {
+            address: this.sendForm.get('address').value,
+            amount: this.sendForm.get('amount').value,
+            comment: this.sendForm.get('comment').value,
+            mixin: this.sendForm.get('mixin').value,
+            fee: this.sendForm.get('fee').value,
+            hide: this.sendForm.get('hide').value
+        };
+        this.actionData = {};
+    };
+    ACSComponent.prototype.getReceivedValue = function () {
+        var amount = this.moneyToInt.transform(this.sendForm.value.amount);
+        var needed = new bignumber_js__WEBPACK_IMPORTED_MODULE_5__["BigNumber"](this.wrapInfo.tx_cost.EvoX_needed_for_erc20);
+        if (amount && needed) {
+            return amount.minus(needed);
+        }
+        return 0;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:click', ['$event.target']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], ACSComponent.prototype, "onClick", null);
     ACSComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-acs',
             template: __webpack_require__(/*! ./acs.component.html */ "./src/app/acs/acs.component.html"),
             styles: [__webpack_require__(/*! ./acs.component.scss */ "./src/app/acs/acs.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_helpers_services_backend_service__WEBPACK_IMPORTED_MODULE_2__["BackendService"],
+            _helpers_services_variables_service__WEBPACK_IMPORTED_MODULE_3__["VariablesService"],
+            _helpers_services_modal_service__WEBPACK_IMPORTED_MODULE_4__["ModalService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"],
+            _helpers_pipes_money_to_int_pipe__WEBPACK_IMPORTED_MODULE_8__["MoneyToIntPipe"]])
     ], ACSComponent);
     return ACSComponent;
 }());

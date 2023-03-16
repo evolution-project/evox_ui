@@ -78,6 +78,8 @@
   },
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Введите свой комментарий здесь",
+    "MESSAGE_PLACEHOLDER": "Сообщение...",
+    "TIPS_PLACEHOLDER": "Не обязательно",
     "WALLET_NAME_PLACEHOLDER": "Введите здесь Имя кошелька",
     "MASTER_PASS_PLACEHOLDER": "Введите мастер-пароль здесь",
     "NAME_PLACEHOLDER": "Введите имя здесь",
@@ -350,8 +352,10 @@
   },
   "SEND": {
     "ADDRESS": "Адрес",
+    "TIPS": "Чаевые",
     "AMOUNT": "Сумма",
     "COMMENT": "Комментарий",
+    "MESSAGE": "Сообщение",
     "DETAILS": "Дополнительные сведения",
     "MIXIN": "Смешивание",
     "FEE": "Коммисия",

@@ -1,23 +1,146 @@
-<div class="wrap-table">
+<div class="message-contact">
+  <div class="content scrolled-content">
+    <div>
+      <div class="head">
+        <h3 class="contacts-title">{{ 'CONTACTS.TITLE' | translate }}</h3>
+        <button type="button" class="back-btn" (click)="back()">
+          <i class="icon back"></i>
+          <span>{{ 'COMMON.BACK' | translate }}</span>
+        </button>
+      </div>
+      <div class="wrap-table">
+        <ng-container>
+          <table *ngIf="this.variablesService.contacts.length !== 0; else emptyList">
+            <thead>
+              <tr #head (window:resize)="calculateWidth()">
+                <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>
+                <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>
+                <th>{{ 'CONTACTS.TABLE.ADDRESS' | translate }}</th>
+                <th>{{ 'CONTACTS.TABLE.NOTES' | translate }}</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="
+                  let contact of this.variablesService.contacts;
+                  let i = index
+                ">
+                <tr>
+                  <td>
+                    {{ contact.name }}
+                  </td>
+                  <td>
+                    <ng-container *ngIf="contact.alias">
+                      <span>{{ contact.alias }}</span>
+                    </ng-container>
+                  </td>
+                  <td class="remote-address">
+                    {{ contact.address }}
+                  </td>
+                  <td class="remote-notes">
+                    {{ contact.notes }}
+                  </td>
+                  <td>
+                    <div class="button-wrapper">
+                      <button [routerLink]="['/contact-send/' + i]" [queryParams]="{ address: contact.address }">
+                        <i class="icon transfer"></i>
+                        <span>{{ 'CONTACTS.BUTTON.SEND' | translate }}</span>
+                      </button>
+                      <button [routerLink]="['/edit-contacts/' + i]" [queryParams]="{ id: i }">
+                        <i class="icon edit"></i>
+                        <span>{{ 'CONTACTS.BUTTON.EDIT' | translate }}</span>
+                      </button>
+                      <button (click)="delete(i)">
+                        <i class="icon delete"></i>
+                        <span>{{ 'CONTACTS.BUTTON.DELETE' | translate }}</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <div class="row-divider"></div>
+              </ng-container>
+            </tbody>
+          </table>
+        </ng-container>
+  
+        <ng-template #emptyList>
+          <div class="empty-list">
+            {{ 'CONTACTS.TABLE.EMPTY' | translate }}
+          </div>
+        </ng-template>
+      </div>
+  
+      <button [routerLink]="['/add-contacts']" class="blue-button">
+        {{ 'CONTACTS.BUTTON.ADD' | translate }}
+      </button>
+  
+    </div>
+  </div>
+</div>
 
-  <table class="messages-table">
-    <thead>
-    <tr>
-      <th>{{ 'MESSAGES.ADDRESS' | translate }}</th>
-      <th>{{ 'MESSAGES.MESSAGE' | translate }}</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let message of messages" [routerLink]="[message.address]">
-      <td>
-        <span>{{message.address}}</span>
-        <i class="icon" *ngIf="message.is_new"></i>
-      </td>
-      <td>
-        <span>{{message.message}}</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+<div class="message-history">
 
+</div>
+
+<div class="message-form">
+  <form *ngIf="!isLoading" class="form-send" [formGroup]="sendForm" (ngSubmit)="showDialog()">
+
+    <div class="input-block input-block-alias">
+      <label for="send-address">{{ 'SEND.ADDRESS' | translate }}</label>
+      <div class="adress-input-row"><input type="text" id="send-address" formControlName="address"
+          [class.required-error]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched"
+          [placeholder]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ADRESS_PLACEHOLDER' | translate)"
+          (mousedown)="addressMouseDown($event)" (contextmenu)="variablesService.onContextMenu($event)"><span
+          *ngIf="currentAliasAdress" class="curent-alias-adress"
+          [class.padding-bottom-01]="variablesService.settings.scale > 7.5"
+          [style.left]="lenghtOfAdress + 3 + 'rem'">{{getShorterAdress()}}</span></div>
+      <div class="alias-dropdown scrolled-content" *ngIf="isOpen">
+        <div *ngFor="let item of localAliases" (click)="setAlias(item.name)">{{item.name}}</div>
+      </div>
+      <div class="error-block"
+        *ngIf="sendForm.controls['address'].invalid && (sendForm.controls['address'].dirty || sendForm.controls['address'].touched)">
+        <div *ngIf="sendForm.controls['address'].errors['address_not_valid']">
+          {{ 'SEND.FORM_ERRORS.ADDRESS_NOT_VALID' | translate }}
+        </div>
+        <div *ngIf="sendForm.controls['address'].errors['alias_not_valid']">
+          {{ 'SEND.FORM_ERRORS.ALIAS_NOT_VALID' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="input-blocks-row">
+      <div class="input-block">
+        <label for="send-amount">{{ 'SEND.TIPS' | translate }}</label>
+        <input type="text" id="send-amount" formControlName="amount"
+          placeholder="{{ 'PLACEHOLDERS.TIPS_PLACEHOLDER' | translate }}"
+          appInputValidate="money" (contextmenu)="variablesService.onContextMenu($event)">
+      </div>
+
+      <div class="input-block">
+        <label for="send-comment">{{ 'SEND.MESSAGE' | translate }}</label>
+        <input type="text" id="send-comment" formControlName="comment"
+          placeholder="{{ 'PLACEHOLDERS.MESSAGE_PLACEHOLDER' | translate }}"
+          [maxLength]="variablesService.maxCommentLength" (contextmenu)="variablesService.onContextMenu($event)">
+        <div class="error-block"
+          *ngIf="sendForm.get('comment').value && sendForm.get('comment').value.length >= variablesService.maxCommentLength">
+          {{ 'SEND.FORM_ERRORS.MAX_LENGTH' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="additional-details" *ngIf="additionalOptions">
+      <div class="input-block">
+        <label for="send-mixin">{{ 'SEND.MIXIN' | translate }}</label>
+        <input type="text" id="send-mixin" formControlName="mixin"
+          [class.required-error]="sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched"
+          [placeholder]="sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched ? ('SEND.FORM_ERRORS.AMOUNT_REQUIRED' | translate ) : ('PLACEHOLDERS.AMOUNT_PLACEHOLDER' | translate)"
+          appInputValidate="integer" (contextmenu)="variablesService.onContextMenu($event)">
+      </div>
+    </div>
+
+    <button type="submit" class="blue-button" [disabled]="!sendForm.valid || !variablesService.currentWallet.loaded">{{
+      'SEND.BUTTON' | translate }}</button>
+    <app-send-modal *ngIf="isModalDialogVisible" [form]="sendForm" (confirmed)="confirmed($event)"></app-send-modal>
+
+  </form>
 </div>
