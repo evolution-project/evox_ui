@@ -5,7 +5,9 @@ import { VariablesService } from '../_helpers/services/variables.service';
 import { ModalService } from '../_helpers/services/modal.service';
 import { BigNumber } from 'bignumber.js';
 import { MIXIN } from '../_shared/constants';
+import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Transaction } from '../_helpers/models/transaction.model';
 import { MoneyToIntPipe } from '../_helpers/pipes/money-to-int.pipe';
 import { finalize } from 'rxjs/operators';
 import { Wallet } from '../_helpers/models/wallet.model';
@@ -26,24 +28,15 @@ interface WrapInfo {
   templateUrl: './acs.component.html',
   styleUrls: ['./acs.component.scss']
 })
-export class ACSComponent implements OnInit {
-  [x: string]: any;
+export class ACSComponent implements OnInit, OnDestroy {
+  @ViewChild('head') head: ElementRef;
   @HostListener('document:click', ['$event.target'])
   public onClick(targetElement) {
     if (targetElement.id !== 'send-address' && this.isOpen) {
       this.isOpen = false;
     }
   }
-  @ViewChild('head') head: ElementRef;
 
-  openedDetails = '';
-  calculatedWidth = [];
-  stop_paginate = false;
-  mining = false;
-  walletID;
-  wallet: Wallet;
-  x = new BigNumber(3);
-  y = new BigNumber(0.2);
   isOpen = false;
   localAliases = [];
   isModalDialogVisible = false;
@@ -57,6 +50,14 @@ export class ACSComponent implements OnInit {
   additionalOptions = false;
   parentRouting;
   actionData;
+  openedDetails = '';
+  calculatedWidth = [];
+  stop_paginate = false;
+  mining = false;
+  walletID;
+  wallet: Wallet;
+  x = new BigNumber(3);
+  y = new BigNumber(0.2);
   private dLActionSubscribe;
   sendForm = new FormGroup({
     address: new FormControl('', [Validators.required, (g: FormControl) => {
@@ -150,10 +151,11 @@ export class ACSComponent implements OnInit {
     private modalService: ModalService,
     private ngZone: NgZone,
     private http: HttpClient,
-    private pagination: PaginationService,
     private moneyToInt: MoneyToIntPipe,
     private route: ActivatedRoute,
+    private pagination: PaginationService,
     private paginationStore: PaginationStore,
+    private location: Location,
   ) {
   }
 
@@ -173,11 +175,9 @@ export class ACSComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sendForm.reset({
-      address: this.variablesService.currentWallet.send_data['address'],
-      comment: this.variablesService.currentWallet.send_data['comment'],
-    });
+    this.backend.getContactAlias();
 
+    /*------------------------history-----------------------*/
     this.parentRouting = this.route.parent.params.subscribe(() => {
       this.openedDetails = '';
     });
@@ -188,7 +188,6 @@ export class ACSComponent implements OnInit {
       if (this.wallet) {
         this.tick();
       }
-      // if this is was restore wallet and it was selected on moment when sync completed
       this.getRecentTransfers();
       this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
     }
@@ -201,7 +200,6 @@ export class ACSComponent implements OnInit {
       ];
     }
     if (after_sync_request && !this.variablesService.sync_started) {
-      // if user click on the wallet at the first time after restore.
       this.getRecentTransfers();
     }
 
@@ -210,71 +208,31 @@ export class ACSComponent implements OnInit {
     } else {
       this.stop_paginate = false;
     }
-    // this will hide pagination a bit earlier
     this.wallet = this.variablesService.getNotLoadedWallet();
     if (this.wallet) {
       this.tick();
     }
+    this.mining = this.variablesService.currentWallet.exclude_mining_txs;
 
-    function getRecentTransfers() {
-      const offset = this.pagination.getOffset(this.variablesService.currentWallet.wallet_id);
-      const value = this.paginationStore.value;
-      const pages = value
-        ? value.filter((item) => item.walletID === this.variablesService.currentWallet.wallet_id)
-        : [];
-  
-      this.backend.getRecentTransfers(
-        this.variablesService.currentWallet.wallet_id,
-        offset,
-        this.variablesService.count,
-        this.variablesService.currentWallet.exclude_mining_txs,
-        (status, data) => {
-          const isForward = this.paginationStore.isForward(
-            pages,
-            this.variablesService.currentWallet.currentPage
-          );
-          if (this.mining && isForward && pages && pages.length === 1) {
-            this.variablesService.currentWallet.currentPage = 1; // set init page after navigation back
-          }
-  
-          const history = data && data.history;
-          this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id] =
-            (history && history.length < this.variablesService.count) || !history;
-          this.stop_paginate = this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id];
-          if (!this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id]) {
-            const page = this.variablesService.currentWallet.currentPage + 1;
-            if (
-              isForward &&
-              this.mining &&
-              history &&
-              history.length === this.variablesService.count
-            ) {
-              this.paginationStore.setPage(
-                page,
-                data.last_item_index,
-                this.variablesService.currentWallet.wallet_id
-              ); // add back page for current page
-            }
-          }
-  
-          this.pagination.calcPages(data);
-          this.pagination.prepareHistory(data, status);
-  
-          this.ngZone.run(() => {
-            this.variablesService.get_recent_transfers = false;
-            if (
-              this.variablesService.after_sync_request.hasOwnProperty(
-                this.variablesService.currentWallet.wallet_id
-              )
-            ) {
-              // this is will complete get_recent_transfers request
-              // this will switch of
-              this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
-            }
-          });
-        }
-      );
+    /*-----------------------Send--------------------------*/
+
+    this.mixin = this.variablesService.currentWallet.send_data['mixin'] || MIXIN;
+    if (this.variablesService.currentWallet.is_auditable) {
+      this.mixin = 0;
+      this.sendForm.controls['mixin'].disable();
     }
+    this.hideWalletAddress = this.variablesService.currentWallet.is_auditable && !this.variablesService.currentWallet.is_watch_only;
+    if (this.hideWalletAddress) {
+      this.sendForm.controls['hide'].disable();
+    }
+    this.sendForm.reset({
+      address: this.variablesService.currentWallet.send_data['address'],
+      amount: this.variablesService.currentWallet.send_data['amount'],
+      comment: this.variablesService.currentWallet.send_data['comment'],
+      mixin: this.mixin,
+      fee: this.variablesService.currentWallet.send_data['fee'] || this.variablesService.default_fee,
+      hide: this.variablesService.currentWallet.send_data['hide'] || false
+    });
 
     this.getWrapInfo();
     this.dLActionSubscribe = this.variablesService.sendActionData$.subscribe((res) => {
@@ -287,6 +245,149 @@ export class ACSComponent implements OnInit {
       }
     })
   }
+  /*------------------------------------------history------------------------------------*/
+  ngAfterViewChecked() {
+    this.calculateWidth();
+  }
+
+  strokeSize(item) {
+    const rem = this.variablesService.settings.scale
+    if ((this.variablesService.height_app - item.height >= 10 && item.height !== 0) || (item.is_mining === true && item.height === 0)) {
+      return 0;
+    } else {
+      if (item.height === 0 || this.variablesService.height_app - item.height < 0) {
+        return (4.5 * rem);
+      } else {
+        return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
+      }
+    }
+  }
+
+  resetPaginationValues() {
+    this.ngZone.run(() => {
+      const total_history_item = this.variablesService.currentWallet
+        .total_history_item;
+      const count = this.variablesService.count;
+      this.variablesService.currentWallet.totalPages = Math.ceil(
+        total_history_item / count
+      );
+      this.variablesService.currentWallet.exclude_mining_txs = this.mining;
+      this.variablesService.currentWallet.currentPage = 1;
+
+      if (!this.variablesService.currentWallet.totalPages) {
+        this.variablesService.currentWallet.totalPages = 1;
+      }
+      this.variablesService.currentWallet.totalPages >
+        this.variablesService.maxPages
+        ? (this.variablesService.currentWallet.pages = new Array(5)
+          .fill(1)
+          .map((value, index) => value + index))
+        : (this.variablesService.currentWallet.pages = new Array(
+          this.variablesService.currentWallet.totalPages
+        )
+          .fill(1)
+          .map((value, index) => value + index));
+    });
+  }
+
+
+  setPage(pageNumber: number) {
+    // this is will allow pagination for wallets that was open from existed wallets'
+    if (pageNumber === this.variablesService.currentWallet.currentPage) {
+      return;
+    }
+    if (
+      this.variablesService.currentWallet.open_from_exist &&
+      !this.variablesService.currentWallet.updated
+    ) {
+      this.variablesService.get_recent_transfers = false;
+      this.variablesService.currentWallet.updated = true;
+    }
+    // if not running get_recent_transfers callback
+    if (!this.variablesService.get_recent_transfers) {
+      this.variablesService.currentWallet.currentPage = pageNumber;
+    }
+    if (!this.variablesService.get_recent_transfers) {
+      this.getRecentTransfers();
+    }
+  }
+
+  toggleMiningTransactions() {
+    if (!this.variablesService.sync_started && !this.wallet) {
+      const value = this.paginationStore.value;
+      if (!value) {
+        this.paginationStore.setPage(1, 0, this.variablesService.currentWallet.wallet_id); // add back page for the first page
+      } else {
+        const pages = value.filter((item) => item.walletID === this.variablesService.currentWallet.wallet_id);
+        if (!pages.length) {
+          this.paginationStore.setPage(1, 0, this.variablesService.currentWallet.wallet_id); // add back page for the first page
+        }
+      }
+      this.mining = !this.mining;
+      this.resetPaginationValues();
+      this.getRecentTransfers();
+    }
+  }
+
+  getRecentTransfers() {
+    const offset = this.pagination.getOffset(this.variablesService.currentWallet.wallet_id);
+    const value = this.paginationStore.value;
+    const pages = value
+      ? value.filter((item) => item.walletID === this.variablesService.currentWallet.wallet_id)
+      : [];
+
+    this.backend.getRecentTransfers(
+      this.variablesService.currentWallet.wallet_id,
+      offset,
+      this.variablesService.count,
+      this.variablesService.currentWallet.exclude_mining_txs,
+      (status, data) => {
+        const isForward = this.paginationStore.isForward(
+          pages,
+          this.variablesService.currentWallet.currentPage
+        );
+        if (this.mining && isForward && pages && pages.length === 1) {
+          this.variablesService.currentWallet.currentPage = 1; // set init page after navigation back
+        }
+
+        const history = data && data.history;
+        this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id] =
+          (history && history.length < this.variablesService.count) || !history;
+        this.stop_paginate = this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id];
+        if (!this.variablesService.stop_paginate[this.variablesService.currentWallet.wallet_id]) {
+          const page = this.variablesService.currentWallet.currentPage + 1;
+          if (
+            isForward &&
+            this.mining &&
+            history &&
+            history.length === this.variablesService.count
+          ) {
+            this.paginationStore.setPage(
+              page,
+              data.last_item_index,
+              this.variablesService.currentWallet.wallet_id
+            ); // add back page for current page
+          }
+        }
+
+        this.pagination.calcPages(data);
+        this.pagination.prepareHistory(data, status);
+
+        this.ngZone.run(() => {
+          this.variablesService.get_recent_transfers = false;
+          if (
+            this.variablesService.after_sync_request.hasOwnProperty(
+              this.variablesService.currentWallet.wallet_id
+            )
+          ) {
+            // this is will complete get_recent_transfers request
+            // this will switch of
+            this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
+          }
+        });
+      }
+    );
+  }
 
   tick() {
     const walletInterval = setInterval(() => {
@@ -296,7 +397,19 @@ export class ACSComponent implements OnInit {
       }
     }, 1000);
   }
-  
+
+  getHeight(item) {
+    if ((this.variablesService.height_app - item.height >= 10 && item.height !== 0) || (item.is_mining === true && item.height === 0)) {
+      return 10;
+    } else {
+      if (item.height === 0 || this.variablesService.height_app - item.height < 0) {
+        return 0;
+      } else {
+        return (this.variablesService.height_app - item.height);
+      }
+    }
+  }
+
   openDetails(tx_hash) {
     if (tx_hash === this.openedDetails) {
       this.openedDetails = '';
@@ -305,6 +418,32 @@ export class ACSComponent implements OnInit {
     }
   }
 
+  calculateWidth() {
+    this.calculatedWidth = [];
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[0].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[1].clientWidth + this.head.nativeElement.childNodes[2].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[3].clientWidth);
+    this.calculatedWidth.push(this.head.nativeElement.childNodes[4].clientWidth);
+  }
+
+  time(item: Transaction) {
+    const now = new Date().getTime();
+    const unlockTime = now + ((item.unlock_time - this.variablesService.height_max) * 60 * 1000);
+    return unlockTime;
+  }
+
+  isLocked(item: Transaction) {
+    if ((item.unlock_time > 500000000) && (item.unlock_time > new Date().getTime() / 1000)) {
+      return true;
+    }
+    if ((item.unlock_time < 500000000) && (item.unlock_time > this.variablesService.height_max)) {
+      return true;
+    }
+    return false;
+  }
+
+
+  /*------------------------------------------send----------------------------------*/
   private getWrapInfo() {
     this.http.get<WrapInfo>('#')
       .pipe(finalize(() => {
@@ -330,7 +469,11 @@ export class ACSComponent implements OnInit {
     this.additionalOptions = true;
     this.sendForm.reset({
       address: this.actionData.address,
+      amount: null,
       comment: this.actionData.comment || this.actionData.comments || '',
+      mixin: this.actionData.mixins || this.mixin,
+      fee: this.actionData.fee || this.variablesService.default_fee,
+      hide: this.actionData.hide_sender === "true" ? true : false
     });
   }
 
@@ -347,9 +490,9 @@ export class ACSComponent implements OnInit {
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
               this.sendForm.get('address').value,
-              this.sendForm.get('0.01').value,
-              this.sendForm.get('0.01').value,
-              this.sendForm.get('10').value,
+              this.sendForm.get('amount').value,
+              this.sendForm.get('fee').value,
+              this.sendForm.get('mixin').value,
               this.sendForm.get('comment').value,
               this.sendForm.get('hide').value,
               (send_status) => {
@@ -387,8 +530,8 @@ export class ACSComponent implements OnInit {
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
                 this.sendForm.get('amount').value,
-                this.sendForm.get('0.01').value,
-                this.sendForm.get('0.01').value,
+                this.sendForm.get('fee').value,
+                this.sendForm.get('mixin').value,
                 this.sendForm.get('comment').value,
                 this.sendForm.get('hide').value,
                 (send_status) => {
@@ -424,10 +567,15 @@ export class ACSComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.parentRouting.unsubscribe();
     this.dLActionSubscribe.unsubscribe();
     this.variablesService.currentWallet.send_data = {
       address: this.sendForm.get('address').value,
+      amount: this.sendForm.get('amount').value,
       comment: this.sendForm.get('comment').value,
+      mixin: this.sendForm.get('mixin').value,
+      fee: this.sendForm.get('fee').value,
+      hide: this.sendForm.get('hide').value
     };
     this.actionData = {}
   }
@@ -438,8 +586,17 @@ export class ACSComponent implements OnInit {
     if (amount && needed) { return (amount as BigNumber).minus(needed); }
     return 0;
   }
-}
-function getRecentTransfers() {
-  throw new Error('Function not implemented.');
+
+  /*------------------------------contact------------------------------*/
+  delete(index: number) {
+    if (this.variablesService.appPass) {
+      this.variablesService.contacts.splice(index, 1);
+      this.backend.storeSecureAppData();
+    }
+  }
+
+  back() {
+    this.location.back();
+  }
 }
 
