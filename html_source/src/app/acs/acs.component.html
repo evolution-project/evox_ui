@@ -55,6 +55,10 @@
 </div>
 </div>
 
+
+
+
+
 <div class="message-column">
   <div class="message-form">
     <form *ngIf="!isLoading" class="form-send" [formGroup]="sendForm" (ngSubmit)="showDialog()">
@@ -115,6 +119,12 @@
       </div>  
     </form>
   </div>
+
+
+
+
+
+
   <div class="message-history">
     <div class="history-wrap">
       <div class="wrap-table scrolled-content">
@@ -135,8 +145,15 @@
                   <span *ngIf="item.tx_type === 0 && item.remote_addresses && item.remote_addresses[0]"
                     (contextmenu)="variablesService.onContextMenuOnlyCopy($event, item.remote_addresses[0])">{{item.remote_addresses[0]}}</span>
                 </td>
-                <td class="transaction-details" [class.open]="item.tx_hash === openedDetails"></td>
               </tr>
+              <div class="row-divider"></div>
+                <tr class="transaction-details" [class.open]="item.tx_hash === openedDetails">
+                  <td colspan="5">
+                    <ng-container *ngIf="item.tx_hash === openedDetails">
+                      <app-acs-message [transaction]="item" [sizes]="calculatedWidth"></app-acs-message>
+                    </ng-container>
+                  </td>
+                </tr>
             </ng-container>
           </tbody>
         </table>

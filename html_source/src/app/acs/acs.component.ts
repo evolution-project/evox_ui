@@ -296,6 +296,14 @@ export class ACSComponent implements OnInit {
       }
     }, 1000);
   }
+  
+  openDetails(tx_hash) {
+    if (tx_hash === this.openedDetails) {
+      this.openedDetails = '';
+    } else {
+      this.openedDetails = tx_hash;
+    }
+  }
 
   private getWrapInfo() {
     this.http.get<WrapInfo>('#')
