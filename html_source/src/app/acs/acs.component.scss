@@ -1,24 +1,33 @@
 :host {
   width: 100%;
+  display: flex;
+}
+.message-column{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  margin-left: 5rem;
+  border-left: 1px solid #9f09ef;
+  width: 100%;
 }
 
 /*---------------------------------------------------message-form-------------------------------------*/
 .message-form{
   
 }
-.message-form > .form-send .input-blocks-row {
+.form-send .input-blocks-row {
   display: flex;
 }
-.message-form > .form-send .input-blocks-row > div {
+.form-send .input-blocks-row > div {
   flex-basis: 50%;
 }
-.message-form > .form-send .input-blocks-row > div:first-child {
+.form-send .input-blocks-row > div:first-child {
   margin-right: 1.5rem;
 }
-.message-form > .form-send .input-blocks-row > div:last-child {
+.form-send .input-blocks-row > div:last-child {
   margin-left: 1.5rem;
 }
-.message-form > .form-send .send-select {
+.form-send .send-select {
   display: flex;
   align-items: center;
   background: transparent;
@@ -31,47 +40,47 @@
   max-width: 15rem;
   height: 1.3rem;
 }
-.message-form > .form-send .send-select .arrow {
+.form-send .send-select .arrow {
   margin-left: 1rem;
   width: 0.8rem;
   height: 0.8rem;
 }
-.message-form > .form-send .send-select .arrow.down {
+.form-send .send-select .arrow.down {
   mask: url(~src/assets/icons/arrow-down.svg) no-repeat center;
 }
-.message-form > .form-send .send-select .arrow.up {
+.form-send .send-select .arrow.up {
   mask: url(~src/assets/icons/arrow-up.svg) no-repeat center;
 }
-.message-form > .form-send .additional-details {
+.form-send .additional-details {
   display: flex;
   margin-top: 1.5rem;
   padding: 0.5rem 0 2rem;
 }
-.message-form > .form-send .additional-details > div {
+.form-send .additional-details > div {
   flex-basis: 25%;
 }
-.message-form > .form-send .additional-details > div:first-child {
+.form-send .additional-details > div:first-child {
   padding-left: 1.5rem;
   padding-right: 1rem;
 }
-.message-form > .form-send .additional-details > div:last-child {
+.form-send .additional-details > div:last-child {
   padding-left: 1rem;
   padding-right: 1.5rem;
 }
-.message-form > .form-send .additional-details .checkbox-block {
+.form-send .additional-details .checkbox-block {
   flex-basis: 50%;
 }
-.message-form > .form-send .additional-details .checkbox-block > label {
+.form-send .additional-details .checkbox-block > label {
   top: 3.5rem;
 }
-.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label {
+.form-send .additional-details .checkbox-block.disabled-checkbox-block label {
   cursor: not-allowed;
 }
-.message-form > .form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {
+.form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {
   background-color: #695576;
   border: 0.1rem solid #695576;
 }
-.message-form > .form-send button {
+.form-send button {
   margin: 2.4rem 0;
   width: 100%;
   max-width: 15rem;
@@ -79,33 +88,41 @@
 
 /*--------------------------------------message-contact----------------------------------------------*/
 .message-contact{
-  
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
-.message-contact > .contacts-title {
+.contacts-title {
   font-size: 1.7rem;
 }
-.message-contact > .wrap-table {
+.message-contact-add-button{
+  padding: 1rem;
+  color: white;
+  margin-top: 5rem;
+  background: linear-gradient(#9502ec 10%, #530087 50%, #310247 90%);
+}
+.wrap-table {
   margin: 1rem -3rem;
 }
-.message-contact > .wrap-table table tbody tr td {
+.wrap-table table tbody tr td {
   padding: 0 3rem 0 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.message-contact > .wrap-table table tbody tr td:first-child {
+.wrap-table table tbody tr td:first-child {
   max-width: 10rem;
   padding: 0 3rem 0 3rem;
 }
-.message-contact > .wrap-table table tbody tr td:nth-child(2) {
+.wrap-table table tbody tr td:nth-child(2) {
   max-width: 10rem;
 }
-.message-contact > .wrap-table table tbody tr td .alias {
+.wrap-table table tbody tr td .alias {
   cursor: pointer;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper {
+.wrap-table table tbody tr td .button-wrapper {
   display: flex;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper button {
+.wrap-table table tbody tr td .button-wrapper button {
   display: flex;
   align-items: center;
   background: transparent;
@@ -118,35 +135,35 @@
   height: auto;
   margin-right: 1.8rem;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon {
+.wrap-table table tbody tr td .button-wrapper button .icon {
   cursor: pointer;
   margin-right: 0.8rem;
   width: 1.7rem;
   height: 1.7rem;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.edit {
+.wrap-table table tbody tr td .button-wrapper button .icon.edit {
   mask: url(../../assets/icons/edit.svg) no-repeat center;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.transfer {
+.wrap-table table tbody tr td .button-wrapper button .icon.transfer {
   mask: url(../../assets/icons/send.svg) no-repeat center;
 }
-.message-contact > .wrap-table table tbody tr td .button-wrapper button .icon.delete {
+.wrap-table table tbody tr td .button-wrapper button .icon.delete {
   mask: url(../../assets/icons/delete.svg) no-repeat center;
 }
-.message-contact > .wrap-table .empty-list {
+.wrap-table .empty-list {
   margin: 2.5rem 3rem;
 }
-.message-contact > .blue-button {
+.blue-button {
   width: 100%;
   max-width: 18rem;
   margin-top: 3rem;
 }
-.message-contact > .footer {
+.footer {
   position: absolute;
   bottom: 3rem;
   font-size: 1.3rem;
 }
-.message-contact > .footer .import-btn {
+.footer .import-btn {
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -156,7 +173,7 @@
   padding: 0;
   height: auto;
 }
-.message-contact > .footer .import-btn .icon {
+.footer .import-btn .icon {
   margin-right: 0.7rem;
   mask: url(../../assets/icons/import-export.svg) no-repeat center;
   width: 0.9rem;
@@ -165,20 +182,35 @@
 
 /*-----------------------------------------------message-history---------------------------------------------*/
 .message-history{
-  
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
 }
-.message-history > .wrap-table {
+.history-wrap {
+  display: flex;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.wrap-table {
+  height: 70%;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  display: flex;
+  flex-direction: column;
   margin: -3rem;
 }
-.message-history > .wrap-table table tbody tr td {
+.wrap-table table tbody tr td {
   min-width: 10rem;
 }
-.message-history > .wrap-table table tbody tr .status {
+.wrap-table table tbody tr .status {
   position: relative;
   display: flex;
   align-items: center;
 }
-.message-history > .wrap-table table tbody tr .status .confirmation {
+.wrap-table table tbody tr .status .confirmation {
   position: absolute;
   top: 50%;
   left: -2rem;
@@ -188,67 +220,67 @@
   width: 0.7rem;
   height: 1.5rem;
 }
-.message-history > .wrap-table table tbody tr .status .confirmation .fill {
+.wrap-table table tbody tr .status .confirmation .fill {
   width: 100%;
 }
-.message-history > .wrap-table table tbody tr .status .lock-transaction {
+.wrap-table table tbody tr .status .lock-transaction {
   position: absolute;
   left: -2rem;
   width: 1.2rem;
   height: 1.2rem;
   margin-right: 1.1rem;
 }
-.message-history > .wrap-table table tbody tr .status .unlock-transaction {
+.wrap-table table tbody tr .status .unlock-transaction {
   position: absolute;
   left: -2rem;
   width: 1.2rem;
   height: 1.2rem;
   margin-right: 1.1rem;
 }
-.message-history > .wrap-table table tbody tr .status .position {
+.wrap-table table tbody tr .status .position {
   position: static;
 }
-.message-history > .wrap-table table tbody tr .status .status-transaction {
+.wrap-table table tbody tr .status .status-transaction {
   margin-right: 1rem;
   width: 1.7rem;
   height: 1.7rem;
 }
-.message-history > .wrap-table table tbody tr .status.send .status-transaction {
+.wrap-table table tbody tr .status.send .status-transaction {
   background-color: transparent;
 }
-.message-history > .wrap-table table tbody tr .status.send .status-transaction::after {
+.wrap-table table tbody tr .status.send .status-transaction::after {
   display: block;
   content: "";
   width: 13px;
   height: 13px;
 }
-.message-history > .wrap-table table tbody tr .status.received .status-transaction {
+.wrap-table table tbody tr .status.received .status-transaction {
   background-color: transparent;
 }
-.message-history > .wrap-table table tbody tr .status.received .status-transaction::after {
+.wrap-table table tbody tr .status.received .status-transaction::after {
   display: block;
   content: "";
   width: 13px;
   height: 13px;
 }
-.message-history > .wrap-table table tbody tr .remote-address {
+.wrap-table table tbody tr .remote-address {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 25vw;
 }
-.message-history > .wrap-table table tbody tr:not(.transaction-details) {
+.wrap-table table tbody tr:not(.transaction-details) {
   cursor: pointer;
 }
-.message-history > .wrap-table table tbody tr.transaction-details {
+.wrap-table table tbody tr.transaction-details {
   -webkit-transition: 0.5s height linear, 0s font-size;
   transition: 0.5s height linear, 0s font-size;
   transition-delay: 0s, 0.5s;
   height: 0;
 }
-.message-history > .wrap-table table tbody tr.transaction-details.open {
+.wrap-table table tbody tr.transaction-details.open {
   height: 16.2rem;
 }
-.message-history > .wrap-table table tbody tr.transaction-details td {
+.wrap-table table tbody tr.transaction-details td {
   position: relative;
   overflow: hidden;
   line-height: inherit;
