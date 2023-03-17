@@ -351,6 +351,7 @@
     "REQUEST_SEND_REG": "The alias will be transferred within 10 minutes"
   },
   "SEND": {
+    "USER": "User",
     "ADDRESS": "Address",
     "TIPS": "Tips",
     "AMOUNT": "Amount",

@@ -297,18 +297,6 @@ export class ACSComponent implements OnInit {
     }, 1000);
   }
 
-  calculateWidth() {
-    this.calculatedWidth = [];
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[0].clientWidth);
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[1].clientWidth + this.head.nativeElement.childNodes[2].clientWidth);
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[3].clientWidth);
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[4].clientWidth);
-  }
-
-  ngAfterViewChecked() {
-    this.calculateWidth();
-  }
-
   private getWrapInfo() {
     this.http.get<WrapInfo>('#')
       .pipe(finalize(() => {

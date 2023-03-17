@@ -61,7 +61,7 @@
 
       <div class="input-block input-block-alias" style="flex-direction: row;">
         <div class="input-block" style="margin: 2rem;">
-          <label for="send-address">{{ 'SEND.ADDRESS' | translate }}</label>
+          <label for="send-address">{{ 'SEND.USER' | translate }}</label>
           <div class="adress-input-row"><input type="text" id="send-address" formControlName="address"
               [class.required-error]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched"
               [placeholder]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ADRESS_PLACEHOLDER' | translate)"
@@ -119,10 +119,10 @@
     <div class="history-wrap">
       <div class="wrap-table scrolled-content">
         <table class="history-table">
-          <thead>
+          <thead style="text-align: center;">
             <tr #head (window:resize)="calculateWidth()">  
               <th>{{ 'HISTORY.DATE' | translate }}</th>
-              <th>{{ 'HISTORY.ADDRESS' | translate }}</th>
+              <th>{{ 'SEND.USER' | translate }}</th>
             </tr>
           </thead>
           <tbody>
@@ -145,7 +145,7 @@
     <div class="pagination-wrapper">
       <div class="pagination">
         <div>
-          <button [ngClass]="{'disabled': variablesService.sync_started || wallet}"
+          <button style="border: none;" [ngClass]="{'disabled': variablesService.sync_started || wallet}"
             [disabled]="variablesService.currentWallet.currentPage === 1 || variablesService.sync_started || wallet"
             (click)="setPage(variablesService.currentWallet.currentPage - 1)">
             <svg class="icon" viewBox="0 0 17 17" width="100%" height="100%" fill="none"
@@ -171,7 +171,7 @@
             </button>
           </ng-container>
 
-          <button [disabled]="stop_paginate || variablesService.sync_started || wallet"
+          <button style="border: none;" [disabled]="stop_paginate || variablesService.sync_started || wallet"
             [ngClass]="{'disabled': variablesService.sync_started || wallet}"
             (click)="setPage(variablesService.currentWallet.currentPage + 1)">
             <svg class="icon" viewBox="0 0 17 17" width="100%" height="100%" fill="none"
