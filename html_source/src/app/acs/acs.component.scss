@@ -141,14 +141,14 @@
   width: 1.7rem;
   height: 1.7rem;
 }
-.wrap-table table tbody tr td .button-wrapper button .icon.edit {
-  mask: url(../../assets/icons/edit.svg) no-repeat center;
+.button-wrapper button .icon.edit {
+  background: url(../../assets/icons/edit.svg) no-repeat center;
 }
-.wrap-table table tbody tr td .button-wrapper button .icon.transfer {
-  mask: url(../../assets/icons/send.svg) no-repeat center;
+.button-wrapper button .icon.transfer {
+  background: url(../../assets/icons/send.svg) no-repeat center;
 }
-.wrap-table table tbody tr td .button-wrapper button .icon.delete {
-  mask: url(../../assets/icons/delete.svg) no-repeat center;
+.button-wrapper button .icon.delete {
+  background: url(../../assets/icons/delete.svg) no-repeat center;
 }
 .wrap-table .empty-list {
   margin: 2.5rem 3rem;

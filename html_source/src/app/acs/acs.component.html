@@ -1,11 +1,11 @@
 <div class="message-contact">
   <div class="content scrolled-content">
     <div>
-      <div class="">
+      <div  class="wraps-table" style="display: flex; flex-direction: column;">
         <ng-container>
           <table *ngIf="this.variablesService.contacts.length !== 0; else emptyList">
             <thead>
-              <tr>
+              <tr #head (window:resize)="calculateWidthContact()">
                 <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>
                 <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>
                 <th></th>
@@ -27,9 +27,6 @@
                   </td>
                   <td>
                     <div class="button-wrapper">
-                      <button [routerLink]="['/wallet/ACS/' + i]" [queryParams]="{ address: contact.address }">
-                        <i class="icon transfer"></i>
-                      </button>
                       <button [routerLink]="['/edit-contacts/' + i]" [queryParams]="{ id: i }">
                         <i class="icon edit"></i>
                       </button>

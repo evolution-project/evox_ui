@@ -52,6 +52,7 @@ export class ACSComponent implements OnInit, OnDestroy {
   actionData;
   openedDetails = '';
   calculatedWidth = [];
+  calculatedWidthContact = [];
   stop_paginate = false;
   mining = false;
   walletID;
@@ -422,8 +423,6 @@ export class ACSComponent implements OnInit, OnDestroy {
     this.calculatedWidth = [];
     this.calculatedWidth.push(this.head.nativeElement.childNodes[0].clientWidth);
     this.calculatedWidth.push(this.head.nativeElement.childNodes[1].clientWidth + this.head.nativeElement.childNodes[2].clientWidth);
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[3].clientWidth);
-    this.calculatedWidth.push(this.head.nativeElement.childNodes[4].clientWidth);
   }
 
   time(item: Transaction) {
@@ -593,6 +592,23 @@ export class ACSComponent implements OnInit, OnDestroy {
       this.variablesService.contacts.splice(index, 1);
       this.backend.storeSecureAppData();
     }
+  }
+
+  calculateWidthContact() {
+    this.calculatedWidthContact = [];
+    this.calculatedWidthContact.push(
+      this.head.nativeElement.childNodes[0].clientWidth
+    );
+    this.calculatedWidthContact.push(
+      this.head.nativeElement.childNodes[1].clientWidth +
+      this.head.nativeElement.childNodes[2].clientWidth
+    );
+    this.calculatedWidthContact.push(
+      this.head.nativeElement.childNodes[3].clientWidth
+    );
+    this.calculatedWidthContact.push(
+      this.head.nativeElement.childNodes[4].clientWidth
+    );
   }
 
   back() {
