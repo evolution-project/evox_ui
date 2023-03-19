@@ -488,11 +488,11 @@ export class ACSComponent implements OnInit, OnDestroy {
           } else {
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
-              this.sendForm.get('address').value,
+              this.sendForm.get('address').value + 0.001,
               this.sendForm.get('amount').value,
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
-              this.sendForm.get('comment').value,
+              this.sendForm.get('comment').value + '|',
               this.sendForm.get('hide').value,
               (send_status) => {
                 if (send_status) {
@@ -528,10 +528,10 @@ export class ACSComponent implements OnInit, OnDestroy {
               this.backend.sendMoney(
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
-                this.sendForm.get('amount').value,
+                this.sendForm.get('amount').value + 0.001,
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
-                this.sendForm.get('comment').value,
+                this.sendForm.get('comment').value + '|',
                 this.sendForm.get('hide').value,
                 (send_status) => {
                   if (send_status) {
@@ -570,8 +570,8 @@ export class ACSComponent implements OnInit, OnDestroy {
     this.dLActionSubscribe.unsubscribe();
     this.variablesService.currentWallet.send_data = {
       address: this.sendForm.get('address').value,
-      amount: this.sendForm.get('amount').value,
-      comment: this.sendForm.get('comment').value,
+      amount: this.sendForm.get('amount').value + 0.001,
+      comment: this.sendForm.get('comment').value + '|',
       mixin: this.sendForm.get('mixin').value,
       fee: this.sendForm.get('fee').value,
       hide: this.sendForm.get('hide').value

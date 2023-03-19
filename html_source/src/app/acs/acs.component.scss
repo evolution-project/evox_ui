@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 2rem;
-  margin-left: 5rem;
+  margin-left: 1.5rem;
   border-left: 1px solid #9f09ef;
   width: 100%;
 }
@@ -17,9 +17,6 @@
 }
 .form-send .input-blocks-row {
   display: flex;
-}
-.form-send .input-blocks-row > div {
-  flex-basis: 50%;
 }
 .form-send .input-blocks-row > div:first-child {
   margin-right: 1.5rem;
@@ -84,6 +81,12 @@
   margin: 2.4rem 0;
   width: 100%;
   max-width: 15rem;
+}
+.form-send .input-send-message{
+  flex-basis: 80%;
+}
+.form-send .button-send-message{
+  flex-basis: 20%;
 }
 
 /*--------------------------------------message-contact----------------------------------------------*/
