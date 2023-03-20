@@ -39,6 +39,33 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   }
 
+  addressAlias(address){
+    if (address !== null && this.variablesService.daemon_state === 2) {
+      if (this.variablesService.aliasesChecked[address] == null) {
+        this.variablesService.aliasesChecked[address] = {};
+        if (this.variablesService.aliases.length) {
+          for (let i = 0, length = this.variablesService.aliases.length; i < length; i++) {
+            if (i in this.variablesService.aliases && this.variablesService.aliases[i]['address'] === address) {
+              this.variablesService.aliasesChecked[address]['name'] = this.variablesService.aliases[i].name;
+              this.variablesService.aliasesChecked[address]['address'] = this.variablesService.aliases[i].address;
+              this.variablesService.aliasesChecked[address]['comment'] = this.variablesService.aliases[i].comment;
+              return this.variablesService.aliasesChecked[address].name;
+            }
+          }
+        }
+        this.backend.getAliasByAddress(address, (status, data) => {
+          if (status) {
+            this.variablesService.aliasesChecked[data.address]['name'] = '@' + data.alias;
+            this.variablesService.aliasesChecked[data.address]['address'] = data.address;
+            this.variablesService.aliasesChecked[data.address]['comment'] = data.comment;
+          }
+        });
+      }
+      return this.variablesService.aliasesChecked[address].name;
+    }
+    return {}
+  }
+
   ngOnInit() {
     this.parentRouting = this.route.parent.params.subscribe(() => {
       this.openedDetails = '';

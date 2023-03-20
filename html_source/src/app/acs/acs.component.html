@@ -197,7 +197,7 @@
                   <span *ngIf="!(item.tx_type === 0 && item.remote_addresses && item.remote_addresses[0])">{{item |
                     historyTypeMessages}}</span>
                   <span *ngIf="item.tx_type === 0 && item.remote_addresses && item.remote_addresses[0]"
-                    (contextmenu)="variablesService.onContextMenuOnlyCopy($event, item.remote_addresses[0])">{{item.remote_addresses[0]}}</span>
+                    (contextmenu)="variablesService.onContextMenuOnlyCopy($event, item.remote_addresses[0])">{{contactAlias(item.remote_addresses[0]) || item.remote_addresses[0]}}</span>
                 </td>
               </tr>
               <div class="row-divider"></div>

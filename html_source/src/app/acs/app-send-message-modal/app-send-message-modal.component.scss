@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     background: rgba(255, 255, 255, 0.753);
   }
@@ -13,7 +13,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: rgb(90, 0, 194);
+    background-color: rgb(41, 0, 87);
     background-position: center;
     background-size: 200%;
     padding: 0.3rem 3rem 3rem 3rem;

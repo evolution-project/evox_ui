@@ -160,6 +160,33 @@ export class ACSComponent implements OnInit, OnDestroy {
     private location: Location,
   ) {
   }
+  contactAlias(address){
+    if (address !== null && this.variablesService.daemon_state === 2) {
+      if (this.variablesService.aliasesChecked[address] == null) {
+        this.variablesService.aliasesChecked[address] = {};
+        if (this.variablesService.aliases.length) {
+          for (let i = 0, length = this.variablesService.aliases.length; i < length; i++) {
+            if (i in this.variablesService.aliases && this.variablesService.aliases[i]['address'] === address) {
+              this.variablesService.aliasesChecked[address]['name'] = this.variablesService.aliases[i].name;
+              this.variablesService.aliasesChecked[address]['address'] = this.variablesService.aliases[i].address;
+              this.variablesService.aliasesChecked[address]['comment'] = this.variablesService.aliases[i].comment;
+              return this.variablesService.aliasesChecked[address].name;
+            }
+          }
+        }
+        this.backend.getAliasByAddress(address, (status, data) => {
+          if (status) {
+            this.variablesService.aliasesChecked[data.address]['name'] = '@' + data.alias;
+            this.variablesService.aliasesChecked[data.address]['address'] = data.address;
+            this.variablesService.aliasesChecked[data.address]['comment'] = data.comment;
+          }
+        });
+      }
+      return this.variablesService.aliasesChecked[address].name;
+    }
+    return {}
+  }
+
 
   getShorterAdress() {
     let tempArr = this.currentAliasAdress.split("");
@@ -485,6 +512,11 @@ export class ACSComponent implements OnInit, OnDestroy {
     });
   }
 
+  amountMessage(){
+    let a = Number(this.sendForm.get('amount').value) + 0.001
+    return String(a)
+  }
+
   onSend() {
     if (this.sendForm.valid) {
       if (this.sendForm.get('address').value.indexOf('@') !== 0) {
@@ -495,10 +527,11 @@ export class ACSComponent implements OnInit, OnDestroy {
               this.sendForm.get('address').setErrors({ 'address_not_valid': true });
             });
           } else {
+            console.log(this.sendForm.get('amount').value)
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
               this.sendForm.get('address').value,
-              this.sendForm.get('amount').value + 0.001,
+              this.amountMessage(),
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
               'ACS: ' + this.sendForm.get('comment').value,
@@ -534,10 +567,11 @@ export class ACSComponent implements OnInit, OnDestroy {
                 this.sendForm.get('address').setErrors({ 'alias_not_valid': true });
               });
             } else {
+              console.log(this.sendForm.get('amount').value)
               this.backend.sendMoney(
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
-                this.sendForm.get('amount').value + 0.001,
+                this.amountMessage(),
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
                 'ACS: ' + this.sendForm.get('comment').value,
@@ -569,7 +603,7 @@ export class ACSComponent implements OnInit, OnDestroy {
       }
     }
   }
-
+  
   toggleOptions() {
     this.additionalOptions = !this.additionalOptions;
   }
