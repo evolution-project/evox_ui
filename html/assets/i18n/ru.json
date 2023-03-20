@@ -79,7 +79,7 @@
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Введите свой комментарий здесь",
     "MESSAGE_PLACEHOLDER": "Сообщение...",
-    "TIPS_PLACEHOLDER": "Не обязательно",
+    "TIPS_PLACEHOLDER": "установите 0 если не нужно",
     "WALLET_NAME_PLACEHOLDER": "Введите здесь Имя кошелька",
     "MASTER_PASS_PLACEHOLDER": "Введите мастер-пароль здесь",
     "NAME_PLACEHOLDER": "Введите имя здесь",

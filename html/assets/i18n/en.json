@@ -79,7 +79,7 @@
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Enter your comment here",
     "MESSAGE_PLACEHOLDER": "Message...",
-    "TIPS_PLACEHOLDER": "Not obligatory",
+    "TIPS_PLACEHOLDER": "set 0 if not needed",
     "WALLET_NAME_PLACEHOLDER": "Enter a Wallet Name here",
     "MASTER_PASS_PLACEHOLDER": "Enter a master password here",
     "NAME_PLACEHOLDER": "Enter a name here",

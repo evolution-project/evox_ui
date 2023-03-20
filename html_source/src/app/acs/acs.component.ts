@@ -44,6 +44,7 @@ export class ACSComponent implements OnInit, OnDestroy {
   mixin: number;
   wrapInfo: WrapInfo;
   isLoading = true;
+  historyMessage = [];
   isWrapShown = false;
   currentAliasAdress: string;
   lenghtOfAdress: number;
@@ -177,7 +178,7 @@ export class ACSComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.backend.getContactAlias();
-
+    this.getHistoryMessage();
     /*------------------------history-----------------------*/
     this.parentRouting = this.route.parent.params.subscribe(() => {
       this.openedDetails = '';
@@ -390,6 +391,14 @@ export class ACSComponent implements OnInit, OnDestroy {
     );
   }
 
+  getHistoryMessage() {
+    for (let item of this.variablesService.currentWallet.history){
+      if (item.comment[0] == 'A' && item.comment[1] == 'C' && item.comment[2] == 'S' && item.comment[3] == ':'){
+        this.historyMessage.push(item)
+      } else {continue}
+    }
+  }
+
   tick() {
     const walletInterval = setInterval(() => {
       this.wallet = this.variablesService.getNotLoadedWallet();
@@ -488,11 +497,11 @@ export class ACSComponent implements OnInit, OnDestroy {
           } else {
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
-              this.sendForm.get('address').value + 0.001,
-              this.sendForm.get('amount').value,
+              this.sendForm.get('address').value,
+              this.sendForm.get('amount').value + 0.001,
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
-              this.sendForm.get('comment').value + '|',
+              'ACS: ' + this.sendForm.get('comment').value,
               this.sendForm.get('hide').value,
               (send_status) => {
                 if (send_status) {
@@ -531,7 +540,7 @@ export class ACSComponent implements OnInit, OnDestroy {
                 this.sendForm.get('amount').value + 0.001,
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
-                this.sendForm.get('comment').value + '|',
+                'ACS: ' + this.sendForm.get('comment').value,
                 this.sendForm.get('hide').value,
                 (send_status) => {
                   if (send_status) {
@@ -570,8 +579,8 @@ export class ACSComponent implements OnInit, OnDestroy {
     this.dLActionSubscribe.unsubscribe();
     this.variablesService.currentWallet.send_data = {
       address: this.sendForm.get('address').value,
-      amount: this.sendForm.get('amount').value + 0.001,
-      comment: this.sendForm.get('comment').value + '|',
+      amount: this.sendForm.get('amount').value,
+      comment: this.sendForm.get('comment').value,
       mixin: this.sendForm.get('mixin').value,
       fee: this.sendForm.get('fee').value,
       hide: this.sendForm.get('hide').value
