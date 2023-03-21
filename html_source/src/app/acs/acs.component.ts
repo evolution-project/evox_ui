@@ -205,8 +205,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnInit() {
     this.backend.getContactAlias();
-    this.getHistoryMessage();
-
     /*------------------------history-----------------------*/
     this.parentRouting = this.route.parent.params.subscribe(() => {
       this.openedDetails = '';
@@ -278,6 +276,8 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
   /*------------------------------------------history------------------------------------*/
   ngAfterViewChecked() {
     this.calculateWidth();
+    this.historyMessage = [];
+    this.getHistoryMessage();
   }
 
   strokeSize(item) {
@@ -290,72 +290,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       } else {
         return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
       }
-    }
-  }
-
-  resetPaginationValues() {
-    this.ngZone.run(() => {
-      const total_history_item = this.variablesService.currentWallet
-        .total_history_item;
-      const count = this.variablesService.count;
-      this.variablesService.currentWallet.totalPages = Math.ceil(
-        total_history_item / count
-      );
-      this.variablesService.currentWallet.exclude_mining_txs = this.mining;
-      this.variablesService.currentWallet.currentPage = 1;
-
-      if (!this.variablesService.currentWallet.totalPages) {
-        this.variablesService.currentWallet.totalPages = 1;
-      }
-      this.variablesService.currentWallet.totalPages >
-        this.variablesService.maxPages
-        ? (this.variablesService.currentWallet.pages = new Array(5)
-          .fill(1)
-          .map((value, index) => value + index))
-        : (this.variablesService.currentWallet.pages = new Array(
-          this.variablesService.currentWallet.totalPages
-        )
-          .fill(1)
-          .map((value, index) => value + index));
-    });
-  }
-
-
-  setPage(pageNumber: number) {
-    // this is will allow pagination for wallets that was open from existed wallets'
-    if (pageNumber === this.variablesService.currentWallet.currentPage) {
-      return;
-    }
-    if (
-      this.variablesService.currentWallet.open_from_exist &&
-      !this.variablesService.currentWallet.updated
-    ) {
-      this.variablesService.get_recent_transfers = false;
-      this.variablesService.currentWallet.updated = true;
-    }
-    // if not running get_recent_transfers callback
-    if (!this.variablesService.get_recent_transfers) {
-      this.variablesService.currentWallet.currentPage = pageNumber;
-    }
-    if (!this.variablesService.get_recent_transfers) {
-      this.getRecentTransfers();
-    }
-  }
-
-  toggleMiningTransactions() {
-    if (!this.variablesService.sync_started && !this.wallet) {
-      const value = this.paginationStore.value;
-      if (!value) {
-        this.paginationStore.setPage(1, 0, this.variablesService.currentWallet.wallet_id); // add back page for the first page
-      } else {
-        const pages = value.filter((item) => item.walletID === this.variablesService.currentWallet.wallet_id);
-        if (!pages.length) {
-          this.paginationStore.setPage(1, 0, this.variablesService.currentWallet.wallet_id); // add back page for the first page
-        }
-      }
-      this.mining = !this.mining;
-      this.resetPaginationValues();
-      this.getRecentTransfers();
     }
   }
 
