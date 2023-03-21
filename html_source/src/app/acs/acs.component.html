@@ -27,6 +27,9 @@
                   </td>
                   <td>
                     <div class="button-wrapper">
+                      <button class="icon" [class.copy]="!copyAnimation" [class.copied]="copyAnimation" (click)="copy(contact.alias)">
+                        <i class="icon copy"></i>
+                      </button>
                       <button [routerLink]="['/edit-contacts/' + i]" [queryParams]="{ id: i }">
                         <i class="icon edit"></i>
                       </button>

@@ -639,6 +639,10 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     }
   }
 
+  copy(value) {
+    this.backend.setClipboard(value);
+  }
+
   calculateWidthContact() {
     this.calculatedWidthContact = [];
     this.calculatedWidthContact.push(
