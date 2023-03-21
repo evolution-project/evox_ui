@@ -112,9 +112,9 @@
         <div class="input-send-message">
           <div class="input-block">
             <label for="send-comment">{{ 'SEND.MESSAGE' | translate }}</label>
-            <input type="text" id="send-comment" formControlName="comment"
+            <textarea  class="input-message" type="text" id="send-comment" formControlName="comment"
               placeholder="{{ 'PLACEHOLDERS.MESSAGE_PLACEHOLDER' | translate }}"
-              [maxLength]="variablesService.maxCommentLength" (contextmenu)="variablesService.onContextMenu($event)">
+              [maxLength]="variablesService.maxCommentLength" (contextmenu)="variablesService.onContextMenu($event)"></textarea>
             <div class="error-block"
               *ngIf="sendForm.get('comment').value && sendForm.get('comment').value.length >= variablesService.maxCommentLength">
               {{ 'SEND.FORM_ERRORS.MAX_LENGTH' | translate }}

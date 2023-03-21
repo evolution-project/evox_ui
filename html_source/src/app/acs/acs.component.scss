@@ -17,6 +17,7 @@
 }
 .form-send .input-blocks-row {
   display: flex;
+  align-items: flex-end;
 }
 .form-send .input-blocks-row > div:first-child {
   margin-right: 1.5rem;
@@ -84,6 +85,14 @@
 }
 .form-send .input-send-message{
   flex-basis: 80%;
+}
+.form-send .input-send-message .input-message{
+  width: 100%;
+  min-height: 9rem;
+  background-color: #720c9957;
+  font-size: 18px;
+  color: white;
+  resize: none;
 }
 .form-send .button-send-message{
   flex-basis: 20%;

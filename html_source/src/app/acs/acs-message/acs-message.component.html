@@ -1,10 +1,9 @@
 <div class="table">
   <div class="row">
-    <span class="cell label" [style.flex-basis]="sizes[0] + 'px'">{{ 'SEND.MESSAGE' | translate }}</span>
-    <span class="cell value" [style.flex-basis]="sizes[1] + sizes[2] + sizes[3] + 'px'"
+    <textarea readonly class="cell value" id="in-message"
           tooltip="{{transaction.comment}}" placement="top" tooltipClass="table-tooltip comment-tooltip" [delay]="500" [showWhenNoOverflow]="false"
           (contextmenu)="variablesService.onContextMenuOnlyCopy($event, transaction.comment)">
       {{transaction.comment}}
-    </span>
+    </textarea>
   </div>
 </div>

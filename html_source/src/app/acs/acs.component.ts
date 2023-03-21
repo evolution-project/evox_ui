@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, NgZone, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, HostListener, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../_helpers/services/backend.service';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -28,7 +28,7 @@ interface WrapInfo {
   templateUrl: './acs.component.html',
   styleUrls: ['./acs.component.scss']
 })
-export class ACSComponent implements OnInit, OnDestroy {
+export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
   @ViewChild('head') head: ElementRef;
   @HostListener('document:click', ['$event.target'])
   public onClick(targetElement) {
@@ -160,6 +160,7 @@ export class ACSComponent implements OnInit, OnDestroy {
     private location: Location,
   ) {
   }
+
   contactAlias(address){
     if (address !== null && this.variablesService.daemon_state === 2) {
       if (this.variablesService.aliasesChecked[address] == null) {
@@ -187,7 +188,6 @@ export class ACSComponent implements OnInit, OnDestroy {
     return {}
   }
 
-
   getShorterAdress() {
     let tempArr = this.currentAliasAdress.split("");
     return this.currentAliasAdress.split("", 34).join('') + "..." + tempArr.splice((tempArr.length - 13), 13).join('')
@@ -206,6 +206,7 @@ export class ACSComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.backend.getContactAlias();
     this.getHistoryMessage();
+
     /*------------------------history-----------------------*/
     this.parentRouting = this.route.parent.params.subscribe(() => {
       this.openedDetails = '';
@@ -512,9 +513,9 @@ export class ACSComponent implements OnInit, OnDestroy {
     });
   }
 
-  amountMessage(){
-    let a = Number(this.sendForm.get('amount').value) + 0.001
-    return String(a)
+  payMessage(){
+    let pay = Number(this.sendForm.get('amount').value) + 0.001
+    return String(pay)
   }
 
   onSend() {
@@ -531,7 +532,7 @@ export class ACSComponent implements OnInit, OnDestroy {
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
               this.sendForm.get('address').value,
-              this.amountMessage(),
+              this.payMessage(),
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
               'ACS: ' + this.sendForm.get('comment').value,
@@ -571,7 +572,7 @@ export class ACSComponent implements OnInit, OnDestroy {
               this.backend.sendMoney(
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
-                this.amountMessage(),
+                this.payMessage(),
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
                 'ACS: ' + this.sendForm.get('comment').value,
@@ -619,7 +620,8 @@ export class ACSComponent implements OnInit, OnDestroy {
       fee: this.sendForm.get('fee').value,
       hide: this.sendForm.get('hide').value
     };
-    this.actionData = {}
+    this.actionData = {},
+    this.historyMessage = []
   }
 
   public getReceivedValue() {
