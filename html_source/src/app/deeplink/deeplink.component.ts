@@ -201,6 +201,13 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
       this.variablesService.setCurrentWallet(this.walletToPayId);
       this._router.navigate(['/wallet/contracts/purchase']).then();
       this.secondStep = false;
+    }
+    else if (this.actionData.action === 'ACS') {
+      this._router.navigate(['/wallet/ACS']).then();
+      this.variablesService.sendActionData$.next(this.actionData);
+      this.variablesService.deeplink$.next(null);
+      this.variablesService.setCurrentWallet(this.walletToPayId);
+      this.secondStep = false;
     } else {
       this.secondStep = true;
     }
