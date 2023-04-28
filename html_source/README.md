@@ -1,6 +1,6 @@
 # EvoX
 
-Required: {"node":"14.+"}!!!!!
+Required: {"node":"14.20.0"}!!!!!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 

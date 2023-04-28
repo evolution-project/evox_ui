@@ -469,7 +469,7 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
               this.payMessage(),
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
-              'ACS: ' + this.sendForm.get('comment').value,
+              'ACS:' + this.sendForm.get('comment').value,
               this.sendForm.get('hide').value,
               (send_status) => {
                 if (send_status) {
@@ -509,7 +509,7 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
                 this.payMessage(),
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
-                'ACS: ' + this.sendForm.get('comment').value,
+                'ACS:' + this.sendForm.get('comment').value,
                 this.sendForm.get('hide').value,
                 (send_status) => {
                   if (send_status) {

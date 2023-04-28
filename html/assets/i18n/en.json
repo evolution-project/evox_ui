@@ -79,11 +79,12 @@
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Enter your comment here",
     "MESSAGE_PLACEHOLDER": "Message...",
-    "TIPS_PLACEHOLDER": "set 0 if not needed",
+    "TIPS_PLACEHOLDER": "Set to 0 if you don't tip user",
     "WALLET_NAME_PLACEHOLDER": "Enter a Wallet Name here",
     "MASTER_PASS_PLACEHOLDER": "Enter a master password here",
     "NAME_PLACEHOLDER": "Enter a name here",
     "ADRESS_PLACEHOLDER": "Enter address here",
+    "ALIAS_PLACEHOLDER": "Enter alias here",
     "NOTES_PLACEHOLDER": "Enter a notes here",
     "DESCRIPTION_PLACEHOLDER": "Enter a description here",
     "SELLER_PLACEHOLDER": "Enter a seller here",
@@ -353,7 +354,7 @@
   "SEND": {
     "USER": "User",
     "ADDRESS": "Address",
-    "TIPS": "Tips",
+    "TIPS": "Tips User",
     "AMOUNT": "Amount",
     "COMMENT": "Comment",
     "MESSAGE": "Message",

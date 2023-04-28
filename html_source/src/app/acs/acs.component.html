@@ -65,7 +65,7 @@
           <label for="send-address">{{ 'SEND.USER' | translate }}</label>
           <div class="adress-input-row"><input type="text" id="send-address" formControlName="address"
               [class.required-error]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched"
-              [placeholder]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ADRESS_PLACEHOLDER' | translate)"
+              [placeholder]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ALIAS_PLACEHOLDER' | translate)"
               (mousedown)="addressMouseDown($event)" (contextmenu)="variablesService.onContextMenu($event)">
           </div>
           <div class="alias-dropdown scrolled-content" *ngIf="isOpen">

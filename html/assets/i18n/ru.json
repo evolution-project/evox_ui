@@ -79,11 +79,12 @@
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Введите свой комментарий здесь",
     "MESSAGE_PLACEHOLDER": "Сообщение...",
-    "TIPS_PLACEHOLDER": "установите 0 если не нужно",
+    "TIPS_PLACEHOLDER": "Установите 0 если нет чаевых",
     "WALLET_NAME_PLACEHOLDER": "Введите здесь Имя кошелька",
     "MASTER_PASS_PLACEHOLDER": "Введите мастер-пароль здесь",
     "NAME_PLACEHOLDER": "Введите имя здесь",
     "ADRESS_PLACEHOLDER": "Введите адрес здесь",
+    "ALIAS_PLACEHOLDER": "Введите алиас здесь",
     "NOTES_PLACEHOLDER": "Введите примечания здесь",
     "DESCRIPTION_PLACEHOLDER": "Введите описание здесь",
     "SELLER_PLACEHOLDER": "Введите продавца здесь",
@@ -353,7 +354,7 @@
   "SEND": {
     "USER": "Пользователь",
     "ADDRESS": "Адрес",
-    "TIPS": "Чаевые",
+    "TIPS": "Чаевые пользователю",
     "AMOUNT": "Сумма",
     "COMMENT": "Комментарий",
     "MESSAGE": "Сообщение",
