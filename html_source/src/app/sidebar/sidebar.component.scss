@@ -23,6 +23,8 @@
   }
 }
 .sidebar-header {
+  margin-top: 2rem;
+  margin-left: 5px;
   min-height: 7rem;
   width: 100%;
   display: flex;
@@ -201,6 +203,7 @@
   }
 }
 .sidebar-accounts {
+  margin-top: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;

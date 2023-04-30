@@ -28,4 +28,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-./Evox --html-path=C:\Users\/*user_name*/\Documents\GitHub\EvoX_ui\html --qt-dev-tools="horizontal,1.3" --remote-node=62.171.142.111:52521
+./EvoX --html-path=C:\Users\/*user_name*/\Documents\GitHub\EvoX_ui\html --qt-dev-tools="horizontal,1.3" --remote-node=62.171.142.111:52521
