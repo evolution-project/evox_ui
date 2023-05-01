@@ -14,6 +14,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { TypingMessageComponent } from './typing-message/typing-message.component';
 import { StakingComponent } from './staking/staking.component';
 import { PriceComponent } from './price/price.component';
+import { ACSComponent } from './acs/acs.component'
 import { SettingsComponent } from './settings/settings.component';
 import { CreateWalletComponent } from './create-wallet/create-wallet.component';
 import { OpenWalletComponent } from './open-wallet/open-wallet.component';
@@ -95,6 +96,10 @@ const routes: Routes = [
       {
         path: 'price',
         component: PriceComponent
+      },
+      {
+        path: 'ACS',
+        component: ACSComponent
       },
       {
         path: '',

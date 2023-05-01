@@ -78,10 +78,13 @@
   },
   "PLACEHOLDERS": {
     "COMMENT_PLACEHOLDER": "Enter your comment here",
+    "MESSAGE_PLACEHOLDER": "Message...",
+    "TIPS_PLACEHOLDER": "Set to 0 if you don't tip user",
     "WALLET_NAME_PLACEHOLDER": "Enter a Wallet Name here",
     "MASTER_PASS_PLACEHOLDER": "Enter a master password here",
     "NAME_PLACEHOLDER": "Enter a name here",
     "ADRESS_PLACEHOLDER": "Enter address here",
+    "ALIAS_PLACEHOLDER": "Enter alias here",
     "NOTES_PLACEHOLDER": "Enter a notes here",
     "DESCRIPTION_PLACEHOLDER": "Enter a description here",
     "SELLER_PLACEHOLDER": "Enter a seller here",
@@ -248,7 +251,8 @@
       "CONTRACTS": "Contracts",
       "MESSAGES": "Messages",
       "STAKING": "Staking",
-      "PRICE": "Price"
+      "PRICE": "Price",
+      "ACS": "ACS"
     },
     "TOOLTIPS": {
       "EDIT_ALIAS": "Edit alias",
@@ -348,9 +352,12 @@
     "REQUEST_SEND_REG": "The alias will be transferred within 10 minutes"
   },
   "SEND": {
+    "USER": "User",
     "ADDRESS": "Address",
+    "TIPS": "Tips User",
     "AMOUNT": "Amount",
     "COMMENT": "Comment",
+    "MESSAGE": "Message",
     "DETAILS": "Additional details",
     "MIXIN": "Mixin",
     "FEE": "Fee",

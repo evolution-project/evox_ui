@@ -1,6 +1,6 @@
 # EvoX
 
-Required: {"node":"12.20.2"}!!!!!
+Required: {"node":"14.20.0"}!!!!!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
@@ -28,4 +28,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-Evox.exe --html-path=C:\Users\name_user\Desktop\Release\html --qt-dev-tools="horizontal,1.3" --remote-node=10.0.0.13:121116
+./EvoX --html-path=C:\Users\/*user_name*/\Documents\GitHub\EvoX_ui\html --qt-dev-tools="horizontal,1.3" --remote-node=62.171.142.111:52521

@@ -1,0 +1,221 @@
+<div class="message-contact">
+  <div class="content scrolled-content">
+    <div>
+      <div  class="wraps-table" style="display: flex; flex-direction: column;">
+        <ng-container>
+          <table *ngIf="this.variablesService.contacts.length !== 0; else emptyList">
+            <thead>
+              <tr #head (window:resize)="calculateWidthContact()">
+                <th>{{ 'CONTACTS.TABLE.NAME' | translate }}</th>
+                <th>{{ 'CONTACTS.TABLE.ALIAS' | translate }}</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="
+                  let contact of this.variablesService.contacts;
+                  let i = index
+                ">
+                <tr>
+                  <td>
+                    {{ contact.name }}
+                  </td>
+                  <td>
+                    <ng-container *ngIf="contact.alias">
+                      <span>{{ contact.alias }}</span>
+                    </ng-container>
+                  </td>
+                  <td>
+                    <div class="button-wrapper">
+                      <button class="icon" [class.copy]="!copyAnimation" [class.copied]="copyAnimation" (click)="copy(contact.alias)">
+                        <i class="icon copy"></i>
+                      </button>
+                      <button [routerLink]="['/edit-contacts/' + i]" [queryParams]="{ id: i }">
+                        <i class="icon edit"></i>
+                      </button>
+                      <button (click)="delete(i)">
+                        <i class="icon delete"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <div class="row-divider"></div>
+              </ng-container>
+            </tbody>
+          </table>
+        </ng-container>
+      <button [routerLink]="['/add-contacts']" class="message-contact-add-button">
+        {{ 'CONTACTS.BUTTON.ADD' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="message-column">
+  <div class="message-form">
+    <form *ngIf="!isLoading" class="form-send" [formGroup]="sendForm" (ngSubmit)="showDialog()">
+
+      <div class="input-block input-block-alias" style="flex-direction: row;">
+        <div class="input-block" style="margin: 2rem;width: 30%;">
+          <label for="send-address">{{ 'SEND.USER' | translate }}</label>
+          <div class="adress-input-row"><input type="text" id="send-address" formControlName="address"
+              [class.required-error]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched"
+              [placeholder]="sendForm.controls['address'].dirty || sendForm.controls['address'].touched ? ('SEND.FORM_ERRORS.ADDRESS_REQUIRED' | translate ) : ('PLACEHOLDERS.ALIAS_PLACEHOLDER' | translate)"
+              (mousedown)="addressMouseDown($event)" (contextmenu)="variablesService.onContextMenu($event)">
+          </div>
+          <div class="alias-dropdown scrolled-content" *ngIf="isOpen">
+            <div *ngFor="let item of localAliases" (click)="setAlias(item.name)">{{item.name}}</div>
+          </div>
+          <div class="error-block"
+            *ngIf="sendForm.controls['address'].invalid && (sendForm.controls['address'].dirty || sendForm.controls['address'].touched)">
+            <div *ngIf="sendForm.controls['address'].errors['address_not_valid']">
+              {{ 'SEND.FORM_ERRORS.ADDRESS_NOT_VALID' | translate }}
+            </div>
+            <div *ngIf="sendForm.controls['address'].errors['alias_not_valid']">
+              {{ 'SEND.FORM_ERRORS.ALIAS_NOT_VALID' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="input-block" style="margin: 2rem;width: 30%;">
+          <label for="send-amount">{{ 'SEND.TIPS' | translate }}</label>
+          <input type="text" id="send-amount" formControlName="amount"
+            placeholder="{{ 'PLACEHOLDERS.TIPS_PLACEHOLDER' | translate }}"
+            appInputValidate="money" (contextmenu)="variablesService.onContextMenu($event)">
+            <div class="error-block"
+              *ngIf="sendForm.controls['amount'].invalid && !sendForm.controls['amount'].errors['required'] && (sendForm.controls['amount'].dirty || sendForm.controls['amount'].touched)">
+              <div *ngIf="sendForm.controls['amount'].errors['zero']">
+                {{ 'SEND.FORM_ERRORS.AMOUNT_ZERO' | translate }}
+              </div>
+              <div *ngIf="sendForm.controls['amount'].errors['great_than_unwraped_coins']">
+                {{ 'SEND.FORM_ERRORS.GREAT_THAN_UNWRAPPED_COINS' | translate }}
+              </div>
+              <div *ngIf="sendForm.controls['amount'].errors['less_than_EvoX_needed']">
+                {{ 'SEND.FORM_ERRORS.LESS_THAN_EvoX_NEEDED' | translate }}
+              </div>
+              <div *ngIf="sendForm.controls['amount'].errors['wrap_info_null']">
+                {{ 'SEND.FORM_ERRORS.WRAP_INFO_NULL' | translate }}
+              </div>
+            </div>
+        </div>
+        <div class="input-block" style="margin: 2rem;width: 10%;">
+          <label for="send-mixin">{{ 'SEND.MIXIN' | translate }}</label>
+          <input type="text" id="send-mixin" formControlName="mixin"
+            [class.required-error]="sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched"
+            [placeholder]="sendForm.controls['mixin'].dirty || sendForm.controls['mixin'].touched ? ('SEND.FORM_ERRORS.AMOUNT_REQUIRED' | translate ) : ('10' | translate)"
+            appInputValidate="integer" (contextmenu)="variablesService.onContextMenu($event)">
+        </div>
+      </div>
+
+      <div class="input-blocks-row">
+        <div class="input-send-message">
+          <div class="input-block">
+            <label for="send-comment">{{ 'SEND.MESSAGE' | translate }}</label>
+            <textarea  class="input-message" type="text" id="send-comment" formControlName="comment"
+              placeholder="{{ 'PLACEHOLDERS.MESSAGE_PLACEHOLDER' | translate }}"
+              [maxLength]="variablesService.maxCommentLength" (contextmenu)="variablesService.onContextMenu($event)"></textarea>
+            <div class="error-block"
+              *ngIf="sendForm.get('comment').value && sendForm.get('comment').value.length >= variablesService.maxCommentLength">
+              {{ 'SEND.FORM_ERRORS.MAX_LENGTH' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="button-send-message">
+          <button type="submit" class="message-contact-add-button">{{'SEND.BUTTON' | translate }}</button>
+        </div>
+        <app-app-send-message-modal *ngIf="isModalDialogVisible" [form]="sendForm" (confirmed)="confirmed($event)"></app-app-send-message-modal>
+      </div>  
+    </form>
+  </div>
+
+
+
+
+
+
+  <div class="message-history">
+    <div class="history-wrap">
+      <div class="wrap-table scrolled-content">
+        <table class="history-table">
+          <thead style="text-align: center;">
+            <tr #head (window:resize)="calculateWidth()"> 
+              <th>{{ 'HISTORY.STATUS' | translate }}</th> 
+              <th>{{ 'HISTORY.DATE' | translate }}</th>
+              <th>{{ 'SEND.USER' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let item of historyMessage">
+            
+              <tr (click)="openDetails(item.tx_hash)" [class.locked-transaction]="!item.is_mining && item.unlock_time > 0">
+                <td>
+                  <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
+                    <ng-container *ngIf="getHeight(item) < 10">
+                      <svg class="confirmation" style="transform: rotateZ(-90deg)"
+                        tooltip="{{ 'HISTORY.STATUS_TOOLTIP' | translate : {'current': getHeight(item), 'total': 10} }}"
+                        placement="bottom-left" tooltipClass="table-tooltip" [delay]="500">
+                        <circle stroke-dasharray="100" fill="transparent" stroke-dashoffset="0" cx="50%" cy="50%"
+                          stroke="rgba(178, 0, 255, 0.33)" r="0.7rem" stroke-width="0.3rem">
+                        </circle>
+                        <circle class="progress-circle" cx="50%" cy="50%"
+                          [style.stroke]="item.is_income ? '#E111D6' : '#AC8FEB'" r="0.7rem" fill="transparent"
+                          stroke-width="0.3rem" stroke-dasharray="4.5rem" stroke-dashoffset="4.5rem" stroke-linecap="round"
+                          [style.stroke-dashoffset]="strokeSize(item)"></circle>
+                      </svg>
+                    </ng-container>
+                    <ng-container *ngIf="getHeight(item) === 10">
+                      <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send-tab.svg" alt="">
+                      <img *ngIf="item.is_income" class="status-transaction" src="./assets/icons/receive.svg" alt="">
+                    </ng-container>
+                    <span class="status-transaction-text">{{ (item.is_income ? 'HISTORY.RECEIVED' : 'HISTORY.SEND') |
+                      translate }}</span>
+                    <ng-container *ngIf="item.unlock_time !== 0 && item.tx_type !== 6">
+                      <ng-container *ngIf="isLocked(item); else unlock">
+                        <ng-container *ngIf="item.unlock_time < 500000000">
+                          <i class="icon lock-transaction"
+                            tooltip="{{ 'HISTORY.LOCK_TOOLTIP' | translate : {'date': time(item) | date : 'MM.dd.yy'} }}"
+                            placement="bottom-left" tooltipClass="table-tooltip" [delay]="500"
+                            [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                        </ng-container>
+                        <ng-container *ngIf="item.unlock_time > 500000000">
+                          <i class="icon lock-transaction"
+                            tooltip="{{ 'HISTORY.LOCK_TOOLTIP' | translate : {'date': item.unlock_time * 1000 | date : 'MM.dd.yy'} }}"
+                            placement="bottom-left" tooltipClass="table-tooltip" [delay]="500"
+                            [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                        </ng-container>
+                      </ng-container>
+                      <ng-template #unlock>
+                        <i class="icon unlock-transaction" placement="bottom-left"
+                          [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                      </ng-template>
+                    </ng-container>
+                  </div>
+                </td>
+                <td>{{item.timestamp * 1000 | date : 'dd-MM-yyyy HH:mm'}}</td>
+                <td class="remote-address">
+                  <span *ngIf="!(item.tx_type === 0 && item.remote_addresses && item.remote_addresses[0])">{{item |
+                    historyTypeMessages}}</span>
+                  <span *ngIf="item.tx_type === 0 && item.remote_addresses && item.remote_addresses[0]"
+                    (contextmenu)="variablesService.onContextMenuOnlyCopy($event, item.remote_addresses[0])">{{contactAlias(item.remote_addresses[0]) || item.remote_addresses[0]}}</span>
+                </td>
+              </tr>
+              <div class="row-divider"></div>
+                <tr class="transaction-details" [class.open]="item.tx_hash === openedDetails">
+                  <td colspan="5">
+                    <ng-container *ngIf="item.tx_hash === openedDetails">
+                      <app-acs-message [transaction]="item" [sizes]="calculatedWidth"></app-acs-message>
+                    </ng-container>
+                  </td>
+                </tr>
+
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

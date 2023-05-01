@@ -93,6 +93,12 @@ export class WalletComponent implements OnInit, OnDestroy {
       link: '/price',
       disabled: false
     },
+    {
+      title: 'WALLET.TABS.ACS',
+      icon: 'acs',
+      link: '/ACS',
+      disabled: true
+    }
   ];
   aliasSubscription: Subscription;
   walletsSubscription: Subscription;
@@ -301,5 +307,6 @@ export class WalletComponent implements OnInit, OnDestroy {
     this.tabs[1].disabled = disabled
     this.tabs[3].disabled = disabled
     this.tabs[4].disabled = disabled
+    this.tabs[6].disabled = disabled
   }
 }

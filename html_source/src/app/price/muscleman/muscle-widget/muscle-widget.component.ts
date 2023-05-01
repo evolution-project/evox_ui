@@ -163,7 +163,6 @@ export class MuscleWidgetComponent implements OnInit, OnDestroy {
         for (const value of chartData.data) {
           data.push([value.date, value.rate])
         }
-
         this.chartsData = [
           {type: 'area', name: this._chartConfig.dataSeriesName, data}
         ]

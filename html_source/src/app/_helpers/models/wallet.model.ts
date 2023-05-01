@@ -298,7 +298,7 @@ export interface CancelOffer {
 export interface UpdateOffer {
   wallet_id: number,
   tx_id: string,
-  no: number,
+  no: number
   od: {
     ap: string,
     at: string,

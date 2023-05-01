@@ -1,0 +1,10 @@
+<div class="table">
+  <div class="row">
+    <textarea id="in-message" 
+      class="cell value" [style.flex-basis]="sizes[1] + sizes[2] + sizes[3] + 'px'"
+      tooltip="{{transaction.comment.substring(4)}}" placement="top" tooltipClass="table-tooltip comment-tooltip" [delay]="500" [showWhenNoOverflow]="false"
+      (contextmenu)="variablesService.onContextMenuOnlyCopy($event, transaction.comment.substring(4))">
+      {{transaction.comment.substring(4)}}
+    </textarea>
+  </div>
+</div>

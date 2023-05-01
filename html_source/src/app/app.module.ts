@@ -76,6 +76,9 @@ import { DragScrollModule } from 'cdk-drag-scroll';
 import { DeeplinkComponent } from './deeplink/deeplink.component';
 import { SyncModalComponent } from './_helpers/modals/sync-modal/sync-modal.component';
 import { ContractsTabComponent } from './contracts/contracts-tab/contracts-tab.component';
+import { ACSComponent } from './acs/acs.component';
+import { AcsMessageComponent } from './acs/acs-message/acs-message.component';
+import { AppSendMessageModalComponent } from './acs/app-send-message-modal/app-send-message-modal.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -145,6 +148,9 @@ export function highchartsFactory() {
     DeeplinkComponent,
     SyncModalComponent,
     ContractsTabComponent,
+    ACSComponent,
+    AcsMessageComponent,
+    AppSendMessageModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+:host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .table {
+    margin: 0 3rem;
+    padding: 0.5rem 0;
+  
+    .row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-top: none;
+      line-height: 3rem;
+      width: 100%;
+  
+      .cell {
+        flex-shrink: 0;
+        flex-grow: 0;
+        padding: 1rem;
+        width: 100%;
+        min-height: 14rem;
+        background-color: #720c9957;
+        overflow: auto;
+        font-size: 24px;
+        color: rgb(184, 184, 184);
+        resize: none;
+  
+        &:first-child {
+          padding-left: 3rem;
+        }
+  
+        &:last-child {
+          padding-right: 3rem;
+        }
+  
+        &.key-value {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

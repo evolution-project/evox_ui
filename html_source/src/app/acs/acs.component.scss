@@ -1,0 +1,299 @@
+:host {
+  width: 100%;
+  display: flex;
+}
+.message-column{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  margin-left: 1.5rem;
+  border-left: 1px solid #9f09ef;
+  width: 100%;
+}
+
+/*---------------------------------------------------message-form-------------------------------------*/
+.message-form{
+  
+}
+.form-send .input-blocks-row {
+  display: flex;
+  align-items: flex-end;
+}
+.form-send .input-blocks-row > div:first-child {
+  margin-right: 1.5rem;
+}
+.form-send .input-blocks-row > div:last-child {
+  margin-left: 1.5rem;
+}
+.form-send .send-select {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 15rem;
+  height: 1.3rem;
+}
+.form-send .send-select .arrow {
+  margin-left: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.form-send .send-select .arrow.down {
+  mask: url(~src/assets/icons/arrow-down.svg) no-repeat center;
+}
+.form-send .send-select .arrow.up {
+  mask: url(~src/assets/icons/arrow-up.svg) no-repeat center;
+}
+.form-send .additional-details {
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0 2rem;
+}
+.form-send .additional-details > div {
+  flex-basis: 25%;
+}
+.form-send .additional-details > div:first-child {
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+.form-send .additional-details > div:last-child {
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+}
+.form-send .additional-details .checkbox-block {
+  flex-basis: 50%;
+}
+.form-send .additional-details .checkbox-block > label {
+  top: 3.5rem;
+}
+.form-send .additional-details .checkbox-block.disabled-checkbox-block label {
+  cursor: not-allowed;
+}
+.form-send .additional-details .checkbox-block.disabled-checkbox-block label:before {
+  background-color: #695576;
+  border: 0.1rem solid #695576;
+}
+.form-send button {
+  margin: 2.4rem 0;
+  width: 100%;
+  font-size: 20px;
+  max-width: 15rem;
+}
+.form-send .input-send-message{
+  flex-basis: 80%;
+}
+.form-send .input-send-message .input-message{
+  width: 100%;
+  min-height: 9rem;
+  background-color: #720c9957;
+  font-size: 18px;
+  color: white;
+  resize: none;
+}
+.form-send .button-send-message{
+  flex-basis: 20%;
+}
+
+/*--------------------------------------message-contact----------------------------------------------*/
+.message-contact{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.contacts-title {
+  font-size: 1.7rem;
+}
+.message-contact-add-button{
+  padding: 1rem;
+  color: white;
+  margin-top: 5rem;
+  background: linear-gradient(#9502ec 10%, #530087 50%, #310247 90%);
+}
+.wrap-table {
+  margin: 1rem -3rem;
+}
+.wrap-table table tbody tr td {
+  padding: 0 3rem 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap-table table tbody tr td:first-child {
+  max-width: 10rem;
+  padding: 0 3rem 0 3rem;
+}
+.wrap-table table tbody tr td:nth-child(2) {
+  max-width: 10rem;
+}
+.wrap-table table tbody tr td .alias {
+  cursor: pointer;
+}
+.wrap-table table tbody tr td .button-wrapper {
+  display: flex;
+}
+.wrap-table table tbody tr td .button-wrapper button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 3rem;
+  outline: none;
+  padding: 0;
+  height: auto;
+  margin-right: 1.8rem;
+}
+.wrap-table table tbody tr td .button-wrapper button .icon {
+  cursor: pointer;
+  margin-right: 0.8rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.button-wrapper button .icon.edit {
+  background: url(../../assets/icons/edit.svg) no-repeat center;
+}
+.button-wrapper button .icon.delete {
+  background: url(../../assets/icons/delete.svg) no-repeat center;
+}
+.button-wrapper button .icon.copy {
+  background: url(../../assets/icons/copy.svg) no-repeat center;
+}
+.wrap-table .empty-list {
+  margin: 2.5rem 3rem;
+}
+.blue-button {
+  width: 100%;
+  max-width: 18rem;
+  margin-top: 3rem;
+}
+.footer {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 1.3rem;
+}
+.footer .import-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.3rem;
+  padding: 0;
+  height: auto;
+}
+.footer .import-btn .icon {
+  margin-right: 0.7rem;
+  mask: url(../../assets/icons/import-export.svg) no-repeat center;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/*-----------------------------------------------message-history---------------------------------------------*/
+.message-history{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.history-wrap {
+  display: flex;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-direction: column;
+}
+.wrap-table {
+  overflow-x: hidden;
+  overflow-y: overlay;
+  display: flex;
+  flex-direction: column;
+}
+.wrap-table table tbody tr td {
+  min-width: 10rem;
+}
+.wrap-table table tbody tr .status {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.wrap-table table tbody tr .status .confirmation {
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: flex-end;
+  width: 0.7rem;
+  height: 1.5rem;
+}
+.wrap-table table tbody tr .status .confirmation .fill {
+  width: 100%;
+}
+.wrap-table table tbody tr .status .lock-transaction {
+  position: absolute;
+  left: -2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.1rem;
+}
+.wrap-table table tbody tr .status .unlock-transaction {
+  position: absolute;
+  left: -2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1.1rem;
+}
+.wrap-table table tbody tr .status .position {
+  position: static;
+}
+.wrap-table table tbody tr .status .status-transaction {
+  margin-right: 1rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.wrap-table table tbody tr .status.send .status-transaction {
+  background-color: transparent;
+}
+.wrap-table table tbody tr .status.send .status-transaction::after {
+  display: block;
+  content: "";
+  width: 13px;
+  height: 13px;
+}
+.wrap-table table tbody tr .status.received .status-transaction {
+  background-color: transparent;
+}
+.wrap-table table tbody tr .status.received .status-transaction::after {
+  display: block;
+  content: "";
+  width: 13px;
+  height: 13px;
+}
+.wrap-table table tbody tr .remote-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25vw;
+}
+.wrap-table table tbody tr:not(.transaction-details) {
+  cursor: pointer;
+}
+.wrap-table table tbody tr.transaction-details {
+  -webkit-transition: 0.5s height linear, 0s font-size;
+  transition: 0.5s height linear, 0s font-size;
+  transition-delay: 0s, 0.5s;
+  height: 0;
+}
+.wrap-table table tbody tr.transaction-details.open {
+  height: 16.2rem;
+}
+.wrap-table table tbody tr.transaction-details td {
+  position: relative;
+  overflow: hidden;
+  line-height: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+}
