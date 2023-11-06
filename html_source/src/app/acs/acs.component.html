@@ -52,10 +52,6 @@
 </div>
 </div>
 
-
-
-
-
 <div class="message-column">
   <div class="message-form">
     <form *ngIf="!isLoading" class="form-send" [formGroup]="sendForm" (ngSubmit)="showDialog()">
@@ -132,11 +128,6 @@
     </form>
   </div>
 
-
-
-
-
-
   <div class="message-history">
     <div class="history-wrap">
       <div class="wrap-table scrolled-content">
@@ -150,7 +141,6 @@
           </thead>
           <tbody>
             <ng-container *ngFor="let item of historyMessage">
-            
               <tr (click)="openDetails(item.tx_hash)" [class.locked-transaction]="!item.is_mining && item.unlock_time > 0">
                 <td>
                   <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
@@ -211,7 +201,6 @@
                     </ng-container>
                   </td>
                 </tr>
-
             </ng-container>
           </tbody>
         </table>

@@ -72,30 +72,6 @@
       </div>
     </ng-container>
     
-    <ng-container *ngIf="secondStep && marketplaceModalShow && actionData.action === 'marketplace_update_offer'">
-      <div class="modal marketplace">
-        <div class="title">
-          <span>Update marketplace offer</span>
-        </div>
-        <div class="data-container">
-          <div class="row"><span>tx_id:</span><span style="font-size: 16px;">{{actionData.tx_id}}</span></div>
-          <div class="row"><span>Offer title:</span> {{actionData.title}}</div>
-          <div class="row"><span>Description:</span> {{actionData.description}}</div>
-          <div class="row"><span>Category:</span> {{actionData.category}}</div>
-          <div class="row"><span>Price:</span> {{actionData.price}} {{this.variablesService.defaultCurrency}}</div>
-          <div class="row"><span>Preview url:</span> {{actionData.url || actionData.img_url}}</div>
-          <div class="row"><span>Contacts:</span> {{actionData.contact}}</div>
-          <div class="row"><span>Comments:</span>{{actionData.comment || actionData.comments}}</div>
-          <div class="row mixins"><span>Mixins:</span> {{actionData.mixins || defaultMixin}}</div>
-          <div class="row"><span>Transaction fee:</span> {{this.variablesService.default_fee}}</div>
-        </div>
-        <div class="wrapper-buttons">
-          <button type="button" class="blue-button" (click)="canselAction()">{{ 'EXPORT_HISTORY.CANCEL' | translate
-            }}</button>
-          <button type="submit" class="blue-button" (click)="marketplaceUpdateSend()">Sign & Send</button>
-        </div>
-      </div>
-    </ng-container>
     <ng-container *ngIf="marketplaceError">
       <div class="modal marketplace--success">
         <div class="title">
