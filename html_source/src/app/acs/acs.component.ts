@@ -8,12 +8,11 @@ import { MIXIN } from '../_shared/constants';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Transaction } from '../_helpers/models/transaction.model';
-import { MoneyToIntPipe } from '../_helpers/pipes/money-to-int.pipe';
 import { finalize } from 'rxjs/operators';
 import { Wallet } from '../_helpers/models/wallet.model';
 import { ActivatedRoute } from '@angular/router';
-import { PaginationService } from '../_helpers/services/pagination.service';
 import { PaginationStore } from '../_helpers/services/pagination.store';
+import { PaginationService } from '../_helpers/services/pagination.service';
 
 interface WrapInfo {
   tx_cost: {
@@ -29,6 +28,7 @@ interface WrapInfo {
   styleUrls: ['./acs.component.scss']
 })
 export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
+  [x: string]: any;
   @ViewChild('head') head: ElementRef;
   @HostListener('document:click', ['$event.target'])
   public onClick(targetElement) {
@@ -132,11 +132,10 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     private modalService: ModalService,
     private ngZone: NgZone,
     private http: HttpClient,
-    private moneyToInt: MoneyToIntPipe,
     private route: ActivatedRoute,
-    private pagination: PaginationService,
-    private paginationStore: PaginationStore,
     private location: Location,
+    private paginationStore: PaginationStore,
+    private pagination: PaginationService,
   ) {
   }
 
@@ -195,7 +194,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       if (this.wallet) {
         this.tick();
       }
-      this.getRecentTransfers();
       this.variablesService.after_sync_request[this.variablesService.currentWallet.wallet_id] = false;
     }
     let after_sync_request = false;
@@ -207,7 +205,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       ];
     }
     if (after_sync_request && !this.variablesService.sync_started) {
-      this.getRecentTransfers();
     }
 
     if (this.variablesService.stop_paginate.hasOwnProperty(this.variablesService.currentWallet.wallet_id)) {
@@ -242,23 +239,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
         this.variablesService.sendActionData$.next({});
       }
     })
-  }
-  /*------------------------------------------history------------------------------------*/
-  ngAfterViewChecked() {
-    this.calculateWidth();
-  }
-
-  strokeSize(item) {
-    const rem = this.variablesService.settings.scale
-    if ((this.variablesService.height_app - item.height >= 10 && item.height !== 0) || (item.is_mining === true && item.height === 0)) {
-      return 0;
-    } else {
-      if (item.height === 0 || this.variablesService.height_app - item.height < 0) {
-        return (4.5 * rem);
-      } else {
-        return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
-      }
-    }
   }
 
   setPage(pageNumber: number) {
@@ -341,7 +321,24 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       }
     );
   }
- 
+  /*------------------------------------------history------------------------------------*/
+  ngAfterViewChecked() {
+    this.calculateWidth();
+  }
+
+  strokeSize(item) {
+    const rem = this.variablesService.settings.scale
+    if ((this.variablesService.height_app - item.height >= 10 && item.height !== 0) || (item.is_mining === true && item.height === 0)) {
+      return 0;
+    } else {
+      if (item.height === 0 || this.variablesService.height_app - item.height < 0) {
+        return (4.5 * rem);
+      } else {
+        return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
+      }
+    }
+  }
+
   tick() {
     const walletInterval = setInterval(() => {
       this.wallet = this.variablesService.getNotLoadedWallet();

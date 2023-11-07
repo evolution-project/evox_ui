@@ -184,10 +184,22 @@
                 </tr>
               </ng-container>
             </ng-container>
+            <div class="pagination-wrapper" style="margin-left: 40%;">
+              <div class="pagination">
+                <div>  
+                  <button [disabled]="stop_paginate || variablesService.sync_started || wallet"
+                    [ngClass]="{'disabled': variablesService.sync_started || wallet}"
+                    (click)="setPage(variablesService.currentWallet.currentPage + 1)" style="border: 2px solid; padding: 5px;">
+                    Load more
+                  </button>
+                </div>
+              </div>
+            </div>
           </tbody>
         </table>
       </div>
       <div></div>
     </div>
   </div>
+  
 </div>

@@ -697,6 +697,10 @@ export class BackendService {
     this.runCommand('get_recent_transfers', params, callback);
   }
 
+  getWalletInfo(wallet_id, callback) {
+    this.runCommand('get_wallet_info', {wallet_id: wallet_id}, callback);
+  }
+
   getPoolInfo(callback) {
     this.runCommand('get_tx_pool_info', {}, callback);
   }
@@ -714,7 +718,6 @@ export class BackendService {
   }
 
 }
-
 
 /*
 
