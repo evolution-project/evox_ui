@@ -261,34 +261,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     }
   }
 
-  resetPaginationValues() {
-    this.ngZone.run(() => {
-      const total_history_item = this.variablesService.currentWallet
-        .total_history_item;
-      const count = this.variablesService.count;
-      this.variablesService.currentWallet.totalPages = Math.ceil(
-        total_history_item / count
-      );
-      this.variablesService.currentWallet.exclude_mining_txs = this.mining;
-      this.variablesService.currentWallet.currentPage = 1;
-
-      if (!this.variablesService.currentWallet.totalPages) {
-        this.variablesService.currentWallet.totalPages = 1;
-      }
-      this.variablesService.currentWallet.totalPages >
-        this.variablesService.maxPages
-        ? (this.variablesService.currentWallet.pages = new Array(5)
-          .fill(1)
-          .map((value, index) => value + index))
-        : (this.variablesService.currentWallet.pages = new Array(
-          this.variablesService.currentWallet.totalPages
-        )
-          .fill(1)
-          .map((value, index) => value + index));
-    });
-  }
-
-
   setPage(pageNumber: number) {
     // this is will allow pagination for wallets that was open from existed wallets'
     if (pageNumber === this.variablesService.currentWallet.currentPage) {
@@ -369,7 +341,7 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       }
     );
   }
-
+ 
   tick() {
     const walletInterval = setInterval(() => {
       this.wallet = this.variablesService.getNotLoadedWallet();
