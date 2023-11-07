@@ -44,7 +44,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
   mixin: number;
   wrapInfo: WrapInfo;
   isLoading = true;
-  historyMessage = [];
   isWrapShown = false;
   currentAliasAdress: string;
   lenghtOfAdress: number;
@@ -111,26 +110,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
             });
           }
           return (g.hasError('alias_not_valid')) ? { 'alias_not_valid': true } : null;
-        }
-      }
-      return null;
-    }]),
-    amount: new FormControl(undefined, [Validators.required, (g: FormControl) => {
-      if (!g.value) { return null; }
-
-      if (g.value === 0) {
-        return { 'zero': true };
-      }
-      const bigAmount = this.moneyToInt.transform(g.value) as BigNumber;
-      if (this.isWrapShown) {
-        if (!this.wrapInfo) {
-          return { wrap_info_null: true };
-        }
-        if (bigAmount.isGreaterThan(new BigNumber(this.wrapInfo.unwraped_coins_left))) {
-          return { great_than_unwraped_coins: true };
-        }
-        if (bigAmount.isLessThan(new BigNumber(this.wrapInfo.tx_cost.EvoX_needed_for_erc20))) {
-          return { less_than_EvoX_needed: true };
         }
       }
       return null;
@@ -241,18 +220,9 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       this.tick();
     }
     this.mining = this.variablesService.currentWallet.exclude_mining_txs;
-
     /*-----------------------Send--------------------------*/
-
     this.mixin = this.variablesService.currentWallet.send_data['mixin'] || MIXIN;
-    if (this.variablesService.currentWallet.is_auditable) {
-      this.mixin = 0;
-      this.sendForm.controls['mixin'].disable();
-    }
     this.hideWalletAddress = this.variablesService.currentWallet.is_auditable && !this.variablesService.currentWallet.is_watch_only;
-    if (this.hideWalletAddress) {
-      this.sendForm.controls['hide'].disable();
-    }
     this.sendForm.reset({
       address: this.variablesService.currentWallet.send_data['address'],
       amount: this.variablesService.currentWallet.send_data['amount'],
@@ -276,8 +246,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
   /*------------------------------------------history------------------------------------*/
   ngAfterViewChecked() {
     this.calculateWidth();
-    this.historyMessage = [];
-    this.getHistoryMessage();
   }
 
   strokeSize(item) {
@@ -290,6 +258,55 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       } else {
         return ((4.5 * rem) - (((4.5 * rem) / 100) * ((this.variablesService.height_app - item.height) * 10)));
       }
+    }
+  }
+
+  resetPaginationValues() {
+    this.ngZone.run(() => {
+      const total_history_item = this.variablesService.currentWallet
+        .total_history_item;
+      const count = this.variablesService.count;
+      this.variablesService.currentWallet.totalPages = Math.ceil(
+        total_history_item / count
+      );
+      this.variablesService.currentWallet.exclude_mining_txs = this.mining;
+      this.variablesService.currentWallet.currentPage = 1;
+
+      if (!this.variablesService.currentWallet.totalPages) {
+        this.variablesService.currentWallet.totalPages = 1;
+      }
+      this.variablesService.currentWallet.totalPages >
+        this.variablesService.maxPages
+        ? (this.variablesService.currentWallet.pages = new Array(5)
+          .fill(1)
+          .map((value, index) => value + index))
+        : (this.variablesService.currentWallet.pages = new Array(
+          this.variablesService.currentWallet.totalPages
+        )
+          .fill(1)
+          .map((value, index) => value + index));
+    });
+  }
+
+
+  setPage(pageNumber: number) {
+    // this is will allow pagination for wallets that was open from existed wallets'
+    if (pageNumber === this.variablesService.currentWallet.currentPage) {
+      return;
+    }
+    if (
+      this.variablesService.currentWallet.open_from_exist &&
+      !this.variablesService.currentWallet.updated
+    ) {
+      this.variablesService.get_recent_transfers = false;
+      this.variablesService.currentWallet.updated = true;
+    }
+    // if not running get_recent_transfers callback
+    if (!this.variablesService.get_recent_transfers) {
+      this.variablesService.currentWallet.currentPage = pageNumber;
+    }
+    if (!this.variablesService.get_recent_transfers) {
+      this.getRecentTransfers();
     }
   }
 
@@ -353,14 +370,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     );
   }
 
-  getHistoryMessage() {
-    for (let item of this.variablesService.currentWallet.history){
-      if (item.comment[0] == 'A' && item.comment[1] == 'C' && item.comment[2] == 'S' && item.comment[3] == ':'){
-        this.historyMessage.push(item)
-      } else {continue}
-    }
-  }
-
   tick() {
     const walletInterval = setInterval(() => {
       this.wallet = this.variablesService.getNotLoadedWallet();
@@ -411,8 +420,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     }
     return false;
   }
-
-
   /*------------------------------------------send----------------------------------*/
   private getWrapInfo() {
     this.http.get<WrapInfo>('#')
@@ -447,11 +454,6 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
     });
   }
 
-  payMessage(){
-    let pay = Number(this.sendForm.get('amount').value) + 0.001
-    return String(pay)
-  }
-
   onSend() {
     if (this.sendForm.valid) {
       if (this.sendForm.get('address').value.indexOf('@') !== 0) {
@@ -462,11 +464,10 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
               this.sendForm.get('address').setErrors({ 'address_not_valid': true });
             });
           } else {
-            console.log(this.sendForm.get('amount').value)
             this.backend.sendMoney(
               this.variablesService.currentWallet.wallet_id,
               this.sendForm.get('address').value,
-              this.payMessage(),
+              '0.001',
               this.sendForm.get('fee').value,
               this.sendForm.get('mixin').value,
               'ACS:' + this.sendForm.get('comment').value,
@@ -502,11 +503,10 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
                 this.sendForm.get('address').setErrors({ 'alias_not_valid': true });
               });
             } else {
-              console.log(this.sendForm.get('amount').value)
               this.backend.sendMoney(
                 this.variablesService.currentWallet.wallet_id,
                 alias_data.address, // this.sendForm.get('address').value,
-                this.payMessage(),
+                '0.001',
                 this.sendForm.get('fee').value,
                 this.sendForm.get('mixin').value,
                 'ACS:' + this.sendForm.get('comment').value,
@@ -538,33 +538,20 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       }
     }
   }
-  
-  toggleOptions() {
-    this.additionalOptions = !this.additionalOptions;
-  }
 
   ngOnDestroy() {
     this.parentRouting.unsubscribe();
     this.dLActionSubscribe.unsubscribe();
     this.variablesService.currentWallet.send_data = {
       address: this.sendForm.get('address').value,
-      amount: this.sendForm.get('amount').value,
+      amount: '',
       comment: this.sendForm.get('comment').value,
       mixin: this.sendForm.get('mixin').value,
       fee: this.sendForm.get('fee').value,
       hide: this.sendForm.get('hide').value
     };
-    this.actionData = {},
-    this.historyMessage = []
+    this.actionData = {}
   }
-
-  public getReceivedValue() {
-    const amount = this.moneyToInt.transform(this.sendForm.value.amount);
-    const needed = new BigNumber(this.wrapInfo.tx_cost.EvoX_needed_for_erc20);
-    if (amount && needed) { return (amount as BigNumber).minus(needed); }
-    return 0;
-  }
-
   /*------------------------------contact------------------------------*/
   delete(index: number) {
     if (this.variablesService.appPass) {

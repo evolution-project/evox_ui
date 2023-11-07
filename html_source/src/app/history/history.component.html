@@ -12,6 +12,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let item of variablesService.currentWallet.history">
+          <ng-container *ngIf="!item.comment.startsWith('ACS:')">
           <tr (click)="openDetails(item.tx_hash)" [class.locked-transaction]="!item.is_mining && item.unlock_time > 0">
             <td>
               <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
@@ -81,6 +82,7 @@
             </td>
           </tr>
           <div class="row-divider"></div>
+        </ng-container>
         </ng-container>
       </tbody>
     </table>
