@@ -520,6 +520,7 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
       hide: this.sendForm.get('hide').value
     };
     this.actionData = {}
+    if(this.variablesService.currentWallet.totalPages > 0) this.setPage(1);
   }
   /*------------------------------contact------------------------------*/
   delete(index: number) {

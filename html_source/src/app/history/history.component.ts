@@ -306,6 +306,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnDestroy() {
     this.parentRouting.unsubscribe();
+    if(this.variablesService.currentWallet.totalPages > 0) this.setPage(1);
   }
-
+  
 }

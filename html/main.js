@@ -3906,6 +3906,8 @@ var ACSComponent = /** @class */ (function () {
             hide: this.sendForm.get('hide').value
         };
         this.actionData = {};
+        if (this.variablesService.currentWallet.totalPages > 0)
+            this.setPage(1);
     };
     /*------------------------------contact------------------------------*/
     ACSComponent.prototype.delete = function (index) {
@@ -7144,6 +7146,8 @@ var HistoryComponent = /** @class */ (function () {
     };
     HistoryComponent.prototype.ngOnDestroy = function () {
         this.parentRouting.unsubscribe();
+        if (this.variablesService.currentWallet.totalPages > 0)
+            this.setPage(1);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('head'),
