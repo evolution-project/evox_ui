@@ -239,6 +239,13 @@ export class ACSComponent implements OnInit, OnDestroy, AfterViewChecked {
         this.variablesService.sendActionData$.next({});
       }
     })
+    if (this.variablesService.currentWallet.totalPages > 0) {
+      for (let i = 1; i <= this.variablesService.currentWallet.totalPages; i++) {
+        setTimeout((page) => {
+          this.setPage(page);
+        }, 1000 * i, i);
+      }
+    }
   }
 
   setPage(pageNumber: number) {
