@@ -1,6 +1,6 @@
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { DeeplinkParams, PushOffer, CancelOffer, UpdateOffer, Wallet } from './../_helpers/models/wallet.model';
+import { DeeplinkParams, PushOffer, CancelOffer, Wallet } from './../_helpers/models/wallet.model';
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { VariablesService } from '../_helpers/services/variables.service';
@@ -127,10 +127,10 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
 
   marketplaceCancelSend(): void {
     let offerObject: CancelOffer = {
-      wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id,
-      no: 0,
-    }
+        wallet_id: this.walletToPayId,
+        tx_id: this.actionData.tx_id,
+        no: 0
+    };
     this.backend.cancel_offer(offerObject, (status, data) => {
       this.ngZone.run(() => {
         if (data.success) {
@@ -138,49 +138,11 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
           this.marketplaceConfirmHash = data.tx_hash;
         } else {
           this.marketplaceModalShow = false;
-          this.marketplaceError = this.actionData.tx_id;
-
+          this.canselAction();
         }
       });
     });
   }
-
-  marketplaceUpdateSend(): void {
-    let offerObject: UpdateOffer = {
-      wallet_id: this.walletToPayId,
-      tx_id: this.actionData.tx_id,
-      no: 0,
-      od: {
-        ap: this.actionData.price || '',
-        at: '1',
-        cat: this.actionData.category || '',
-        cnt: this.actionData.contact || '',
-        com: this.actionData.comment || this.actionData.comments || '',
-        do: this.actionData.description || '',
-        et: 10,
-        fee: new BigNumber('' + ((+this.actionData.fee || +this.variablesService.default_fee) * 1000000000000)),
-        lci: '',
-        lco: 'World Wide',
-        ot: 1,
-        pt: 'Credit cards, BTC, EvoX, ETH',
-        t: this.actionData.title || '',
-        url: this.actionData.url || this.actionData.img_url || '',
-      },
-    }
-    this.backend.update_offer(offerObject, (status, data) => {
-      this.ngZone.run(() => {
-        if (data.success) {
-          this.marketplaceModalShow = false;
-          this.marketplaceConfirmHash = data.tx_hash;
-        } else {
-          this.marketplaceModalShow = false;
-          this.marketplaceError = this.actionData.tx_id;
-
-        }
-      });
-    });
-  }
-
 
   copyHash(): void {
     this.backend.setClipboard(this.marketplaceConfirmHash);
@@ -203,10 +165,10 @@ export class DeeplinkComponent implements OnInit, OnDestroy {
       this.secondStep = false;
     }
     else if (this.actionData.action === 'ACS') {
-      this._router.navigate(['/wallet/ACS']).then();
       this.variablesService.sendActionData$.next(this.actionData);
       this.variablesService.deeplink$.next(null);
       this.variablesService.setCurrentWallet(this.walletToPayId);
+      this._router.navigate(['/wallet/ACS']).then();
       this.secondStep = false;
     } else {
       this.secondStep = true;

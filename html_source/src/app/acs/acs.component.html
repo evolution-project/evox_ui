@@ -52,10 +52,6 @@
 </div>
 </div>
 
-
-
-
-
 <div class="message-column">
   <div class="message-form">
     <form *ngIf="!isLoading" class="form-send" [formGroup]="sendForm" (ngSubmit)="showDialog()">
@@ -81,27 +77,7 @@
             </div>
           </div>
         </div>
-        <div class="input-block" style="margin: 2rem;width: 30%;">
-          <label for="send-amount">{{ 'SEND.TIPS' | translate }}</label>
-          <input type="text" id="send-amount" formControlName="amount"
-            placeholder="{{ 'PLACEHOLDERS.TIPS_PLACEHOLDER' | translate }}"
-            appInputValidate="money" (contextmenu)="variablesService.onContextMenu($event)">
-            <div class="error-block"
-              *ngIf="sendForm.controls['amount'].invalid && !sendForm.controls['amount'].errors['required'] && (sendForm.controls['amount'].dirty || sendForm.controls['amount'].touched)">
-              <div *ngIf="sendForm.controls['amount'].errors['zero']">
-                {{ 'SEND.FORM_ERRORS.AMOUNT_ZERO' | translate }}
-              </div>
-              <div *ngIf="sendForm.controls['amount'].errors['great_than_unwraped_coins']">
-                {{ 'SEND.FORM_ERRORS.GREAT_THAN_UNWRAPPED_COINS' | translate }}
-              </div>
-              <div *ngIf="sendForm.controls['amount'].errors['less_than_EvoX_needed']">
-                {{ 'SEND.FORM_ERRORS.LESS_THAN_EvoX_NEEDED' | translate }}
-              </div>
-              <div *ngIf="sendForm.controls['amount'].errors['wrap_info_null']">
-                {{ 'SEND.FORM_ERRORS.WRAP_INFO_NULL' | translate }}
-              </div>
-            </div>
-        </div>
+        
         <div class="input-block" style="margin: 2rem;width: 10%;">
           <label for="send-mixin">{{ 'SEND.MIXIN' | translate }}</label>
           <input type="text" id="send-mixin" formControlName="mixin"
@@ -132,11 +108,6 @@
     </form>
   </div>
 
-
-
-
-
-
   <div class="message-history">
     <div class="history-wrap">
       <div class="wrap-table scrolled-content">
@@ -149,8 +120,8 @@
             </tr>
           </thead>
           <tbody>
-            <ng-container *ngFor="let item of historyMessage">
-            
+            <ng-container *ngFor="let item of variablesService.currentWallet.history_massage">
+              <ng-container *ngIf="item.comment.startsWith('ACS:')">
               <tr (click)="openDetails(item.tx_hash)" [class.locked-transaction]="!item.is_mining && item.unlock_time > 0">
                 <td>
                   <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
@@ -211,11 +182,13 @@
                     </ng-container>
                   </td>
                 </tr>
-
+              </ng-container>
             </ng-container>
           </tbody>
         </table>
       </div>
+      <div></div>
     </div>
   </div>
+  
 </div>

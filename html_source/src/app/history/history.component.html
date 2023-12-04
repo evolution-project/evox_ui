@@ -12,6 +12,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let item of variablesService.currentWallet.history">
+          <ng-container *ngIf="!item.comment.startsWith('ACS:')">
           <tr (click)="openDetails(item.tx_hash)" [class.locked-transaction]="!item.is_mining && item.unlock_time > 0">
             <td>
               <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
@@ -81,6 +82,69 @@
             </td>
           </tr>
           <div class="row-divider"></div>
+        </ng-container>
+        <ng-container *ngIf="item.comment.startsWith('ACS:')">
+          <tr>
+            <td>
+              <div class="status" [ngClass]="item.is_income ? 'received' : 'send'">
+                <ng-container *ngIf="getHeight(item) < 10">
+                  <svg class="confirmation" style="transform: rotateZ(-90deg)"
+                    tooltip="{{ 'HISTORY.STATUS_TOOLTIP' | translate : {'current': getHeight(item), 'total': 10} }}"
+                    placement="bottom-left" tooltipClass="table-tooltip" [delay]="500">
+                    <circle stroke-dasharray="100" fill="transparent" stroke-dashoffset="0" cx="50%" cy="50%"
+                      stroke="rgba(178, 0, 255, 0.33)" r="0.7rem" stroke-width="0.3rem">
+                    </circle>
+                    <circle class="progress-circle" cx="50%" cy="50%"
+                      [style.stroke]="item.is_income ? '#E111D6' : '#AC8FEB'" r="0.7rem" fill="transparent"
+                      stroke-width="0.3rem" stroke-dasharray="4.5rem" stroke-dashoffset="4.5rem" stroke-linecap="round"
+                      [style.stroke-dashoffset]="strokeSize(item)"></circle>
+                  </svg>
+                </ng-container>
+                <ng-container *ngIf="getHeight(item) === 10">
+                  <img *ngIf="!item.is_income" class="status-transaction" src="./assets/icons/send-tab.svg" alt="">
+                  <img *ngIf="item.is_income" class="status-transaction" src="./assets/icons/receive.svg" alt="">
+                </ng-container>
+                <span class="status-transaction-text">{{ (item.is_income ? 'HISTORY.RECEIVED' : 'HISTORY.SEND') |
+                  translate }}</span>
+                <ng-container *ngIf="item.unlock_time !== 0 && item.tx_type !== 6">
+                  <ng-container *ngIf="isLocked(item); else unlock">
+                    <ng-container *ngIf="item.unlock_time < 500000000">
+                      <i class="icon lock-transaction"
+                        tooltip="{{ 'HISTORY.LOCK_TOOLTIP' | translate : {'date': time(item) | date : 'MM.dd.yy'} }}"
+                        placement="bottom-left" tooltipClass="table-tooltip" [delay]="500"
+                        [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                    </ng-container>
+                    <ng-container *ngIf="item.unlock_time > 500000000">
+                      <i class="icon lock-transaction"
+                        tooltip="{{ 'HISTORY.LOCK_TOOLTIP' | translate : {'date': item.unlock_time * 1000 | date : 'MM.dd.yy'} }}"
+                        placement="bottom-left" tooltipClass="table-tooltip" [delay]="500"
+                        [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                    </ng-container>
+                  </ng-container>
+                  <ng-template #unlock>
+                    <i class="icon unlock-transaction" placement="bottom-left"
+                      [class.position]="variablesService.height_app - item.height < 10 || item.height === 0 && item.timestamp > 0"></i>
+                  </ng-template>
+                </ng-container>
+              </div>
+            </td>
+            <td>{{item.timestamp * 1000 | date : 'dd-MM-yyyy HH:mm'}}</td>
+            <td>
+              <span></span>
+            </td>
+            <td>
+              <span></span>
+            </td>
+            <td class="remote-address">Anonymous Chat System</td>
+          </tr>
+          <div class="row-divider"></div>
+          <tr class="transaction-details" >
+            <td colspan="5">
+
+            </td>
+          </tr>
+          <div class="row-divider"></div>
+        </ng-container>
         </ng-container>
       </tbody>
     </table>

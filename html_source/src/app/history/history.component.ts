@@ -39,7 +39,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   }
 
-  addressAlias(address){
+  addressAlias(address) {
     if (address !== null && this.variablesService.daemon_state === 2) {
       if (this.variablesService.aliasesChecked[address] == null) {
         this.variablesService.aliasesChecked[address] = {};
@@ -60,10 +60,11 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
             this.variablesService.aliasesChecked[data.address]['comment'] = data.comment;
           }
         });
+        return ""; // Возвращаем пустую строку вместо объекта Object
       }
       return this.variablesService.aliasesChecked[address].name;
     }
-    return {}
+    return "";
   }
 
   ngOnInit() {
@@ -305,6 +306,7 @@ export class HistoryComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnDestroy() {
     this.parentRouting.unsubscribe();
+    if(this.variablesService.currentWallet.totalPages > 0) this.setPage(1);
   }
-
+  
 }

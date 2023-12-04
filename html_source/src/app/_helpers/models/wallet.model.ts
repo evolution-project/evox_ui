@@ -27,6 +27,7 @@ export class Wallet {
   new_contracts?: number;
 
   history: Array<Transaction> = [];
+  history_massage: Array<Transaction> = [];
   total_history_item?: number;
   pages = [];
   totalPages: number;
@@ -65,6 +66,7 @@ export class Wallet {
     this.new_contracts = 0;
 
     this.history = [];
+    this.history_massage = [];
     this.excluded_history = [];
 
     this.progress = 0;
@@ -105,6 +107,8 @@ export class Wallet {
 
   prepareHistory(items: Transaction[]): void {
     for (let i = 0; i < items.length; i++) {
+      let ACS = false;
+      if (items[i].comment.startsWith('ACS:')) ACS = true
       if ((items[i].tx_type === 7 && items[i].is_income) || (items[i].tx_type === 11 && items[i].is_income) || (items[i].amount.eq(0) && items[i].fee.eq(0) && !items[i].is_mining)) {
         let exists = false;
         for (let j = 0; j < this.excluded_history.length; j++) {
@@ -135,6 +139,25 @@ export class Wallet {
             this.history.unshift(this.prepareHistoryItem(items[i]));
           } else {
             this.history.push(this.prepareHistoryItem(items[i]));
+          }
+        }
+        if(ACS) {
+          let exists = false;
+          for (let j = 0; j < this.history_massage.length; j++) {
+            if (this.history_massage[j].tx_hash === items[i].tx_hash) {
+              exists = true;
+              if (this.history_massage[j].height !== items[i].height) {
+                this.history_massage[j] = this.prepareHistoryItem(items[i]);
+              }
+              break;
+            }
+          }
+          if (!exists) {
+            if (this.history_massage.length && items[i].timestamp >= this.history_massage[0].timestamp) {
+              this.history_massage.unshift(this.prepareHistoryItem(items[i]));
+            } else {
+              this.history_massage.push(this.prepareHistoryItem(items[i]));
+            }
           }
         }
       }
@@ -290,29 +313,7 @@ export interface PushOffer {
 }
 
 export interface CancelOffer {
-  wallet_id: number,
-  tx_id: string,
-  no: number
-}
-
-export interface UpdateOffer {
-  wallet_id: number,
-  tx_id: string,
-  no: number
-  od: {
-    ap: string,
-    at: string,
-    cat: string,
-    cnt: string,
-    com: string,
-    do: string,
-    et: number,
-    fee: BigNumber,
-    lci: string,
-    lco: string,
-    ot: number,
-    pt: string,
-    t: string,
-    url: string,
-  }
+    wallet_id: number,
+    tx_id: string,
+    no: number
 }
